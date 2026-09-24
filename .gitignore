@@ -1,0 +1,10 @@
+# downloaded release assets and everything the verification steps create
+/release/
+/trusted/
+/sources/
+/out/
+/out_test/
+/audit_work/
+/replay_work/
+/v3_replay_addendum/
+__pycache__/

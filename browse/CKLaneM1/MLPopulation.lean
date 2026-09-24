@@ -1,0 +1,474 @@
+import CKLaneM1.MLRoute
+import CKLaneM1.MLG3
+import CKLaneM1.Pop.S0000
+import CKLaneM1.Pop.S0001
+import CKLaneM1.Pop.S0002
+import CKLaneM1.Pop.S0003
+import CKLaneM1.Pop.S0004
+import CKLaneM1.Pop.S0005
+import CKLaneM1.Pop.S0006
+import CKLaneM1.Pop.S0007
+import CKLaneM1.Pop.S0008
+import CKLaneM1.Pop.S0009
+import CKLaneM1.Pop.S0010
+import CKLaneM1.Pop.S0011
+import CKLaneM1.Pop.S0012
+import CKLaneM1.Pop.S0013
+import CKLaneM1.Pop.S0014
+import CKLaneM1.Pop.S0015
+import CKLaneM1.Pop.S0016
+import CKLaneM1.Pop.S0017
+import CKLaneM1.Pop.S0018
+import CKLaneM1.Pop.S0019
+import CKLaneM1.Pop.S0020
+import CKLaneM1.Pop.S0021
+import CKLaneM1.Pop.S0022
+import CKLaneM1.Pop.S0023
+import CKLaneM1.Pop.S0024
+import CKLaneM1.Pop.S0025
+import CKLaneM1.Pop.S0026
+import CKLaneM1.Pop.S0027
+import CKLaneM1.Pop.S0028
+import CKLaneM1.Pop.S0029
+import CKLaneM1.Pop.S0030
+import CKLaneM1.Pop.S0031
+import CKLaneM1.Pop.S0032
+import CKLaneM1.Pop.S0033
+import CKLaneM1.Pop.S0034
+import CKLaneM1.Pop.S0035
+import CKLaneM1.Pop.S0036
+import CKLaneM1.Pop.S0037
+import CKLaneM1.Pop.S0038
+import CKLaneM1.Pop.S0039
+import CKLaneM1.Pop.S0040
+import CKLaneM1.Pop.S0041
+import CKLaneM1.Pop.S0042
+import CKLaneM1.Pop.S0043
+import CKLaneM1.Pop.S0044
+import CKLaneM1.Pop.S0045
+import CKLaneM1.Pop.S0046
+import CKLaneM1.Pop.S0047
+import CKLaneM1.Pop.S0048
+import CKLaneM1.Pop.S0049
+import CKLaneM1.Pop.S0050
+import CKLaneM1.Pop.S0051
+import CKLaneM1.Pop.S0052
+import CKLaneM1.Pop.S0053
+import CKLaneM1.Pop.S0054
+import CKLaneM1.Pop.S0055
+import CKLaneM1.Pop.S0056
+import CKLaneM1.Pop.S0057
+import CKLaneM1.Pop.S0058
+import CKLaneM1.Pop.S0059
+import CKLaneM1.Pop.S0060
+import CKLaneM1.Pop.S0061
+import CKLaneM1.Pop.S0062
+import CKLaneM1.Pop.S0063
+import CKLaneM1.Pop.S0064
+import CKLaneM1.Pop.S0065
+import CKLaneM1.Pop.S0066
+import CKLaneM1.Pop.S0067
+import CKLaneM1.Pop.S0068
+import CKLaneM1.Pop.S0069
+import CKLaneM1.Pop.S0070
+import CKLaneM1.Pop.S0071
+import CKLaneM1.Pop.S0072
+import CKLaneM1.Pop.S0073
+import CKLaneM1.Pop.S0074
+import CKLaneM1.Pop.S0075
+import CKLaneM1.Pop.S0076
+import CKLaneM1.Pop.S0077
+import CKLaneM1.Pop.S0078
+import CKLaneM1.Pop.S0079
+import CKLaneM1.Pop.S0080
+import CKLaneM1.Pop.S0081
+import CKLaneM1.Pop.S0082
+import CKLaneM1.Pop.S0083
+import CKLaneM1.Pop.S0084
+import CKLaneM1.Pop.S0085
+import CKLaneM1.Pop.S0086
+import CKLaneM1.Pop.S0087
+import CKLaneM1.Pop.S0088
+import CKLaneM1.Pop.S0089
+import CKLaneM1.Pop.S0090
+import CKLaneM1.Pop.S0091
+import CKLaneM1.Pop.S0092
+import CKLaneM1.Pop.S0093
+import CKLaneM1.Pop.S0094
+import CKLaneM1.Pop.S0095
+import CKLaneM1.Pop.S0096
+import CKLaneM1.Pop.S0097
+import CKLaneM1.Pop.S0098
+import CKLaneM1.Pop.S0099
+import CKLaneM1.Pop.S0100
+import CKLaneM1.Pop.S0101
+import CKLaneM1.Pop.S0102
+import CKLaneM1.Pop.S0103
+import CKLaneM1.Pop.S0104
+import CKLaneM1.Pop.S0105
+import CKLaneM1.Pop.S0106
+import CKLaneM1.Pop.S0107
+import CKLaneM1.Pop.S0108
+import CKLaneM1.Pop.S0109
+import CKLaneM1.Pop.S0110
+import CKLaneM1.Pop.S0111
+import CKLaneM1.Pop.S0112
+import CKLaneM1.Pop.S0113
+import CKLaneM1.Pop.S0114
+import CKLaneM1.Pop.S0115
+import CKLaneM1.Pop.S0116
+import CKLaneM1.Pop.S0117
+import CKLaneM1.Pop.S0118
+import CKLaneM1.Pop.S0119
+import CKLaneM1.Pop.S0120
+import CKLaneM1.Pop.S0121
+import CKLaneM1.Pop.S0122
+import CKLaneM1.Pop.S0123
+import CKLaneM1.Pop.S0124
+import CKLaneM1.Pop.S0125
+import CKLaneM1.Pop.S0126
+import CKLaneM1.Pop.S0127
+import CKLaneM1.Pop.S0128
+import CKLaneM1.Pop.S0129
+import CKLaneM1.Pop.S0130
+import CKLaneM1.Pop.S0131
+import CKLaneM1.Pop.S0132
+import CKLaneM1.Pop.S0133
+import CKLaneM1.Pop.S0134
+import CKLaneM1.Pop.S0135
+import CKLaneM1.Pop.S0136
+import CKLaneM1.Pop.S0137
+import CKLaneM1.Pop.S0138
+import CKLaneM1.Pop.S0139
+import CKLaneM1.Pop.S0140
+import CKLaneM1.Pop.S0141
+import CKLaneM1.Pop.S0142
+import CKLaneM1.Pop.S0143
+import CKLaneM1.Pop.S0144
+import CKLaneM1.Pop.S0145
+import CKLaneM1.Pop.S0146
+import CKLaneM1.Pop.S0147
+import CKLaneM1.Pop.S0148
+import CKLaneM1.Pop.S0149
+import CKLaneM1.Pop.S0150
+import CKLaneM1.Pop.S0151
+import CKLaneM1.Pop.S0152
+import CKLaneM1.Pop.S0153
+import CKLaneM1.Pop.S0154
+import CKLaneM1.Pop.S0155
+import CKLaneM1.Pop.S0156
+import CKLaneM1.Pop.S0157
+import CKLaneM1.Pop.S0158
+import CKLaneM1.Pop.S0159
+import CKLaneM1.Pop.S0160
+import CKLaneM1.Pop.S0161
+import CKLaneM1.Pop.S0162
+import CKLaneM1.Pop.S0163
+import CKLaneM1.Pop.S0164
+import CKLaneM1.Pop.S0165
+import CKLaneM1.Pop.S0166
+import CKLaneM1.Pop.S0167
+import CKLaneM1.Pop.S0168
+import CKLaneM1.Pop.S0169
+import CKLaneM1.Pop.S0170
+import CKLaneM1.Pop.S0171
+import CKLaneM1.Pop.S0172
+import CKLaneM1.Pop.S0173
+import CKLaneM1.Pop.S0174
+import CKLaneM1.Pop.S0175
+import CKLaneM1.Pop.S0176
+import CKLaneM1.Pop.S0177
+import CKLaneM1.Pop.S0178
+import CKLaneM1.Pop.S0179
+import CKLaneM1.Pop.S0180
+import CKLaneM1.Pop.S0181
+import CKLaneM1.Pop.S0182
+import CKLaneM1.Pop.S0183
+import CKLaneM1.Pop.S0184
+import CKLaneM1.Pop.S0185
+import CKLaneM1.Pop.S0186
+import CKLaneM1.Pop.S0187
+import CKLaneM1.Pop.S0188
+import CKLaneM1.Pop.S0189
+import CKLaneM1.Pop.S0190
+import CKLaneM1.Pop.S0191
+import CKLaneM1.Pop.S0192
+import CKLaneM1.Pop.S0193
+import CKLaneM1.Pop.S0194
+import CKLaneM1.Pop.S0195
+import CKLaneM1.Pop.S0196
+import CKLaneM1.Pop.S0197
+import CKLaneM1.Pop.S0198
+import CKLaneM1.Pop.S0199
+import CKLaneM1.Pop.S0200
+import CKLaneM1.Pop.S0201
+import CKLaneM1.Pop.S0202
+import CKLaneM1.Pop.S0203
+import CKLaneM1.Pop.S0204
+import CKLaneM1.Pop.S0205
+import CKLaneM1.Pop.S0206
+import CKLaneM1.Pop.S0207
+import CKLaneM1.Pop.S0208
+import CKLaneM1.Pop.S0209
+import CKLaneM1.Pop.S0210
+import CKLaneM1.Pop.S0211
+import CKLaneM1.Pop.S0212
+import CKLaneM1.Pop.S0213
+import CKLaneM1.Pop.S0214
+import CKLaneM1.Pop.S0215
+import CKLaneM1.Pop.S0216
+import CKLaneM1.Pop.S0217
+import CKLaneM1.Pop.S0218
+import CKLaneM1.Pop.S0219
+import CKLaneM1.Pop.S0220
+import CKLaneM1.Pop.S0221
+import CKLaneM1.Pop.S0222
+import CKLaneM1.Pop.S0223
+import CKLaneM1.Pop.S0224
+import CKLaneM1.Pop.S0225
+import CKLaneM1.Pop.S0226
+import CKLaneM1.Pop.S0227
+import CKLaneM1.Pop.S0228
+import CKLaneM1.Pop.S0229
+import CKLaneM1.Pop.S0230
+import CKLaneM1.Pop.S0231
+import CKLaneM1.Pop.S0232
+import CKLaneM1.Pop.S0233
+import CKLaneM1.Pop.S0234
+import CKLaneM1.Pop.S0235
+import CKLaneM1.Pop.S0236
+import CKLaneM1.Pop.S0237
+import CKLaneM1.Pop.S0238
+import CKLaneM1.Pop.S0239
+import CKLaneM1.Pop.S0240
+import CKLaneM1.Pop.S0241
+import CKLaneM1.Pop.S0242
+import CKLaneM1.Pop.S0243
+import CKLaneM1.Pop.S0244
+import CKLaneM1.Pop.S0245
+import CKLaneM1.Pop.S0246
+import CKLaneM1.Pop.S0247
+import CKLaneM1.Pop.S0248
+import CKLaneM1.Pop.S0249
+import CKLaneM1.Pop.S0250
+import CKLaneM1.Pop.S0251
+import CKLaneM1.Pop.S0252
+import CKLaneM1.Pop.S0253
+import CKLaneM1.Pop.S0254
+import CKLaneM1.Pop.S0255
+import CKLaneM1.Pop.S0256
+import CKLaneM1.Pop.S0257
+import CKLaneM1.Pop.S0258
+import CKLaneM1.Pop.S0259
+import CKLaneM1.Pop.S0260
+import CKLaneM1.Pop.S0261
+import CKLaneM1.Pop.S0262
+import CKLaneM1.Pop.S0263
+import CKLaneM1.Pop.S0264
+import CKLaneM1.Pop.S0265
+import CKLaneM1.Pop.S0266
+import CKLaneM1.Pop.S0267
+import CKLaneM1.Pop.S0268
+import CKLaneM1.Pop.S0269
+import CKLaneM1.Pop.S0270
+import CKLaneM1.Pop.S0271
+import CKLaneM1.Pop.S0272
+import CKLaneM1.Pop.S0273
+import CKLaneM1.Pop.S0274
+import CKLaneM1.Pop.S0275
+import CKLaneM1.Pop.S0276
+import CKLaneM1.Pop.S0277
+import CKLaneM1.Pop.S0278
+import CKLaneM1.Pop.S0279
+import CKLaneM1.Pop.S0280
+import CKLaneM1.Pop.S0281
+import CKLaneM1.Pop.S0282
+import CKLaneM1.Pop.S0283
+import CKLaneM1.Pop.S0284
+import CKLaneM1.Pop.S0285
+import CKLaneM1.Pop.S0286
+import CKLaneM1.Pop.S0287
+import CKLaneM1.Pop.S0288
+import CKLaneM1.Pop.S0289
+import CKLaneM1.Pop.S0290
+import CKLaneM1.Pop.S0291
+import CKLaneM1.Pop.S0292
+import CKLaneM1.Pop.S0293
+import CKLaneM1.Pop.S0294
+import CKLaneM1.Pop.S0295
+import CKLaneM1.Pop.S0296
+import CKLaneM1.Pop.S0297
+import CKLaneM1.Pop.S0298
+import CKLaneM1.Pop.S0299
+import CKLaneM1.Pop.S0300
+import CKLaneM1.Pop.S0301
+import CKLaneM1.Pop.S0302
+import CKLaneM1.Pop.S0303
+import CKLaneM1.Pop.S0304
+import CKLaneM1.Pop.S0305
+import CKLaneM1.Pop.S0306
+import CKLaneM1.Pop.S0307
+import CKLaneM1.Pop.S0308
+import CKLaneM1.Pop.S0309
+import CKLaneM1.Pop.S0310
+import CKLaneM1.Pop.S0311
+import CKLaneM1.Pop.S0312
+import CKLaneM1.Pop.S0313
+import CKLaneM1.Pop.S0314
+import CKLaneM1.Pop.S0315
+import CKLaneM1.Pop.S0316
+import CKLaneM1.Pop.S0317
+import CKLaneM1.Pop.S0318
+import CKLaneM1.Pop.S0319
+import CKLaneM1.Pop.S0320
+import CKLaneM1.Pop.S0321
+import CKLaneM1.Pop.S0322
+import CKLaneM1.Pop.S0323
+import CKLaneM1.Pop.S0324
+import CKLaneM1.Pop.S0325
+import CKLaneM1.Pop.S0326
+import CKLaneM1.Pop.S0327
+import CKLaneM1.Pop.S0328
+import CKLaneM1.Pop.S0329
+import CKLaneM1.Pop.S0330
+import CKLaneM1.Pop.S0331
+import CKLaneM1.Pop.S0332
+import CKLaneM1.Pop.S0333
+import CKLaneM1.Pop.S0334
+import CKLaneM1.Pop.S0335
+import CKLaneM1.Pop.S0336
+import CKLaneM1.Pop.S0337
+import CKLaneM1.Pop.S0338
+import CKLaneM1.Pop.S0339
+import CKLaneM1.Pop.S0340
+import CKLaneM1.Pop.S0341
+import CKLaneM1.Pop.S0342
+import CKLaneM1.Pop.S0343
+import CKLaneM1.Pop.S0344
+import CKLaneM1.Pop.S0345
+import CKLaneM1.Pop.S0346
+import CKLaneM1.Pop.S0347
+import CKLaneM1.Pop.S0348
+import CKLaneM1.Pop.S0349
+import CKLaneM1.Pop.S0350
+import CKLaneM1.Pop.S0351
+import CKLaneM1.Pop.S0352
+import CKLaneM1.Pop.S0353
+import CKLaneM1.Pop.S0354
+import CKLaneM1.Pop.S0355
+import CKLaneM1.Pop.S0356
+import CKLaneM1.Pop.S0357
+import CKLaneM1.Pop.S0358
+import CKLaneM1.Pop.S0359
+import CKLaneM1.Pop.S0360
+import CKLaneM1.Pop.S0361
+import CKLaneM1.Pop.S0362
+import CKLaneM1.Pop.S0363
+import CKLaneM1.Pop.S0364
+import CKLaneM1.Pop.S0365
+import CKLaneM1.Pop.S0366
+import CKLaneM1.Pop.S0367
+import CKLaneM1.Pop.S0368
+import CKLaneM1.Pop.S0369
+import CKLaneM1.Pop.S0370
+import CKLaneM1.Pop.S0371
+import CKLaneM1.Pop.S0372
+import CKLaneM1.Pop.S0373
+import CKLaneM1.Pop.S0374
+import CKLaneM1.Pop.S0375
+import CKLaneM1.Pop.S0376
+import CKLaneM1.Pop.S0377
+import CKLaneM1.Pop.S0378
+import CKLaneM1.Pop.S0379
+import CKLaneM1.Pop.S0380
+import CKLaneM1.Pop.S0381
+import CKLaneM1.Pop.S0382
+import CKLaneM1.Pop.S0383
+import CKLaneM1.Pop.S0384
+import CKLaneM1.Pop.S0385
+import CKLaneM1.Pop.S0386
+import CKLaneM1.Pop.S0387
+import CKLaneM1.Pop.S0388
+import CKLaneM1.Pop.S0389
+import CKLaneM1.Pop.S0390
+import CKLaneM1.Pop.S0391
+import CKLaneM1.Pop.S0392
+import CKLaneM1.Pop.S0393
+import CKLaneM1.Pop.S0394
+import CKLaneM1.Pop.S0395
+import CKLaneM1.Pop.S0396
+import CKLaneM1.Pop.S0397
+import CKLaneM1.Pop.S0398
+import CKLaneM1.Pop.S0399
+import CKLaneM1.Pop.S0400
+import CKLaneM1.Pop.S0401
+import CKLaneM1.Pop.S0402
+import CKLaneM1.Pop.S0403
+import CKLaneM1.Pop.S0404
+import CKLaneM1.Pop.S0405
+import CKLaneM1.Pop.S0406
+import CKLaneM1.Pop.S0407
+import CKLaneM1.Pop.S0408
+import CKLaneM1.Pop.S0409
+import CKLaneM1.Pop.S0410
+import CKLaneM1.Pop.S0411
+import CKLaneM1.Pop.S0412
+import CKLaneM1.Pop.S0413
+import CKLaneM1.Pop.S0414
+import CKLaneM1.Pop.S0415
+import CKLaneM1.Pop.S0416
+import CKLaneM1.Pop.S0417
+import CKLaneM1.Pop.S0418
+import CKLaneM1.Pop.S0419
+import CKLaneM1.Pop.S0420
+import CKLaneM1.Pop.S0421
+import CKLaneM1.Pop.S0422
+
+/-!
+# Lane M1: the archived `same_side.mean_logsum` population
+
+`allLeaves` concatenates the 423 kernel-checked shards (50429 archived leaves, each bound to its
+archive path by `checkLeaf`).  `all_paths_sLeafOK` is the coordinator's final (S) family form
+`∀ archived mean_logsum path p, CKLaneG3.SLeafOK (CKLaneG3.sBox p)` (the path list equals the archived
+mean_logsum leaves of `same_side/ADAPT_RESULT.json`, see work/population_receipt.json).
+-/
+
+set_option autoImplicit false
+set_option maxRecDepth 100000
+
+namespace CKLaneM1.ML.Population
+
+open CKLaneM1.ML
+
+theorem sem_append {L₁ L₂ : List (List ℕ × LeafCert)}
+    (h₁ : ∀ x ∈ L₁, SemSS (ssBox x.1)) (h₂ : ∀ x ∈ L₂, SemSS (ssBox x.1)) :
+    ∀ x ∈ L₁ ++ L₂, SemSS (ssBox x.1) := by
+  intro x hx
+  rcases List.mem_append.mp hx with h | h
+  · exact h₁ x h
+  · exact h₂ x h
+
+def allLeaves : List (List ℕ × LeafCert) :=
+  Pop.S0000.leaves ++ (Pop.S0001.leaves ++ (Pop.S0002.leaves ++ (Pop.S0003.leaves ++ (Pop.S0004.leaves ++ (Pop.S0005.leaves ++ (Pop.S0006.leaves ++ (Pop.S0007.leaves ++ (Pop.S0008.leaves ++ (Pop.S0009.leaves ++ (Pop.S0010.leaves ++ (Pop.S0011.leaves ++ (Pop.S0012.leaves ++ (Pop.S0013.leaves ++ (Pop.S0014.leaves ++ (Pop.S0015.leaves ++ (Pop.S0016.leaves ++ (Pop.S0017.leaves ++ (Pop.S0018.leaves ++ (Pop.S0019.leaves ++ (Pop.S0020.leaves ++ (Pop.S0021.leaves ++ (Pop.S0022.leaves ++ (Pop.S0023.leaves ++ (Pop.S0024.leaves ++ (Pop.S0025.leaves ++ (Pop.S0026.leaves ++ (Pop.S0027.leaves ++ (Pop.S0028.leaves ++ (Pop.S0029.leaves ++ (Pop.S0030.leaves ++ (Pop.S0031.leaves ++ (Pop.S0032.leaves ++ (Pop.S0033.leaves ++ (Pop.S0034.leaves ++ (Pop.S0035.leaves ++ (Pop.S0036.leaves ++ (Pop.S0037.leaves ++ (Pop.S0038.leaves ++ (Pop.S0039.leaves ++ (Pop.S0040.leaves ++ (Pop.S0041.leaves ++ (Pop.S0042.leaves ++ (Pop.S0043.leaves ++ (Pop.S0044.leaves ++ (Pop.S0045.leaves ++ (Pop.S0046.leaves ++ (Pop.S0047.leaves ++ (Pop.S0048.leaves ++ (Pop.S0049.leaves ++ (Pop.S0050.leaves ++ (Pop.S0051.leaves ++ (Pop.S0052.leaves ++ (Pop.S0053.leaves ++ (Pop.S0054.leaves ++ (Pop.S0055.leaves ++ (Pop.S0056.leaves ++ (Pop.S0057.leaves ++ (Pop.S0058.leaves ++ (Pop.S0059.leaves ++ (Pop.S0060.leaves ++ (Pop.S0061.leaves ++ (Pop.S0062.leaves ++ (Pop.S0063.leaves ++ (Pop.S0064.leaves ++ (Pop.S0065.leaves ++ (Pop.S0066.leaves ++ (Pop.S0067.leaves ++ (Pop.S0068.leaves ++ (Pop.S0069.leaves ++ (Pop.S0070.leaves ++ (Pop.S0071.leaves ++ (Pop.S0072.leaves ++ (Pop.S0073.leaves ++ (Pop.S0074.leaves ++ (Pop.S0075.leaves ++ (Pop.S0076.leaves ++ (Pop.S0077.leaves ++ (Pop.S0078.leaves ++ (Pop.S0079.leaves ++ (Pop.S0080.leaves ++ (Pop.S0081.leaves ++ (Pop.S0082.leaves ++ (Pop.S0083.leaves ++ (Pop.S0084.leaves ++ (Pop.S0085.leaves ++ (Pop.S0086.leaves ++ (Pop.S0087.leaves ++ (Pop.S0088.leaves ++ (Pop.S0089.leaves ++ (Pop.S0090.leaves ++ (Pop.S0091.leaves ++ (Pop.S0092.leaves ++ (Pop.S0093.leaves ++ (Pop.S0094.leaves ++ (Pop.S0095.leaves ++ (Pop.S0096.leaves ++ (Pop.S0097.leaves ++ (Pop.S0098.leaves ++ (Pop.S0099.leaves ++ (Pop.S0100.leaves ++ (Pop.S0101.leaves ++ (Pop.S0102.leaves ++ (Pop.S0103.leaves ++ (Pop.S0104.leaves ++ (Pop.S0105.leaves ++ (Pop.S0106.leaves ++ (Pop.S0107.leaves ++ (Pop.S0108.leaves ++ (Pop.S0109.leaves ++ (Pop.S0110.leaves ++ (Pop.S0111.leaves ++ (Pop.S0112.leaves ++ (Pop.S0113.leaves ++ (Pop.S0114.leaves ++ (Pop.S0115.leaves ++ (Pop.S0116.leaves ++ (Pop.S0117.leaves ++ (Pop.S0118.leaves ++ (Pop.S0119.leaves ++ (Pop.S0120.leaves ++ (Pop.S0121.leaves ++ (Pop.S0122.leaves ++ (Pop.S0123.leaves ++ (Pop.S0124.leaves ++ (Pop.S0125.leaves ++ (Pop.S0126.leaves ++ (Pop.S0127.leaves ++ (Pop.S0128.leaves ++ (Pop.S0129.leaves ++ (Pop.S0130.leaves ++ (Pop.S0131.leaves ++ (Pop.S0132.leaves ++ (Pop.S0133.leaves ++ (Pop.S0134.leaves ++ (Pop.S0135.leaves ++ (Pop.S0136.leaves ++ (Pop.S0137.leaves ++ (Pop.S0138.leaves ++ (Pop.S0139.leaves ++ (Pop.S0140.leaves ++ (Pop.S0141.leaves ++ (Pop.S0142.leaves ++ (Pop.S0143.leaves ++ (Pop.S0144.leaves ++ (Pop.S0145.leaves ++ (Pop.S0146.leaves ++ (Pop.S0147.leaves ++ (Pop.S0148.leaves ++ (Pop.S0149.leaves ++ (Pop.S0150.leaves ++ (Pop.S0151.leaves ++ (Pop.S0152.leaves ++ (Pop.S0153.leaves ++ (Pop.S0154.leaves ++ (Pop.S0155.leaves ++ (Pop.S0156.leaves ++ (Pop.S0157.leaves ++ (Pop.S0158.leaves ++ (Pop.S0159.leaves ++ (Pop.S0160.leaves ++ (Pop.S0161.leaves ++ (Pop.S0162.leaves ++ (Pop.S0163.leaves ++ (Pop.S0164.leaves ++ (Pop.S0165.leaves ++ (Pop.S0166.leaves ++ (Pop.S0167.leaves ++ (Pop.S0168.leaves ++ (Pop.S0169.leaves ++ (Pop.S0170.leaves ++ (Pop.S0171.leaves ++ (Pop.S0172.leaves ++ (Pop.S0173.leaves ++ (Pop.S0174.leaves ++ (Pop.S0175.leaves ++ (Pop.S0176.leaves ++ (Pop.S0177.leaves ++ (Pop.S0178.leaves ++ (Pop.S0179.leaves ++ (Pop.S0180.leaves ++ (Pop.S0181.leaves ++ (Pop.S0182.leaves ++ (Pop.S0183.leaves ++ (Pop.S0184.leaves ++ (Pop.S0185.leaves ++ (Pop.S0186.leaves ++ (Pop.S0187.leaves ++ (Pop.S0188.leaves ++ (Pop.S0189.leaves ++ (Pop.S0190.leaves ++ (Pop.S0191.leaves ++ (Pop.S0192.leaves ++ (Pop.S0193.leaves ++ (Pop.S0194.leaves ++ (Pop.S0195.leaves ++ (Pop.S0196.leaves ++ (Pop.S0197.leaves ++ (Pop.S0198.leaves ++ (Pop.S0199.leaves ++ (Pop.S0200.leaves ++ (Pop.S0201.leaves ++ (Pop.S0202.leaves ++ (Pop.S0203.leaves ++ (Pop.S0204.leaves ++ (Pop.S0205.leaves ++ (Pop.S0206.leaves ++ (Pop.S0207.leaves ++ (Pop.S0208.leaves ++ (Pop.S0209.leaves ++ (Pop.S0210.leaves ++ (Pop.S0211.leaves ++ (Pop.S0212.leaves ++ (Pop.S0213.leaves ++ (Pop.S0214.leaves ++ (Pop.S0215.leaves ++ (Pop.S0216.leaves ++ (Pop.S0217.leaves ++ (Pop.S0218.leaves ++ (Pop.S0219.leaves ++ (Pop.S0220.leaves ++ (Pop.S0221.leaves ++ (Pop.S0222.leaves ++ (Pop.S0223.leaves ++ (Pop.S0224.leaves ++ (Pop.S0225.leaves ++ (Pop.S0226.leaves ++ (Pop.S0227.leaves ++ (Pop.S0228.leaves ++ (Pop.S0229.leaves ++ (Pop.S0230.leaves ++ (Pop.S0231.leaves ++ (Pop.S0232.leaves ++ (Pop.S0233.leaves ++ (Pop.S0234.leaves ++ (Pop.S0235.leaves ++ (Pop.S0236.leaves ++ (Pop.S0237.leaves ++ (Pop.S0238.leaves ++ (Pop.S0239.leaves ++ (Pop.S0240.leaves ++ (Pop.S0241.leaves ++ (Pop.S0242.leaves ++ (Pop.S0243.leaves ++ (Pop.S0244.leaves ++ (Pop.S0245.leaves ++ (Pop.S0246.leaves ++ (Pop.S0247.leaves ++ (Pop.S0248.leaves ++ (Pop.S0249.leaves ++ (Pop.S0250.leaves ++ (Pop.S0251.leaves ++ (Pop.S0252.leaves ++ (Pop.S0253.leaves ++ (Pop.S0254.leaves ++ (Pop.S0255.leaves ++ (Pop.S0256.leaves ++ (Pop.S0257.leaves ++ (Pop.S0258.leaves ++ (Pop.S0259.leaves ++ (Pop.S0260.leaves ++ (Pop.S0261.leaves ++ (Pop.S0262.leaves ++ (Pop.S0263.leaves ++ (Pop.S0264.leaves ++ (Pop.S0265.leaves ++ (Pop.S0266.leaves ++ (Pop.S0267.leaves ++ (Pop.S0268.leaves ++ (Pop.S0269.leaves ++ (Pop.S0270.leaves ++ (Pop.S0271.leaves ++ (Pop.S0272.leaves ++ (Pop.S0273.leaves ++ (Pop.S0274.leaves ++ (Pop.S0275.leaves ++ (Pop.S0276.leaves ++ (Pop.S0277.leaves ++ (Pop.S0278.leaves ++ (Pop.S0279.leaves ++ (Pop.S0280.leaves ++ (Pop.S0281.leaves ++ (Pop.S0282.leaves ++ (Pop.S0283.leaves ++ (Pop.S0284.leaves ++ (Pop.S0285.leaves ++ (Pop.S0286.leaves ++ (Pop.S0287.leaves ++ (Pop.S0288.leaves ++ (Pop.S0289.leaves ++ (Pop.S0290.leaves ++ (Pop.S0291.leaves ++ (Pop.S0292.leaves ++ (Pop.S0293.leaves ++ (Pop.S0294.leaves ++ (Pop.S0295.leaves ++ (Pop.S0296.leaves ++ (Pop.S0297.leaves ++ (Pop.S0298.leaves ++ (Pop.S0299.leaves ++ (Pop.S0300.leaves ++ (Pop.S0301.leaves ++ (Pop.S0302.leaves ++ (Pop.S0303.leaves ++ (Pop.S0304.leaves ++ (Pop.S0305.leaves ++ (Pop.S0306.leaves ++ (Pop.S0307.leaves ++ (Pop.S0308.leaves ++ (Pop.S0309.leaves ++ (Pop.S0310.leaves ++ (Pop.S0311.leaves ++ (Pop.S0312.leaves ++ (Pop.S0313.leaves ++ (Pop.S0314.leaves ++ (Pop.S0315.leaves ++ (Pop.S0316.leaves ++ (Pop.S0317.leaves ++ (Pop.S0318.leaves ++ (Pop.S0319.leaves ++ (Pop.S0320.leaves ++ (Pop.S0321.leaves ++ (Pop.S0322.leaves ++ (Pop.S0323.leaves ++ (Pop.S0324.leaves ++ (Pop.S0325.leaves ++ (Pop.S0326.leaves ++ (Pop.S0327.leaves ++ (Pop.S0328.leaves ++ (Pop.S0329.leaves ++ (Pop.S0330.leaves ++ (Pop.S0331.leaves ++ (Pop.S0332.leaves ++ (Pop.S0333.leaves ++ (Pop.S0334.leaves ++ (Pop.S0335.leaves ++ (Pop.S0336.leaves ++ (Pop.S0337.leaves ++ (Pop.S0338.leaves ++ (Pop.S0339.leaves ++ (Pop.S0340.leaves ++ (Pop.S0341.leaves ++ (Pop.S0342.leaves ++ (Pop.S0343.leaves ++ (Pop.S0344.leaves ++ (Pop.S0345.leaves ++ (Pop.S0346.leaves ++ (Pop.S0347.leaves ++ (Pop.S0348.leaves ++ (Pop.S0349.leaves ++ (Pop.S0350.leaves ++ (Pop.S0351.leaves ++ (Pop.S0352.leaves ++ (Pop.S0353.leaves ++ (Pop.S0354.leaves ++ (Pop.S0355.leaves ++ (Pop.S0356.leaves ++ (Pop.S0357.leaves ++ (Pop.S0358.leaves ++ (Pop.S0359.leaves ++ (Pop.S0360.leaves ++ (Pop.S0361.leaves ++ (Pop.S0362.leaves ++ (Pop.S0363.leaves ++ (Pop.S0364.leaves ++ (Pop.S0365.leaves ++ (Pop.S0366.leaves ++ (Pop.S0367.leaves ++ (Pop.S0368.leaves ++ (Pop.S0369.leaves ++ (Pop.S0370.leaves ++ (Pop.S0371.leaves ++ (Pop.S0372.leaves ++ (Pop.S0373.leaves ++ (Pop.S0374.leaves ++ (Pop.S0375.leaves ++ (Pop.S0376.leaves ++ (Pop.S0377.leaves ++ (Pop.S0378.leaves ++ (Pop.S0379.leaves ++ (Pop.S0380.leaves ++ (Pop.S0381.leaves ++ (Pop.S0382.leaves ++ (Pop.S0383.leaves ++ (Pop.S0384.leaves ++ (Pop.S0385.leaves ++ (Pop.S0386.leaves ++ (Pop.S0387.leaves ++ (Pop.S0388.leaves ++ (Pop.S0389.leaves ++ (Pop.S0390.leaves ++ (Pop.S0391.leaves ++ (Pop.S0392.leaves ++ (Pop.S0393.leaves ++ (Pop.S0394.leaves ++ (Pop.S0395.leaves ++ (Pop.S0396.leaves ++ (Pop.S0397.leaves ++ (Pop.S0398.leaves ++ (Pop.S0399.leaves ++ (Pop.S0400.leaves ++ (Pop.S0401.leaves ++ (Pop.S0402.leaves ++ (Pop.S0403.leaves ++ (Pop.S0404.leaves ++ (Pop.S0405.leaves ++ (Pop.S0406.leaves ++ (Pop.S0407.leaves ++ (Pop.S0408.leaves ++ (Pop.S0409.leaves ++ (Pop.S0410.leaves ++ (Pop.S0411.leaves ++ (Pop.S0412.leaves ++ (Pop.S0413.leaves ++ (Pop.S0414.leaves ++ (Pop.S0415.leaves ++ (Pop.S0416.leaves ++ (Pop.S0417.leaves ++ (Pop.S0418.leaves ++ (Pop.S0419.leaves ++ (Pop.S0420.leaves ++ (Pop.S0421.leaves ++ (Pop.S0422.leaves))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+
+theorem all_sem : ∀ x ∈ allLeaves, SemSS (ssBox x.1) :=
+  sem_append Pop.S0000.sem (sem_append Pop.S0001.sem (sem_append Pop.S0002.sem (sem_append Pop.S0003.sem (sem_append Pop.S0004.sem (sem_append Pop.S0005.sem (sem_append Pop.S0006.sem (sem_append Pop.S0007.sem (sem_append Pop.S0008.sem (sem_append Pop.S0009.sem (sem_append Pop.S0010.sem (sem_append Pop.S0011.sem (sem_append Pop.S0012.sem (sem_append Pop.S0013.sem (sem_append Pop.S0014.sem (sem_append Pop.S0015.sem (sem_append Pop.S0016.sem (sem_append Pop.S0017.sem (sem_append Pop.S0018.sem (sem_append Pop.S0019.sem (sem_append Pop.S0020.sem (sem_append Pop.S0021.sem (sem_append Pop.S0022.sem (sem_append Pop.S0023.sem (sem_append Pop.S0024.sem (sem_append Pop.S0025.sem (sem_append Pop.S0026.sem (sem_append Pop.S0027.sem (sem_append Pop.S0028.sem (sem_append Pop.S0029.sem (sem_append Pop.S0030.sem (sem_append Pop.S0031.sem (sem_append Pop.S0032.sem (sem_append Pop.S0033.sem (sem_append Pop.S0034.sem (sem_append Pop.S0035.sem (sem_append Pop.S0036.sem (sem_append Pop.S0037.sem (sem_append Pop.S0038.sem (sem_append Pop.S0039.sem (sem_append Pop.S0040.sem (sem_append Pop.S0041.sem (sem_append Pop.S0042.sem (sem_append Pop.S0043.sem (sem_append Pop.S0044.sem (sem_append Pop.S0045.sem (sem_append Pop.S0046.sem (sem_append Pop.S0047.sem (sem_append Pop.S0048.sem (sem_append Pop.S0049.sem (sem_append Pop.S0050.sem (sem_append Pop.S0051.sem (sem_append Pop.S0052.sem (sem_append Pop.S0053.sem (sem_append Pop.S0054.sem (sem_append Pop.S0055.sem (sem_append Pop.S0056.sem (sem_append Pop.S0057.sem (sem_append Pop.S0058.sem (sem_append Pop.S0059.sem (sem_append Pop.S0060.sem (sem_append Pop.S0061.sem (sem_append Pop.S0062.sem (sem_append Pop.S0063.sem (sem_append Pop.S0064.sem (sem_append Pop.S0065.sem (sem_append Pop.S0066.sem (sem_append Pop.S0067.sem (sem_append Pop.S0068.sem (sem_append Pop.S0069.sem (sem_append Pop.S0070.sem (sem_append Pop.S0071.sem (sem_append Pop.S0072.sem (sem_append Pop.S0073.sem (sem_append Pop.S0074.sem (sem_append Pop.S0075.sem (sem_append Pop.S0076.sem (sem_append Pop.S0077.sem (sem_append Pop.S0078.sem (sem_append Pop.S0079.sem (sem_append Pop.S0080.sem (sem_append Pop.S0081.sem (sem_append Pop.S0082.sem (sem_append Pop.S0083.sem (sem_append Pop.S0084.sem (sem_append Pop.S0085.sem (sem_append Pop.S0086.sem (sem_append Pop.S0087.sem (sem_append Pop.S0088.sem (sem_append Pop.S0089.sem (sem_append Pop.S0090.sem (sem_append Pop.S0091.sem (sem_append Pop.S0092.sem (sem_append Pop.S0093.sem (sem_append Pop.S0094.sem (sem_append Pop.S0095.sem (sem_append Pop.S0096.sem (sem_append Pop.S0097.sem (sem_append Pop.S0098.sem (sem_append Pop.S0099.sem (sem_append Pop.S0100.sem (sem_append Pop.S0101.sem (sem_append Pop.S0102.sem (sem_append Pop.S0103.sem (sem_append Pop.S0104.sem (sem_append Pop.S0105.sem (sem_append Pop.S0106.sem (sem_append Pop.S0107.sem (sem_append Pop.S0108.sem (sem_append Pop.S0109.sem (sem_append Pop.S0110.sem (sem_append Pop.S0111.sem (sem_append Pop.S0112.sem (sem_append Pop.S0113.sem (sem_append Pop.S0114.sem (sem_append Pop.S0115.sem (sem_append Pop.S0116.sem (sem_append Pop.S0117.sem (sem_append Pop.S0118.sem (sem_append Pop.S0119.sem (sem_append Pop.S0120.sem (sem_append Pop.S0121.sem (sem_append Pop.S0122.sem (sem_append Pop.S0123.sem (sem_append Pop.S0124.sem (sem_append Pop.S0125.sem (sem_append Pop.S0126.sem (sem_append Pop.S0127.sem (sem_append Pop.S0128.sem (sem_append Pop.S0129.sem (sem_append Pop.S0130.sem (sem_append Pop.S0131.sem (sem_append Pop.S0132.sem (sem_append Pop.S0133.sem (sem_append Pop.S0134.sem (sem_append Pop.S0135.sem (sem_append Pop.S0136.sem (sem_append Pop.S0137.sem (sem_append Pop.S0138.sem (sem_append Pop.S0139.sem (sem_append Pop.S0140.sem (sem_append Pop.S0141.sem (sem_append Pop.S0142.sem (sem_append Pop.S0143.sem (sem_append Pop.S0144.sem (sem_append Pop.S0145.sem (sem_append Pop.S0146.sem (sem_append Pop.S0147.sem (sem_append Pop.S0148.sem (sem_append Pop.S0149.sem (sem_append Pop.S0150.sem (sem_append Pop.S0151.sem (sem_append Pop.S0152.sem (sem_append Pop.S0153.sem (sem_append Pop.S0154.sem (sem_append Pop.S0155.sem (sem_append Pop.S0156.sem (sem_append Pop.S0157.sem (sem_append Pop.S0158.sem (sem_append Pop.S0159.sem (sem_append Pop.S0160.sem (sem_append Pop.S0161.sem (sem_append Pop.S0162.sem (sem_append Pop.S0163.sem (sem_append Pop.S0164.sem (sem_append Pop.S0165.sem (sem_append Pop.S0166.sem (sem_append Pop.S0167.sem (sem_append Pop.S0168.sem (sem_append Pop.S0169.sem (sem_append Pop.S0170.sem (sem_append Pop.S0171.sem (sem_append Pop.S0172.sem (sem_append Pop.S0173.sem (sem_append Pop.S0174.sem (sem_append Pop.S0175.sem (sem_append Pop.S0176.sem (sem_append Pop.S0177.sem (sem_append Pop.S0178.sem (sem_append Pop.S0179.sem (sem_append Pop.S0180.sem (sem_append Pop.S0181.sem (sem_append Pop.S0182.sem (sem_append Pop.S0183.sem (sem_append Pop.S0184.sem (sem_append Pop.S0185.sem (sem_append Pop.S0186.sem (sem_append Pop.S0187.sem (sem_append Pop.S0188.sem (sem_append Pop.S0189.sem (sem_append Pop.S0190.sem (sem_append Pop.S0191.sem (sem_append Pop.S0192.sem (sem_append Pop.S0193.sem (sem_append Pop.S0194.sem (sem_append Pop.S0195.sem (sem_append Pop.S0196.sem (sem_append Pop.S0197.sem (sem_append Pop.S0198.sem (sem_append Pop.S0199.sem (sem_append Pop.S0200.sem (sem_append Pop.S0201.sem (sem_append Pop.S0202.sem (sem_append Pop.S0203.sem (sem_append Pop.S0204.sem (sem_append Pop.S0205.sem (sem_append Pop.S0206.sem (sem_append Pop.S0207.sem (sem_append Pop.S0208.sem (sem_append Pop.S0209.sem (sem_append Pop.S0210.sem (sem_append Pop.S0211.sem (sem_append Pop.S0212.sem (sem_append Pop.S0213.sem (sem_append Pop.S0214.sem (sem_append Pop.S0215.sem (sem_append Pop.S0216.sem (sem_append Pop.S0217.sem (sem_append Pop.S0218.sem (sem_append Pop.S0219.sem (sem_append Pop.S0220.sem (sem_append Pop.S0221.sem (sem_append Pop.S0222.sem (sem_append Pop.S0223.sem (sem_append Pop.S0224.sem (sem_append Pop.S0225.sem (sem_append Pop.S0226.sem (sem_append Pop.S0227.sem (sem_append Pop.S0228.sem (sem_append Pop.S0229.sem (sem_append Pop.S0230.sem (sem_append Pop.S0231.sem (sem_append Pop.S0232.sem (sem_append Pop.S0233.sem (sem_append Pop.S0234.sem (sem_append Pop.S0235.sem (sem_append Pop.S0236.sem (sem_append Pop.S0237.sem (sem_append Pop.S0238.sem (sem_append Pop.S0239.sem (sem_append Pop.S0240.sem (sem_append Pop.S0241.sem (sem_append Pop.S0242.sem (sem_append Pop.S0243.sem (sem_append Pop.S0244.sem (sem_append Pop.S0245.sem (sem_append Pop.S0246.sem (sem_append Pop.S0247.sem (sem_append Pop.S0248.sem (sem_append Pop.S0249.sem (sem_append Pop.S0250.sem (sem_append Pop.S0251.sem (sem_append Pop.S0252.sem (sem_append Pop.S0253.sem (sem_append Pop.S0254.sem (sem_append Pop.S0255.sem (sem_append Pop.S0256.sem (sem_append Pop.S0257.sem (sem_append Pop.S0258.sem (sem_append Pop.S0259.sem (sem_append Pop.S0260.sem (sem_append Pop.S0261.sem (sem_append Pop.S0262.sem (sem_append Pop.S0263.sem (sem_append Pop.S0264.sem (sem_append Pop.S0265.sem (sem_append Pop.S0266.sem (sem_append Pop.S0267.sem (sem_append Pop.S0268.sem (sem_append Pop.S0269.sem (sem_append Pop.S0270.sem (sem_append Pop.S0271.sem (sem_append Pop.S0272.sem (sem_append Pop.S0273.sem (sem_append Pop.S0274.sem (sem_append Pop.S0275.sem (sem_append Pop.S0276.sem (sem_append Pop.S0277.sem (sem_append Pop.S0278.sem (sem_append Pop.S0279.sem (sem_append Pop.S0280.sem (sem_append Pop.S0281.sem (sem_append Pop.S0282.sem (sem_append Pop.S0283.sem (sem_append Pop.S0284.sem (sem_append Pop.S0285.sem (sem_append Pop.S0286.sem (sem_append Pop.S0287.sem (sem_append Pop.S0288.sem (sem_append Pop.S0289.sem (sem_append Pop.S0290.sem (sem_append Pop.S0291.sem (sem_append Pop.S0292.sem (sem_append Pop.S0293.sem (sem_append Pop.S0294.sem (sem_append Pop.S0295.sem (sem_append Pop.S0296.sem (sem_append Pop.S0297.sem (sem_append Pop.S0298.sem (sem_append Pop.S0299.sem (sem_append Pop.S0300.sem (sem_append Pop.S0301.sem (sem_append Pop.S0302.sem (sem_append Pop.S0303.sem (sem_append Pop.S0304.sem (sem_append Pop.S0305.sem (sem_append Pop.S0306.sem (sem_append Pop.S0307.sem (sem_append Pop.S0308.sem (sem_append Pop.S0309.sem (sem_append Pop.S0310.sem (sem_append Pop.S0311.sem (sem_append Pop.S0312.sem (sem_append Pop.S0313.sem (sem_append Pop.S0314.sem (sem_append Pop.S0315.sem (sem_append Pop.S0316.sem (sem_append Pop.S0317.sem (sem_append Pop.S0318.sem (sem_append Pop.S0319.sem (sem_append Pop.S0320.sem (sem_append Pop.S0321.sem (sem_append Pop.S0322.sem (sem_append Pop.S0323.sem (sem_append Pop.S0324.sem (sem_append Pop.S0325.sem (sem_append Pop.S0326.sem (sem_append Pop.S0327.sem (sem_append Pop.S0328.sem (sem_append Pop.S0329.sem (sem_append Pop.S0330.sem (sem_append Pop.S0331.sem (sem_append Pop.S0332.sem (sem_append Pop.S0333.sem (sem_append Pop.S0334.sem (sem_append Pop.S0335.sem (sem_append Pop.S0336.sem (sem_append Pop.S0337.sem (sem_append Pop.S0338.sem (sem_append Pop.S0339.sem (sem_append Pop.S0340.sem (sem_append Pop.S0341.sem (sem_append Pop.S0342.sem (sem_append Pop.S0343.sem (sem_append Pop.S0344.sem (sem_append Pop.S0345.sem (sem_append Pop.S0346.sem (sem_append Pop.S0347.sem (sem_append Pop.S0348.sem (sem_append Pop.S0349.sem (sem_append Pop.S0350.sem (sem_append Pop.S0351.sem (sem_append Pop.S0352.sem (sem_append Pop.S0353.sem (sem_append Pop.S0354.sem (sem_append Pop.S0355.sem (sem_append Pop.S0356.sem (sem_append Pop.S0357.sem (sem_append Pop.S0358.sem (sem_append Pop.S0359.sem (sem_append Pop.S0360.sem (sem_append Pop.S0361.sem (sem_append Pop.S0362.sem (sem_append Pop.S0363.sem (sem_append Pop.S0364.sem (sem_append Pop.S0365.sem (sem_append Pop.S0366.sem (sem_append Pop.S0367.sem (sem_append Pop.S0368.sem (sem_append Pop.S0369.sem (sem_append Pop.S0370.sem (sem_append Pop.S0371.sem (sem_append Pop.S0372.sem (sem_append Pop.S0373.sem (sem_append Pop.S0374.sem (sem_append Pop.S0375.sem (sem_append Pop.S0376.sem (sem_append Pop.S0377.sem (sem_append Pop.S0378.sem (sem_append Pop.S0379.sem (sem_append Pop.S0380.sem (sem_append Pop.S0381.sem (sem_append Pop.S0382.sem (sem_append Pop.S0383.sem (sem_append Pop.S0384.sem (sem_append Pop.S0385.sem (sem_append Pop.S0386.sem (sem_append Pop.S0387.sem (sem_append Pop.S0388.sem (sem_append Pop.S0389.sem (sem_append Pop.S0390.sem (sem_append Pop.S0391.sem (sem_append Pop.S0392.sem (sem_append Pop.S0393.sem (sem_append Pop.S0394.sem (sem_append Pop.S0395.sem (sem_append Pop.S0396.sem (sem_append Pop.S0397.sem (sem_append Pop.S0398.sem (sem_append Pop.S0399.sem (sem_append Pop.S0400.sem (sem_append Pop.S0401.sem (sem_append Pop.S0402.sem (sem_append Pop.S0403.sem (sem_append Pop.S0404.sem (sem_append Pop.S0405.sem (sem_append Pop.S0406.sem (sem_append Pop.S0407.sem (sem_append Pop.S0408.sem (sem_append Pop.S0409.sem (sem_append Pop.S0410.sem (sem_append Pop.S0411.sem (sem_append Pop.S0412.sem (sem_append Pop.S0413.sem (sem_append Pop.S0414.sem (sem_append Pop.S0415.sem (sem_append Pop.S0416.sem (sem_append Pop.S0417.sem (sem_append Pop.S0418.sem (sem_append Pop.S0419.sem (sem_append Pop.S0420.sem (sem_append Pop.S0421.sem (Pop.S0422.sem))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+
+/-- Path form: every archived path listed in the shards carries the owner statement on its exact box. -/
+theorem all_paths_sem : ∀ p ∈ allLeaves.map Prod.fst, SemSS (ssBox p) := by
+  intro p hp
+  obtain ⟨x, hx, rfl⟩ := List.mem_map.mp hp
+  exact all_sem x hx
+
+/-- Canonical-row form (`a ≤ b`, strict psi-activity) for every archived mean_logsum path. -/
+theorem all_paths_row : ∀ p ∈ allLeaves.map Prod.fst, SemSSRow (ssBox p) :=
+  fun p hp => semSSRow_of_semSS (all_paths_sem p hp)
+
+/-- Coordinator's final (S) form (BRIEF §7 + `CKLaneG3.SCover`): every archived mean_logsum leaf path. -/
+theorem all_paths_sLeafOK : ∀ p ∈ allLeaves.map Prod.fst, CKLaneG3.SLeafOK (CKLaneG3.sBox p) :=
+  fun p hp => sLeafOK_of_semSS (all_paths_sem p hp)
+
+theorem allPaths_length : (allLeaves.map Prod.fst).length = 50429 := by
+  decide +kernel
+
+end CKLaneM1.ML.Population

@@ -1,0 +1,2 @@
+# Keep every file byte-exact (the Lean sources and tables are checked by sha256).
+* -text

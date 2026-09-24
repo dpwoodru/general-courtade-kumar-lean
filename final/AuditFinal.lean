@@ -1,0 +1,4 @@
+import CKRoute.Final
+
+#check @GeneralCK.ArchiveRegionalBoundary.generalCourtadeKumar_closed
+#print axioms GeneralCK.ArchiveRegionalBoundary.generalCourtadeKumar_closed

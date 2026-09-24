@@ -1,0 +1,663 @@
+#family	modules	lines	bytes	sample_module	check_heads(auto)	mechanisms(textual counts)	top_external_imports
+GeneralCK.Certificates.LaneRB2WaveV2.*	11785	23824612	2309850487	GeneralCK.Certificates.LaneRB2WaveV2.Coverage	DyadicFastLog.check:501114	decide:8844186;norm_num:235680;rfl:58920	GeneralCK.Certificates.DyadicFastLog:11784;GeneralCK.Certificates.BivariateProvedProgram:11784;GeneralCK.CorrectionHessianNatural:11784;GeneralCK.Certificates.CorrectionFactorizedProgramKernel:11784;GeneralCK.CorrectionInteriorRatioBridge:11784
+GeneralCK.Certificates.E#*	11239	3283317	217757255	GeneralCK.Certificates.E8AdaptiveOriginOwnerBridge	expBoxCheck:18366;logBoxCheck:1578;data.replay.positiveCheck:786;evalTheta:8	decide:283696;decide +kernel:37773;norm_num:18420;rfl:2228	GeneralCK.Certificates.DyadicLogSeries:3;GeneralCK.PureGapE8AnalyticRealBridge:3;GeneralCK.Certificates.Generated.E8AdaptiveFamily.FullCertificate:2;Mathlib.Analysis.Calculus.LocalExtr.Rolle:2;Mathlib.Analysis.SpecialFunctions.Complex.LogBounds:2
+GeneralCK.Certificates.RB1Band1.*	5892	11908163	1161363611	GeneralCK.Certificates.RB1Band1.Cell000000	DyadicFastLog.check:252732	decide:4423560;norm_num:117820;rfl:29455	GeneralCK.Certificates.DyadicFastLog:5891;GeneralCK.Certificates.BivariateProvedProgram:5891;GeneralCK.CorrectionHessianNatural:5891;GeneralCK.Certificates.CorrectionFactorizedProgramKernel:5891;GeneralCK.CorrectionInteriorRatioBridge:5891
+CKLaneC.RSC2.*	2428	234265	202231555	CKLaneC.RSC2.BA_0000	stageB:15584;stageC0:15584;stageC1:15584;stageC2:15584	decide +kernel:140420;norm_num:101	CKLaneC.RSCell.RegionI:2426;CKLaneC.RSCell.Staged:2408;CKLaneC.RST2.U_Top:1;GeneralCK.SmallMeanPhiRetainedCutoff:1
+GeneralCK.Certificates.Generated.LowRatioFamily.*	1455	1565906	90371545	GeneralCK.Certificates.Generated.LowRatioFamily.Cell0000		norm_num:353740	GeneralCK.Certificates.LowRatioFamilyHelpers:248
+GeneralCK.Certificates.Generated.DoubleCapMiddle.*	960	566162	31660586	GeneralCK.Certificates.Generated.DoubleCapMiddle.Cell0000		norm_num:128577	GeneralCK.PureGapDoubleCapBiasChecker:480
+GeneralCK.Certificates.Generated.MidpointFamily.*	914	1506264	126118921	GeneralCK.Certificates.Generated.MidpointFamily.Cell0000	DyadicFastLog.check:25770	decide:447539;norm_num:80746;rfl:5154	GeneralCK.Certificates.DyadicFastLog:859;GeneralCK.Certificates.BivariateProvedProgram:859;GeneralCK.Certificates.ReflectionMidpointKernel:859;GeneralCK.Certificates.LowRatioFamilyHelpers:859;GeneralCK.ReflectionSmallRatioMidpointJet:859
+GeneralCK.Certificates.Generated.MidpointNextFamily.*	914	1506264	126223162	GeneralCK.Certificates.Generated.MidpointNextFamily.Cell0000	DyadicFastLog.check:25770	decide:447539;norm_num:80746;rfl:5154	GeneralCK.Certificates.DyadicFastLog:859;GeneralCK.Certificates.BivariateProvedProgram:859;GeneralCK.Certificates.ReflectionMidpointKernel:859;GeneralCK.Certificates.LowRatioFamilyHelpers:859;GeneralCK.ReflectionSmallRatioMidpointJet:859
+GeneralCK.Certificates.Generated.MidpointExtensionFamily.*	898	1472981	123891585	GeneralCK.Certificates.Generated.MidpointExtensionFamily.BandCertificate000	DyadicFastLog.check:25200	decide:437640;norm_num:78960;rfl:5040	GeneralCK.Certificates.DyadicFastLog:840;GeneralCK.Certificates.BivariateProvedProgram:840;GeneralCK.Certificates.ReflectionMidpointKernel:840;GeneralCK.Certificates.LowRatioFamilyHelpers:840;GeneralCK.ReflectionSmallRatioMidpointJet:840
+GeneralCK.Certificates.Generated.E8TAxisPositiveAggregation.*	688	14514	1066056	GeneralCK.Certificates.Generated.E8TAxisPositiveAggregation.Root0000		norm_num:721	GeneralCK.Certificates.E8TAxisPositiveAggregationKernel:688;GeneralCK.Certificates.E8TAxisProd0000LCertified:1;GeneralCK.Certificates.E8TAxisProd0000RCertified:1;GeneralCK.Certificates.E8TAxisProd0001Certified:1;GeneralCK.Certificates.E8TAxisProd0002Certified:1
+GeneralCK.Certificates.Generated.E8AdaptiveFamily.*	655	204406	9699935	GeneralCK.Certificates.Generated.E8AdaptiveFamily.Batch0000	work0000.theta.ok:1;work0001.theta.ok:1;work0002.theta.ok:1;work0003.theta.ok:1	norm_num:17833;rfl:7688	GeneralCK.Certificates.E8QuadraticCellCertificateSchema:482
+CKLaneC.RST2.*	533	15101	5317479	CKLaneC.RST2.U_0000		decide +kernel:1527;norm_num:6	CKLaneR2.Tail.Leaf:532;CKLaneC.RSTail.Bridge:532;CKLaneC.RSTail.Region:1
+GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.*	513	341804	19099914	GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.All		decide:768;norm_num:78080	GeneralCK.PureGapDoubleCapHighMiddleDerivativeTraceForm:256;GeneralCK.PureGapDoubleCapBiasChecker:256;GeneralCK.PureGapDoubleCapHighMiddleDerivativeValueAdapter:1
+GeneralCK.Certificates.Generated.DoubleCapLowMiddle.*	456	266760	14685552	GeneralCK.Certificates.Generated.DoubleCapLowMiddle.Cell0000		norm_num:60420	GeneralCK.PureGapDoubleCapBiasChecker:228
+GeneralCK.Certificates.Generated.MidpointPostNextBandFamily.*	439	722449	60705619	GeneralCK.Certificates.Generated.MidpointPostNextBandFamily.Cell0000	DyadicFastLog.check:12360	decide:214652;norm_num:38728;rfl:2472	GeneralCK.Certificates.DyadicFastLog:412;GeneralCK.Certificates.BivariateProvedProgram:412;GeneralCK.Certificates.ReflectionMidpointKernel:412;GeneralCK.Certificates.LowRatioFamilyHelpers:412;GeneralCK.ReflectionSmallRatioMidpointJet:412
+CKLaneM1.Pop.*	423	160593	41200591	CKLaneM1.Pop.S0000		decide +kernel:846	CKLaneM1.MLChecker:423
+GeneralCK.Certificates.Generated.MidpointNextBandFamily.*	394	647054	54453331	GeneralCK.Certificates.Generated.MidpointNextBandFamily.Cell0000	DyadicFastLog.check:11070	decide:192249;norm_num:34686;rfl:2214	GeneralCK.Certificates.DyadicFastLog:369;GeneralCK.Certificates.BivariateProvedProgram:369;GeneralCK.Certificates.ReflectionMidpointKernel:369;GeneralCK.Certificates.LowRatioFamilyHelpers:369;GeneralCK.ReflectionSmallRatioMidpointJet:369
+CKLaneM03.Leaves.*	335	203677	17603394	CKLaneM03.Leaves.P0000		decide +kernel:37506	CKLaneM03.Split:335
+CKLaneD.Fleet.*	330	434838	43184726	CKLaneD.Fleet.S0000		decide +kernel:330	CKLaneD.FleetBase:330
+CKLaneM07.CE.Cells.*	280	24932	9474403	CKLaneM07.CE.Cells.C0000	chk0:280;chkA:280;chkC:280;chkU:280	decide +kernel:3086	CKLaneM07.CE.ChainV2:280
+CKLaneE.*	259	96708	11592258	CKLaneE.CertEP	ptOk:24;check:12;boxOk:10;w.boxOk:4	decide:79;decide +kernel:21305;norm_num:30;rfl:44	GeneralCK.PureGapCapZeroReduction:2;GeneralCK.ScalarGap:2;GeneralCK.PsiSameSideTail8SmallMeanRegionClosure:1;GeneralCK.DeterministicCap:1;Mathlib.Analysis.SpecialFunctions.Log.Deriv:1
+CKLaneC3.*	214	59798	13075607	CKLaneC3.Compact	tagOKF:6928;tags.all:58;p00.check:40;p01.check:40	decide:30;decide +kernel:8908;norm_num:7;rfl:19	GeneralCK.PureGapE8CertificateReduction:3;GeneralCK.PureGapE8SAxisOriginClosure:2;GeneralCK.Certificates.E8CompactDeltaDirectionalExpansion:1;GeneralCK.Certificates.E8TAxisRationalTreeBridgeKernel:1;E8GlobalRatioCertificate:1
+CKLaneM08.Fleet.*	154	10429	1932137	CKLaneM08.Fleet.S0000	checkAll:154	decide +kernel:154	CKLaneM08.Checker:154
+CKLaneP.Cells.S3.*	148	50742	6646740	CKLaneP.Cells.S3.C000_0000		decide +kernel:148	CKLaneP.SeamTree:148
+CKLaneM2.Fleet.*	142	235465	22514629	CKLaneM2.Fleet.S0000		decide +kernel:142	CKLaneM2.SLChecker:142
+CKLaneN23.PosCell.*	128	1152	28736	CKLaneN23.PosCell.C0_0	boxCell:128	decide +kernel:128	CKLaneN23.CPosSplit:128
+CKLaneA3X.*	114	10505	6974674	CKLaneA3X.AlgRW	zeroPrefix:20;allEmpty:2;s.isEmpty:2;isOneT:2	decide:14;decide +kernel:1207;norm_num:27;rfl:161	Mathlib:2;GeneralCK.CorrectionHessianNatural:1;GeneralCK.CorrectionHighUScaledContract:1;GeneralCK.CorrectionHighUNearCornerDetGapFactor:1;GeneralCK.CorrectionHighUNearCornerRegularContact:1
+CKLaneN1b.Fleet.*	105	36050	18543280	CKLaneN1b.Fleet.S0000		decide +kernel:4918	CKLaneN1b.FleetBase:105
+CKLaneM10.Fleet.*	78	46274	4583339	CKLaneM10.Fleet.S0000		decide +kernel:78	CKLaneM10.Leaf:78
+CKLaneC2R.Cells.S00.*	76	59422	23745998	CKLaneC2R.Cells.S00.B000	cellOk:1510	decide +kernel:1510	CKLaneC2R.CompactCheck:76
+CKLaneM05.FE8.Sub.*	70	1650	2978029	CKLaneM05.FE8.Sub.Sub000		decide +kernel:70	CKLaneM05.FE8.W3:70;CKLaneM05.FE8.W1:70
+CKLaneN4.LU.Shards.*	69	8304	925970	CKLaneN4.LU.Shards.U000	cellCheck:1131;treeCheck:69	decide +kernel:1200	CKLaneN4.LU.Tree:69
+CKLaneN6.Cs.*	63	9177	3740786	CKLaneN6.Cs.C0000		decide +kernel:63	CKLaneN6.Coarse:63
+CKLaneC2R.Cells.S01.*	61	92251	18601030	CKLaneC2R.Cells.S01.B000	cellOkT:984;cellOk:220	decide +kernel:1204	CKLaneC2R.CompactCheckT:50;CKLaneC2R.CompactCheck:11
+CKLaneN1.EdgeShard.*	61	732	18234	CKLaneN1.EdgeShard.E00		decide +kernel:61	CKLaneN1.EdgeTree:61
+CKLaneG3.S.Chunk.*	54	972	1293323	CKLaneG3.S.Chunk.C_4			CKLaneD.ArchTree:54
+CKLaneM05.FE8.Se.*	51	1222	2219667	CKLaneM05.FE8.Se.Se000		decide +kernel:51	CKLaneM05.FE8.W3:51;CKLaneM05.FE8.W1:51
+CKLaneC2R.EpCells.*	49	128275	16790415	CKLaneC2R.EpCells.B000	ecellOkT:2742;ecellOk:180	decide +kernel:2922	CKLaneC2R.EndpointCheckT:46;CKLaneC2R.EndpointCheck:3
+CKLaneC.SAxis.Data.*	44	8023	1917738	CKLaneC.SAxis.Data.Cells00	cell0000.check:1;cell0001.check:1;cell0002.check:1;cell0003.check:1	decide +kernel:1537;rfl:2	CKLaneC.SAxis.Cell:28;CKLaneC.S3.SlopeChain:1
+CKLaneC2R.Cells.S02.*	43	72929	13249466	CKLaneC2R.Cells.S02.B000	cellOkT:858	decide +kernel:858	CKLaneC2R.CompactCheckT:43
+CKLaneM06.CapSS.*	42	882	349481	CKLaneM06.CapSS.C000	tree.check:42	decide +kernel:42	CKLaneM06.CapTree:42
+CKLaneM09.Fleet.*	42	2891	756140	CKLaneM09.Fleet.S0000		decide +kernel:42	CKLaneM09.Checker:42
+CKLaneA2.Diag4.*	41	4116	401887	CKLaneA2.Diag4.M00		decide +kernel:1249	CKLaneA2.Join:41
+CKLaneP.*	39	10372	554858	CKLaneP.DCBound	VD.okDy:4;tcommon:3;logChk:2;tlistOK:2	decide:22;decide +kernel:20;norm_num:128;rfl:23	GeneralCK.PureGapCapZeroReduction:2;GeneralCK.PureGapZeroCapLeftStationaryThetaBracketBridge:2;GeneralCK.PureGapMeanStationarity:2;GeneralCK.PureGapCompactMean:2;GeneralCK.SmallMeanPhiRetainedCutoff:2
+CKLaneC2R.Cells.S05.*	37	62479	11709273	CKLaneC2R.Cells.S05.B000	cellOkT:732	decide +kernel:732	CKLaneC2R.CompactCheckT:37
+CKLaneN1.*	35	6630	749277	CKLaneN1.Analytic	yupOK:24;ptOk:19;slopeLoOk:5;T.allLeaves:4	decide:81;decide +kernel:17;norm_num:78;rfl:10	GeneralCK.BellmanAssembly:2;GeneralCK.SmallMeanPhiRetainedCutoff:2;CKLaneE.FastPoint:2;GeneralCK.PureGapCapZeroReduction:2;GeneralCK.ProfileDerivatives:1
+GeneralCK.Certificates.ReflectionSmallBiasContactDegree#*	35	16964	729809	GeneralCK.Certificates.ReflectionSmallBiasContactDegree10	equalityCheck:886;fineBound:28;aBound:8;degreeBound:8	decide +kernel:908;norm_num:11	GeneralCK.ReflectionSmallBiasHalfSumPowers:11;GeneralCK.ReflectionSmallBiasPerspectiveJet:11;GeneralCK.ReflectionSmallBiasFineCertificate:7;GeneralCK.ReflectionSmallBiasExponentCertificate:2;GeneralCK.Certificates.ReflectionSmallBiasBivariateInverse9:1
+CKLaneN23.*	34	7526	553749	CKLaneN23.CBound	zeroPrefix:15;cornerCheck:4;decide:2;grid:2	decide:30;decide +kernel:10;native_decide:1;norm_num:195;rfl:75	GeneralCK.ProfileConvexity:3;Mathlib.Analysis.Complex.ExponentialBounds:2;GeneralCK.ProfileDerivatives:2;GeneralCK.PureGapCapAnalytic:2;GeneralCK.SmallMeanPhiRetainedCutoff:2
+CKLaneM07.FleetT.*	33	3799	547097	CKLaneM07.FleetT.T0000		decide +kernel:33	CKLaneM07.Checker:33
+CKLaneA4.D2.*	32	2304	139561	CKLaneA4.D2.C00		decide:32;decide +kernel:256	CKLaneA4.D2Base:32
+CKLaneM06.CapXH.*	32	672	258679	CKLaneM06.CapXH.C000	tree.check:32	decide +kernel:32	CKLaneM06.CapSec:32
+CKLaneA2.Diag6.*	30	2870	272429	CKLaneA2.Diag6.M00		decide +kernel:866	CKLaneA2.Join:30
+CKLaneA3V.*	28	5820	978144	CKLaneA3V.AlgRW	zeroPrefix:18;allEmpty:2;s.isEmpty:2;isOneT:2	decide:11;decide +kernel:787;norm_num:27;rfl:160	Mathlib:2;GeneralCK.CorrectionHessianNatural:1;GeneralCK.CorrectionHighUScaledContract:1;GeneralCK.CorrectionHighUNearCornerDetGapFactor:1;GeneralCK.CorrectionHighUNearCornerRegularContact:1
+CKLaneA3W.*	27	5457	679824	CKLaneA3W.AlgRW	zeroPrefix:17;allEmpty:2;s.isEmpty:2;isOneT:2	decide:9;decide +kernel:785;norm_num:44;rfl:160	Mathlib:2;GeneralCK.CorrectionHessianNatural:1;GeneralCK.CorrectionHighUScaledContract:1;GeneralCK.CorrectionHighUNearCornerDetGapFactor:1;GeneralCK.CorrectionHighUNearCornerRegularContact:1
+CKLaneM05.FE8.Sc.*	27	632	1066894	CKLaneM05.FE8.Sc.Sc000		decide +kernel:27	CKLaneM05.FE8.W3:27;CKLaneM05.FE8.W1:27
+CKLaneM07.CE.*	27	6074	361509	CKLaneM07.CE.Bridge	V2.chkA:12;V2.chkC:12;V2.chkU:12;V2.chkB:12	decide:58;decide +kernel:13;norm_num:19;rfl:23	CKLaneN1.R3Leaf:2;CKLaneN1.CEStat:1;GeneralCK.PureGapMeanStationarity:1;GeneralCK.PhysicalSlope:1;GeneralCK.RadialConvexity:1
+CKLaneM07.CE.R3Cells.K15.*	27	567	250996	CKLaneM07.CE.R3Cells.K15.S0000		decide +kernel:27	CKLaneM07.CE.R3Glue2:27
+GeneralCK.Certificates.Generated.E8TAxisFullBridge.*	27	10487	1984999	GeneralCK.Certificates.Generated.E8TAxisFullBridge.All		decide +kernel:776;norm_num:766	GeneralCK.Certificates.E8TAxisRationalTreeBridgeKernel:26;GeneralCK.Certificates.E8TAxisCell0001Certified:1;GeneralCK.Certificates.E8TAxisCertifiedLedgerBridge:1;GeneralCK.Certificates.E8TAxisZero0000Root:1;GeneralCK.Certificates.E8TAxisZero0001Root:1
+GeneralCK.PureGapE#*	27	3627	160098	GeneralCK.PureGapE8AnalyticGerm		norm_num:129;rfl:28	GeneralCK.Certificates.E8AdaptiveOriginOwnerBridge:2;GeneralCK.ReflectionComplexContactGerm:1;GeneralCK.ReflectionComplexContactFactor:1;GeneralCK.Certificates.E8InverseJet:1;GeneralCK.CorrectionHessianNatural:1
+CKLaneA1.*	26	6031	288062	CKLaneA1.Analysis	okN:8;brOK:6;decide:5;chainOK:4	decide:74;decide +kernel:18;native_decide:1;norm_num:47;rfl:45	GeneralCK.CorrectionComplementCharts:3;CKLaneA1.BSData.C000:1;CKLaneA1.BSData.C001:1;CKLaneA1.BSData.C002:1;CKLaneA1.BSData.C003:1
+CKLaneM06.CapXHB.*	26	2032	1258162	CKLaneM06.CapXHB.B000	tree_0.check:26;tree_1.check:26;tree_2.check:26;tree_3.check:26	decide +kernel:154	CKLaneM06.CapSec:26
+CKLaneA2.Diag3.*	25	2520	239012	CKLaneA2.Diag3.M00		decide +kernel:765	CKLaneA2.Join:25
+CKLaneN6.*	25	2847	1061097	CKLaneN6.APar	aparCheck:3;lskCheck:3;plogCheck:3;radCheck:3	decide:18;decide +kernel:82;norm_num:7;rfl:8	CKLaneN6.Cs.C0016:3;CKLaneN6.Cs.C0015:2;GeneralCK.PsiThreeTenthsParentClosure:1;GeneralCK.PsiOuterEntropy28:1;GeneralCK.PsiOuterEntropy200:1
+CKLaneM06.Leaf.*	24	696	26926	CKLaneM06.Leaf.L444444444444444440202021203	checkLeaf:24	decide +kernel:48	CKLaneM06.Checker:24
+CKLaneM07.CE.R3Cells.K16.*	24	504	369737	CKLaneM07.CE.R3Cells.K16.S0000		decide +kernel:24	CKLaneN1.R3Leaf:24
+CKLaneN1.SRShard.*	22	220	5600	CKLaneN1.SRShard.C00		decide +kernel:22	CKLaneN1.SRTrees:22
+GeneralCK.Certificates.EntropyCurvatureLogs#*	22	12066	637468	GeneralCK.Certificates.EntropyCurvatureLogs00		norm_num:5265	GeneralCK.Certificates.EntropyCurvatureBounds:22
+CKLaneC2R.Cells.S03.*	21	34068	6227821	CKLaneC2R.Cells.S03.B000	cellOkT:401	decide +kernel:401	CKLaneC2R.CompactCheckT:21
+CKLaneA5.Diag1.*	20	1680	155354	CKLaneA5.Diag1.M00		decide +kernel:500	CKLaneA5.Join:20
+CKLaneG3.S.C0.*	20	2234	360021	CKLaneG3.S.C0.B0		decide +kernel:83	CKLaneG3.SChunkBind:20;CKLaneG3.SCover:20;CKLaneE.SAdapt:20;CKLaneE.NLSB055:5;CKLaneE.NLSB064:4
+E#*	20	2941	164587	E8BoundedArgumentJets	expBoxCheck:59;logBoxCheck:3;centeredTaylorCheck:1	decide:1;decide +kernel:174;norm_num:60;rfl:30	GeneralCK.PureGapE8TailSixteenDerivatives:2;GeneralCK.Certificates.E8TAxisStableInterval:1;GeneralCK.Certificates.JetProgramTaylor:1;GeneralCK.PureGapE8LargeSStableCriterion:1;GeneralCK.Certificates.E8HistoricalTailIdentity:1
+CKLaneC2R.Cells.S04.*	19	31805	5855162	CKLaneC2R.Cells.S04.B000	cellOkT:374	decide +kernel:374	CKLaneC2R.CompactCheckT:19
+CKLaneM06.*	19	3485	172489	CKLaneM06.Canary	B.boxOk:11;checkLeaf:3;ptOk:3;check:3	decide:252;decide +kernel:8;norm_num:15;rfl:62	CKLaneE.FastPoint:2;GeneralCK.BellmanAssembly:2;CKLaneE.EntropyDropSharp:1;CKLaneM07.KappaLogSum:1;GeneralCK.PsiEndpointPlaneGlobal:1
+CKLaneN4.*	19	8659	1010749	CKLaneN4.CentralSubrows	checkEY:3;checkSplit:3;EYBox:2;eyBoxOK:2	decide:43;decide +kernel:18;norm_num:30;rfl:18	GeneralCK.PsiRadialDeficit:2;GeneralCK.PhiEntropyConvexity:1;GeneralCK.PsiParentEntropyGain:1;GeneralCK.PsiSplitLossBound:1;GeneralCK.PsiRetainedChildBridge:1
+CKLaneA1.R5Data.*	18	7086	1287944	CKLaneA1.R5Data.C000	stripOK:246;strips000.all:1;strips001.all:1;strips002.all:1	decide +kernel:246	CKLaneA1.R5Cell:18
+CKLaneA1.FEData.*	17	2476	229587	CKLaneA1.FEData.C000	strips000.all:1;strips001.all:1;strips002.all:1;strips003.all:1	decide +kernel:17	CKLaneA1.FEStrip:17
+CKLaneC2.*	17	1999	127719	CKLaneC2.Atoms	cellOk:52;logChk:6;cp0.ok:2;chkThetaLt:2	decide:12;decide +kernel:116;norm_num:11;rfl:12	GeneralCK.PureGapE8AnalyticRealBridge:1;GeneralCK.Certificates.E8ThetaHigherDerivatives:1;GeneralCK.LanePHMC.Chain:1;Mathlib:1;GeneralCK.PureGapE8Inverse:1
+CKLaneG1.E25S.*	17	29535	2067432	CKLaneG1.E25S.S0000		decide +kernel:17	CKLaneG1.E25:17
+CKLaneG3.S.C1.*	17	635	40311	CKLaneG3.S.C1.B0		decide +kernel:83	CKLaneG3.SChunkBind:17;CKLaneG3.SCover:17;CKLaneM1.MLPopulationDfs:17;CKLaneG3.S.ChunkG.G_50202020315:3;CKLaneG3.S.ChunkG.G_503001053042052:3
+CKLaneN1c.EPShard.*	17	2044	185382	CKLaneN1c.EPShard.S00		decide +kernel:17	CKLaneN1c.Endpoint:17;CKLaneG1.OppTransition:17
+CKLaneM11.Fleet.*	15	4763	488536	CKLaneM11.Fleet.S0000		decide +kernel:15;rfl:15	CKLaneM11.Envelope:15
+GeneralCK.Certificates.EntropyCurvatureLeaves#*	15	2540	175047	GeneralCK.Certificates.EntropyCurvatureLeaves00		norm_num:2100	GeneralCK.Certificates.EntropyCurvatureLogs:15
+CKLaneM03.Family.*	14	4132	3687029	CKLaneM03.Family.F00			CKLaneM03.Leaves.P0000:1;CKLaneM03.Leaves.P0001:1;CKLaneM03.Leaves.P0002:1;CKLaneM03.Leaves.P0003:1;CKLaneM03.Leaves.P0004:1
+CKLaneR2.Tail.*	14	2780	137999	CKLaneR2.Tail.Chart	domL:8;expBoxOK:5;bDomOK:5;domS:3	decide:49;norm_num:17;rfl:20	CKLaneR2.Cell.Defs:1;CKLaneR2.Cell.SoundContact:1
+CKLaneA2.Diag5.*	13	1448	137236	CKLaneA2.Diag5.M00		decide +kernel:443	CKLaneA2.Join:13
+CKLaneM05.FE8.Sd.*	13	304	741774	CKLaneM05.FE8.Sd.Sd000		decide +kernel:13	CKLaneM05.FE8.W3:13;CKLaneM05.FE8.W1:13
+GeneralCK.Certificates.ReflectionSmallBiasPicardReplay#*	13	12519	514137	GeneralCK.Certificates.ReflectionSmallBiasPicardReplay1	equalityCheck:156	decide +kernel:299;norm_num:13	GeneralCK.Certificates.ReflectionSmallBiasPicardData:13;GeneralCK.ReflectionSmallBiasJetReplay:13
+CKLaneD.*	12	3557	543485	CKLaneD.Analytic	checkEndpoint:2;imageCheck:2;xcOK:1;checkCell:1	decide:31;decide +kernel:8;norm_num:32;rfl:9	GeneralCK.BellmanAssembly:1;GeneralCK.PsiEndpointPlaneSymmetric:1;GeneralCK.ProfileLowerBounds:1;Mathlib.Analysis.SpecialFunctions.Log.Base:1;CKLaneD.Fleet.S0000:1
+CKLaneC.RSCell.*	11	1546	74198	CKLaneC.RSCell.CellAPI	domOK:5;checkImplicit:2;stageB:2;stageC0:2	decide:47;decide +kernel:1;norm_num:19;rfl:9	CKLaneN23.RSDefs:2;CKLaneC.TM3.Fun:1;CKLaneC.RSEnc.Residual:1;Mathlib.Analysis.Complex.ExponentialBounds:1
+CKLaneG3.S.C2.*	11	1452	88580	CKLaneG3.S.C2.B0		decide +kernel:83	CKLaneG3.SChunkBind:11;CKLaneG3.SCover:11;CKLaneM03.G3Bridge:11;CKLaneM03.Family.F01:3;CKLaneG3.S.ChunkG.G_503001053042052:3
+CKLaneG3.S.*	11	1394	70145	CKLaneG3.S.Compact		decide:1;decide +kernel:17;rfl:11	CKLaneG3.SBind:3;CKLaneG3.SCompact:1;CKLaneG3.PSort:1;CKLaneG3.S.C0.B0:1;CKLaneG3.S.C0.B1:1
+CKLaneM07.CE.R3Oct.*	11	354	13554	CKLaneM07.CE.R3Oct.K10		decide +kernel:74	CKLaneM07.CE.R3Roots:11;CKLaneM07.CE.R3Glue:11;CKLaneM07.CE.R3Cells.K10.S0000:1;CKLaneM07.CE.R3Cells.K11.S0000:1;CKLaneM07.CE.R3Cells.K11.S0001:1
+CKLaneN1c.*	11	2316	114104	CKLaneN1c.Collar	CKLaneE.FP.ptOk:3;radCheck:1;the:1;ptOk:1	decide:16;decide +kernel:19;norm_num:43;rfl:2	CKLaneD.Analytic:3;CKLaneG1.CoverKit3:2;CKLaneE.FastPoint:2;CKLaneN1.SubRows:2;GeneralCK.PsiEndpointPlaneGlobal:2
+CKLaneN4.LU.*	11	2136	100272	CKLaneN4.LU.Check	vtxOk:1;cOk:1;vtxCheck:1;cellCheck:1	decide:46;decide +kernel:3;norm_num:37;rfl:21	GeneralCK.PureGapZeroCapLeftUpperRadialReduction:1;GeneralCK.PerspectiveCurve:1;GeneralCK.RadialConvexity:1;GeneralCK.RadialContact:1;GeneralCK.RadialDerivatives:1
+GeneralCK.Certificates.ReflectionSmallBiasBivariateInverse#*	11	14597	674114	GeneralCK.Certificates.ReflectionSmallBiasBivariateInverse1	equalityCheck:550;degreeBound:44	decide +kernel:572;norm_num:11;rfl:11	GeneralCK.ReflectionSmallBiasBivariateBase:11;GeneralCK.ReflectionSmallBiasInversePowerSeeds:11;GeneralCK.ReflectionSmallBiasDegreeCertificate:11
+CKLaneG3.*	10	1059	46975	CKLaneG3.Consume	good:2;tisNodeAx:2;tconsume:1;tallLabels:1	decide:2;decide +kernel:1;norm_num:5;rfl:12	CKLaneD.Cover:1;GeneralCK.BellmanAssembly:1;GeneralCK.EqualMean:1;CKLaneG3.S.Compact:1
+CKLaneN1b.*	10	2237	168647	CKLaneN1b.Analytic	p.ok:5;CapCell.ok:2;PCCell.ok:2;checkCert:1	decide:26;decide +kernel:2;norm_num:14;rfl:7	CKLaneD.Checker:1;CKLaneE.FastPoint:1;CKLaneE.SlopeBounds:1;CKLaneM09.CapCore:1;GeneralCK.ScalarGap:1
+GeneralCK.ReflectionSmallBiasContactSumChecks#*	10	1620	71006	GeneralCK.ReflectionSmallBiasContactSumChecks1	equalityCheck:480;fineBound:20	decide +kernel:500	GeneralCK.ReflectionSmallBiasContactSumData:10
+CKLaneA1.BSData.*	9	1195	111492	CKLaneA1.BSData.C000	bstrips000.all:1;bstrips001.all:1;bstrips002.all:1;bstrips003.all:1	decide +kernel:9	CKLaneA1.BSCover:9
+CKLaneG1.*	9	3704	360762	CKLaneG1.CoverKit	PT.checkB:7;PT.sameShape:3;List:2;rpre:2	decide:21;decide +kernel:10;norm_num:2;rfl:5	CKLaneD.FleetBase:2;CKLaneN1.Tree:1;CKLaneD.Checker:1;GeneralCK.BellmanAssembly:1;CKLaneG1.E25S.S0000:1
+CKLaneM04.Leaf.*	9	387	27907	CKLaneM04.Leaf.L02502412412512503	checkLeaf:9	decide +kernel:9	CKLaneM04.Checker:9
+CKLaneM05.FE8.*	9	2159	125465	CKLaneM05.FE8.Base	embeds:3;splaneCheck:3;embedsRB:2;boxSane:2	decide:42;decide +kernel:2;norm_num:4;rfl:20	CKLaneM05.Checker:1;CKLaneN23.SameSideHalf:1;CKLaneE.CertW:1;CKLaneE.CertEP3:1;CKLaneE.CertLSK:1
+CKLaneM07.CE.R3Cells.K14.*	9	189	117761	CKLaneM07.CE.R3Cells.K14.S0000		decide +kernel:9	CKLaneM07.CE.R3Glue2:9
+CKLaneN1.CapShard.*	9	108	2630	CKLaneN1.CapShard.K00		decide +kernel:9	CKLaneN1.CapTree:9
+CKLaneN1.DBShard.*	9	90	2204	CKLaneN1.DBShard.D00		decide +kernel:9	CKLaneN1.DBTree:9
+GeneralCK.Certificates.Generated.DoubleCapLowMiddleAggregation.*	9	1025	79622	GeneralCK.Certificates.Generated.DoubleCapLowMiddleAggregation.All			GeneralCK.Certificates.Generated.DoubleCapLowMiddle.Cell0000:1;GeneralCK.Certificates.Generated.DoubleCapLowMiddle.Cell0001:1;GeneralCK.Certificates.Generated.DoubleCapLowMiddle.Cell0002:1;GeneralCK.Certificates.Generated.DoubleCapLowMiddle.Cell0003:1;GeneralCK.Certificates.Generated.DoubleCapLowMiddle.Cell0004:1
+CKLaneC2R.*	8	13133	870244	CKLaneC2R.CompactAll	allCheck:11;pointOk:3;pointOkT:3;memQ:2	decide:51;decide +kernel:2;norm_num:14;rfl:8	CKLaneC2R.CompactCover.S00:1;CKLaneC2R.CompactCover.S01:1;CKLaneC2R.CompactCover.S02:1;CKLaneC2R.CompactCover.S03:1;CKLaneC2R.CompactCover.S04:1
+CKLaneN4.L4.*	8	6741	928826	CKLaneN4.L4.S00		decide +kernel:8	CKLaneN4.OLeafKernel:8
+CKRoute.*	8	745	33875	CKRoute.Bindings		norm_num:1;rfl:1	CKLaneD.Structural:1;CKLaneN23.OpBoundaryStrip:1;CKLaneG3.OUnion.U_none:1;CKLaneN4.OLeaves:1;CKLaneM09.Leaves:1
+GeneralCK.Certificates.MixedLeaves#*	7	980	55367	GeneralCK.Certificates.MixedLeaves00		norm_num:840	GeneralCK.Certificates.MixedLogs:7
+GeneralCK.Certificates.MixedLogs#*	7	2791	136683	GeneralCK.Certificates.MixedLogs00		norm_num:1060	GeneralCK.Certificates.MixedBounds:7
+GeneralCK.PsiSameRatioTail#*	7	1101	46216	GeneralCK.PsiSameRatioTail14Entropy425		decide:1;norm_num:102	GeneralCK.Certificates.SmallMeanLeaves:1;GeneralCK.LowInformationMeans:1;GeneralCK.PsiSmallDistanceLowEntropy:1;GeneralCK.PsiSameRatioTail:1;GeneralCK.PsiNormalizedLowEntropy:1
+CKLaneC2R.CompactCover.S#*	6	20609	1231303	CKLaneC2R.CompactCover.S00			CKLaneC2R.Cells.S00.B000:1;CKLaneC2R.Cells.S00.B001:1;CKLaneC2R.Cells.S00.B002:1;CKLaneC2R.Cells.S00.B003:1;CKLaneC2R.Cells.S00.B004:1
+CKLaneM05.Fleet.S#*	6	981	45535	CKLaneM05.Fleet.S000	check:69	decide +kernel:69	CKLaneM05.Checker:6
+CKLaneN1c.NMShard.S#*	6	638	53506	CKLaneN1c.NMShard.S00		decide +kernel:6	CKLaneN1c.Normalized:6;CKLaneG1.OppTransition:6
+GeneralCK.Certificates.Jet#*	5	569	25132	GeneralCK.Certificates.Jet2		norm_num:1	Mathlib.Analysis.SpecialFunctions.Log.Deriv:2;Mathlib.Analysis.Calculus.Deriv.Inv:2;Mathlib.Tactic.FieldSimp:2;Mathlib.Tactic.Ring:1;GeneralCK.Certificates.ReflectionBounds:1
+CKLaneA2.SlotDiagonal#*	4	572	29862	CKLaneA2.SlotDiagonal3		decide +kernel:109	GeneralCK.CorrectionComplementCharts:4;CKLaneA2.Diag3.M00:1;CKLaneA2.Diag3.M01:1;CKLaneA2.Diag3.M02:1;CKLaneA2.Diag3.M03:1
+CKLaneG3.S.ChunkG.G_#*	4	542	675825	CKLaneG3.S.ChunkG.G_50202020315			CKLaneD.ArchTree:4
+CKLaneM07.CE.R3Cells.K13.S#*	4	84	62698	CKLaneM07.CE.R3Cells.K13.S0000		decide +kernel:4	CKLaneM07.CE.R3Glue2:4
+GeneralCK.PsiOuterEntropy#*	4	596	27634	GeneralCK.PsiOuterEntropy200		norm_num:69	GeneralCK.PsiParentContactEnvelope:1;GeneralCK.PsiParentPolynomialBounds:1;GeneralCK.PsiOuterEntropyExtension:1;GeneralCK.PsiThreeTenthsParentClosure:1;GeneralCK.PsiParentPolynomialBounds37:1
+GeneralCK.PsiSameSideTail#*	4	184	7740	GeneralCK.PsiSameSideTail14ExtendedRegionClosure			GeneralCK.PsiSameRatioTail14Extended:1;GeneralCK.PsiAffineChildCertificate:1;GeneralCK.PsiSameRatioTail15:1;GeneralCK.PsiExtendedRegionClosure:1;GeneralCK.PsiSameRatioTail16:1
+CKLaneA4.D#*	3	144	14126	CKLaneA4.D2Base	cellOK:1;treeOK:1	decide +kernel:1	CKLaneA.Cell:1;CKLaneA4.D2.C00:1;CKLaneA4.D2.C01:1;CKLaneA4.D2.C02:1;CKLaneA4.D2.C03:1
+CKLaneM07.CE.R3Cells.K12.S#*	3	63	38422	CKLaneM07.CE.R3Cells.K12.S0000		decide +kernel:3	CKLaneM07.CE.R3Glue2:3
+CKLaneG3.M11.L#*	2	52	3012	CKLaneG3.M11.L1_024125		decide +kernel:4	CKLaneG3.Families:2;CKLaneM11.Fleet.S0007:2;CKLaneM11.Fleet.S0000:1;CKLaneM11.Fleet.S0001:1;CKLaneM11.Fleet.S0002:1
+CKLaneM07.CE.R3Cells.K11.S#*	2	42	24708	CKLaneM07.CE.R3Cells.K11.S0000		decide +kernel:2	CKLaneM07.CE.R3Glue2:2
+GeneralCK.Certificates.DyadicJet#*	2	267	11652	GeneralCK.Certificates.DyadicJet5Bounds			GeneralCK.Certificates.Jet5:1;GeneralCK.Certificates.DyadicExpBounds:1;GeneralCK.Certificates.Jet5ReciprocalLog:1
+GeneralCK.PsiFullBiasTail#*	2	108	4930	GeneralCK.PsiFullBiasTail8CurrentOwners			GeneralCK.PsiCentralFullBiasWedges:1;GeneralCK.PsiSameSideTail8SmallMeanRegionClosure:1;GeneralCK.PsiExtendedRegionClosure:1;GeneralCK.FinalAssemblyAfterDiagnosticHybrid:1
+GeneralCK.PsiThreeTenthsCentralTail#*	2	91	3282	GeneralCK.PsiThreeTenthsCentralTail37			GeneralCK.PsiOuterEntropy37:1;GeneralCK.PsiThreeTenthsBiasClosure:1;GeneralCK.PsiOuterEntropy200:1
+GeneralCK.PureGapD#*	2	192	11903	GeneralCK.PureGapD0AxisPolynomial		norm_num:9	GeneralCK.Certificates.E8OriginMixedKTransfer:1;GeneralCK.Certificates.E8OriginSourceAffineReplay:1;GeneralCK.PureGapHalfMeanAnalytic:1;GeneralCK.Certificates.E8AdaptiveOriginOwnerBridge:1
+GeneralCK.PureGapZeroCapLeftUpperHalfCollarC#*	2	167	6987	GeneralCK.PureGapZeroCapLeftUpperHalfCollarC600Actual		norm_num:2	GeneralCK.PureGapZeroCapLeftUpperHalfCollarLogJets:1;GeneralCK.PureGapZeroCapLeftUpperHalfCollarMiddleEta:1;GeneralCK.PureGapZeroCapLeftUpperHalfCollarRadialJet:1;GeneralCK.PureGapZeroCapLeftUpperHalfCollarQuartic:1
+GeneralCK.ReflectionSmallBiasDifferenceJetChecks#*	2	326	14432	GeneralCK.ReflectionSmallBiasDifferenceJetChecks1	equalityCheck:96;fineBound:4	decide +kernel:100	GeneralCK.ReflectionSmallBiasDifferenceJetData:2
+CKLaneA.Cell	1	283	13968	CKLaneA.Cell	taylorOK:1;cellOK:1;treeOK:1	decide:19;decide +kernel:3;norm_num:1;rfl:2	CKLaneA.Semantics:1
+CKLaneA.LogKap	1	378	17843	CKLaneA.LogKap	logIvOK:2;ebaOK:1;kapOK:1	decide:9;norm_num:9;rfl:2	CKLaneA.PsiEnc:1;GeneralCK.Certificates.ReflectionBounds:1;GeneralCK.ReflectionContactInverse:1;GeneralCK.ReflectionRegularContact:1
+CKLaneA.Machine	1	217	9068	CKLaneA.Machine		rfl:1	CKLaneA.LogKap:1;GeneralCK.Certificates.BivariateJetProgramTaylor:1
+CKLaneA.Prog	1	460	14740	CKLaneA.Prog		rfl:4	CKLaneA.Machine:1
+CKLaneA.Psi	1	296	14345	CKLaneA.Psi		rfl:1	Mathlib.Analysis.SpecialFunctions.Log.Deriv:1;Mathlib.Analysis.SpecialFunctions.Log.Basic:1;Mathlib.Analysis.Calculus.SmoothSeries:1;Mathlib.Analysis.SpecificLimits.Normed:1;Mathlib.Analysis.SpecialFunctions.Pow.Real:1
+CKLaneA.PsiEnc	1	349	15248	CKLaneA.PsiEnc	psiOK:3;psiOKA:2	decide:4	CKLaneA.Psi:1;GeneralCK.Certificates.DyadicBivariateJetBounds:1
+CKLaneA.Semantics	1	256	11169	CKLaneA.Semantics		norm_num:6;rfl:1	CKLaneA.Prog:1;GeneralCK.CorrectionHighUNearCornerDetGapFactor:1;GeneralCK.CorrectionHighUNearCornerRegularContact:1
+CKLaneA2.Join	1	28	1027	CKLaneA2.Join	treeOK:6;decide:2	decide:4;decide +kernel:2	CKLaneA.Cell:1
+CKLaneA5.Bands	1	30	1438	CKLaneA5.Bands			GeneralCK.Certificates.RB1Band1.Coverage:1;GeneralCK.LaneRB2OwnerActual:1;GeneralCK.CorrectionComplementCharts:1
+CKLaneA5.ChartOwnersAsm	1	60	2068	CKLaneA5.ChartOwnersAsm			GeneralCK.CorrectionComplementCharts:1;CKLaneA1.BSFinal:1;CKLaneA1.FEFinal:1;CKLaneA5.SlotDiagonal1:1;CKLaneA4.D2Slot:1
+CKLaneA5.Correction	1	33	1341	CKLaneA5.Correction			CKLaneA5.ChartOwnersAsm:1;CKLaneA5.Bands:1
+CKLaneA5.Join	1	29	1122	CKLaneA5.Join	treeOK:6;decide:2	decide:4;decide +kernel:2	CKLaneA.Cell:1
+CKLaneA5.SlotDiagonal#*	1	112	5545	CKLaneA5.SlotDiagonal1		decide +kernel:19	CKLaneA5.Diag1.M00:1;CKLaneA5.Diag1.M01:1;CKLaneA5.Diag1.M02:1;CKLaneA5.Diag1.M03:1;CKLaneA5.Diag1.M04:1
+CKLaneC.RSEnc.Residual	1	93	4065	CKLaneC.RSEnc.Residual		norm_num:4	GeneralCK.RadialDerivatives:1;GeneralCK.EtaMonotone:1;GeneralCK.ProfileBasics:1
+CKLaneC.RSTail.Bridge	1	15	698	CKLaneC.RSTail.Bridge			CKLaneC.RSTail.Region:1;CKLaneR2.Cell.Defs:1
+CKLaneC.RSTail.Region	1	82	3930	CKLaneC.RSTail.Region			CKLaneC.RSCell.Union:1;CKLaneC.RSCell.Defs:1
+CKLaneC.S3.SlopeChain	1	176	7279	CKLaneC.S3.SlopeChain			CKLaneC.S3.TaylorForm:1
+CKLaneC.S3.SlopeTable	1	317	14769	CKLaneC.S3.SlopeTable	w.check:5;logBoxCheck:1;denomsB:1;expBoxCheck:1	decide:19;decide +kernel:1	CKLaneC.S3.TaylorChain:1;GeneralCK.Certificates.E8TAxisFirstCellInverseCoverage:1;GeneralCK.Certificates.E8CompactAnchorInterval:1;GeneralCK.Certificates.E8CompactAnchorTaylor3:1
+CKLaneC.S3.TaylorChain	1	298	14445	CKLaneC.S3.TaylorChain		norm_num:5	GeneralCK.Certificates.E8TAxisDeltaDirectionalJet:1
+CKLaneC.S3.TaylorForm	1	272	14046	CKLaneC.S3.TaylorForm		rfl:6	CKLaneC.S3.SlopeTable:1
+CKLaneC.SAxis.Cell	1	470	21849	CKLaneC.SAxis.Cell	replayAny:1;w.check:1	decide:14;decide +kernel:2;rfl:2	CKLaneC.SAxis.RayS:1;CKLaneC.S3.SlopeChain:1;GeneralCK.Certificates.E8TAxisRegularUnconditionalSource:1;GeneralCK.AgyE8SlopeRangeFull:1
+CKLaneC.SAxis.Final	1	74	50247	CKLaneC.SAxis.Final	tree.check:1	decide +kernel:1	CKLaneC.SAxis.Data.Cells00:1;CKLaneC.SAxis.Data.Cells01:1;CKLaneC.SAxis.Data.Cells02:1;CKLaneC.SAxis.Data.Cells03:1;CKLaneC.SAxis.Data.Cells04:1
+CKLaneC.SAxis.MixedS	1	383	24907	CKLaneC.SAxis.MixedS			GeneralCK.Certificates.DyadicJet5Bounds:1
+CKLaneC.SAxis.RayS	1	412	19268	CKLaneC.SAxis.RayS		norm_num:3	CKLaneC.SAxis.MixedS:1;GeneralCK.Certificates.E8TAxisDeltaDirectionalJet:1;GeneralCK.PureGapE8SecondSJet:1
+CKLaneC.TM3.Core	1	895	42224	CKLaneC.TM3.Core	wfC:5;wfP:5;T.ok:4;rows:1	decide:2;rfl:51	GeneralCK.RadialDerivatives:1;Mathlib.Analysis.SpecialFunctions.Log.Deriv:1
+CKLaneC.TM3.Fun	1	461	24802	CKLaneC.TM3.Fun	w.ok:2;Sm.ok:1	decide:6;norm_num:5;rfl:7	CKLaneC.TM3.Scalar:1
+CKLaneC.TM3.Scalar	1	379	19842	CKLaneC.TM3.Scalar		norm_num:10;rfl:9	CKLaneC.TM3.Core:1
+CKLaneG3.M04.L#*	1	31	2252	CKLaneG3.M04.L1_0250241		decide +kernel:3	CKLaneG3.Families:1;CKLaneM04.Leaf.L02502412412512503:1;CKLaneM04.Leaf.L02502512402512513:1;CKLaneM04.Leaf.L02502512412402403:1;CKLaneM04.Leaf.L02502512502412413:1
+CKLaneG3.M04.Top	1	113	5831	CKLaneG3.M04.Top		decide +kernel:16	CKLaneG3.Families:1;CKLaneD.OCompact:1;CKLaneG3.M04.L1_0250241:1
+CKLaneG3.M11.Top	1	130	6654	CKLaneG3.M11.Top		decide +kernel:19	CKLaneG3.Families:1;CKLaneD.OCompact:1;CKLaneG3.M11.L1_024125:1;CKLaneG3.M11.L1_1:1
+CKLaneG3.OUnion.U_none	1	42	2618	CKLaneG3.OUnion.U_none		decide:1;decide +kernel:1;rfl:13	CKLaneG3.Families:1;CKLaneD.OCompact:1
+CKLaneM03.Canary	1	74	3109	CKLaneM03.Canary	epLeaf:2	decide +kernel:6	CKLaneM03.Kernel:1
+CKLaneM03.G#*	1	53	1929	CKLaneM03.G3Bridge		rfl:8	CKLaneM03.Canary:1;CKLaneG3.SCover:1
+CKLaneM03.Kernel	1	567	28352	CKLaneM03.Kernel	epCheck:2;ptOk:1;epLeaf:1	decide:8;norm_num:2;rfl:2	GeneralCK.RadialConcavity:1;GeneralCK.RadialContact:1;GeneralCK.PsiEndpointPlaneSymmetric:1;GeneralCK.BellmanAssembly:1;GeneralCK.DeterministicCap:1
+CKLaneM03.Split	1	79	2916	CKLaneM03.Split		rfl:1	CKLaneM03.Kernel:1
+CKLaneM04.Checker	1	447	23936	CKLaneM04.Checker	checkLeaf:2;check:1	decide:10;norm_num:1	CKLaneD.FleetBase:1;GeneralCK.PsiLogSumOwner:1
+CKLaneM05.Checker	1	485	24556	CKLaneM05.Checker	ptOk:6;boxOk:1;ptsOk:1;checkBox:1	decide:2;norm_num:3;rfl:3	CKLaneE.FastPoint:1;CKLaneD.FleetBase:1;GeneralCK.PureGapCapZeroReduction:1;GeneralCK.RadialContact:1;Mathlib.Analysis.SpecialFunctions.Log.Base:1
+CKLaneM05.Leaves	1	614	41925	CKLaneM05.Leaves		decide:22;decide +kernel:4;rfl:44	CKLaneM05.Split:1;CKLaneM05.SAdapter:1;CKLaneM05.Fleet.S000:1;CKLaneM05.Fleet.S001:1;CKLaneM05.Fleet.S002:1
+CKLaneM05.SAdapter	1	51	2102	CKLaneM05.SAdapter		rfl:3	CKLaneM05.Checker:1;CKLaneG3.SCover:1
+CKLaneM05.Split	1	76	3639	CKLaneM05.Split		rfl:4	CKLaneM05.Checker:1
+CKLaneM07.Analytic	1	316	15304	CKLaneM07.Analytic		rfl:1	CKLaneE.FastPoint:1;CKLaneE.EntropyDropSharp:1;CKLaneE.NLSChecker:1;GeneralCK.PsiLogSumOwner:1;GeneralCK.PureGapCapZeroReduction:1
+CKLaneM07.CE.R3Cells.K10.S#*	1	21	16449	CKLaneM07.CE.R3Cells.K10.S0000		decide +kernel:1	CKLaneM07.CE.R3Glue2:1
+CKLaneM07.CE.R3Cells.K17.S#*	1	21	4651	CKLaneM07.CE.R3Cells.K17.S0000		decide +kernel:1	CKLaneN1.R3Leaf:1
+CKLaneM07.CE.R3Cells.K7.S#*	1	21	2349	CKLaneM07.CE.R3Cells.K7.S0000		decide +kernel:1	CKLaneM07.CE.R3Glue2:1
+CKLaneM07.CE.R3Cells.K8.S#*	1	21	8688	CKLaneM07.CE.R3Cells.K8.S0000		decide +kernel:1	CKLaneM07.CE.R3Glue2:1
+CKLaneM07.CE.R3Cells.K9.S#*	1	21	12052	CKLaneM07.CE.R3Cells.K9.S0000		decide +kernel:1	CKLaneM07.CE.R3Glue2:1
+CKLaneM07.Checker	1	688	36720	CKLaneM07.Checker	ptOk:12;zrOk:2;check:2;pow2LowerOK:1	decide:8;norm_num:7;rfl:2	CKLaneM07.Analytic:1;CKLaneM07.KappaLogSum:1
+CKLaneM07.G#*	1	60	2315	CKLaneM07.G3Adapter	checkLeaf:1	rfl:8	CKLaneM07.Checker:1;CKLaneG3.SCover:1
+CKLaneM07.KappaLogSum	1	333	16051	CKLaneM07.KappaLogSum		rfl:1	GeneralCK.PsiLogSumOwner:1;GeneralCK.LogSum:1
+CKLaneM07.Leaves	1	81	5291	CKLaneM07.Leaves		decide +kernel:1;rfl:1	CKLaneM07.FleetT.T0000:1;CKLaneM07.FleetT.T0001:1;CKLaneM07.FleetT.T0002:1;CKLaneM07.FleetT.T0003:1;CKLaneM07.FleetT.T0004:1
+CKLaneM08.Adapter	1	42	1413	CKLaneM08.Adapter		rfl:2	CKLaneM08.Checker:1;CKLaneG3.SCover:1
+CKLaneM08.Checker	1	633	32200	CKLaneM08.Checker	aOk:2;gOk:2;Leaf.check:2;Cert:1	decide:4;norm_num:2;rfl:4	CKLaneM08.Ratios:1;CKLaneD.FleetBase:1
+CKLaneM08.Ratios	1	314	13601	CKLaneM08.Ratios		norm_num:15	CKLaneE.CertLS:1
+CKLaneM09.CapCore	1	200	9630	CKLaneM09.CapCore		norm_num:1	CKLaneD.FleetBase:1;CKLaneE.FastPoint:1;GeneralCK.PsiEndpointPlaneGlobal:1;GeneralCK.DeterministicCap:1
+CKLaneM09.Checker	1	451	24481	CKLaneM09.Checker	FP.ptOk:13;capCheck:3;boxOk:1;decide:1	decide:8;norm_num:1	CKLaneM09.CapCore:1
+CKLaneM09.Leaves	1	188	6620	CKLaneM09.Leaves		decide +kernel:2;rfl:2	CKLaneM09.Fleet.S0000:1;CKLaneM09.Fleet.S0001:1;CKLaneM09.Fleet.S0002:1;CKLaneM09.Fleet.S0003:1;CKLaneM09.Fleet.S0004:1
+CKLaneM1.MLChecker	1	669	33405	CKLaneM1.MLChecker	ptOk:2;cellCheck:1;RBox:1;checkBox:1	decide:4;norm_num:2;rfl:5	CKLaneM1.MLSupport:1;GeneralCK.PsiLogSumOwner:1;GeneralCK.ScalarGap:1
+CKLaneM1.MLG#*	1	42	1602	CKLaneM1.MLG3	checkLeaf:1	rfl:3	CKLaneM1.MLChecker:1;CKLaneG3.SCover:1
+CKLaneM1.MLPopulation	1	474	33607	CKLaneM1.MLPopulation		decide +kernel:1;rfl:1	CKLaneM1.MLRoute:1;CKLaneM1.MLG3:1;CKLaneM1.Pop.S0000:1;CKLaneM1.Pop.S0001:1;CKLaneM1.Pop.S0002:1
+CKLaneM1.MLPopulationDfs	1	4312	502805	CKLaneM1.MLPopulationDfs		decide +kernel:853;rfl:1	CKLaneM1.MLPopulation:1
+CKLaneM1.MLRoute	1	57	2180	CKLaneM1.MLRoute	checkLeaf:1		CKLaneM1.MLChecker:1
+CKLaneM1.MLSupport	1	269	12202	CKLaneM1.MLSupport	cHok:3;pow2LowerOK:1;pow2UpperOK:1;ptOk:1	decide:8;norm_num:4	CKLaneE.FastPoint:1;GeneralCK.SmallMeanMeans:1;GeneralCK.LowInformationMeans:1
+CKLaneM10.Analytic	1	171	7874	CKLaneM10.Analytic		norm_num:1;rfl:1	CKLaneD.FleetBase:1;GeneralCK.PsiFeasibleImbalance:1
+CKLaneM10.Checker	1	488	26317	CKLaneM10.Checker	checkPt:3;checkFS:2;lowOK:1;hmOK:1	decide:7;rfl:5	CKLaneM10.Analytic:1
+CKLaneM10.Leaf	1	95	4152	CKLaneM10.Leaf	checkLeafFS:4;checkFSTree:1;FSTree:1;only:1	decide:3	CKLaneM10.Checker:1
+CKLaneM10.Leaves	1	218	9068	CKLaneM10.Leaves		decide +kernel:3;rfl:1	CKLaneD.ArchTree:1;CKLaneM10.Fleet.S0000:1;CKLaneM10.Fleet.S0001:1;CKLaneM10.Fleet.S0002:1;CKLaneM10.Fleet.S0003:1
+CKLaneM11.Envelope	1	267	12859	CKLaneM11.Envelope	mOK:1;checkEnvCell:1;EnvCert:1;checkEnv:1	decide:8	CKLaneD.FleetBase:1
+CKLaneM2.FleetAll	1	470	15022	CKLaneM2.FleetAll		decide +kernel:2;rfl:1	CKLaneM2.Fleet.S0000:1;CKLaneM2.Fleet.S0001:1;CKLaneM2.Fleet.S0002:1;CKLaneM2.Fleet.S0003:1;CKLaneM2.Fleet.S0004:1
+CKLaneM2.Leaves	1	38	1528	CKLaneM2.Leaves		rfl:1	CKLaneM2.FleetAll:1;CKLaneD.OCompact:1
+CKLaneM2.SLChecker	1	645	34002	CKLaneM2.SLChecker	checkPt:2;xcOKs:2;checkLeafSL:2;secOK:1	decide:16;norm_num:1;rfl:1	CKLaneM2.SLPlane:1
+CKLaneM2.SLPlane	1	173	9330	CKLaneM2.SLPlane		rfl:5	CKLaneD.FleetBase:1;GeneralCK.LogSum:1;Mathlib.Analysis.SpecialFunctions.Trigonometric.DerivHyp:1
+CKLaneR2.Cell.Defs	1	200	7195	CKLaneR2.Cell.Defs		decide:5	CKLaneR2.TM3.Fun:1
+CKLaneR2.Cell.SoundBasic	1	149	7007	CKLaneR2.Cell.SoundBasic		decide:1;decide +kernel:1;norm_num:11;rfl:1	CKLaneR2.Cell.Defs:1;CKLaneR2.RSEnc.Residual:1;Mathlib.Analysis.Complex.ExponentialBounds:1
+CKLaneR2.Cell.SoundContact	1	236	11518	CKLaneR2.Cell.SoundContact		norm_num:3;rfl:1	CKLaneR2.Cell.SoundImplicit:1;CKLaneN23.RSDefs:1
+CKLaneR2.Cell.SoundImplicit	1	282	15735	CKLaneR2.Cell.SoundImplicit	checkImplicit:2;Ok:1	decide:8;norm_num:4;rfl:5	CKLaneR2.Cell.SoundBasic:1
+CKLaneR2.RSEnc.Residual	1	93	4067	CKLaneR2.RSEnc.Residual		norm_num:4	GeneralCK.RadialDerivatives:1;GeneralCK.EtaMonotone:1;GeneralCK.ProfileBasics:1
+CKLaneR2.TM3.Core	1	895	42226	CKLaneR2.TM3.Core	wfC:5;wfP:5;T.ok:4;rows:1	decide:2;rfl:51	GeneralCK.RadialDerivatives:1;Mathlib.Analysis.SpecialFunctions.Log.Deriv:1
+CKLaneR2.TM3.Fun	1	461	24805	CKLaneR2.TM3.Fun	w.ok:2;Sm.ok:1	decide:6;norm_num:5;rfl:7	CKLaneR2.TM3.Scalar:1
+CKLaneR2.TM3.Scalar	1	379	19845	CKLaneR2.TM3.Scalar		norm_num:10;rfl:9	CKLaneR2.TM3.Core:1
+GeneralCK.AgyE#*	1	152	6830	GeneralCK.AgyE8SlopeRangeFull		norm_num:4	GeneralCK.Certificates.E8TAxisStableJet5:1;GeneralCK.PureGapE8RegularizedInverse:1;GeneralCK.PureGapE8CertificateReduction:1
+GeneralCK.ArchiveRegionalBoundary	1	34	1396	GeneralCK.ArchiveRegionalBoundary			GeneralCK.ConditionalCK:1;GeneralCK.FiniteLaw:1
+GeneralCK.BellmanAssembly	1	136	5623	GeneralCK.BellmanAssembly		norm_num:6	GeneralCK.FiniteLaw:1;GeneralCK.ProfileConvexity:1
+GeneralCK.BellmanStatement	1	49	2094	GeneralCK.BellmanStatement			GeneralCK.Statement:1
+GeneralCK.BellmanSymmetry	1	85	3865	GeneralCK.BellmanSymmetry		rfl:3	GeneralCK.BellmanAssembly:1
+GeneralCK.CanonicalCKClosure	1	83	3933	GeneralCK.CanonicalCKClosure			GeneralCK.PhiBranchClosure:1;GeneralCK.PureGapFixedEntropyClosure:1
+GeneralCK.Certificates.BivariateJet#*	1	185	9217	GeneralCK.Certificates.BivariateJet2			GeneralCK.Certificates.Jet2Composition:1;GeneralCK.Certificates.ReflectionTaylor:1
+GeneralCK.Certificates.BivariateJetBounds	1	91	4762	GeneralCK.Certificates.BivariateJetBounds			GeneralCK.Certificates.BivariateJet2:1;GeneralCK.Certificates.Jet2Bounds:1
+GeneralCK.Certificates.BivariateJetProgram	1	265	13514	GeneralCK.Certificates.BivariateJetProgram	check:4;op.check:3	decide:1;rfl:5	GeneralCK.Certificates.DyadicBivariateJetBounds:1
+GeneralCK.Certificates.BivariateJetProgramTaylor	1	77	3645	GeneralCK.Certificates.BivariateJetProgramTaylor	check:2		GeneralCK.Certificates.BivariateJetProgram:1;GeneralCK.Certificates.BivariateJetTaylor:1;GeneralCK.Certificates.JetProgramTaylor:1
+GeneralCK.Certificates.BivariateJetTaylor	1	67	2968	GeneralCK.Certificates.BivariateJetTaylor		rfl:1	GeneralCK.Certificates.BivariateJetBounds:1
+GeneralCK.Certificates.BivariateProvedProgram	1	204	10793	GeneralCK.Certificates.BivariateProvedProgram		rfl:2	GeneralCK.Certificates.ProvedTranscendental:1;GeneralCK.Certificates.BivariateJetProgramTaylor:1
+GeneralCK.Certificates.CorrectionFactorizedProgramKernel	1	332	11043	GeneralCK.Certificates.CorrectionFactorizedProgramKernel		norm_num:1;rfl:2	GeneralCK.Certificates.CorrectionProgramKernel:1
+GeneralCK.Certificates.CorrectionHybridProgramKernel	1	96	3878	GeneralCK.Certificates.CorrectionHybridProgramKernel	arithmeticStepCheck:1;arithmeticCheck:1	decide:1	GeneralCK.Certificates.BivariateProvedProgram:1
+GeneralCK.Certificates.CorrectionIntegerLogTableKernel	1	74	2478	GeneralCK.Certificates.CorrectionIntegerLogTableKernel	d.check:1;allCheck:1	norm_num:1	GeneralCK.Certificates.DyadicFastLog:1
+GeneralCK.Certificates.CorrectionProgramKernel	1	380	12452	GeneralCK.Certificates.CorrectionProgramKernel		norm_num:1;rfl:3	GeneralCK.Certificates.BivariateProvedProgram:1;GeneralCK.CorrectionHessianNatural:1
+GeneralCK.Certificates.DyadicBivariateJetBounds	1	214	12270	GeneralCK.Certificates.DyadicBivariateJetBounds	invCheck:2;logCheck:2;contactCheck:2;b.subsetCheck:1		GeneralCK.Certificates.BivariateJet2:1;GeneralCK.Certificates.BivariateJetBounds:1;GeneralCK.Certificates.DyadicLogBounds:1;GeneralCK.Certificates.DyadicContactBounds:1
+GeneralCK.Certificates.DyadicContactBounds	1	138	7162	GeneralCK.Certificates.DyadicContactBounds	jetCheck:3;bracketCheck:2;endpointCheck:1	decide:3;norm_num:1	GeneralCK.Certificates.DyadicEntropyBounds:1;GeneralCK.Certificates.ReflectionContactBounds:1
+GeneralCK.Certificates.DyadicEntropyBounds	1	81	3472	GeneralCK.Certificates.DyadicEntropyBounds	check:1;checkB:1		GeneralCK.Certificates.DyadicLogBounds:1
+GeneralCK.Certificates.DyadicExpBounds	1	84	3989	GeneralCK.Certificates.DyadicExpBounds		decide:1	GeneralCK.Certificates.DyadicFastLog:1;Mathlib.Analysis.SpecialFunctions.Log.Basic:1
+GeneralCK.Certificates.DyadicFastLog	1	65	3044	GeneralCK.Certificates.DyadicFastLog	check:1	decide:1;norm_num:2	GeneralCK.Certificates.DyadicLogSeries:1
+GeneralCK.Certificates.DyadicInterval	1	179	8660	GeneralCK.Certificates.DyadicInterval	a.positiveCheck:2;a.subsetCheck:1;a.recipCheck:1;benchmarkValue.subsetCheck:1	decide:3	Mathlib.Data.Real.Basic:1;Mathlib.Data.Int.DivMod:1;Mathlib.Tactic.NormNum:1;Mathlib.Tactic.Linarith:1;Mathlib.Tactic.Ring:1
+GeneralCK.Certificates.DyadicJetBounds	1	152	7543	GeneralCK.Certificates.DyadicJetBounds	b.subsetCheck:1;b.invCheck:1;b.taylorCheck:1	decide:1	GeneralCK.Certificates.DyadicInterval:1;GeneralCK.Certificates.Jet2Bounds:1
+GeneralCK.Certificates.DyadicLogBounds	1	175	9141	GeneralCK.Certificates.DyadicLogBounds	check:3;checkEndpoint:2;checkJet:2;checkRational:1	decide:2;norm_num:8	GeneralCK.Certificates.DyadicJetBounds:1;GeneralCK.Certificates.LogBounds:1
+GeneralCK.Certificates.DyadicLogSeries	1	120	6198	GeneralCK.Certificates.DyadicLogSeries	guard:3;check:2	decide:2;norm_num:2	GeneralCK.Certificates.DyadicInterval:1;Mathlib.Analysis.SpecialFunctions.Log.Deriv:1
+GeneralCK.Certificates.EntropyCurvatureBounds	1	85	3374	GeneralCK.Certificates.EntropyCurvatureBounds		norm_num:1	GeneralCK.EntropyCurvatureDefs:1;GeneralCK.Certificates.MixedBounds:1;GeneralCK.EtaMonotone:1
+GeneralCK.Certificates.EntropyCurvatureCertificate	1	1420	63693	GeneralCK.Certificates.EntropyCurvatureCertificate			GeneralCK.Certificates.EntropyCurvatureLeaves00:1;GeneralCK.Certificates.EntropyCurvatureLeaves01:1;GeneralCK.Certificates.EntropyCurvatureLeaves02:1;GeneralCK.Certificates.EntropyCurvatureLeaves03:1;GeneralCK.Certificates.EntropyCurvatureLeaves04:1
+GeneralCK.Certificates.EntropyCurvatureLogs	1	22	1188	GeneralCK.Certificates.EntropyCurvatureLogs			GeneralCK.Certificates.EntropyCurvatureLogs00:1;GeneralCK.Certificates.EntropyCurvatureLogs01:1;GeneralCK.Certificates.EntropyCurvatureLogs02:1;GeneralCK.Certificates.EntropyCurvatureLogs03:1;GeneralCK.Certificates.EntropyCurvatureLogs04:1
+GeneralCK.Certificates.Generated.BivariateFastPilot	1	2291	210325	GeneralCK.Certificates.Generated.BivariateFastPilot	DyadicFastLog.check:47	decide:830;norm_num:22;rfl:4	GeneralCK.Certificates.DyadicFastLog:1;GeneralCK.Certificates.BivariateProvedProgram:1;GeneralCK.Certificates.ReflectionExpressionJet:1
+GeneralCK.Certificates.Generated.DoubleCapMiddleAggregation	1	1934	749895	GeneralCK.Certificates.Generated.DoubleCapMiddleAggregation			GeneralCK.Certificates.Generated.DoubleCapMiddle.Cell0000:1;GeneralCK.Certificates.Generated.DoubleCapMiddle.Cell0001:1;GeneralCK.Certificates.Generated.DoubleCapMiddle.Cell0002:1;GeneralCK.Certificates.Generated.DoubleCapMiddle.Cell0003:1;GeneralCK.Certificates.Generated.DoubleCapMiddle.Cell0004:1
+GeneralCK.Certificates.Generated.HighBiasCoarseBounds	1	604	33176	GeneralCK.Certificates.Generated.HighBiasCoarseBounds		norm_num:138	GeneralCK.Certificates.Generated.HighBiasCoarseLogs:1
+GeneralCK.Certificates.Generated.HighBiasCoarseConstants	1	285	16083	GeneralCK.Certificates.Generated.HighBiasCoarseConstants		norm_num:59	GeneralCK.Certificates.Generated.HighBiasCoarseLogs:1
+GeneralCK.Certificates.Generated.HighBiasCoarseLogs	1	262	12099	GeneralCK.Certificates.Generated.HighBiasCoarseLogs		norm_num:72	GeneralCK.ReflectionHighBiasCore:1
+GeneralCK.Certificates.JetProgram	1	158	7821	GeneralCK.Certificates.JetProgram	check:4;op.check:2	decide:1	GeneralCK.Certificates.DyadicContactBounds:1
+GeneralCK.Certificates.JetProgramShape	1	87	3729	GeneralCK.Certificates.JetProgramShape		rfl:3	GeneralCK.Certificates.JetProgramValues:1
+GeneralCK.Certificates.JetProgramTaylor	1	101	4787	GeneralCK.Certificates.JetProgramTaylor	check:2;ReflectionExpression.dyadicTaylorCheck:1	rfl:1	GeneralCK.Certificates.JetProgramShape:1;GeneralCK.Certificates.ReflectionTaylor:1
+GeneralCK.Certificates.JetProgramValues	1	46	2092	GeneralCK.Certificates.JetProgramValues		rfl:2	GeneralCK.Certificates.JetProgram:1
+GeneralCK.Certificates.LogBounds	1	45	1889	GeneralCK.Certificates.LogBounds	checkLog:1	decide:1	Mathlib.Analysis.SpecialFunctions.Log.Deriv:1;Mathlib.Tactic.NormNum:1;Mathlib.Tactic.Linarith:1;Mathlib.Tactic.Ring:1;Mathlib.Tactic.Positivity:1
+GeneralCK.Certificates.LowRatioFamilyHelpers	1	14	591	GeneralCK.Certificates.LowRatioFamilyHelpers			GeneralCK.ReflectionSmallRatioFormula:1
+GeneralCK.Certificates.MidpointBounds	1	78	3860	GeneralCK.Certificates.MidpointBounds			GeneralCK.Certificates.TaylorBounds:1;Mathlib.Analysis.Calculus.Deriv.MeanValue:1
+GeneralCK.Certificates.MixedBounds	1	99	4407	GeneralCK.Certificates.MixedBounds		norm_num:3	GeneralCK.Certificates.LogBounds:1;GeneralCK.Certificates.PilotData:1;Mathlib.Tactic.GCongr:1
+GeneralCK.Certificates.MixedCertificate	1	432	17410	GeneralCK.Certificates.MixedCertificate			GeneralCK.Certificates.MixedLeaves00:1;GeneralCK.Certificates.MixedLeaves01:1;GeneralCK.Certificates.MixedLeaves02:1;GeneralCK.Certificates.MixedLeaves03:1;GeneralCK.Certificates.MixedLeaves04:1
+GeneralCK.Certificates.MixedConstants	1	28	1045	GeneralCK.Certificates.MixedConstants		norm_num:6	GeneralCK.Certificates.MixedBounds:1
+GeneralCK.Certificates.MixedLogs	1	7	301	GeneralCK.Certificates.MixedLogs			GeneralCK.Certificates.MixedLogs00:1;GeneralCK.Certificates.MixedLogs01:1;GeneralCK.Certificates.MixedLogs02:1;GeneralCK.Certificates.MixedLogs03:1;GeneralCK.Certificates.MixedLogs04:1
+GeneralCK.Certificates.NonnegativeBoxPolynomial	1	86	3333	GeneralCK.Certificates.NonnegativeBoxPolynomial			Mathlib.Data.Real.Basic:1;Mathlib.Tactic.NormNum:1;Mathlib.Tactic.Linarith:1;Mathlib.Tactic.Ring:1;Mathlib.Tactic.Positivity:1
+GeneralCK.Certificates.PilotData	1	46	2085	GeneralCK.Certificates.PilotData		norm_num:10	GeneralCK.Certificates.LogBounds:1
+GeneralCK.Certificates.ProvedTranscendental	1	114	6103	GeneralCK.Certificates.ProvedTranscendental	entropyRaw:1;denominatorRaw:1;DyadicContact.enclosure:1		GeneralCK.Certificates.DyadicBivariateJetBounds:1
+GeneralCK.Certificates.ReflectionBounds	1	118	5136	GeneralCK.Certificates.ReflectionBounds		norm_num:3	GeneralCK.Certificates.MixedBounds:1;GeneralCK.RadialContact:1
+GeneralCK.Certificates.ReflectionCompactProgramKernel	1	209	9517	GeneralCK.Certificates.ReflectionCompactProgramKernel	nonlinearCheck:3;boxes:1	rfl:2	GeneralCK.Certificates.CorrectionHybridProgramKernel:1;GeneralCK.Certificates.ReflectionFastTranscendental:1
+GeneralCK.Certificates.ReflectionContactBounds	1	82	3938	GeneralCK.Certificates.ReflectionContactBounds			GeneralCK.Certificates.ReflectionContactJet:1;GeneralCK.Certificates.Jet2Bounds:1
+GeneralCK.Certificates.ReflectionContactJet	1	38	1682	GeneralCK.Certificates.ReflectionContactJet			GeneralCK.ReflectionContactInverse:1;GeneralCK.Certificates.Jet2Composition:1
+GeneralCK.Certificates.ReflectionExpressionJet	1	218	11389	GeneralCK.Certificates.ReflectionExpressionJet		norm_num:8;rfl:1	GeneralCK.Certificates.ReflectionContactJet:1;GeneralCK.Certificates.ReflectionBounds:1
+GeneralCK.Certificates.ReflectionFastTranscendental	1	140	6047	GeneralCK.Certificates.ReflectionFastTranscendental	w.check:6	decide:4;norm_num:2	GeneralCK.Certificates.CorrectionIntegerLogTableKernel:1;GeneralCK.Certificates.ProvedTranscendental:1
+GeneralCK.Certificates.ReflectionMidpointCombinedCoverage	1	44	2198	GeneralCK.Certificates.ReflectionMidpointCombinedCoverage			GeneralCK.Certificates.Generated.MidpointFamily.FullCertificate:1;GeneralCK.Certificates.Generated.MidpointNextFamily.FullCertificate:1;GeneralCK.Certificates.Generated.MidpointExtensionFamily.FullCertificate:1;GeneralCK.Certificates.Generated.MidpointNextBandFamily.FullCertificate:1;GeneralCK.Certificates.Generated.MidpointPostNextBandFamily.FullCertificate:1
+GeneralCK.Certificates.ReflectionMidpointKernel	1	226	7086	GeneralCK.Certificates.ReflectionMidpointKernel		norm_num:1;rfl:1	GeneralCK.Certificates.BivariateProvedProgram:1;GeneralCK.ReflectionSmallRatioFormula:1
+GeneralCK.Certificates.ReflectionSmallBiasCoefficientData	1	394	15591	GeneralCK.Certificates.ReflectionSmallBiasCoefficientData	checkCoefficient:25;checkRows:1	norm_num:27;rfl:1	GeneralCK.ReflectionSmallBiasCoefficientBounds:1
+GeneralCK.Certificates.ReflectionSmallBiasDifferenceTable	1	599	27989	GeneralCK.Certificates.ReflectionSmallBiasDifferenceTable	equalityCheck:25;degreeBound:2	decide +kernel:26	GeneralCK.ReflectionSmallBiasCandidateSparse:1;GeneralCK.ReflectionSmallBiasDegreeCertificate:1
+GeneralCK.Certificates.ReflectionSmallBiasPicardData	1	768	31359	GeneralCK.Certificates.ReflectionSmallBiasPicardData			GeneralCK.ReflectionSmallBiasJetFunctions:1;GeneralCK.ReflectionSmallBiasPolynomialCertificate:1
+GeneralCK.Certificates.ReflectionSmallBiasPicardPhiReplay	1	1381	58066	GeneralCK.Certificates.ReflectionSmallBiasPicardPhiReplay	equalityCheck:13	decide +kernel:25;norm_num:2	GeneralCK.Certificates.ReflectionSmallBiasPicardData:1;GeneralCK.ReflectionSmallBiasJetReplay:1
+GeneralCK.Certificates.ReflectionTaylor	1	116	5196	GeneralCK.Certificates.ReflectionTaylor	dyadicTaylorCheck:1	decide:1	GeneralCK.ReflectionNormalized:1;GeneralCK.Certificates.Jet2Bounds:1;GeneralCK.Certificates.DyadicJetBounds:1
+GeneralCK.Certificates.RegularContactBounds	1	98	4766	GeneralCK.Certificates.RegularContactBounds		norm_num:3;rfl:2	GeneralCK.Certificates.RegularContactJet:1;GeneralCK.Certificates.Jet2Bounds:1
+GeneralCK.Certificates.RegularContactJet	1	17	654	GeneralCK.Certificates.RegularContactJet			GeneralCK.ReflectionRegularContact:1;GeneralCK.Certificates.Jet2Composition:1
+GeneralCK.Certificates.RegularReflectionExpressionJet	1	102	5266	GeneralCK.Certificates.RegularReflectionExpressionJet		norm_num:5	GeneralCK.Certificates.SignedReflectionJet:1;GeneralCK.Certificates.RegularContactJet:1
+GeneralCK.Certificates.SignedReflectionJet	1	57	2809	GeneralCK.Certificates.SignedReflectionJet			GeneralCK.Certificates.ReflectionExpressionJet:1
+GeneralCK.Certificates.SmallMeanBounds	1	74	3344	GeneralCK.Certificates.SmallMeanBounds		norm_num:2	GeneralCK.Statement:1;GeneralCK.Certificates.MixedBounds:1
+GeneralCK.Certificates.SmallMeanCertificate	1	22	925	GeneralCK.Certificates.SmallMeanCertificate		norm_num:2;rfl:1	GeneralCK.Certificates.SmallMeanCoverage:1;GeneralCK.Certificates.SmallMeanFixed:1;GeneralCK.SmallMeanAnalytic:1
+GeneralCK.Certificates.SmallMeanCoverage	1	86	3995	GeneralCK.Certificates.SmallMeanCoverage			GeneralCK.Certificates.SmallMeanLeaves:1
+GeneralCK.Certificates.SmallMeanEntropy	1	790	40810	GeneralCK.Certificates.SmallMeanEntropy		norm_num:415	GeneralCK.Certificates.SmallMeanBounds:1
+GeneralCK.Certificates.SmallMeanFixed	1	36	1568	GeneralCK.Certificates.SmallMeanFixed		norm_num:11	GeneralCK.Certificates.SmallMeanLeaves:1;GeneralCK.Certificates.SmallMeanSlopeBounds:1
+GeneralCK.Certificates.SmallMeanLeaves	1	235	13598	GeneralCK.Certificates.SmallMeanLeaves		norm_num:205	GeneralCK.Certificates.SmallMeanEntropy:1
+GeneralCK.Certificates.SmallMeanSlopeBounds	1	54	2258	GeneralCK.Certificates.SmallMeanSlopeBounds			GeneralCK.Certificates.SmallMeanBounds:1;GeneralCK.ProfileLowerBounds:1
+GeneralCK.Certificates.TaylorBounds	1	104	4713	GeneralCK.Certificates.TaylorBounds		norm_num:5	Mathlib.Analysis.Convex.Deriv:1;Mathlib.Analysis.Calculus.Deriv.Pow:1;Mathlib.Tactic.NormNum:1;Mathlib.Tactic.Linarith:1;Mathlib.Tactic.Ring:1
+GeneralCK.Certificates.ZeroCapLeftStationaryAnchorLogs	1	97	3926	GeneralCK.Certificates.ZeroCapLeftStationaryAnchorLogs		norm_num:16	GeneralCK.Certificates.MixedBounds:1
+GeneralCK.Certificates.ZeroCapLeftStationaryLogEnclosures	1	97	4261	GeneralCK.Certificates.ZeroCapLeftStationaryLogEnclosures		norm_num:25	GeneralCK.Certificates.ZeroCapLeftStationaryAnchorLogs:1
+GeneralCK.ConditionalCK	1	44	1842	GeneralCK.ConditionalCK			GeneralCK.EntropyFlow:1;GeneralCK.LimitTransfer:1
+GeneralCK.CorrectionBasics	1	109	5898	GeneralCK.CorrectionBasics		norm_num:7	GeneralCK.FourMomentDefs:1;GeneralCK.RadialConvexity:1;GeneralCK.PhiEntropyConvexity:1
+GeneralCK.CorrectionCertifiedBandClosure	1	112	5324	GeneralCK.CorrectionCertifiedBandClosure			GeneralCK.CorrectionFamilyAssembly:1
+GeneralCK.CorrectionComplementCharts	1	127	6843	GeneralCK.CorrectionComplementCharts			GeneralCK.CorrectionComplementLedger:1
+GeneralCK.CorrectionComplementLedger	1	146	6041	GeneralCK.CorrectionComplementLedger		norm_num:1	GeneralCK.CorrectionCertifiedBandClosure:1
+GeneralCK.CorrectionConvexityCriterion	1	174	8571	GeneralCK.CorrectionConvexityCriterion		norm_num:2	GeneralCK.CorrectionHessianPSD:1;GeneralCK.PerspectiveCurve:1;Mathlib.Analysis.Convex.Deriv:1
+GeneralCK.CorrectionFamilyAssembly	1	96	4165	GeneralCK.CorrectionFamilyAssembly		norm_num:4	GeneralCK.CorrectionRatioBellmanClosure:1
+GeneralCK.CorrectionGlobalConvexity	1	274	14301	GeneralCK.CorrectionGlobalConvexity		norm_num:4	GeneralCK.CorrectionConvexityCriterion:1;GeneralCK.CorrectionBasics:1
+GeneralCK.CorrectionHessian	1	404	20167	GeneralCK.CorrectionHessian		norm_num:8;rfl:2	GeneralCK.FourMomentDefs:1;GeneralCK.EntropyRadialDerivatives:1
+GeneralCK.CorrectionHessianFactored	1	68	2773	GeneralCK.CorrectionHessianFactored		rfl:1	GeneralCK.CorrectionHessianPSD:1
+GeneralCK.CorrectionHessianNatural	1	215	8713	GeneralCK.CorrectionHessianNatural		norm_num:4;rfl:2	GeneralCK.CorrectionHessianFactored:1;GeneralCK.ReflectionContactInverse:1
+GeneralCK.CorrectionHessianPSD	1	93	4506	GeneralCK.CorrectionHessianPSD			GeneralCK.CorrectionHessian:1
+GeneralCK.CorrectionHighUNearCornerActualAdapter	1	60	2350	GeneralCK.CorrectionHighUNearCornerActualAdapter		norm_num:3	GeneralCK.CorrectionHighUNearCornerWedgeAdapter:1
+GeneralCK.CorrectionHighUNearCornerContactBracket	1	93	3709	GeneralCK.CorrectionHighUNearCornerContactBracket			GeneralCK.CorrectionHighUScaledContract:1;GeneralCK.EntropyParabola:1;GeneralCK.ReflectionRegularContact:1
+GeneralCK.CorrectionHighUNearCornerContactRemainder	1	123	5557	GeneralCK.CorrectionHighUNearCornerContactRemainder			GeneralCK.CorrectionHighUNearCornerContactBracket:1
+GeneralCK.CorrectionHighUNearCornerDetGapFactor	1	142	6157	GeneralCK.CorrectionHighUNearCornerDetGapFactor		rfl:2	GeneralCK.CorrectionHighUNearCornerDetOnly:1;Mathlib.Analysis.Calculus.DSlope:1
+GeneralCK.CorrectionHighUNearCornerDetOnly	1	34	1276	GeneralCK.CorrectionHighUNearCornerDetOnly			GeneralCK.CorrectionHighUNearCornerLeftMinor:1;GeneralCK.CorrectionHighUNearCornerActualAdapter:1
+GeneralCK.CorrectionHighUNearCornerEntropyBounds	1	62	2594	GeneralCK.CorrectionHighUNearCornerEntropyBounds		norm_num:3	GeneralCK.CorrectionHighUNearCornerRegularContact:1
+GeneralCK.CorrectionHighUNearCornerLeftMinor	1	125	5554	GeneralCK.CorrectionHighUNearCornerLeftMinor			GeneralCK.CorrectionHighUNearCornerLeftScalar:1;GeneralCK.CorrectionHighUNearCornerRadialBounds:1
+GeneralCK.CorrectionHighUNearCornerLeftScalar	1	61	2756	GeneralCK.CorrectionHighUNearCornerLeftScalar		norm_num:5	GeneralCK.CorrectionHighUNearCornerLogitBounds:1
+GeneralCK.CorrectionHighUNearCornerLogitBounds	1	61	2394	GeneralCK.CorrectionHighUNearCornerLogitBounds		norm_num:2	GeneralCK.CorrectionHighUNearCornerEntropyBounds:1
+GeneralCK.CorrectionHighUNearCornerRadialBounds	1	179	7956	GeneralCK.CorrectionHighUNearCornerRadialBounds		norm_num:4	GeneralCK.CorrectionHighUNearCornerEntropyBounds:1
+GeneralCK.CorrectionHighUNearCornerRegularContact	1	180	8459	GeneralCK.CorrectionHighUNearCornerRegularContact		decide:1;norm_num:1;rfl:1	GeneralCK.CorrectionHighUNearCornerContactRemainder:1
+GeneralCK.CorrectionHighUNearCornerWedgeAdapter	1	60	2496	GeneralCK.CorrectionHighUNearCornerWedgeAdapter			GeneralCK.CorrectionHighUNearCornerWedgeTarget:1
+GeneralCK.CorrectionHighUNearCornerWedgeTarget	1	22	731	GeneralCK.CorrectionHighUNearCornerWedgeTarget			GeneralCK.CorrectionHighUScaledContract:1
+GeneralCK.CorrectionHighUScaledContract	1	63	2552	GeneralCK.CorrectionHighUScaledContract		norm_num:1	GeneralCK.CorrectionFamilyAssembly:1;GeneralCK.CorrectionInteriorRatioBridge:1
+GeneralCK.CorrectionInteriorRatioBridge	1	28	1156	GeneralCK.CorrectionInteriorRatioBridge			GeneralCK.CorrectionHessianNatural:1
+GeneralCK.CorrectionRatioBellmanClosure	1	84	4113	GeneralCK.CorrectionRatioBellmanClosure			GeneralCK.CorrectionRatioGlobalBridge:1;GeneralCK.CanonicalCKClosure:1
+GeneralCK.CorrectionRatioGlobalBridge	1	117	5380	GeneralCK.CorrectionRatioGlobalBridge			GeneralCK.CorrectionInteriorRatioBridge:1;GeneralCK.CorrectionConvexityCriterion:1
+GeneralCK.CubeAnalysis	1	111	5158	GeneralCK.CubeAnalysis			GeneralCK.BellmanStatement:1;GeneralCK.ProfileBasics:1
+GeneralCK.DeterministicCap	1	95	4605	GeneralCK.DeterministicCap			GeneralCK.ProfileConvexity:1;GeneralCK.InformationIdentity:1;GeneralCK.FiniteLaw:1
+GeneralCK.DiagnosticParentActivity	1	239	11002	GeneralCK.DiagnosticParentActivity		norm_num:46	GeneralCK.LeftStationaryHybridReplacement:1;GeneralCK.PureGapZeroCapRightRadialTangentBound:1;GeneralCK.PureGapZeroCapLeftStationaryThetaBracketBridge:1;GeneralCK.PsiOuterEntropy2048:1
+GeneralCK.Distribution	1	47	1625	GeneralCK.Distribution			GeneralCK.Statement:1
+GeneralCK.EnergyIdentity	1	73	2811	GeneralCK.EnergyIdentity		rfl:1	GeneralCK.CubeAnalysis:1
+GeneralCK.EntropyComparison	1	134	5577	GeneralCK.EntropyComparison		norm_num:1	GeneralCK.ProfileBasics:1;GeneralCK.EtaMonotone:1;Mathlib.Analysis.Calculus.MeanValue:1
+GeneralCK.EntropyCurvatureDefs	1	23	946	GeneralCK.EntropyCurvatureDefs			GeneralCK.EntropyRadialDerivatives:1;GeneralCK.ProfileConvexity:1
+GeneralCK.EntropyCurvatureLargeTail	1	120	4593	GeneralCK.EntropyCurvatureLargeTail		norm_num:5	GeneralCK.EntropyCurvatureDefs:1
+GeneralCK.EntropyCurvatureReduction	1	207	8849	GeneralCK.EntropyCurvatureReduction		norm_num:2;rfl:2	GeneralCK.EntropyCurvatureDefs:1
+GeneralCK.EntropyCurvatureSmallTail	1	116	4781	GeneralCK.EntropyCurvatureSmallTail		norm_num:12	GeneralCK.EntropyCurvatureDefs:1;GeneralCK.SmallMeanAnalytic:1;GeneralCK.MixedTails:1
+GeneralCK.EntropyCurvatureStrict	1	87	3105	GeneralCK.EntropyCurvatureStrict		norm_num:3	GeneralCK.PhysicalSlope:1;GeneralCK.EntropyRadialDerivatives:1;GeneralCK.Certificates.PilotData:1
+GeneralCK.EntropyFlow	1	160	7076	GeneralCK.EntropyFlow		norm_num:1;rfl:1	GeneralCK.CubeAnalysis:1;GeneralCK.NoiseEvolution:1;GeneralCK.EntropyComparison:1;GeneralCK.EnergyIdentity:1;Mathlib.Analysis.Convex.Jensen:1
+GeneralCK.EntropyParabola	1	45	1618	GeneralCK.EntropyParabola		norm_num:1	GeneralCK.SmallMeanEstimates:1
+GeneralCK.EntropyRadialDerivatives	1	145	6655	GeneralCK.EntropyRadialDerivatives		norm_num:6	GeneralCK.RadialDerivatives:1;GeneralCK.MixedDerivative:1;GeneralCK.RadialConvexity:1
+GeneralCK.EqualEntropy	1	26	1174	GeneralCK.EqualEntropy			GeneralCK.FourMomentDefs:1;GeneralCK.RadialFourPoint:1;GeneralCK.FourMomentLowerBound:1
+GeneralCK.EqualMean	1	60	2538	GeneralCK.EqualMean		norm_num:6	GeneralCK.PhiEntropyConvexity:1;GeneralCK.BellmanAssembly:1;GeneralCK.LogSum:1
+GeneralCK.EtaMonotone	1	66	2513	GeneralCK.EtaMonotone		norm_num:2;rfl:1	GeneralCK.ProfileBasics:1
+GeneralCK.FCActive	1	283	13312	GeneralCK.FCActive		norm_num:11;rfl:2	GeneralCK.FCAnalytic:1;GeneralCK.FCAnalytic2:1
+GeneralCK.FCAnalytic	1	202	9255	GeneralCK.FCAnalytic		norm_num:18;rfl:1	GeneralCK.OppositeCornerPhiAffineCertificate:1;GeneralCK.PsiExtendedEntropyCurvature:1;GeneralCK.EntropyParabola:1
+GeneralCK.FCAnalytic#*	1	191	7929	GeneralCK.FCAnalytic2		norm_num:25	GeneralCK.OppositeCornerPhiAffineCertificate:1;GeneralCK.RadialConcavity:1;GeneralCK.Certificates.PilotData:1
+GeneralCK.FCCapped	1	154	6713	GeneralCK.FCCapped		rfl:3	GeneralCK.FCRay:1;GeneralCK.FCPilotFace:1
+GeneralCK.FCCappedScalar	1	297	14806	GeneralCK.FCCappedScalar		norm_num:3	GeneralCK.FCSharp500:1;GeneralCK.FCContact:1;GeneralCK.FCOwnerFinal:1
+GeneralCK.FCConst	1	185	8363	GeneralCK.FCConst		norm_num:9	GeneralCK.FCSharp:1
+GeneralCK.FCContact	1	99	4162	GeneralCK.FCContact			GeneralCK.FCCapped:1
+GeneralCK.FCDecrement	1	158	7126	GeneralCK.FCDecrement		norm_num:9	GeneralCK.FCContact:1
+GeneralCK.FCEtaPoints	1	164	7181	GeneralCK.FCEtaPoints		norm_num:44	GeneralCK.FCDecrement:1
+GeneralCK.FCFinalCheck	1	55	2061	GeneralCK.FCFinalCheck			GeneralCK.FCCappedScalar:1
+GeneralCK.FCOwner	1	50	1999	GeneralCK.FCOwner		rfl:1	GeneralCK.FCRayMain:1
+GeneralCK.FCOwnerFinal	1	44	1585	GeneralCK.FCOwnerFinal			GeneralCK.FCCapped:1;GeneralCK.FCOwner:1
+GeneralCK.FCPilotFace	1	165	7459	GeneralCK.FCPilotFace		norm_num:1;rfl:7	GeneralCK.OppositeCornerPhiAffineCertificate:1
+GeneralCK.FCRay	1	155	6549	GeneralCK.FCRay		norm_num:10	GeneralCK.FCActive:1;GeneralCK.EntropyRadialDerivatives:1
+GeneralCK.FCRayMain	1	205	9925	GeneralCK.FCRayMain		norm_num:3	GeneralCK.FCRay:1;GeneralCK.FCPilotFace:1
+GeneralCK.FCSharp	1	293	13614	GeneralCK.FCSharp		norm_num:49	GeneralCK.FCEtaPoints:1
+GeneralCK.FCSharp#*	1	117	5609	GeneralCK.FCSharp500		norm_num:8	GeneralCK.FCConst:1
+GeneralCK.FinalAssemblyAfterDiagnosticHybrid	1	176	7925	GeneralCK.FinalAssemblyAfterDiagnosticHybrid		norm_num:1	GeneralCK.DiagnosticParentActivity:1
+GeneralCK.FinalAssemblyAfterSmallBoundary	1	112	4846	GeneralCK.FinalAssemblyAfterSmallBoundary		norm_num:1	GeneralCK.SmallBoundaryPhiCompactClosure:1;GeneralCK.SmallBoundaryPhiLowContactClosure:1
+GeneralCK.FinalProductionAssemblyPositiveCutoff	1	121	5441	GeneralCK.FinalProductionAssemblyPositiveCutoff			GeneralCK.PureGapPositiveCutoffMinimizerRepair:1;GeneralCK.FinalAssemblyAfterSmallBoundary:1;GeneralCK.PsiFullBiasTail8FinalBridge:1
+GeneralCK.FiniteLaw	1	184	8297	GeneralCK.FiniteLaw		rfl:8	GeneralCK.EtaMonotone:1;Mathlib.Analysis.Convex.Jensen:1
+GeneralCK.FourMomentDefs	1	23	876	GeneralCK.FourMomentDefs			GeneralCK.BellmanAssembly:1
+GeneralCK.FourMomentLowerBound	1	76	3761	GeneralCK.FourMomentLowerBound		rfl:1	GeneralCK.FourMomentDefs:1;GeneralCK.RadialConvexity:1
+GeneralCK.FourMomentScalarBounds	1	20	905	GeneralCK.FourMomentScalarBounds			GeneralCK.Reflection:1;GeneralCK.CorrectionGlobalConvexity:1;GeneralCK.FourMomentLowerBound:1
+GeneralCK.InformationIdentity	1	148	5422	GeneralCK.InformationIdentity		norm_num:1;rfl:3	GeneralCK.Distribution:1
+GeneralCK.LanePHMC.Chain	1	59	2698	GeneralCK.LanePHMC.Chain		norm_num:1	GeneralCK.LanePHMC.Reduce:1;E8GlobalRatioCertificate:1
+GeneralCK.LanePHMC.Reduce	1	101	4943	GeneralCK.LanePHMC.Reduce		norm_num:1	GeneralCK.PureGapAnalyticClosure:1;GeneralCK.PureGapHalfMeanAnalytic:1;GeneralCK.PureGapHalfMeanOwner:1;GeneralCK.PureGapE8HalfMean:1;GeneralCK.PureGapE8Inverse:1
+GeneralCK.LaneRB#*	1	86	3881	GeneralCK.LaneRB2OwnerActual		norm_num:3	GeneralCK.Certificates.LaneRB2WaveV2.Coverage:1;GeneralCK.CorrectionFamilyAssembly:1
+GeneralCK.LeftStationaryHybridReplacement	1	160	7198	GeneralCK.LeftStationaryHybridReplacement		norm_num:2	GeneralCK.PureGapCanonicalFormula:1;GeneralCK.RemainingBellman:1
+GeneralCK.LimitTransfer	1	51	2013	GeneralCK.LimitTransfer		norm_num:2	GeneralCK.Regularization:1
+GeneralCK.LogSum	1	292	13749	GeneralCK.LogSum		norm_num:6	GeneralCK.FiniteLaw:1;Mathlib.Analysis.Calculus.MeanValue:1
+GeneralCK.LowInformationMeans	1	170	7841	GeneralCK.LowInformationMeans		norm_num:4;rfl:4	GeneralCK.SmallMeanMeans:1;GeneralCK.Certificates.MixedConstants:1
+GeneralCK.LowInformationProfile	1	89	3700	GeneralCK.LowInformationProfile			GeneralCK.PhysicalSlope:1;GeneralCK.ScalarGap:1
+GeneralCK.LowInformationRegion	1	80	3743	GeneralCK.LowInformationRegion		norm_num:1	GeneralCK.LowInformationProfile:1;GeneralCK.LowInformationMeans:1;GeneralCK.BellmanSymmetry:1;GeneralCK.LogSum:1;GeneralCK.DeterministicCap:1
+GeneralCK.MixedDerivative	1	24	1137	GeneralCK.MixedDerivative			GeneralCK.RadialDerivatives:1;GeneralCK.MixedTails:1;GeneralCK.Certificates.MixedCertificate:1
+GeneralCK.MixedTails	1	272	10885	GeneralCK.MixedTails		norm_num:14	GeneralCK.Certificates.MixedBounds:1;GeneralCK.Certificates.MixedConstants:1;GeneralCK.ProfileDerivatives:1
+GeneralCK.NoiseEvolution	1	156	6389	GeneralCK.NoiseEvolution		rfl:2	GeneralCK.InformationIdentity:1;Mathlib.Analysis.SpecialFunctions.ExpDeriv:1
+GeneralCK.OppositeCornerPhiAffineCertificate	1	68	3062	GeneralCK.OppositeCornerPhiAffineCertificate		rfl:1	GeneralCK.FinalProductionAssemblyPositiveCutoff:1;GeneralCK.PsiAffineChildCertificate:1
+GeneralCK.PerspectiveCurve	1	60	2847	GeneralCK.PerspectiveCurve		norm_num:4	GeneralCK.EntropyRadialDerivatives:1;GeneralCK.RadialZeroBoundary:1
+GeneralCK.PhiBranchClosure	1	83	3486	GeneralCK.PhiBranchClosure			GeneralCK.FourMomentScalarBounds:1;GeneralCK.RemainingBellman:1;GeneralCK.EqualEntropy:1
+GeneralCK.PhiEntropyConvexity	1	69	3089	GeneralCK.PhiEntropyConvexity		rfl:1	GeneralCK.EntropyCurvatureLargeTail:1;GeneralCK.EntropyCurvatureSmallTail:1;GeneralCK.EntropyCurvatureReduction:1;GeneralCK.EntropyCurvatureStrict:1;GeneralCK.Certificates.EntropyCurvatureCertificate:1
+GeneralCK.PhysicalSlope	1	144	6199	GeneralCK.PhysicalSlope		norm_num:10	GeneralCK.ProfileIncreasingCurvature:1
+GeneralCK.ProfileBasics	1	88	3468	GeneralCK.ProfileBasics		norm_num:2;rfl:1	GeneralCK.BellmanStatement:1
+GeneralCK.ProfileConvexity	1	163	6704	GeneralCK.ProfileConvexity		norm_num:8	GeneralCK.ProfileDerivatives:1;Mathlib.Analysis.Convex.Deriv:1
+GeneralCK.ProfileDerivatives	1	104	4173	GeneralCK.ProfileDerivatives		rfl:1	GeneralCK.EntropyComparison:1;Mathlib.Analysis.Calculus.Deriv.Inverse:1;Mathlib.Topology.Order.MonotoneContinuity:1
+GeneralCK.ProfileIncreasingCurvature	1	235	10062	GeneralCK.ProfileIncreasingCurvature		norm_num:19	GeneralCK.ProfileConvexity:1;GeneralCK.ProfileLowerBounds:1;GeneralCK.Certificates.PilotData:1;Mathlib.Tactic.GCongr:1
+GeneralCK.ProfileLowerBounds	1	103	4426	GeneralCK.ProfileLowerBounds		norm_num:2	GeneralCK.ProfileConvexity:1
+GeneralCK.PsiAffineChildCertificate	1	182	8655	GeneralCK.PsiAffineChildCertificate		rfl:1	GeneralCK.PsiEndpointPlaneSymmetric:1;GeneralCK.EqualMean:1
+GeneralCK.PsiAfterCornerClosure	1	113	5207	GeneralCK.PsiAfterCornerClosure			GeneralCK.PsiAfterTailClosure:1;GeneralCK.PsiEndpointBellman:1;GeneralCK.PsiOppositeBoundaryOwner:1;GeneralCK.PsiOppositeLowEntropyOwner:1
+GeneralCK.PsiAfterTailClosure	1	40	1595	GeneralCK.PsiAfterTailClosure			GeneralCK.PsiSameRatioTail:1
+GeneralCK.PsiAnalyticCKClosure	1	31	1386	GeneralCK.PsiAnalyticCKClosure			GeneralCK.PsiAfterCornerClosure:1
+GeneralCK.PsiBalancedMeans	1	111	5461	GeneralCK.PsiBalancedMeans		norm_num:8	GeneralCK.PsiEndpointPlaneSymmetric:1;GeneralCK.EqualMean:1
+GeneralCK.PsiBoundaryAnalyticBridge	1	342	17854	GeneralCK.PsiBoundaryAnalyticBridge		norm_num:7	GeneralCK.PsiScalarOwnerCore:1
+GeneralCK.PsiBoundaryLeafReplay	1	1013	50656	GeneralCK.PsiBoundaryLeafReplay		norm_num:516;rfl:50	GeneralCK.PsiScalarOwnerCore:1;Mathlib.Analysis.Complex.ExponentialBounds:1
+GeneralCK.PsiCentralAnalyticClosure	1	152	7247	GeneralCK.PsiCentralAnalyticClosure			GeneralCK.PsiCompactAnalyticClosure:1;GeneralCK.PsiCentralEntropy1024:1
+GeneralCK.PsiCentralEntropy#*	1	354	16707	GeneralCK.PsiCentralEntropy1024		norm_num:18;rfl:1	GeneralCK.PsiOuterEntropy200:1;GeneralCK.PsiFourRatioBridge:1;GeneralCK.PsiSmallDistanceLowEntropy:1
+GeneralCK.PsiCentralFullBiasWedges	1	247	11633	GeneralCK.PsiCentralFullBiasWedges		norm_num:3	GeneralCK.PsiCentralTwentyFourWedge:1
+GeneralCK.PsiCentralSixteenWedge	1	322	14568	GeneralCK.PsiCentralSixteenWedge		norm_num:44	GeneralCK.PsiThreeTenthsTail28:1
+GeneralCK.PsiCentralTwentyFourWedge	1	275	12974	GeneralCK.PsiCentralTwentyFourWedge		norm_num:32	GeneralCK.PsiCentralSixteenWedge:1
+GeneralCK.PsiChildEntropyCoupling	1	71	3135	GeneralCK.PsiChildEntropyCoupling			GeneralCK.PsiExtendedEntropyCurvature:1;GeneralCK.PsiSignedSplit:1
+GeneralCK.PsiCompactAnalyticClosure	1	132	6537	GeneralCK.PsiCompactAnalyticClosure			GeneralCK.PsiOuterEntropy2048:1;GeneralCK.PsiExtendedRegionClosure:1;GeneralCK.PsiAffineChildCertificate:1
+GeneralCK.PsiEighthBiasClosure	1	306	15107	GeneralCK.PsiEighthBiasClosure		norm_num:7	GeneralCK.PsiEntropy200Closure:1
+GeneralCK.PsiEndpointBellman	1	53	2252	GeneralCK.PsiEndpointBellman			GeneralCK.PsiEndpointPlaneGlobal:1;GeneralCK.PsiLargerEntropyLaw:1;GeneralCK.PsiOppositeCornerDomain:1;GeneralCK.PsiRegionLedger:1
+GeneralCK.PsiEndpointContact	1	363	16992	GeneralCK.PsiEndpointContact		norm_num:9	GeneralCK.CorrectionBasics:1
+GeneralCK.PsiEndpointContactGain	1	132	5877	GeneralCK.PsiEndpointContactGain			GeneralCK.PsiEndpointContact:1;GeneralCK.PsiEndpointLogCurvature:1;GeneralCK.PsiRetainedChildBridge:1
+GeneralCK.PsiEndpointLogCurvature	1	150	6819	GeneralCK.PsiEndpointLogCurvature		norm_num:17	GeneralCK.PsiEndpointLogGain:1
+GeneralCK.PsiEndpointLogGain	1	59	2375	GeneralCK.PsiEndpointLogGain		norm_num:1;rfl:1	GeneralCK.PsiExtendedEntropyCurvature:1;GeneralCK.PsiSignedSplit:1
+GeneralCK.PsiEndpointPlaneCoefficients	1	162	6809	GeneralCK.PsiEndpointPlaneCoefficients		norm_num:4	GeneralCK.PsiEndpointPlaneQuotientDefs:1;Mathlib.Analysis.Convex.Deriv:1;Mathlib.Analysis.SpecialFunctions.Log.NegMulLog:1
+GeneralCK.PsiEndpointPlaneCoordinates	1	115	4879	GeneralCK.PsiEndpointPlaneCoordinates			GeneralCK.PsiEndpointPlaneQuotientDefs:1;GeneralCK.PsiEndpointPlaneGraph:1
+GeneralCK.PsiEndpointPlaneDifferential	1	157	6887	GeneralCK.PsiEndpointPlaneDifferential			GeneralCK.PsiEndpointPlaneNoFold:1
+GeneralCK.PsiEndpointPlaneGlobal	1	107	4952	GeneralCK.PsiEndpointPlaneGlobal			GeneralCK.PsiEndpointPlaneMinimum:1;GeneralCK.PsiEndpointPlaneStationary:1;GeneralCK.PsiEndpointPlaneCoordinates:1;GeneralCK.PsiEndpointPlaneCoefficients:1;GeneralCK.PsiEndpointPlaneLaw:1
+GeneralCK.PsiEndpointPlaneGraph	1	208	9344	GeneralCK.PsiEndpointPlaneGraph			GeneralCK.PsiEndpointPlaneLevelUniqueness:1
+GeneralCK.PsiEndpointPlaneLaw	1	92	4138	GeneralCK.PsiEndpointPlaneLaw		norm_num:1	GeneralCK.PsiEndpointPlaneQuotientDefs:1;GeneralCK.PsiEndpointContactGain:1
+GeneralCK.PsiEndpointPlaneLevelUniqueness	1	109	4814	GeneralCK.PsiEndpointPlaneLevelUniqueness			GeneralCK.PsiEndpointPlaneDifferential:1;Mathlib.Analysis.Calculus.DerivativeTest:1;Mathlib.Topology.Order.Compact:1
+GeneralCK.PsiEndpointPlaneMinimum	1	216	10519	GeneralCK.PsiEndpointPlaneMinimum		norm_num:1	GeneralCK.PsiEndpointPlaneQuotientDefs:1;GeneralCK.ProfileDerivatives:1;Mathlib.Topology.Order.Compact:1
+GeneralCK.PsiEndpointPlaneNoFold	1	160	6513	GeneralCK.PsiEndpointPlaneNoFold		norm_num:1	Mathlib.Analysis.SpecialFunctions.Log.Deriv:1;Mathlib.Tactic.FieldSimp:1;Mathlib.Tactic.Linarith:1;Mathlib.Tactic.Ring:1;Mathlib.Tactic.NormNum:1
+GeneralCK.PsiEndpointPlaneQuotientDefs	1	19	687	GeneralCK.PsiEndpointPlaneQuotientDefs			GeneralCK.LogSum:1;GeneralCK.PsiEndpointPlaneNoFold:1
+GeneralCK.PsiEndpointPlaneStationary	1	142	6247	GeneralCK.PsiEndpointPlaneStationary			GeneralCK.PsiEndpointPlaneQuotientDefs:1;GeneralCK.ProfileDerivatives:1;Mathlib.Analysis.Calculus.LocalExtr.Basic:1
+GeneralCK.PsiEndpointPlaneSymmetric	1	92	4163	GeneralCK.PsiEndpointPlaneSymmetric			GeneralCK.PsiEndpointPlaneGlobal:1
+GeneralCK.PsiEntropy#*	1	135	6202	GeneralCK.PsiEntropy200Closure			GeneralCK.PsiOuterEntropy200:1;GeneralCK.PsiCentralAnalyticClosure:1
+GeneralCK.PsiEntropySlopeVariation	1	147	6992	GeneralCK.PsiEntropySlopeVariation		norm_num:5	GeneralCK.EntropyCurvatureReduction:1;GeneralCK.PureGapHalfMeanAnalytic:1
+GeneralCK.PsiExtendedEntropyCurvature	1	200	9269	GeneralCK.PsiExtendedEntropyCurvature		norm_num:8;rfl:1	GeneralCK.EntropyCurvatureReduction:1;GeneralCK.EntropyParabola:1;GeneralCK.Certificates.PilotData:1
+GeneralCK.PsiExtendedRegionClosure	1	143	6910	GeneralCK.PsiExtendedRegionClosure			GeneralCK.PsiPositiveEntropyClosure:1;GeneralCK.PsiSameRatioTail24:1;GeneralCK.PsiOuterEntropyExtension:1;GeneralCK.PsiBalancedMeans:1
+GeneralCK.PsiFeasibleImbalance	1	160	6422	GeneralCK.PsiFeasibleImbalance		norm_num:6	GeneralCK.PsiLogSumOwner:1
+GeneralCK.PsiFifthBiasAutomaticClosure	1	222	10792	GeneralCK.PsiFifthBiasAutomaticClosure		norm_num:7	GeneralCK.PsiParentFiveGain:1
+GeneralCK.PsiFifthBiasClosure	1	353	16949	GeneralCK.PsiFifthBiasClosure		norm_num:14	GeneralCK.PsiSixthBiasClosure:1
+GeneralCK.PsiFourFifteenthsParentClosure	1	156	8147	GeneralCK.PsiFourFifteenthsParentClosure		norm_num:10	GeneralCK.PsiParentFiveGainExtended:1;GeneralCK.PsiRatioEightContactRefinement:1
+GeneralCK.PsiFourRatioBridge	1	231	10382	GeneralCK.PsiFourRatioBridge		norm_num:37	GeneralCK.PsiEndpointPlaneSymmetric:1;GeneralCK.PsiLargerEntropyLaw:1
+GeneralCK.PsiGeneralLowEntropy	1	147	6947	GeneralCK.PsiGeneralLowEntropy		norm_num:1	GeneralCK.PsiFourRatioBridge:1;GeneralCK.PsiSmallDistanceLowEntropy:1;GeneralCK.PsiLowEntropyBias:1;GeneralCK.PsiEndpointBellman:1
+GeneralCK.PsiLargerEntropyLaw	1	118	5886	GeneralCK.PsiLargerEntropyLaw			GeneralCK.PsiLargerEntropyRedesign:1;GeneralCK.PsiParentDominance:1
+GeneralCK.PsiLargerEntropyRedesign	1	162	7542	GeneralCK.PsiLargerEntropyRedesign		norm_num:4	GeneralCK.PsiLowEntropyRedesign:1
+GeneralCK.PsiLogSumOwner	1	138	6170	GeneralCK.PsiLogSumOwner			GeneralCK.PsiRegionLedger:1;GeneralCK.LogSum:1
+GeneralCK.PsiLowEntropyBias	1	114	4647	GeneralCK.PsiLowEntropyBias		norm_num:19	GeneralCK.PsiParentPhiFloor:1;GeneralCK.PsiParentDominance:1
+GeneralCK.PsiLowEntropyLeafReplay	1	955	47223	GeneralCK.PsiLowEntropyLeafReplay		norm_num:233;rfl:5	GeneralCK.PsiScalarOwnerCore:1;GeneralCK.EtaMonotone:1;GeneralCK.Certificates.LogBounds:1
+GeneralCK.PsiLowEntropyRedesign	1	145	7099	GeneralCK.PsiLowEntropyRedesign		norm_num:1	GeneralCK.PsiParentEntropyGain:1;GeneralCK.PsiRadialDeficit:1;GeneralCK.PsiChildEntropyCoupling:1;GeneralCK.PsiSplitLossBound:1;GeneralCK.PsiEntropySlopeVariation:1
+GeneralCK.PsiModerateEntropy	1	269	14003	GeneralCK.PsiModerateEntropy		norm_num:6	GeneralCK.PsiEndpointBellman:1
+GeneralCK.PsiNormalizedLowEntropy	1	800	34841	GeneralCK.PsiNormalizedLowEntropy		norm_num:102;rfl:3	GeneralCK.PsiBoundaryAnalyticBridge:1;GeneralCK.Certificates.LogBounds:1;GeneralCK.EntropyParabola:1;GeneralCK.EntropyComparison:1;GeneralCK.ProfileConvexity:1
+GeneralCK.PsiOppositeBoundaryOwner	1	227	10286	GeneralCK.PsiOppositeBoundaryOwner	enh:1;enhanced:1	decide:1;norm_num:87;rfl:1	GeneralCK.PsiBoundaryLeafReplay:1;GeneralCK.PsiBoundaryAnalyticBridge:1;GeneralCK.PsiEndpointBellman:1
+GeneralCK.PsiOppositeCornerDomain	1	70	3047	GeneralCK.PsiOppositeCornerDomain		norm_num:9	GeneralCK.PsiRegionLedger:1;GeneralCK.PsiRetainedChildBridge:1
+GeneralCK.PsiOppositeLowEntropyOwner	1	91	4368	GeneralCK.PsiOppositeLowEntropyOwner			GeneralCK.PsiEndpointBellman:1;GeneralCK.PsiLowEntropyBias:1;GeneralCK.PsiSmallDistanceLowEntropy:1;GeneralCK.PsiFourRatioBridge:1
+GeneralCK.PsiOuterEntropyExtension	1	126	5506	GeneralCK.PsiOuterEntropyExtension		norm_num:29	GeneralCK.PsiModerateEntropy:1;GeneralCK.PsiParentPhiFloor:1
+GeneralCK.PsiParentContactEnvelope	1	153	7267	GeneralCK.PsiParentContactEnvelope		norm_num:11	GeneralCK.PsiOuterEntropy2048:1
+GeneralCK.PsiParentDominance	1	360	16402	GeneralCK.PsiParentDominance		norm_num:9	GeneralCK.PsiParentEntropyGain:1;GeneralCK.RadialDerivatives:1;GeneralCK.EntropyParabola:1
+GeneralCK.PsiParentElevenHalvesGain	1	143	7050	GeneralCK.PsiParentElevenHalvesGain		norm_num:34	GeneralCK.PsiFifthBiasAutomaticClosure:1
+GeneralCK.PsiParentEntropyGain	1	175	7219	GeneralCK.PsiParentEntropyGain		norm_num:3	GeneralCK.ProfileLowerBounds:1;GeneralCK.SmallMeanEstimates:1;GeneralCK.Certificates.PilotData:1
+GeneralCK.PsiParentFiveGain	1	122	5911	GeneralCK.PsiParentFiveGain		norm_num:29	GeneralCK.PsiFifthBiasClosure:1
+GeneralCK.PsiParentFiveGainExtended	1	134	6592	GeneralCK.PsiParentFiveGainExtended		norm_num:34	GeneralCK.PsiQuarterBiasClosure:1
+GeneralCK.PsiParentPhiFloor	1	67	2822	GeneralCK.PsiParentPhiFloor		norm_num:2	GeneralCK.PsiLowEntropyLeafReplay:1;GeneralCK.RadialContact:1
+GeneralCK.PsiParentPolynomialBounds	1	96	3120	GeneralCK.PsiParentPolynomialBounds		norm_num:4	GeneralCK.PsiOuterEntropy2048:1
+GeneralCK.PsiParentPolynomialBounds#*	1	33	1064	GeneralCK.PsiParentPolynomialBounds37			GeneralCK.PsiParentPolynomialBounds:1
+GeneralCK.PsiPositiveEntropyClosure	1	94	4749	GeneralCK.PsiPositiveEntropyClosure			GeneralCK.PsiAnalyticCKClosure:1;GeneralCK.PsiGeneralLowEntropy:1
+GeneralCK.PsiQuarterBiasClosure	1	356	17554	GeneralCK.PsiQuarterBiasClosure		norm_num:11	GeneralCK.PsiQuarterParentClosure:1
+GeneralCK.PsiQuarterParentClosure	1	203	9794	GeneralCK.PsiQuarterParentClosure		norm_num:19	GeneralCK.PsiParentElevenHalvesGain:1
+GeneralCK.PsiRadialDeficit	1	163	6796	GeneralCK.PsiRadialDeficit		norm_num:39	GeneralCK.EntropyRadialDerivatives:1;GeneralCK.RadialConcavity:1
+GeneralCK.PsiRatioEightContactRefinement	1	187	9164	GeneralCK.PsiRatioEightContactRefinement		norm_num:12	GeneralCK.PsiQuarterBiasClosure:1
+GeneralCK.PsiRegionLedger	1	126	5675	GeneralCK.PsiRegionLedger			GeneralCK.RemainingBellman:1
+GeneralCK.PsiRetainedChildBridge	1	139	6103	GeneralCK.PsiRetainedChildBridge		norm_num:3	GeneralCK.PsiChildEntropyCoupling:1;GeneralCK.BellmanAssembly:1
+GeneralCK.PsiSameRatioTail	1	253	10485	GeneralCK.PsiSameRatioTail		norm_num:39	GeneralCK.PsiLogSumOwner:1;GeneralCK.ScalarGap:1;GeneralCK.PhysicalSlope:1;GeneralCK.DeterministicCap:1;GeneralCK.Certificates.SmallMeanBounds:1
+GeneralCK.PsiScalarOwnerCore	1	125	5333	GeneralCK.PsiScalarOwnerCore		rfl:1	GeneralCK.PsiFeasibleImbalance:1
+GeneralCK.PsiSeventhBiasClosure	1	362	17361	GeneralCK.PsiSeventhBiasClosure		norm_num:5	GeneralCK.PsiEighthBiasClosure:1
+GeneralCK.PsiSignedSplit	1	118	4677	GeneralCK.PsiSignedSplit		norm_num:3	GeneralCK.LogSum:1
+GeneralCK.PsiSixthBiasClosure	1	402	19219	GeneralCK.PsiSixthBiasClosure		norm_num:11	GeneralCK.PsiSeventhBiasClosure:1
+GeneralCK.PsiSmallDistanceBounds	1	134	5639	GeneralCK.PsiSmallDistanceBounds		norm_num:28	GeneralCK.PsiEndpointPlaneSymmetric:1;GeneralCK.PsiParentEntropyGain:1;GeneralCK.EntropyParabola:1;GeneralCK.RadialConcavity:1
+GeneralCK.PsiSmallDistanceLowEntropy	1	190	8582	GeneralCK.PsiSmallDistanceLowEntropy		norm_num:6;rfl:1	GeneralCK.PsiSmallDistanceBounds:1
+GeneralCK.PsiSplitLossBound	1	146	6179	GeneralCK.PsiSplitLossBound		norm_num:4	GeneralCK.PsiSignedSplit:1;GeneralCK.LowInformationMeans:1
+GeneralCK.PsiThreeTenthsBiasClosure	1	90	4468	GeneralCK.PsiThreeTenthsBiasClosure			GeneralCK.PsiThreeTenthsRetainedWedge:1;GeneralCK.PsiThreeTenthsParentClosure:1
+GeneralCK.PsiThreeTenthsContactRefinement	1	148	7257	GeneralCK.PsiThreeTenthsContactRefinement		norm_num:18	GeneralCK.PsiTwoSeventhsBiasClosure:1;GeneralCK.PsiEndpointPlaneNoFold:1
+GeneralCK.PsiThreeTenthsParentClosure	1	195	9670	GeneralCK.PsiThreeTenthsParentClosure		norm_num:17	GeneralCK.PsiThreeTenthsParentGain:1;GeneralCK.PsiThreeTenthsContactRefinement:1
+GeneralCK.PsiThreeTenthsParentGain	1	147	7163	GeneralCK.PsiThreeTenthsParentGain		norm_num:37	GeneralCK.PsiTwoSeventhsBiasClosure:1
+GeneralCK.PsiThreeTenthsRetainedWedge	1	213	10666	GeneralCK.PsiThreeTenthsRetainedWedge		norm_num:10	GeneralCK.PsiThreeTenthsParentClosure:1
+GeneralCK.PsiThreeTenthsTail#*	1	75	2860	GeneralCK.PsiThreeTenthsTail28			GeneralCK.PsiOuterEntropy28:1;GeneralCK.PsiThreeTenthsCentralTail37:1
+GeneralCK.PsiTwoSeventhsBiasClosure	1	93	4770	GeneralCK.PsiTwoSeventhsBiasClosure			GeneralCK.PsiTwoSeventhsRetainedWedge:1;GeneralCK.PsiTwoSeventhsParentClosure:1
+GeneralCK.PsiTwoSeventhsParentClosure	1	162	8187	GeneralCK.PsiTwoSeventhsParentClosure		norm_num:19	GeneralCK.PsiFourFifteenthsParentClosure:1
+GeneralCK.PsiTwoSeventhsRetainedWedge	1	213	10662	GeneralCK.PsiTwoSeventhsRetainedWedge		norm_num:10	GeneralCK.PsiFourFifteenthsParentClosure:1
+GeneralCK.PureGapAnalyticClosure	1	148	7458	GeneralCK.PureGapAnalyticClosure		norm_num:2;rfl:1	GeneralCK.PureGapD0Origin:1;GeneralCK.PureGapCapAnalytic:1;GeneralCK.PureGapE8LargeSConsumer:1
+GeneralCK.PureGapCanonicalFormula	1	46	2045	GeneralCK.PureGapCanonicalFormula			GeneralCK.PureGapEntropyRearrangement:1
+GeneralCK.PureGapCapAnalytic	1	86	3885	GeneralCK.PureGapCapAnalytic		norm_num:1	GeneralCK.PureGapCapFiberOwner:1;GeneralCK.PureGapHalfMeanAnalytic:1
+GeneralCK.PureGapCapFiberOwner	1	229	10688	GeneralCK.PureGapCapFiberOwner			GeneralCK.PureGapSeamOwner:1
+GeneralCK.PureGapCapZeroReduction	1	340	15740	GeneralCK.PureGapCapZeroReduction		norm_num:15;rfl:5	GeneralCK.PureGapCapAnalytic:1;GeneralCK.DeterministicCap:1;GeneralCK.ProfileLowerBounds:1;GeneralCK.PhiEntropyConvexity:1
+GeneralCK.PureGapCompactMean	1	237	10720	GeneralCK.PureGapCompactMean		norm_num:3	GeneralCK.PureGapCanonicalFormula:1
+GeneralCK.PureGapDoubleCapBatchJointOwnerAdapter	1	40	1627	GeneralCK.PureGapDoubleCapBatchJointOwnerAdapter			GeneralCK.PureGapDoubleCapLowFirstFifthAssembly:1;GeneralCK.Certificates.Generated.DoubleCapMiddleAggregation:1;GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.All:1;GeneralCK.PureGapDoubleCapLowTailNearZeroOwnerAdapter:1
+GeneralCK.PureGapDoubleCapBiasChecker	1	128	5398	GeneralCK.PureGapDoubleCapBiasChecker		rfl:2	GeneralCK.PureGapDoubleCapSlopeCertificate:1;GeneralCK.Certificates.SmallMeanSlopeBounds:1;GeneralCK.Certificates.RegularContactBounds:1;GeneralCK.CorrectionHessianNatural:1
+GeneralCK.PureGapDoubleCapHighMiddleDerivativeAggregate	1	50	2273	GeneralCK.PureGapDoubleCapHighMiddleDerivativeAggregate		norm_num:3	GeneralCK.PureGapDoubleCapHighMiddleImplicitDerivativeAdapters:1;GeneralCK.PureGapDoubleCapHighTailSevenSixteenthsActualSign:1
+GeneralCK.PureGapDoubleCapHighMiddleDerivativeChecker	1	50	1939	GeneralCK.PureGapDoubleCapHighMiddleDerivativeChecker			GeneralCK.PureGapDoubleCapHighMiddleDerivativeCoverage:1;GeneralCK.ReflectionContactInverse:1
+GeneralCK.PureGapDoubleCapHighMiddleDerivativeCoverage	1	74	2895	GeneralCK.PureGapDoubleCapHighMiddleDerivativeCoverage		decide:1;norm_num:4	GeneralCK.PureGapDoubleCapHighTailSevenSixteenthsActualSign:1
+GeneralCK.PureGapDoubleCapHighMiddleDerivativeIdentity	1	102	4321	GeneralCK.PureGapDoubleCapHighMiddleDerivativeIdentity			GeneralCK.PureGapDoubleCapHighMiddleDerivativeChecker:1;GeneralCK.CorrectionHessianNatural:1
+GeneralCK.PureGapDoubleCapHighMiddleDerivativeOwnerAdapter	1	61	2308	GeneralCK.PureGapDoubleCapHighMiddleDerivativeOwnerAdapter		rfl:1	GeneralCK.PureGapDoubleCapHighMiddleDerivativeAggregate:1
+GeneralCK.PureGapDoubleCapHighMiddleDerivativeTraceForm	1	34	1179	GeneralCK.PureGapDoubleCapHighMiddleDerivativeTraceForm			GeneralCK.PureGapDoubleCapHighMiddleDerivativeChecker:1
+GeneralCK.PureGapDoubleCapHighMiddleDerivativeValueAdapter	1	64	2584	GeneralCK.PureGapDoubleCapHighMiddleDerivativeValueAdapter			GeneralCK.PureGapDoubleCapHighMiddleDerivativeOwnerAdapter:1
+GeneralCK.PureGapDoubleCapHighMiddleImplicitDerivativeAdapters	1	163	6720	GeneralCK.PureGapDoubleCapHighMiddleImplicitDerivativeAdapters		rfl:4	GeneralCK.PureGapDoubleCapHighMiddleDerivativeIdentity:1;GeneralCK.EntropyComparison:1
+GeneralCK.PureGapDoubleCapHighTailActualSign	1	181	7151	GeneralCK.PureGapDoubleCapHighTailActualSign		norm_num:6;rfl:1	GeneralCK.PureGapDoubleCapHighTailSign:1;GeneralCK.PureGapDoubleCapHighTailRational:1
+GeneralCK.PureGapDoubleCapHighTailFifteenthThirtySecondsActualSign	1	163	6524	GeneralCK.PureGapDoubleCapHighTailFifteenthThirtySecondsActualSign		norm_num:6;rfl:1	GeneralCK.PureGapDoubleCapHighTailFifteenthThirtySecondsContact:1;GeneralCK.PureGapDoubleCapHighTailFifteenthThirtySecondsRational:1
+GeneralCK.PureGapDoubleCapHighTailFifteenthThirtySecondsContact	1	121	4945	GeneralCK.PureGapDoubleCapHighTailFifteenthThirtySecondsContact		norm_num:5	GeneralCK.PureGapDoubleCapHighTailSign:1;GeneralCK.PureGapDoubleCapHighTailFifteenthThirtySecondsIdentity:1
+GeneralCK.PureGapDoubleCapHighTailFifteenthThirtySecondsHybridOwnerAdapter	1	67	2960	GeneralCK.PureGapDoubleCapHighTailFifteenthThirtySecondsHybridOwnerAdapter		norm_num:2	GeneralCK.PureGapDoubleCapHighTailFifteenthThirtySecondsValue:1;GeneralCK.PureGapDoubleCapHighTailHybridOwnerAdapter:1
+GeneralCK.PureGapDoubleCapHighTailFifteenthThirtySecondsIdentity	1	69	2658	GeneralCK.PureGapDoubleCapHighTailFifteenthThirtySecondsIdentity		norm_num:3	GeneralCK.PureGapDoubleCapHighTailIdentity:1
+GeneralCK.PureGapDoubleCapHighTailFifteenthThirtySecondsRational	1	75	2947	GeneralCK.PureGapDoubleCapHighTailFifteenthThirtySecondsRational		norm_num:4;rfl:1	GeneralCK.PureGapDoubleCapHighTailRational:1
+GeneralCK.PureGapDoubleCapHighTailFifteenthThirtySecondsValue	1	53	2133	GeneralCK.PureGapDoubleCapHighTailFifteenthThirtySecondsValue			GeneralCK.PureGapDoubleCapHighTailFifteenthThirtySecondsActualSign:1
+GeneralCK.PureGapDoubleCapHighTailHybridOwnerAdapter	1	40	1673	GeneralCK.PureGapDoubleCapHighTailHybridOwnerAdapter		norm_num:2	GeneralCK.PureGapDoubleCapHighTailActualSign:1
+GeneralCK.PureGapDoubleCapHighTailIdentity	1	157	6158	GeneralCK.PureGapDoubleCapHighTailIdentity		norm_num:3	GeneralCK.SmallMeanCapTailBounds:1;GeneralCK.ReflectionRegularContact:1;GeneralCK.ProfileBasics:1;GeneralCK.PureGapCapZeroReduction:1
+GeneralCK.PureGapDoubleCapHighTailRational	1	58	2140	GeneralCK.PureGapDoubleCapHighTailRational		norm_num:4;rfl:1	GeneralCK.SmallMeanCapTailBounds:1
+GeneralCK.PureGapDoubleCapHighTailSevenSixteenthsActualSign	1	163	6445	GeneralCK.PureGapDoubleCapHighTailSevenSixteenthsActualSign		norm_num:6;rfl:1	GeneralCK.PureGapDoubleCapHighTailSevenSixteenthsContact:1;GeneralCK.PureGapDoubleCapHighTailSevenSixteenthsRational:1
+GeneralCK.PureGapDoubleCapHighTailSevenSixteenthsContact	1	121	4918	GeneralCK.PureGapDoubleCapHighTailSevenSixteenthsContact		norm_num:5	GeneralCK.PureGapDoubleCapHighTailSign:1;GeneralCK.PureGapDoubleCapHighTailSevenSixteenthsIdentity:1
+GeneralCK.PureGapDoubleCapHighTailSevenSixteenthsHybridOwnerAdapter	1	67	2929	GeneralCK.PureGapDoubleCapHighTailSevenSixteenthsHybridOwnerAdapter		norm_num:2	GeneralCK.PureGapDoubleCapHighTailSevenSixteenthsValue:1;GeneralCK.PureGapDoubleCapHighTailFifteenthThirtySecondsHybridOwnerAdapter:1
+GeneralCK.PureGapDoubleCapHighTailSevenSixteenthsIdentity	1	71	2730	GeneralCK.PureGapDoubleCapHighTailSevenSixteenthsIdentity		norm_num:3	GeneralCK.PureGapDoubleCapHighTailFifteenthThirtySecondsIdentity:1;GeneralCK.LowInformationMeans:1
+GeneralCK.PureGapDoubleCapHighTailSevenSixteenthsRational	1	72	2847	GeneralCK.PureGapDoubleCapHighTailSevenSixteenthsRational		norm_num:4;rfl:1	GeneralCK.PureGapDoubleCapHighTailRational:1
+GeneralCK.PureGapDoubleCapHighTailSevenSixteenthsValue	1	53	2096	GeneralCK.PureGapDoubleCapHighTailSevenSixteenthsValue			GeneralCK.PureGapDoubleCapHighTailSevenSixteenthsActualSign:1
+GeneralCK.PureGapDoubleCapHighTailSign	1	123	5020	GeneralCK.PureGapDoubleCapHighTailSign		norm_num:5	GeneralCK.PureGapDoubleCapOuterSlopeChecker:1;GeneralCK.PureGapDoubleCapHighTailIdentity:1;GeneralCK.PureGapDoubleCapHighTailRational:1
+GeneralCK.PureGapDoubleCapLowFirstFifthAssembly	1	20	803	GeneralCK.PureGapDoubleCapLowFirstFifthAssembly			GeneralCK.PureGapDoubleCapLowTailActualSign:1;GeneralCK.Certificates.Generated.DoubleCapLowMiddleAggregation.All:1
+GeneralCK.PureGapDoubleCapLowTailActualDiagonalMargin	1	24	924	GeneralCK.PureGapDoubleCapLowTailActualDiagonalMargin			GeneralCK.PureGapDoubleCapLowTailYThreeQuarters:1;GeneralCK.PureGapDoubleCapLowTailLinearSeparation:1
+GeneralCK.PureGapDoubleCapLowTailActualSecant	1	117	5039	GeneralCK.PureGapDoubleCapLowTailActualSecant			GeneralCK.PureGapDoubleCapLowTailUniformSecantAlgebra:1;GeneralCK.PureGapDoubleCapLowTailContactLossSecant:1;GeneralCK.PureGapDoubleCapLowTailLinearSeparation:1
+GeneralCK.PureGapDoubleCapLowTailActualSign	1	92	3948	GeneralCK.PureGapDoubleCapLowTailActualSign		rfl:1	GeneralCK.PureGapDoubleCapLowTailActualSecant:1;GeneralCK.PureGapDoubleCapOuterSlopeChecker:1
+GeneralCK.PureGapDoubleCapLowTailContactGainDerivative	1	49	1796	GeneralCK.PureGapDoubleCapLowTailContactGainDerivative		norm_num:1	GeneralCK.PureGapDoubleCapLowTailActualDiagonalMargin:1;GeneralCK.Certificates.MixedConstants:1
+GeneralCK.PureGapDoubleCapLowTailContactLossBridge	1	60	2364	GeneralCK.PureGapDoubleCapLowTailContactLossBridge		rfl:1	GeneralCK.PureGapDoubleCapLowTailContactGainDerivative:1
+GeneralCK.PureGapDoubleCapLowTailContactLossSecant	1	65	2523	GeneralCK.PureGapDoubleCapLowTailContactLossSecant			GeneralCK.PureGapDoubleCapLowTailContactLossBridge:1;GeneralCK.PureGapDoubleCapLowTailRatioIncrement:1
+GeneralCK.PureGapDoubleCapLowTailCoupling	1	162	6223	GeneralCK.PureGapDoubleCapLowTailCoupling			GeneralCK.PureGapDoubleCapSlopeCertificate:1;GeneralCK.ReflectionDiagonalPositive:1;GeneralCK.CorrectionHessianNatural:1
+GeneralCK.PureGapDoubleCapLowTailDiagonalBias	1	36	1317	GeneralCK.PureGapDoubleCapLowTailDiagonalBias			GeneralCK.PureGapDoubleCapLowTailLinearSeparation:1;GeneralCK.PureGapDoubleCapOuterSlopeChecker:1;GeneralCK.SmallMeanCapTailBounds:1
+GeneralCK.PureGapDoubleCapLowTailDiagonalMarginDerivative	1	49	1934	GeneralCK.PureGapDoubleCapLowTailDiagonalMarginDerivative		norm_num:1	GeneralCK.PureGapDoubleCapLowTailDiagonalBias:1;GeneralCK.SmallMeanAnalytic:1
+GeneralCK.PureGapDoubleCapLowTailDiagonalMarginPositive	1	82	3382	GeneralCK.PureGapDoubleCapLowTailDiagonalMarginPositive		norm_num:3	GeneralCK.PureGapDoubleCapLowTailDiagonalMarginDerivative:1;GeneralCK.Certificates.MixedConstants:1
+GeneralCK.PureGapDoubleCapLowTailDiagonalQuantitative	1	48	1857	GeneralCK.PureGapDoubleCapLowTailDiagonalQuantitative			GeneralCK.PureGapDoubleCapLowTailHighBiasAnchors:1;GeneralCK.PureGapDoubleCapLowTailDiagonalBias:1
+GeneralCK.PureGapDoubleCapLowTailHalfGap	1	65	2693	GeneralCK.PureGapDoubleCapLowTailHalfGap		norm_num:5	GeneralCK.PureGapDoubleCapLowTailYThreeQuarters:1;GeneralCK.PsiNormalizedLowEntropy:1
+GeneralCK.PureGapDoubleCapLowTailHighBiasAnchors	1	101	3761	GeneralCK.PureGapDoubleCapLowTailHighBiasAnchors		norm_num:7	GeneralCK.PureGapDoubleCapLowTailHalfGap:1;GeneralCK.Certificates.MixedConstants:1
+GeneralCK.PureGapDoubleCapLowTailLinearSeparation	1	52	2149	GeneralCK.PureGapDoubleCapLowTailLinearSeparation			GeneralCK.PureGapDoubleCapLowTailSeparationQuotient:1
+GeneralCK.PureGapDoubleCapLowTailNearZeroOwnerAdapter	1	25	903	GeneralCK.PureGapDoubleCapLowTailNearZeroOwnerAdapter		norm_num:2	GeneralCK.PureGapDoubleCapLowTailActualSign:1;GeneralCK.PureGapDoubleCapHighTailSevenSixteenthsHybridOwnerAdapter:1
+GeneralCK.PureGapDoubleCapLowTailRatioIncrement	1	70	3194	GeneralCK.PureGapDoubleCapLowTailRatioIncrement			GeneralCK.PureGapDoubleCapLowTailCoupling:1
+GeneralCK.PureGapDoubleCapLowTailSeparation	1	93	3683	GeneralCK.PureGapDoubleCapLowTailSeparation			GeneralCK.PureGapDoubleCapLowTailRatioIncrement:1
+GeneralCK.PureGapDoubleCapLowTailSeparationQuotient	1	32	1215	GeneralCK.PureGapDoubleCapLowTailSeparationQuotient			GeneralCK.PureGapDoubleCapLowTailSeparation:1
+GeneralCK.PureGapDoubleCapLowTailUniformSecantAlgebra	1	71	3014	GeneralCK.PureGapDoubleCapLowTailUniformSecantAlgebra		norm_num:7	GeneralCK.PureGapDoubleCapLowTailDiagonalQuantitative:1
+GeneralCK.PureGapDoubleCapLowTailYThreeQuarters	1	31	1227	GeneralCK.PureGapDoubleCapLowTailYThreeQuarters		norm_num:6	GeneralCK.PureGapDoubleCapLowTailDiagonalMarginPositive:1;GeneralCK.PsiNormalizedLowEntropy:1
+GeneralCK.PureGapDoubleCapOuterSlopeChecker	1	318	13392	GeneralCK.PureGapDoubleCapOuterSlopeChecker		norm_num:5	GeneralCK.PureGapDoubleCapSlopeCertificate:1;GeneralCK.ReflectionRegularDifference:1;GeneralCK.CorrectionHessianNatural:1
+GeneralCK.PureGapDoubleCapScalarContract	1	73	2987	GeneralCK.PureGapDoubleCapScalarContract			GeneralCK.PureGapCapZeroReduction:1;GeneralCK.RadialConvexity:1
+GeneralCK.PureGapDoubleCapSlopeCertificate	1	186	8291	GeneralCK.PureGapDoubleCapSlopeCertificate		norm_num:9	GeneralCK.PureGapDoubleCapScalarContract:1;GeneralCK.PhiEntropyConvexity:1;GeneralCK.PureGapE8Bridge:1
+GeneralCK.PureGapEntropyRearrangement	1	153	7253	GeneralCK.PureGapEntropyRearrangement		rfl:10	GeneralCK.PureGapSymmetry:1;GeneralCK.EntropyRadialDerivatives:1;Mathlib.Analysis.Calculus.Deriv.MeanValue:1
+GeneralCK.PureGapFixedEntropyClosure	1	108	5741	GeneralCK.PureGapFixedEntropyClosure			GeneralCK.PureGapCompactMean:1
+GeneralCK.PureGapHalfMeanAnalytic	1	194	8387	GeneralCK.PureGapHalfMeanAnalytic		norm_num:8;rfl:1	GeneralCK.PureGapHalfMeanOwner:1;GeneralCK.ReflectionRegularDifference:1
+GeneralCK.PureGapHalfMeanCurve	1	220	10138	GeneralCK.PureGapHalfMeanCurve		norm_num:2	GeneralCK.PureGapE8HalfMean:1;GeneralCK.CorrectionGlobalConvexity:1;Mathlib.Analysis.Calculus.DerivativeTest:1
+GeneralCK.PureGapHalfMeanOwner	1	117	5260	GeneralCK.PureGapHalfMeanOwner		rfl:1	GeneralCK.PureGapMinimizerLedger:1;GeneralCK.PureGapHalfMeanCurve:1
+GeneralCK.PureGapMeanStationarity	1	104	4840	GeneralCK.PureGapMeanStationarity		rfl:2	GeneralCK.PureGapFixedEntropyClosure:1
+GeneralCK.PureGapMiddleDeterministic	1	305	13708	GeneralCK.PureGapMiddleDeterministic		norm_num:7;rfl:2	GeneralCK.PureGapE8Inverse:1;GeneralCK.RadialZeroBoundary:1;GeneralCK.RadialConcavity:1;GeneralCK.CorrectionGlobalConvexity:1
+GeneralCK.PureGapMinimizerLedger	1	209	9861	GeneralCK.PureGapMinimizerLedger		norm_num:1	GeneralCK.PureGapE8OwnerClosure:1
+GeneralCK.PureGapPositiveCutoffMinimizerRepair	1	210	9302	GeneralCK.PureGapPositiveCutoffMinimizerRepair		norm_num:2	GeneralCK.SmallMeanPhiRetainedCutoff:1
+GeneralCK.PureGapSeamOwner	1	173	8215	GeneralCK.PureGapSeamOwner			GeneralCK.PureGapHalfMeanOwner:1
+GeneralCK.PureGapSymmetry	1	189	8062	GeneralCK.PureGapSymmetry		rfl:4	GeneralCK.CorrectionBasics:1
+GeneralCK.PureGapZeroCapLeftStationaryAfterNarrowMiddle	1	42	1774	GeneralCK.PureGapZeroCapLeftStationaryAfterNarrowMiddle			GeneralCK.PureGapZeroCapLeftStationaryNarrowMiddleCertified:1
+GeneralCK.PureGapZeroCapLeftStationaryAnchorContacts	1	77	3529	GeneralCK.PureGapZeroCapLeftStationaryAnchorContacts		norm_num:26	GeneralCK.PureGapZeroCapLeftStationaryThetaBracketBridge:1;GeneralCK.Certificates.ZeroCapLeftStationaryLogEnclosures:1;GeneralCK.Certificates.SmallMeanBounds:1
+GeneralCK.PureGapZeroCapLeftStationaryAnchorRegion	1	202	9701	GeneralCK.PureGapZeroCapLeftStationaryAnchorRegion		norm_num:23	GeneralCK.PureGapZeroCapLeftStationaryAfterNarrowMiddle:1
+GeneralCK.PureGapZeroCapLeftStationaryCompactReduction	1	202	10033	GeneralCK.PureGapZeroCapLeftStationaryCompactReduction		norm_num:9	GeneralCK.PureGapZeroCapLeftStationaryRatioExclusion:1
+GeneralCK.PureGapZeroCapLeftStationaryEntropyBounds	1	75	3355	GeneralCK.PureGapZeroCapLeftStationaryEntropyBounds		norm_num:15	GeneralCK.Certificates.ZeroCapLeftStationaryLogEnclosures:1;GeneralCK.Certificates.SmallMeanBounds:1;GeneralCK.PureGapCapZeroReduction:1
+GeneralCK.PureGapZeroCapLeftStationaryHighAnchors	1	167	7167	GeneralCK.PureGapZeroCapLeftStationaryHighAnchors		norm_num:48	GeneralCK.PureGapZeroCapLeftStationaryLowRangeEnvelope:1
+GeneralCK.PureGapZeroCapLeftStationaryHighRangeEnvelope	1	220	10403	GeneralCK.PureGapZeroCapLeftStationaryHighRangeEnvelope		norm_num:6	GeneralCK.PureGapZeroCapLeftStationaryHighAnchors:1
+GeneralCK.PureGapZeroCapLeftStationaryLogIncrementTail	1	203	9172	GeneralCK.PureGapZeroCapLeftStationaryLogIncrementTail		norm_num:10	GeneralCK.PureGapZeroCapLeftStationaryCompactReduction:1;GeneralCK.MixedDerivative:1
+GeneralCK.PureGapZeroCapLeftStationaryLowAnchors	1	149	6318	GeneralCK.PureGapZeroCapLeftStationaryLowAnchors		norm_num:44	GeneralCK.PureGapZeroCapLeftStationaryRayEnvelope:1
+GeneralCK.PureGapZeroCapLeftStationaryLowRangeEnvelope	1	187	8638	GeneralCK.PureGapZeroCapLeftStationaryLowRangeEnvelope		norm_num:7	GeneralCK.PureGapZeroCapLeftStationaryLowAnchors:1
+GeneralCK.PureGapZeroCapLeftStationaryNarrowMiddle	1	86	3602	GeneralCK.PureGapZeroCapLeftStationaryNarrowMiddle		norm_num:3	GeneralCK.PureGapMiddleDeterministic:1
+GeneralCK.PureGapZeroCapLeftStationaryNarrowMiddleCertified	1	51	2160	GeneralCK.PureGapZeroCapLeftStationaryNarrowMiddleCertified		norm_num:9	GeneralCK.PureGapZeroCapLeftStationaryEntropyBounds:1;GeneralCK.PureGapZeroCapLeftStationaryRadialSlopeIntervals:1;GeneralCK.PureGapZeroCapLeftStationaryNarrowMiddle:1
+GeneralCK.PureGapZeroCapLeftStationaryRadialSlopeIntervals	1	163	6708	GeneralCK.PureGapZeroCapLeftStationaryRadialSlopeIntervals		norm_num:21	GeneralCK.PureGapZeroCapLeftStationaryAnchorContacts:1;GeneralCK.Certificates.ZeroCapLeftStationaryLogEnclosures:1
+GeneralCK.PureGapZeroCapLeftStationaryRatioExclusion	1	206	9796	GeneralCK.PureGapZeroCapLeftStationaryRatioExclusion		norm_num:2	GeneralCK.PureGapZeroCapLeftStationaryHighRangeEnvelope:1
+GeneralCK.PureGapZeroCapLeftStationaryRayEnvelope	1	215	9793	GeneralCK.PureGapZeroCapLeftStationaryRayEnvelope		norm_num:9	GeneralCK.PureGapZeroCapLeftStationaryAnchorRegion:1
+GeneralCK.PureGapZeroCapLeftStationaryThetaBracketBridge	1	75	3304	GeneralCK.PureGapZeroCapLeftStationaryThetaBracketBridge		norm_num:10	GeneralCK.PureGapMiddleDeterministic:1;GeneralCK.RadialContact:1;GeneralCK.RadialDerivatives:1
+GeneralCK.PureGapZeroCapLeftUpperAfterHalfCollar	1	52	1956	GeneralCK.PureGapZeroCapLeftUpperAfterHalfCollar			GeneralCK.PureGapZeroCapLeftUpperHalfCollarC600Actual:1
+GeneralCK.PureGapZeroCapLeftUpperAfterHalfCollarAndNarrow	1	34	1370	GeneralCK.PureGapZeroCapLeftUpperAfterHalfCollarAndNarrow			GeneralCK.PureGapZeroCapLeftUpperAfterHalfCollar:1;GeneralCK.PureGapZeroCapLeftUpperNarrowRectangle:1
+GeneralCK.PureGapZeroCapLeftUpperHalfCollarBiasGeometry	1	48	1779	GeneralCK.PureGapZeroCapLeftUpperHalfCollarBiasGeometry			GeneralCK.PureGapZeroCapLeftUpperHalfCollarQuartic:1
+GeneralCK.PureGapZeroCapLeftUpperHalfCollarEntropyJet	1	59	2849	GeneralCK.PureGapZeroCapLeftUpperHalfCollarEntropyJet		norm_num:2	GeneralCK.PureGapZeroCapLeftUpperHalfCollarLogJets:1
+GeneralCK.PureGapZeroCapLeftUpperHalfCollarJetAlgebra	1	52	1731	GeneralCK.PureGapZeroCapLeftUpperHalfCollarJetAlgebra			GeneralCK.PureGapZeroCapLeftUpperHalfCollarQuartic:1
+GeneralCK.PureGapZeroCapLeftUpperHalfCollarLogJets	1	157	6916	GeneralCK.PureGapZeroCapLeftUpperHalfCollarLogJets		norm_num:3	Mathlib.Analysis.SpecialFunctions.Complex.LogBounds:1;GeneralCK.PureGapZeroCapLeftUpperHalfCollarBiasGeometry:1;GeneralCK.PureGapZeroCapLeftUpperHalfCollarJetAlgebra:1
+GeneralCK.PureGapZeroCapLeftUpperHalfCollarMiddleEta	1	182	8400	GeneralCK.PureGapZeroCapLeftUpperHalfCollarMiddleEta		norm_num:2	GeneralCK.PureGapZeroCapLeftUpperHalfCollarEntropyJet:1
+GeneralCK.PureGapZeroCapLeftUpperHalfCollarQuartic	1	87	3624	GeneralCK.PureGapZeroCapLeftUpperHalfCollarQuartic			Mathlib.Analysis.Complex.ExponentialBounds:1;GeneralCK.PureGapZeroCapLeftUpperRadialReduction:1
+GeneralCK.PureGapZeroCapLeftUpperHalfCollarRadialContactJet	1	201	9120	GeneralCK.PureGapZeroCapLeftUpperHalfCollarRadialContactJet		norm_num:3	GeneralCK.PureGapZeroCapLeftUpperHalfCollarMiddleEta:1
+GeneralCK.PureGapZeroCapLeftUpperHalfCollarRadialJet	1	105	4822	GeneralCK.PureGapZeroCapLeftUpperHalfCollarRadialJet		norm_num:5	GeneralCK.PureGapZeroCapLeftUpperHalfCollarRadialContactJet:1
+GeneralCK.PureGapZeroCapLeftUpperNarrowRectangle	1	208	9334	GeneralCK.PureGapZeroCapLeftUpperNarrowRectangle		norm_num:47	GeneralCK.PureGapZeroCapLeftUpperRadialReduction:1;GeneralCK.RadialConvexity:1;GeneralCK.Certificates.SmallMeanBounds:1
+GeneralCK.PureGapZeroCapLeftUpperRadialReduction	1	72	3025	GeneralCK.PureGapZeroCapLeftUpperRadialReduction			GeneralCK.PureGapCapZeroReduction:1
+GeneralCK.PureGapZeroCapLeftUpperWideHalfCollar	1	768	36230	GeneralCK.PureGapZeroCapLeftUpperWideHalfCollar		norm_num:13	GeneralCK.PureGapZeroCapLeftUpperAfterHalfCollarAndNarrow:1
+GeneralCK.PureGapZeroCapRightHalfBoundaryRadialChart	1	34	1346	GeneralCK.PureGapZeroCapRightHalfBoundaryRadialChart			GeneralCK.PureGapZeroCapRightStationaryFullRadialChart:1
+GeneralCK.PureGapZeroCapRightRadialTangentBound	1	40	1430	GeneralCK.PureGapZeroCapRightRadialTangentBound			GeneralCK.RadialConvexity:1;GeneralCK.RadialDerivatives:1;Mathlib.Tactic.Linarith:1
+GeneralCK.PureGapZeroCapRightStationaryFullRadialChart	1	71	2977	GeneralCK.PureGapZeroCapRightStationaryFullRadialChart			GeneralCK.PureGapCapZeroReduction:1;GeneralCK.PureGapMeanStationarity:1
+GeneralCK.RadialConcavity	1	218	10238	GeneralCK.RadialConcavity		norm_num:9	GeneralCK.RadialConvexity:1;Mathlib.Analysis.SpecialFunctions.Sqrt:1
+GeneralCK.RadialContact	1	200	8722	GeneralCK.RadialContact		norm_num:3;rfl:2	GeneralCK.ProfileBasics:1
+GeneralCK.RadialConvexity	1	140	6256	GeneralCK.RadialConvexity		norm_num:3;rfl:5	GeneralCK.RadialDerivatives:1;GeneralCK.EtaMonotone:1;Mathlib.Analysis.Convex.Deriv:1;Mathlib.Analysis.Convex.Jensen:1
+GeneralCK.RadialDerivatives	1	226	9839	GeneralCK.RadialDerivatives		norm_num:1;rfl:1	GeneralCK.RadialContact:1;GeneralCK.ProfileDerivatives:1;GeneralCK.Certificates.MixedBounds:1
+GeneralCK.RadialFourPoint	1	45	1907	GeneralCK.RadialFourPoint			GeneralCK.RadialConcavity:1;GeneralCK.BellmanAssembly:1
+GeneralCK.RadialZeroBoundary	1	75	3350	GeneralCK.RadialZeroBoundary		norm_num:3	GeneralCK.RadialConvexity:1;Mathlib.Analysis.Calculus.Deriv.Slope:1
+GeneralCK.Reflection	1	257	12566	GeneralCK.Reflection		rfl:5	GeneralCK.CorrectionBasics:1;GeneralCK.SmallMeanAnalytic:1;GeneralCK.PerspectiveCurve:1;GeneralCK.ReflectionContactCurvature:1
+GeneralCK.ReflectionComplexContactFactor	1	166	7324	GeneralCK.ReflectionComplexContactFactor		norm_num:2	GeneralCK.ReflectionComplexContactGerm:1;Mathlib.Analysis.Analytic.Order:1
+GeneralCK.ReflectionComplexContactGerm	1	158	6693	GeneralCK.ReflectionComplexContactGerm		norm_num:8;rfl:1	GeneralCK.ReflectionComplexFixedPoint:1;Mathlib.Analysis.Calculus.InverseFunctionTheorem.Analytic:1;Mathlib.Analysis.SpecialFunctions.Complex.Analytic:1
+GeneralCK.ReflectionComplexCubicBound	1	200	9091	GeneralCK.ReflectionComplexCubicBound		norm_num:5	GeneralCK.ReflectionComplexContactFactor:1
+GeneralCK.ReflectionComplexDiscElementary	1	145	6023	GeneralCK.ReflectionComplexDiscElementary		norm_num:7	Mathlib.Analysis.Complex.Norm:1;Mathlib.Topology.MetricSpace.Lipschitz:1
+GeneralCK.ReflectionComplexEntropy	1	291	14168	GeneralCK.ReflectionComplexEntropy		norm_num:18;rfl:1	Mathlib.Analysis.SpecialFunctions.Complex.LogBounds:1;Mathlib.Analysis.Complex.ExponentialBounds:1;Mathlib.Analysis.Calculus.MeanValue:1;GeneralCK.ReflectionComplexDiscElementary:1
+GeneralCK.ReflectionComplexFixedPoint	1	164	7651	GeneralCK.ReflectionComplexFixedPoint		norm_num:3	GeneralCK.ReflectionComplexEntropy:1;Mathlib.Topology.MetricSpace.Contracting:1
+GeneralCK.ReflectionComplexGlobalAnalytic	1	267	12057	GeneralCK.ReflectionComplexGlobalAnalytic		norm_num:7;rfl:1	GeneralCK.ReflectionComplexCubicBound:1
+GeneralCK.ReflectionComplexRealBridge	1	120	5196	GeneralCK.ReflectionComplexRealBridge		norm_num:7	GeneralCK.ReflectionComplexFixedPoint:1;GeneralCK.ReflectionContactInverse:1;GeneralCK.Certificates.SmallMeanCertificate:1
+GeneralCK.ReflectionContactCurvature	1	53	2154	GeneralCK.ReflectionContactCurvature		norm_num:2	GeneralCK.PerspectiveCurve:1
+GeneralCK.ReflectionContactInverse	1	132	5757	GeneralCK.ReflectionContactInverse		norm_num:4	GeneralCK.Reflection:1;GeneralCK.Certificates.ReflectionBounds:1
+GeneralCK.ReflectionDiagonalPositive	1	142	6348	GeneralCK.ReflectionDiagonalPositive		norm_num:4	GeneralCK.Certificates.RegularReflectionExpressionJet:1;GeneralCK.ReflectionNormalized:1;GeneralCK.SmallMeanEstimates:1;GeneralCK.Certificates.MixedConstants:1
+GeneralCK.ReflectionEndpointBridge	1	29	1165	GeneralCK.ReflectionEndpointBridge			GeneralCK.Certificates.RegularReflectionExpressionJet:1;GeneralCK.ReflectionNormalized:1
+GeneralCK.ReflectionHighBiasCases	1	189	7694	GeneralCK.ReflectionHighBiasCases		norm_num:12	GeneralCK.ReflectionHighBiasLog:1;GeneralCK.ReflectionRegularContact:1;GeneralCK.Certificates.MixedConstants:1;Mathlib.Analysis.SpecialFunctions.Sqrt:1;Mathlib.Tactic.GCongr:1
+GeneralCK.ReflectionHighBiasCore	1	110	4901	GeneralCK.ReflectionHighBiasCore		norm_num:10	GeneralCK.ReflectionSmallRatioFormula:1;GeneralCK.ReflectionRegularContact:1;GeneralCK.ReflectionHighBiasLog:1
+GeneralCK.ReflectionHighBiasEntropy	1	102	4588	GeneralCK.ReflectionHighBiasEntropy		norm_num:4	GeneralCK.ReflectionRegularContact:1
+GeneralCK.ReflectionHighBiasLargeAlgebra	1	211	9579	GeneralCK.ReflectionHighBiasLargeAlgebra		norm_num:2	GeneralCK.ReflectionHighBiasCore:1;GeneralCK.Certificates.MixedConstants:1
+GeneralCK.ReflectionHighBiasLargeRegion	1	64	3210	GeneralCK.ReflectionHighBiasLargeRegion			GeneralCK.ReflectionHighBiasCases:1;GeneralCK.ReflectionHighBiasEntropy:1;GeneralCK.ReflectionHighBiasLargeAlgebra:1;GeneralCK.ReflectionHighBiasRational:1;GeneralCK.ReflectionHighBiasRegion:1
+GeneralCK.ReflectionHighBiasLog	1	106	3951	GeneralCK.ReflectionHighBiasLog		norm_num:8	GeneralCK.SmallMeanAnalytic:1;GeneralCK.Certificates.SmallMeanCertificate:1
+GeneralCK.ReflectionHighBiasRational	1	30	1307	GeneralCK.ReflectionHighBiasRational		norm_num:2	Mathlib.Data.Real.Basic:1;Mathlib.Tactic.GCongr:1;Mathlib.Tactic.NormNum:1;Mathlib.Tactic.Positivity:1
+GeneralCK.ReflectionHighBiasRegion	1	23	1080	GeneralCK.ReflectionHighBiasRegion		norm_num:2	GeneralCK.Certificates.Generated.HighBiasCoarseBounds:1;GeneralCK.Certificates.Generated.HighBiasCoarseConstants:1
+GeneralCK.ReflectionNormalized	1	77	3244	GeneralCK.ReflectionNormalized		norm_num:3	GeneralCK.Certificates.ReflectionExpressionJet:1
+GeneralCK.ReflectionRegularContact	1	170	7706	GeneralCK.ReflectionRegularContact		norm_num:3	GeneralCK.ReflectionContactInverse:1
+GeneralCK.ReflectionRegularDifference	1	94	3494	GeneralCK.ReflectionRegularDifference		norm_num:1	GeneralCK.ReflectionRegularContact:1;GeneralCK.ReflectionNormalized:1
+GeneralCK.ReflectionRemainingRegions	1	41	1810	GeneralCK.ReflectionRemainingRegions			GeneralCK.ReflectionHighBiasLargeRegion:1;GeneralCK.Certificates.Generated.LowRatioFamily.FullCertificate:1
+GeneralCK.ReflectionRemainingRegionsCertified	1	92	4310	GeneralCK.ReflectionRemainingRegionsCertified			GeneralCK.ReflectionRemainingRegionsExtended:1;GeneralCK.Certificates.Generated.MidpointExtensionFamily.FullCertificate:1;GeneralCK.Certificates.Generated.MidpointNextBandFamily.FullCertificate:1;GeneralCK.Certificates.ReflectionMidpointCombinedCoverage:1
+GeneralCK.ReflectionRemainingRegionsExtended	1	43	2045	GeneralCK.ReflectionRemainingRegionsExtended		norm_num:1	GeneralCK.ReflectionRemainingRegions:1;GeneralCK.Certificates.Generated.MidpointFamily.FullCertificate:1;GeneralCK.Certificates.Generated.MidpointNextFamily.FullCertificate:1
+GeneralCK.ReflectionSmallBias	1	15	540	GeneralCK.ReflectionSmallBias			GeneralCK.ReflectionSmallBiasDifferenceJet:1;GeneralCK.ReflectionSmallBiasRealAgreement:1
+GeneralCK.ReflectionSmallBiasBivariateBase	1	918	38821	GeneralCK.ReflectionSmallBiasBivariateBase	equalityCheck:26	decide +kernel:26;rfl:2	GeneralCK.ReflectionSmallBiasJetRawSum:1
+GeneralCK.ReflectionSmallBiasCandidate	1	79	3550	GeneralCK.ReflectionSmallBiasCandidate		norm_num:4	GeneralCK.Certificates.ReflectionSmallBiasCoefficientData:1;GeneralCK.ReflectionSmallBiasComplexDifference:1
+GeneralCK.ReflectionSmallBiasCandidateCurvature	1	86	4035	GeneralCK.ReflectionSmallBiasCandidateCurvature		norm_num:1;rfl:2	GeneralCK.ReflectionSmallBiasMonomialCurvature:1
+GeneralCK.ReflectionSmallBiasCandidateSparse	1	58	2480	GeneralCK.ReflectionSmallBiasCandidateSparse		norm_num:2;rfl:3	GeneralCK.ReflectionSmallBiasCandidate:1;GeneralCK.ReflectionSmallBiasPolynomialCertificate:1
+GeneralCK.ReflectionSmallBiasCoefficientBounds	1	113	4841	GeneralCK.ReflectionSmallBiasCoefficientBounds	checkCoefficient:1;checkRows:1	decide:1;norm_num:5	Mathlib.Analysis.Complex.ExponentialBounds:1;Mathlib.Tactic.Linarith:1;Mathlib.Tactic.GCongr:1;Mathlib.Tactic.Positivity:1;Mathlib.Tactic.Ring:1
+GeneralCK.ReflectionSmallBiasCompactFunctions	1	59	2638	GeneralCK.ReflectionSmallBiasCompactFunctions	equalityCheck:2	decide +kernel:2;rfl:2	GeneralCK.ReflectionSmallBiasJetFunctions:1;GeneralCK.ReflectionSmallBiasJetComposition:1;GeneralCK.ReflectionSmallBiasPolynomialCertificate:1
+GeneralCK.ReflectionSmallBiasComplexDifference	1	147	7391	GeneralCK.ReflectionSmallBiasComplexDifference		norm_num:20;rfl:4	GeneralCK.ReflectionSmallBiasComplexDomain:1
+GeneralCK.ReflectionSmallBiasComplexDomain	1	132	5651	GeneralCK.ReflectionSmallBiasComplexDomain		norm_num:10	GeneralCK.ReflectionComplexGlobalAnalytic:1
+GeneralCK.ReflectionSmallBiasContactSum	1	658	24351	GeneralCK.ReflectionSmallBiasContactSum	equalityCheck:10	decide:1;decide +kernel:2	GeneralCK.ReflectionSmallBiasContactSumChecks1:1;GeneralCK.ReflectionSmallBiasContactSumChecks2:1;GeneralCK.ReflectionSmallBiasContactSumChecks3:1;GeneralCK.ReflectionSmallBiasContactSumChecks4:1;GeneralCK.ReflectionSmallBiasContactSumChecks5:1
+GeneralCK.ReflectionSmallBiasContactSumData	1	9663	459693	GeneralCK.ReflectionSmallBiasContactSumData			GeneralCK.Certificates.ReflectionSmallBiasContactDegree2:1;GeneralCK.Certificates.ReflectionSmallBiasContactDegree4:1;GeneralCK.Certificates.ReflectionSmallBiasContactDegree6:1;GeneralCK.Certificates.ReflectionSmallBiasContactDegree8:1;GeneralCK.Certificates.ReflectionSmallBiasContactDegree10:1
+GeneralCK.ReflectionSmallBiasContactTable	1	64	3343	GeneralCK.ReflectionSmallBiasContactTable		rfl:1	GeneralCK.Certificates.ReflectionSmallBiasPicardReplay1:1;GeneralCK.Certificates.ReflectionSmallBiasPicardReplay2:1;GeneralCK.Certificates.ReflectionSmallBiasPicardReplay3:1;GeneralCK.Certificates.ReflectionSmallBiasPicardReplay4:1;GeneralCK.Certificates.ReflectionSmallBiasPicardReplay5:1
+GeneralCK.ReflectionSmallBiasContactValueJet	1	61	2812	GeneralCK.ReflectionSmallBiasContactValueJet		norm_num:3;rfl:3	GeneralCK.ReflectionSmallBiasJetFunctions:1
+GeneralCK.ReflectionSmallBiasCurvatureAssembly	1	112	5517	GeneralCK.ReflectionSmallBiasCurvatureAssembly		rfl:2	GeneralCK.ReflectionSmallBiasCandidateCurvature:1;GeneralCK.ReflectionSmallBiasRemainderCurvature:1;Mathlib.Analysis.Complex.RealDeriv:1
+GeneralCK.ReflectionSmallBiasDegreeCertificate	1	45	1797	GeneralCK.ReflectionSmallBiasDegreeCertificate	degreeBound:1	decide:1;rfl:1	GeneralCK.ReflectionSmallBiasPolynomialCertificate:1
+GeneralCK.ReflectionSmallBiasDifferenceJet	1	177	6904	GeneralCK.ReflectionSmallBiasDifferenceJet	equalityCheck:6	decide +kernel:4;norm_num:1;rfl:4	GeneralCK.ReflectionSmallBiasDifferenceJetChecks1:1;GeneralCK.ReflectionSmallBiasDifferenceJetChecks2:1
+GeneralCK.ReflectionSmallBiasDifferenceJetData	1	1084	52020	GeneralCK.ReflectionSmallBiasDifferenceJetData			GeneralCK.ReflectionSmallBiasContactSum:1;GeneralCK.ReflectionSmallBiasLinearSymmetry:1;GeneralCK.Certificates.ReflectionSmallBiasDifferenceTable:1;GeneralCK.ReflectionSmallBiasCurvatureAssembly:1
+GeneralCK.ReflectionSmallBiasExponentCertificate	1	45	1720	GeneralCK.ReflectionSmallBiasExponentCertificate	aBound:1	decide:1;rfl:1	GeneralCK.ReflectionSmallBiasDegreeCertificate:1
+GeneralCK.ReflectionSmallBiasFineCertificate	1	47	1893	GeneralCK.ReflectionSmallBiasFineCertificate	fineBound:1	decide:1;rfl:1	GeneralCK.ReflectionSmallBiasExponentCertificate:1
+GeneralCK.ReflectionSmallBiasHalfSumPowers	1	552	21480	GeneralCK.ReflectionSmallBiasHalfSumPowers	equalityCheck:22	decide +kernel:22;norm_num:1	GeneralCK.ReflectionSmallBiasJetRawSum:1
+GeneralCK.ReflectionSmallBiasInversePowerSeeds	1	837	31399	GeneralCK.ReflectionSmallBiasInversePowerSeeds	equalityCheck:23	decide +kernel:23;rfl:1	GeneralCK.ReflectionSmallBiasJetReplay:1
+GeneralCK.ReflectionSmallBiasJet	1	107	4681	GeneralCK.ReflectionSmallBiasJet		norm_num:1	GeneralCK.ReflectionSmallBiasPolynomial:1
+GeneralCK.ReflectionSmallBiasJetComposition	1	53	2457	GeneralCK.ReflectionSmallBiasJetComposition		rfl:2	GeneralCK.ReflectionSmallBiasJetConstructors:1
+GeneralCK.ReflectionSmallBiasJetConstructors	1	104	4137	GeneralCK.ReflectionSmallBiasJetConstructors		rfl:2	GeneralCK.ReflectionSmallBiasJet:1
+GeneralCK.ReflectionSmallBiasJetFunctions	1	69	2926	GeneralCK.ReflectionSmallBiasJetFunctions		rfl:2	GeneralCK.ReflectionSmallBiasJetInverse:1;GeneralCK.ReflectionSmallBiasPicard:1
+GeneralCK.ReflectionSmallBiasJetInverse	1	34	1627	GeneralCK.ReflectionSmallBiasJetInverse		rfl:1	GeneralCK.ReflectionSmallBiasJetConstructors:1
+GeneralCK.ReflectionSmallBiasJetRawSum	1	19	598	GeneralCK.ReflectionSmallBiasJetRawSum			GeneralCK.ReflectionSmallBiasJetReplay:1
+GeneralCK.ReflectionSmallBiasJetReplay	1	42	2265	GeneralCK.ReflectionSmallBiasJetReplay		rfl:3	GeneralCK.ReflectionSmallBiasCompactFunctions:1
+GeneralCK.ReflectionSmallBiasLinearSymmetry	1	56	2261	GeneralCK.ReflectionSmallBiasLinearSymmetry		rfl:1	GeneralCK.ReflectionSmallBiasJetRawSum:1
+GeneralCK.ReflectionSmallBiasMonomialCurvature	1	72	3091	GeneralCK.ReflectionSmallBiasMonomialCurvature			GeneralCK.ReflectionSmallBiasCandidate:1
+GeneralCK.ReflectionSmallBiasPartialCauchy	1	84	4012	GeneralCK.ReflectionSmallBiasPartialCauchy			GeneralCK.ReflectionSmallBiasRemainder:1;Mathlib.Analysis.Calculus.Deriv.Prod:1
+GeneralCK.ReflectionSmallBiasPerspectiveJet	1	83	4071	GeneralCK.ReflectionSmallBiasPerspectiveJet		rfl:2	GeneralCK.ReflectionSmallBiasContactTable:1
+GeneralCK.ReflectionSmallBiasPicard	1	69	3125	GeneralCK.ReflectionSmallBiasPicard		norm_num:5	GeneralCK.ReflectionSmallBiasComplexDifference:1;Mathlib.Analysis.Asymptotics.Lemmas:1
+GeneralCK.ReflectionSmallBiasPolynomial	1	173	6815	GeneralCK.ReflectionSmallBiasPolynomial		norm_num:1;rfl:1	GeneralCK.ReflectionSmallBiasComplexDomain:1;Mathlib.Analysis.Asymptotics.Lemmas:1
+GeneralCK.ReflectionSmallBiasPolynomialCertificate	1	18	776	GeneralCK.ReflectionSmallBiasPolynomialCertificate	equalityCheck:1	decide:1	GeneralCK.ReflectionSmallBiasPolynomial:1
+GeneralCK.ReflectionSmallBiasRealAgreement	1	115	6249	GeneralCK.ReflectionSmallBiasRealAgreement		norm_num:12	GeneralCK.ReflectionSmallBiasCurvatureAssembly:1;GeneralCK.ReflectionRegularDifference:1
+GeneralCK.ReflectionSmallBiasRemainder	1	69	3232	GeneralCK.ReflectionSmallBiasRemainder		norm_num:2	Mathlib.Analysis.Complex.Schwarz:1;Mathlib.Analysis.Complex.Liouville:1;Mathlib.Analysis.Asymptotics.Lemmas:1
+GeneralCK.ReflectionSmallBiasRemainderCurvature	1	96	4374	GeneralCK.ReflectionSmallBiasRemainderCurvature			GeneralCK.ReflectionSmallBiasPartialCauchy:1
+GeneralCK.ReflectionSmallRatio	1	113	5103	GeneralCK.ReflectionSmallRatio			GeneralCK.ReflectionNormalized:1;Mathlib.Analysis.Calculus.Deriv.MeanValue:1
+GeneralCK.ReflectionSmallRatioFormula	1	95	3812	GeneralCK.ReflectionSmallRatioFormula		norm_num:1	GeneralCK.ReflectionSmallRatio:1
+GeneralCK.ReflectionSmallRatioMidpoint	1	57	2766	GeneralCK.ReflectionSmallRatioMidpoint			GeneralCK.ReflectionSmallRatio:1;GeneralCK.Certificates.MidpointBounds:1
+GeneralCK.ReflectionSmallRatioMidpointJet	1	25	1160	GeneralCK.ReflectionSmallRatioMidpointJet			GeneralCK.ReflectionSmallRatioMidpoint:1
+GeneralCK.Regularization	1	98	3813	GeneralCK.Regularization		norm_num:5;rfl:1	GeneralCK.InformationIdentity:1;Mathlib.Tactic.FunProp:1
+GeneralCK.RemainingBellman	1	41	2185	GeneralCK.RemainingBellman			GeneralCK.SmallMeanRegion:1;GeneralCK.LowInformationRegion:1;GeneralCK.ConditionalCK:1;GeneralCK.EqualMean:1
+GeneralCK.ScalarGap	1	81	3597	GeneralCK.ScalarGap		rfl:1	GeneralCK.ProfileIncreasingCurvature:1;Mathlib.Analysis.Convex.Jensen:1
+GeneralCK.SmallBoundaryPhiCompactBox	1	579	15980	GeneralCK.SmallBoundaryPhiCompactBox		decide +kernel:5;norm_num:25	GeneralCK.SmallBoundaryPhiTailBox:1
+GeneralCK.SmallBoundaryPhiCompactBoxBounds	1	63	2654	GeneralCK.SmallBoundaryPhiCompactBoxBounds		norm_num:1	GeneralCK.SmallBoundaryPhiCompactBox:1
+GeneralCK.SmallBoundaryPhiCompactClosure	1	61	2981	GeneralCK.SmallBoundaryPhiCompactClosure			GeneralCK.SmallBoundaryPhiCompactCoordinates:1;GeneralCK.SmallBoundaryPhiCompactBoxBounds:1;GeneralCK.SmallBoundaryPhiTailSource:1
+GeneralCK.SmallBoundaryPhiCompactCoordinates	1	45	1703	GeneralCK.SmallBoundaryPhiCompactCoordinates		norm_num:6	GeneralCK.SmallBoundaryPhiCompactTransport:1;GeneralCK.SmallBoundaryPhiTailCoordinates:1
+GeneralCK.SmallBoundaryPhiCompactTransport	1	130	5638	GeneralCK.SmallBoundaryPhiCompactTransport		norm_num:4	GeneralCK.SmallBoundaryPhiContactCertificate:1
+GeneralCK.SmallBoundaryPhiContactCertificate	1	198	8710	GeneralCK.SmallBoundaryPhiContactCertificate			GeneralCK.SmallBoundaryPhiSchurReduction:1
+GeneralCK.SmallBoundaryPhiLowContactClosure	1	71	3214	GeneralCK.SmallBoundaryPhiLowContactClosure			GeneralCK.SmallBoundaryPhiTailSource:1
+GeneralCK.SmallBoundaryPhiLowContactTail	1	201	8614	GeneralCK.SmallBoundaryPhiLowContactTail		norm_num:7	GeneralCK.SmallBoundaryPhiContactCertificate:1;GeneralCK.PsiNormalizedLowEntropy:1
+GeneralCK.SmallBoundaryPhiSchurReduction	1	246	11212	GeneralCK.SmallBoundaryPhiSchurReduction		norm_num:6	GeneralCK.SmallMeanPhiRetainedCutoff:1;GeneralCK.CorrectionConvexityCriterion:1
+GeneralCK.SmallBoundaryPhiTailBox	1	727	24213	GeneralCK.SmallBoundaryPhiTailBox		decide +kernel:5;norm_num:25;rfl:2	GeneralCK.Certificates.NonnegativeBoxPolynomial:1
+GeneralCK.SmallBoundaryPhiTailCoordinates	1	101	3522	GeneralCK.SmallBoundaryPhiTailCoordinates		norm_num:4	GeneralCK.SmallBoundaryPhiLowContactTail:1
+GeneralCK.SmallBoundaryPhiTailSource	1	161	6998	GeneralCK.SmallBoundaryPhiTailSource		norm_num:1	GeneralCK.SmallBoundaryPhiTailCoordinates:1;GeneralCK.SmallBoundaryPhiTailBox:1
+GeneralCK.SmallMeanAnalytic	1	135	5318	GeneralCK.SmallMeanAnalytic		norm_num:7	GeneralCK.ProfileLowerBounds:1
+GeneralCK.SmallMeanCapTailBounds	1	38	1358	GeneralCK.SmallMeanCapTailBounds		norm_num:1	GeneralCK.LowInformationMeans:1
+GeneralCK.SmallMeanEndpoint	1	59	2739	GeneralCK.SmallMeanEndpoint		norm_num:9	GeneralCK.SmallMeanEstimates:1;GeneralCK.PhysicalSlope:1;GeneralCK.Certificates.SmallMeanCertificate:1
+GeneralCK.SmallMeanEstimates	1	112	5115	GeneralCK.SmallMeanEstimates		norm_num:8;rfl:3	GeneralCK.SmallMeanAnalytic:1
+GeneralCK.SmallMeanMeans	1	158	6985	GeneralCK.SmallMeanMeans		rfl:4	GeneralCK.SmallMeanEstimates:1;GeneralCK.DeterministicCap:1
+GeneralCK.SmallMeanPhiRetainedCutoff	1	226	11353	GeneralCK.SmallMeanPhiRetainedCutoff		norm_num:5	GeneralCK.FinalAssemblyAfterDiagnosticHybrid:1;GeneralCK.PureGapCapZeroReduction:1;GeneralCK.PhiBranchClosure:1;GeneralCK.PureGapFixedEntropyClosure:1;GeneralCK.PureGapE8Inverse:1
+GeneralCK.SmallMeanRegion	1	99	4510	GeneralCK.SmallMeanRegion		norm_num:3	GeneralCK.SmallMeanEndpoint:1;GeneralCK.SmallMeanMeans:1;GeneralCK.ScalarGap:1;GeneralCK.BellmanAssembly:1;GeneralCK.LogSum:1
+GeneralCK.Statement	1	63	2627	GeneralCK.Statement		norm_num:1	Mathlib.Analysis.SpecialFunctions.BinaryEntropy:1;Mathlib.Data.Fintype.BigOperators:1;Mathlib.Tactic.NormNum:1;Mathlib.Tactic.Linarith:1;Mathlib.Tactic.Ring:1

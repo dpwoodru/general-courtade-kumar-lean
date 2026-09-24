@@ -1,0 +1,20 @@
+{
+ "GeneralCK.Certificates.E8TAxisZero0082Root": {
+  "detail": "SOURCE_VARIANT",
+  "reason": "the campaign olean (196,496 B, mtime 2026-09-15 02:18) was compiled from source variant 2b04854f... (1,878 B; three copies with mtime 02:18 in the campaign workspace; positiveAt ends `... at *` + `exact <by linarith x4>`), not from the chosen source 234eadad... (1,841 B; five identical copies in the campaign workspace; `exact <hs0, hs1, ht0, ht1>`). The canonical clean build compiled the chosen source (rc 0; 133,936 B). A scratch canonical rebuild of the variant against the clean LEAN_PATH reproduced the campaign bytes exactly (olean 061862a9..., ilean 0f4136c4...). No dependent's bytes changed.",
+  "variant_source": "provenance/E8TAxisZero0082Root/campaign_variant_2b04854f.lean",
+  "variant_source_sha256": "2b04854fb7202c589e5e541e8b9009f443f67c5c38737016f09629cacdcc9097",
+  "scratch_rebuild": {
+   "cwd": "<scratch source root>",
+   "rel": "GeneralCK/Certificates/E8TAxisZero0082Root.lean",
+   "olean": "<scratch output root>/GeneralCK/Certificates/E8TAxisZero0082Root.olean",
+   "olean_sha256": "061862a9a429e4e0e614fb9ccc2b0ed54cc01e064d24b721cf9a454d6956dc9c",
+   "ilean_sha256": "0f4136c4c97a76ad008da024c2c567cd7efae90620945cd393d18265031e99eb",
+   "rc_file": "<scratch logs>/E8TAxisZero0082Root.rc",
+   "time_file": "<scratch logs>/E8TAxisZero0082Root.time"
+  },
+  "campaign_olean_sha256": "061862a9a429e4e0e614fb9ccc2b0ed54cc01e064d24b721cf9a454d6956dc9c",
+  "t": "2026-09-23T20:53:04Z",
+  "chosen_sha256": "234eadad7586e12bebce6c9abd673f2d9c3be19123231fd8936c2ea197b301e0"
+ }
+}

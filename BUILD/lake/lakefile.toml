@@ -1,0 +1,242 @@
+# Lake project skeleton for the v3 sources — UNTESTED on the campaign host (no-lake rule there).
+# Put this file, lean-toolchain and lake-manifest.json at the root of the extracted sources/ tree, then:
+#   lake exe cache get          # Mathlib db584cd6… oleans from the Mathlib cache
+#   lake build CKRoute.Final    # builds the final module and its whole import closure (45,500 modules)
+# Lake records the package name "general-ck" in every olean, so bytes differ from CLEAN_BUILD_HASHES.tsv
+# (which follows the plain-lean recipes of BUILD/build_plain.py) by the package name only.
+name = "general-ck"
+version = "0.1.0"
+defaultTargets = ["CKRoute"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "db584cd6d46c92f209a44c0f1c829460d327499d"
+
+[[lean_lib]]
+name = "CKLaneA"
+globs = ["CKLaneA", "CKLaneA.+"]
+
+[[lean_lib]]
+name = "CKLaneA1"
+globs = ["CKLaneA1", "CKLaneA1.+"]
+
+[[lean_lib]]
+name = "CKLaneA2"
+globs = ["CKLaneA2", "CKLaneA2.+"]
+
+[[lean_lib]]
+name = "CKLaneA3V"
+globs = ["CKLaneA3V", "CKLaneA3V.+"]
+
+[[lean_lib]]
+name = "CKLaneA3W"
+globs = ["CKLaneA3W", "CKLaneA3W.+"]
+
+[[lean_lib]]
+name = "CKLaneA3X"
+globs = ["CKLaneA3X", "CKLaneA3X.+"]
+
+[[lean_lib]]
+name = "CKLaneA4"
+globs = ["CKLaneA4", "CKLaneA4.+"]
+
+[[lean_lib]]
+name = "CKLaneA5"
+globs = ["CKLaneA5", "CKLaneA5.+"]
+
+[[lean_lib]]
+name = "CKLaneC"
+globs = ["CKLaneC", "CKLaneC.+"]
+
+[[lean_lib]]
+name = "CKLaneC2"
+globs = ["CKLaneC2", "CKLaneC2.+"]
+
+[[lean_lib]]
+name = "CKLaneC2R"
+globs = ["CKLaneC2R", "CKLaneC2R.+"]
+
+[[lean_lib]]
+name = "CKLaneC3"
+globs = ["CKLaneC3", "CKLaneC3.+"]
+
+[[lean_lib]]
+name = "CKLaneD"
+globs = ["CKLaneD", "CKLaneD.+"]
+
+[[lean_lib]]
+name = "CKLaneE"
+globs = ["CKLaneE", "CKLaneE.+"]
+
+[[lean_lib]]
+name = "CKLaneG1"
+globs = ["CKLaneG1", "CKLaneG1.+"]
+
+[[lean_lib]]
+name = "CKLaneG3"
+globs = ["CKLaneG3", "CKLaneG3.+"]
+
+[[lean_lib]]
+name = "CKLaneM03"
+globs = ["CKLaneM03", "CKLaneM03.+"]
+
+[[lean_lib]]
+name = "CKLaneM04"
+globs = ["CKLaneM04", "CKLaneM04.+"]
+
+[[lean_lib]]
+name = "CKLaneM05"
+globs = ["CKLaneM05", "CKLaneM05.+"]
+
+[[lean_lib]]
+name = "CKLaneM06"
+globs = ["CKLaneM06", "CKLaneM06.+"]
+
+[[lean_lib]]
+name = "CKLaneM07"
+globs = ["CKLaneM07", "CKLaneM07.+"]
+
+[[lean_lib]]
+name = "CKLaneM08"
+globs = ["CKLaneM08", "CKLaneM08.+"]
+
+[[lean_lib]]
+name = "CKLaneM09"
+globs = ["CKLaneM09", "CKLaneM09.+"]
+
+[[lean_lib]]
+name = "CKLaneM1"
+globs = ["CKLaneM1", "CKLaneM1.+"]
+
+[[lean_lib]]
+name = "CKLaneM10"
+globs = ["CKLaneM10", "CKLaneM10.+"]
+
+[[lean_lib]]
+name = "CKLaneM11"
+globs = ["CKLaneM11", "CKLaneM11.+"]
+
+[[lean_lib]]
+name = "CKLaneM2"
+globs = ["CKLaneM2", "CKLaneM2.+"]
+
+[[lean_lib]]
+name = "CKLaneN1"
+globs = ["CKLaneN1", "CKLaneN1.+"]
+
+[[lean_lib]]
+name = "CKLaneN1b"
+globs = ["CKLaneN1b", "CKLaneN1b.+"]
+
+[[lean_lib]]
+name = "CKLaneN1c"
+globs = ["CKLaneN1c", "CKLaneN1c.+"]
+
+[[lean_lib]]
+name = "CKLaneN23"
+globs = ["CKLaneN23", "CKLaneN23.+"]
+
+[[lean_lib]]
+name = "CKLaneN4"
+globs = ["CKLaneN4", "CKLaneN4.+"]
+
+[[lean_lib]]
+name = "CKLaneN6"
+globs = ["CKLaneN6", "CKLaneN6.+"]
+
+[[lean_lib]]
+name = "CKLaneP"
+globs = ["CKLaneP", "CKLaneP.+"]
+
+[[lean_lib]]
+name = "CKLaneR2"
+globs = ["CKLaneR2", "CKLaneR2.+"]
+
+[[lean_lib]]
+name = "CKRoute"
+globs = ["CKRoute", "CKRoute.+"]
+
+[[lean_lib]]
+name = "E8BoundedArgumentJets"
+globs = ["E8BoundedArgumentJets", "E8BoundedArgumentJets.+"]
+
+[[lean_lib]]
+name = "E8CompactCertificate"
+globs = ["E8CompactCertificate", "E8CompactCertificate.+"]
+
+[[lean_lib]]
+name = "E8CompactInterval"
+globs = ["E8CompactInterval", "E8CompactInterval.+"]
+
+[[lean_lib]]
+name = "E8CompactQuadraticSign"
+globs = ["E8CompactQuadraticSign", "E8CompactQuadraticSign.+"]
+
+[[lean_lib]]
+name = "E8CompactTaylor"
+globs = ["E8CompactTaylor", "E8CompactTaylor.+"]
+
+[[lean_lib]]
+name = "E8EntropyQuotientBound"
+globs = ["E8EntropyQuotientBound", "E8EntropyQuotientBound.+"]
+
+[[lean_lib]]
+name = "E8GlobalRatioCertificate"
+globs = ["E8GlobalRatioCertificate", "E8GlobalRatioCertificate.+"]
+
+[[lean_lib]]
+name = "E8InitialInterval"
+globs = ["E8InitialInterval", "E8InitialInterval.+"]
+
+[[lean_lib]]
+name = "E8LargeTFinal"
+globs = ["E8LargeTFinal", "E8LargeTFinal.+"]
+
+[[lean_lib]]
+name = "E8MiddleCertificate"
+globs = ["E8MiddleCertificate", "E8MiddleCertificate.+"]
+
+[[lean_lib]]
+name = "E8PadeAnalyticHelpers"
+globs = ["E8PadeAnalyticHelpers", "E8PadeAnalyticHelpers.+"]
+
+[[lean_lib]]
+name = "E8PadeTail"
+globs = ["E8PadeTail", "E8PadeTail.+"]
+
+[[lean_lib]]
+name = "E8QuadraticThreshold"
+globs = ["E8QuadraticThreshold", "E8QuadraticThreshold.+"]
+
+[[lean_lib]]
+name = "E8RatioFactor"
+globs = ["E8RatioFactor", "E8RatioFactor.+"]
+
+[[lean_lib]]
+name = "E8RatioMonotonicity"
+globs = ["E8RatioMonotonicity", "E8RatioMonotonicity.+"]
+
+[[lean_lib]]
+name = "E8StableRatio"
+globs = ["E8StableRatio", "E8StableRatio.+"]
+
+[[lean_lib]]
+name = "E8TailElevenNineAlgebra"
+globs = ["E8TailElevenNineAlgebra", "E8TailElevenNineAlgebra.+"]
+
+[[lean_lib]]
+name = "E8TailElevenNineDerivatives"
+globs = ["E8TailElevenNineDerivatives", "E8TailElevenNineDerivatives.+"]
+
+[[lean_lib]]
+name = "E8TailElevenNineParameters"
+globs = ["E8TailElevenNineParameters", "E8TailElevenNineParameters.+"]
+
+[[lean_lib]]
+name = "E8TightArgumentJets"
+globs = ["E8TightArgumentJets", "E8TightArgumentJets.+"]
+
+[[lean_lib]]
+name = "GeneralCK"
+globs = ["GeneralCK", "GeneralCK.+"]

@@ -1,0 +1,107 @@
+{
+ "t": "20260923T205316Z",
+ "total": 45500,
+ "counts": {
+  "IDENTICAL": 39447,
+  "DIFFERENT": 5294,
+  "RELOCATED": 759
+ },
+ "detail_counts": {
+  "DIFFERENT/MODULE_NAME+EMBEDDED_PATH": 700,
+  "DIFFERENT/MODULE_NAME": 4591,
+  "RELOCATED/RELOCATED": 759,
+  "DIFFERENT/DEP_MODULE_NAME": 2,
+  "DIFFERENT/SOURCE_VARIANT": 1
+ },
+ "non_identical": 6053,
+ "self_caused": 6051,
+ "inherited": [
+  "CKLaneC.SAxis.RayS",
+  "GeneralCK.Certificates.E8CompactAnchorRegularJetDerivatives"
+ ],
+ "unexplained": [],
+ "n_unexplained": 0,
+ "failed": [],
+ "not_built": 0,
+ "by_historical_mode": {
+  "plain": {
+   "IDENTICAL": 39300,
+   "DIFFERENT": 3
+  },
+  "lake": {
+   "IDENTICAL": 111
+  },
+  "prefix": {
+   "IDENTICAL": 34,
+   "DIFFERENT": 4544,
+   "RELOCATED": 685
+  },
+  "abs": {
+   "DIFFERENT": 700,
+   "IDENTICAL": 2
+  },
+  "unknown-name": {
+   "RELOCATED": 74,
+   "DIFFERENT": 47
+  }
+ },
+ "by_historical_to_build_convention": {
+  "plain->plain": {
+   "IDENTICAL": 39300,
+   "DIFFERENT": 3
+  },
+  "lake->lake": {
+   "IDENTICAL": 111
+  },
+  "prefix->prefix": {
+   "IDENTICAL": 34
+  },
+  "abs->prefix": {
+   "DIFFERENT": 5
+  },
+  "prefix->plain": {
+   "DIFFERENT": 4544,
+   "RELOCATED": 685
+  },
+  "abs->plain": {
+   "DIFFERENT": 695
+  },
+  "abs->abs": {
+   "IDENTICAL": 2
+  },
+  "unknown-name->plain": {
+   "RELOCATED": 74,
+   "DIFFERENT": 47
+  }
+ },
+ "ilean_classes": {
+  "IDENTICAL": 21918,
+  "NO_REFERENCE": 17535,
+  "DIFFERENT": 6047
+ },
+ "source_vs_rel_chosen_mismatch": [],
+ "n_source_mismatch": 0,
+ "accepted_source": "the exported source set (sources_v3.tar.zst); every compiled source was checked against its manifest sha256",
+ "wall_clock": {
+  "start": "2026-09-23T17:13:33Z",
+  "last_result": "2026-09-23T20:40:30Z",
+  "hours": 3.45
+ },
+ "lean_core_hours": {
+  "workstation": 31.4,
+  "cluster": 689.5
+ },
+ "results_by_backend": {
+  "workstation": 2921,
+  "cluster": 42579
+ },
+ "max_rss_kb": 71200504,
+ "max_rss_module": "CKRoute.Final",
+ "stolen_or_hedged": 459,
+ "modes_file": "historical build-mode table (campaign-internal; its per-module content is the recipe column of SOURCES_MANIFEST.tsv)",
+ "abs_check_identical": "5/5",
+ "source_variant_evidence": "provenance/E8TAxisZero0082Root/source_variant_evidence.json",
+ "source_variants": [
+  "GeneralCK.Certificates.E8TAxisZero0082Root"
+ ]
+}

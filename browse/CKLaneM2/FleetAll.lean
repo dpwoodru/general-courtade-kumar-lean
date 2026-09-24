@@ -1,0 +1,470 @@
+import CKLaneM2.Fleet.S0000
+import CKLaneM2.Fleet.S0001
+import CKLaneM2.Fleet.S0002
+import CKLaneM2.Fleet.S0003
+import CKLaneM2.Fleet.S0004
+import CKLaneM2.Fleet.S0005
+import CKLaneM2.Fleet.S0006
+import CKLaneM2.Fleet.S0007
+import CKLaneM2.Fleet.S0008
+import CKLaneM2.Fleet.S0009
+import CKLaneM2.Fleet.S0010
+import CKLaneM2.Fleet.S0011
+import CKLaneM2.Fleet.S0012
+import CKLaneM2.Fleet.S0013
+import CKLaneM2.Fleet.S0014
+import CKLaneM2.Fleet.S0015
+import CKLaneM2.Fleet.S0016
+import CKLaneM2.Fleet.S0017
+import CKLaneM2.Fleet.S0018
+import CKLaneM2.Fleet.S0019
+import CKLaneM2.Fleet.S0020
+import CKLaneM2.Fleet.S0021
+import CKLaneM2.Fleet.S0022
+import CKLaneM2.Fleet.S0023
+import CKLaneM2.Fleet.S0024
+import CKLaneM2.Fleet.S0025
+import CKLaneM2.Fleet.S0026
+import CKLaneM2.Fleet.S0027
+import CKLaneM2.Fleet.S0028
+import CKLaneM2.Fleet.S0029
+import CKLaneM2.Fleet.S0030
+import CKLaneM2.Fleet.S0031
+import CKLaneM2.Fleet.S0032
+import CKLaneM2.Fleet.S0033
+import CKLaneM2.Fleet.S0034
+import CKLaneM2.Fleet.S0035
+import CKLaneM2.Fleet.S0036
+import CKLaneM2.Fleet.S0037
+import CKLaneM2.Fleet.S0038
+import CKLaneM2.Fleet.S0039
+import CKLaneM2.Fleet.S0040
+import CKLaneM2.Fleet.S0041
+import CKLaneM2.Fleet.S0042
+import CKLaneM2.Fleet.S0043
+import CKLaneM2.Fleet.S0044
+import CKLaneM2.Fleet.S0045
+import CKLaneM2.Fleet.S0046
+import CKLaneM2.Fleet.S0047
+import CKLaneM2.Fleet.S0048
+import CKLaneM2.Fleet.S0049
+import CKLaneM2.Fleet.S0050
+import CKLaneM2.Fleet.S0051
+import CKLaneM2.Fleet.S0052
+import CKLaneM2.Fleet.S0053
+import CKLaneM2.Fleet.S0054
+import CKLaneM2.Fleet.S0055
+import CKLaneM2.Fleet.S0056
+import CKLaneM2.Fleet.S0057
+import CKLaneM2.Fleet.S0058
+import CKLaneM2.Fleet.S0059
+import CKLaneM2.Fleet.S0060
+import CKLaneM2.Fleet.S0061
+import CKLaneM2.Fleet.S0062
+import CKLaneM2.Fleet.S0063
+import CKLaneM2.Fleet.S0064
+import CKLaneM2.Fleet.S0065
+import CKLaneM2.Fleet.S0066
+import CKLaneM2.Fleet.S0067
+import CKLaneM2.Fleet.S0068
+import CKLaneM2.Fleet.S0069
+import CKLaneM2.Fleet.S0070
+import CKLaneM2.Fleet.S0071
+import CKLaneM2.Fleet.S0072
+import CKLaneM2.Fleet.S0073
+import CKLaneM2.Fleet.S0074
+import CKLaneM2.Fleet.S0075
+import CKLaneM2.Fleet.S0076
+import CKLaneM2.Fleet.S0077
+import CKLaneM2.Fleet.S0078
+import CKLaneM2.Fleet.S0079
+import CKLaneM2.Fleet.S0080
+import CKLaneM2.Fleet.S0081
+import CKLaneM2.Fleet.S0082
+import CKLaneM2.Fleet.S0083
+import CKLaneM2.Fleet.S0084
+import CKLaneM2.Fleet.S0085
+import CKLaneM2.Fleet.S0086
+import CKLaneM2.Fleet.S0087
+import CKLaneM2.Fleet.S0088
+import CKLaneM2.Fleet.S0089
+import CKLaneM2.Fleet.S0090
+import CKLaneM2.Fleet.S0091
+import CKLaneM2.Fleet.S0092
+import CKLaneM2.Fleet.S0093
+import CKLaneM2.Fleet.S0094
+import CKLaneM2.Fleet.S0095
+import CKLaneM2.Fleet.S0096
+import CKLaneM2.Fleet.S0097
+import CKLaneM2.Fleet.S0098
+import CKLaneM2.Fleet.S0099
+import CKLaneM2.Fleet.S0100
+import CKLaneM2.Fleet.S0101
+import CKLaneM2.Fleet.S0102
+import CKLaneM2.Fleet.S0103
+import CKLaneM2.Fleet.S0104
+import CKLaneM2.Fleet.S0105
+import CKLaneM2.Fleet.S0106
+import CKLaneM2.Fleet.S0107
+import CKLaneM2.Fleet.S0108
+import CKLaneM2.Fleet.S0109
+import CKLaneM2.Fleet.S0110
+import CKLaneM2.Fleet.S0111
+import CKLaneM2.Fleet.S0112
+import CKLaneM2.Fleet.S0113
+import CKLaneM2.Fleet.S0114
+import CKLaneM2.Fleet.S0115
+import CKLaneM2.Fleet.S0116
+import CKLaneM2.Fleet.S0117
+import CKLaneM2.Fleet.S0118
+import CKLaneM2.Fleet.S0119
+import CKLaneM2.Fleet.S0120
+import CKLaneM2.Fleet.S0121
+import CKLaneM2.Fleet.S0122
+import CKLaneM2.Fleet.S0123
+import CKLaneM2.Fleet.S0124
+import CKLaneM2.Fleet.S0125
+import CKLaneM2.Fleet.S0126
+import CKLaneM2.Fleet.S0127
+import CKLaneM2.Fleet.S0128
+import CKLaneM2.Fleet.S0129
+import CKLaneM2.Fleet.S0130
+import CKLaneM2.Fleet.S0131
+import CKLaneM2.Fleet.S0132
+import CKLaneM2.Fleet.S0133
+import CKLaneM2.Fleet.S0134
+import CKLaneM2.Fleet.S0135
+import CKLaneM2.Fleet.S0136
+import CKLaneM2.Fleet.S0137
+import CKLaneM2.Fleet.S0138
+import CKLaneM2.Fleet.S0139
+import CKLaneM2.Fleet.S0140
+import CKLaneM2.Fleet.S0141
+import CKLaneD.ArchTree
+
+/-!
+# Lane M2b fleet aggregate: all 7,056 archived `shifted_logsum` leaves
+
+Archive `OUTER_OPPOSITE_RESULT.json` sha256 44344386e10adb6f6bdd066d7fbe4056ab2c10164019c0d9dce378a2e9edf72d.
+Certified shard by shard (142 shards of <= 50 leaves), bound to the archived partition tree
+`CKLaneD.ArchTree.archTree` by `slPaths_eq` (kernel-checked list equality of the label-1 leaf paths).
+-/
+
+namespace CKLaneM2.FleetAll
+
+open CKLaneD CKLaneM2 GeneralCK
+
+theorem forall_mem_append_of {α : Type*} {P : α → Prop} {l₁ l₂ : List α}
+    (h₁ : ∀ x ∈ l₁, P x) (h₂ : ∀ x ∈ l₂, P x) : ∀ x ∈ l₁ ++ l₂, P x := by
+  intro x hx
+  rcases List.mem_append.mp hx with h | h
+  · exact h₁ x h
+  · exact h₂ x h
+
+set_option maxRecDepth 100000 in
+noncomputable def allLeaves : List (List ℕ × SLWitness) :=
+  (Fleet.S0000.leaves ++
+  (Fleet.S0001.leaves ++
+  (Fleet.S0002.leaves ++
+  (Fleet.S0003.leaves ++
+  (Fleet.S0004.leaves ++
+  (Fleet.S0005.leaves ++
+  (Fleet.S0006.leaves ++
+  (Fleet.S0007.leaves ++
+  (Fleet.S0008.leaves ++
+  (Fleet.S0009.leaves ++
+  (Fleet.S0010.leaves ++
+  (Fleet.S0011.leaves ++
+  (Fleet.S0012.leaves ++
+  (Fleet.S0013.leaves ++
+  (Fleet.S0014.leaves ++
+  (Fleet.S0015.leaves ++
+  (Fleet.S0016.leaves ++
+  (Fleet.S0017.leaves ++
+  (Fleet.S0018.leaves ++
+  (Fleet.S0019.leaves ++
+  (Fleet.S0020.leaves ++
+  (Fleet.S0021.leaves ++
+  (Fleet.S0022.leaves ++
+  (Fleet.S0023.leaves ++
+  (Fleet.S0024.leaves ++
+  (Fleet.S0025.leaves ++
+  (Fleet.S0026.leaves ++
+  (Fleet.S0027.leaves ++
+  (Fleet.S0028.leaves ++
+  (Fleet.S0029.leaves ++
+  (Fleet.S0030.leaves ++
+  (Fleet.S0031.leaves ++
+  (Fleet.S0032.leaves ++
+  (Fleet.S0033.leaves ++
+  (Fleet.S0034.leaves ++
+  (Fleet.S0035.leaves ++
+  (Fleet.S0036.leaves ++
+  (Fleet.S0037.leaves ++
+  (Fleet.S0038.leaves ++
+  (Fleet.S0039.leaves ++
+  (Fleet.S0040.leaves ++
+  (Fleet.S0041.leaves ++
+  (Fleet.S0042.leaves ++
+  (Fleet.S0043.leaves ++
+  (Fleet.S0044.leaves ++
+  (Fleet.S0045.leaves ++
+  (Fleet.S0046.leaves ++
+  (Fleet.S0047.leaves ++
+  (Fleet.S0048.leaves ++
+  (Fleet.S0049.leaves ++
+  (Fleet.S0050.leaves ++
+  (Fleet.S0051.leaves ++
+  (Fleet.S0052.leaves ++
+  (Fleet.S0053.leaves ++
+  (Fleet.S0054.leaves ++
+  (Fleet.S0055.leaves ++
+  (Fleet.S0056.leaves ++
+  (Fleet.S0057.leaves ++
+  (Fleet.S0058.leaves ++
+  (Fleet.S0059.leaves ++
+  (Fleet.S0060.leaves ++
+  (Fleet.S0061.leaves ++
+  (Fleet.S0062.leaves ++
+  (Fleet.S0063.leaves ++
+  (Fleet.S0064.leaves ++
+  (Fleet.S0065.leaves ++
+  (Fleet.S0066.leaves ++
+  (Fleet.S0067.leaves ++
+  (Fleet.S0068.leaves ++
+  (Fleet.S0069.leaves ++
+  (Fleet.S0070.leaves ++
+  (Fleet.S0071.leaves ++
+  (Fleet.S0072.leaves ++
+  (Fleet.S0073.leaves ++
+  (Fleet.S0074.leaves ++
+  (Fleet.S0075.leaves ++
+  (Fleet.S0076.leaves ++
+  (Fleet.S0077.leaves ++
+  (Fleet.S0078.leaves ++
+  (Fleet.S0079.leaves ++
+  (Fleet.S0080.leaves ++
+  (Fleet.S0081.leaves ++
+  (Fleet.S0082.leaves ++
+  (Fleet.S0083.leaves ++
+  (Fleet.S0084.leaves ++
+  (Fleet.S0085.leaves ++
+  (Fleet.S0086.leaves ++
+  (Fleet.S0087.leaves ++
+  (Fleet.S0088.leaves ++
+  (Fleet.S0089.leaves ++
+  (Fleet.S0090.leaves ++
+  (Fleet.S0091.leaves ++
+  (Fleet.S0092.leaves ++
+  (Fleet.S0093.leaves ++
+  (Fleet.S0094.leaves ++
+  (Fleet.S0095.leaves ++
+  (Fleet.S0096.leaves ++
+  (Fleet.S0097.leaves ++
+  (Fleet.S0098.leaves ++
+  (Fleet.S0099.leaves ++
+  (Fleet.S0100.leaves ++
+  (Fleet.S0101.leaves ++
+  (Fleet.S0102.leaves ++
+  (Fleet.S0103.leaves ++
+  (Fleet.S0104.leaves ++
+  (Fleet.S0105.leaves ++
+  (Fleet.S0106.leaves ++
+  (Fleet.S0107.leaves ++
+  (Fleet.S0108.leaves ++
+  (Fleet.S0109.leaves ++
+  (Fleet.S0110.leaves ++
+  (Fleet.S0111.leaves ++
+  (Fleet.S0112.leaves ++
+  (Fleet.S0113.leaves ++
+  (Fleet.S0114.leaves ++
+  (Fleet.S0115.leaves ++
+  (Fleet.S0116.leaves ++
+  (Fleet.S0117.leaves ++
+  (Fleet.S0118.leaves ++
+  (Fleet.S0119.leaves ++
+  (Fleet.S0120.leaves ++
+  (Fleet.S0121.leaves ++
+  (Fleet.S0122.leaves ++
+  (Fleet.S0123.leaves ++
+  (Fleet.S0124.leaves ++
+  (Fleet.S0125.leaves ++
+  (Fleet.S0126.leaves ++
+  (Fleet.S0127.leaves ++
+  (Fleet.S0128.leaves ++
+  (Fleet.S0129.leaves ++
+  (Fleet.S0130.leaves ++
+  (Fleet.S0131.leaves ++
+  (Fleet.S0132.leaves ++
+  (Fleet.S0133.leaves ++
+  (Fleet.S0134.leaves ++
+  (Fleet.S0135.leaves ++
+  (Fleet.S0136.leaves ++
+  (Fleet.S0137.leaves ++
+  (Fleet.S0138.leaves ++
+  (Fleet.S0139.leaves ++
+  (Fleet.S0140.leaves ++
+  Fleet.S0141.leaves)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+
+set_option maxRecDepth 100000 in
+theorem allLeaves_sem : ∀ x ∈ allLeaves, SemUVT (uvtBox x.1) :=
+  (forall_mem_append_of Fleet.S0000.sem
+  (forall_mem_append_of Fleet.S0001.sem
+  (forall_mem_append_of Fleet.S0002.sem
+  (forall_mem_append_of Fleet.S0003.sem
+  (forall_mem_append_of Fleet.S0004.sem
+  (forall_mem_append_of Fleet.S0005.sem
+  (forall_mem_append_of Fleet.S0006.sem
+  (forall_mem_append_of Fleet.S0007.sem
+  (forall_mem_append_of Fleet.S0008.sem
+  (forall_mem_append_of Fleet.S0009.sem
+  (forall_mem_append_of Fleet.S0010.sem
+  (forall_mem_append_of Fleet.S0011.sem
+  (forall_mem_append_of Fleet.S0012.sem
+  (forall_mem_append_of Fleet.S0013.sem
+  (forall_mem_append_of Fleet.S0014.sem
+  (forall_mem_append_of Fleet.S0015.sem
+  (forall_mem_append_of Fleet.S0016.sem
+  (forall_mem_append_of Fleet.S0017.sem
+  (forall_mem_append_of Fleet.S0018.sem
+  (forall_mem_append_of Fleet.S0019.sem
+  (forall_mem_append_of Fleet.S0020.sem
+  (forall_mem_append_of Fleet.S0021.sem
+  (forall_mem_append_of Fleet.S0022.sem
+  (forall_mem_append_of Fleet.S0023.sem
+  (forall_mem_append_of Fleet.S0024.sem
+  (forall_mem_append_of Fleet.S0025.sem
+  (forall_mem_append_of Fleet.S0026.sem
+  (forall_mem_append_of Fleet.S0027.sem
+  (forall_mem_append_of Fleet.S0028.sem
+  (forall_mem_append_of Fleet.S0029.sem
+  (forall_mem_append_of Fleet.S0030.sem
+  (forall_mem_append_of Fleet.S0031.sem
+  (forall_mem_append_of Fleet.S0032.sem
+  (forall_mem_append_of Fleet.S0033.sem
+  (forall_mem_append_of Fleet.S0034.sem
+  (forall_mem_append_of Fleet.S0035.sem
+  (forall_mem_append_of Fleet.S0036.sem
+  (forall_mem_append_of Fleet.S0037.sem
+  (forall_mem_append_of Fleet.S0038.sem
+  (forall_mem_append_of Fleet.S0039.sem
+  (forall_mem_append_of Fleet.S0040.sem
+  (forall_mem_append_of Fleet.S0041.sem
+  (forall_mem_append_of Fleet.S0042.sem
+  (forall_mem_append_of Fleet.S0043.sem
+  (forall_mem_append_of Fleet.S0044.sem
+  (forall_mem_append_of Fleet.S0045.sem
+  (forall_mem_append_of Fleet.S0046.sem
+  (forall_mem_append_of Fleet.S0047.sem
+  (forall_mem_append_of Fleet.S0048.sem
+  (forall_mem_append_of Fleet.S0049.sem
+  (forall_mem_append_of Fleet.S0050.sem
+  (forall_mem_append_of Fleet.S0051.sem
+  (forall_mem_append_of Fleet.S0052.sem
+  (forall_mem_append_of Fleet.S0053.sem
+  (forall_mem_append_of Fleet.S0054.sem
+  (forall_mem_append_of Fleet.S0055.sem
+  (forall_mem_append_of Fleet.S0056.sem
+  (forall_mem_append_of Fleet.S0057.sem
+  (forall_mem_append_of Fleet.S0058.sem
+  (forall_mem_append_of Fleet.S0059.sem
+  (forall_mem_append_of Fleet.S0060.sem
+  (forall_mem_append_of Fleet.S0061.sem
+  (forall_mem_append_of Fleet.S0062.sem
+  (forall_mem_append_of Fleet.S0063.sem
+  (forall_mem_append_of Fleet.S0064.sem
+  (forall_mem_append_of Fleet.S0065.sem
+  (forall_mem_append_of Fleet.S0066.sem
+  (forall_mem_append_of Fleet.S0067.sem
+  (forall_mem_append_of Fleet.S0068.sem
+  (forall_mem_append_of Fleet.S0069.sem
+  (forall_mem_append_of Fleet.S0070.sem
+  (forall_mem_append_of Fleet.S0071.sem
+  (forall_mem_append_of Fleet.S0072.sem
+  (forall_mem_append_of Fleet.S0073.sem
+  (forall_mem_append_of Fleet.S0074.sem
+  (forall_mem_append_of Fleet.S0075.sem
+  (forall_mem_append_of Fleet.S0076.sem
+  (forall_mem_append_of Fleet.S0077.sem
+  (forall_mem_append_of Fleet.S0078.sem
+  (forall_mem_append_of Fleet.S0079.sem
+  (forall_mem_append_of Fleet.S0080.sem
+  (forall_mem_append_of Fleet.S0081.sem
+  (forall_mem_append_of Fleet.S0082.sem
+  (forall_mem_append_of Fleet.S0083.sem
+  (forall_mem_append_of Fleet.S0084.sem
+  (forall_mem_append_of Fleet.S0085.sem
+  (forall_mem_append_of Fleet.S0086.sem
+  (forall_mem_append_of Fleet.S0087.sem
+  (forall_mem_append_of Fleet.S0088.sem
+  (forall_mem_append_of Fleet.S0089.sem
+  (forall_mem_append_of Fleet.S0090.sem
+  (forall_mem_append_of Fleet.S0091.sem
+  (forall_mem_append_of Fleet.S0092.sem
+  (forall_mem_append_of Fleet.S0093.sem
+  (forall_mem_append_of Fleet.S0094.sem
+  (forall_mem_append_of Fleet.S0095.sem
+  (forall_mem_append_of Fleet.S0096.sem
+  (forall_mem_append_of Fleet.S0097.sem
+  (forall_mem_append_of Fleet.S0098.sem
+  (forall_mem_append_of Fleet.S0099.sem
+  (forall_mem_append_of Fleet.S0100.sem
+  (forall_mem_append_of Fleet.S0101.sem
+  (forall_mem_append_of Fleet.S0102.sem
+  (forall_mem_append_of Fleet.S0103.sem
+  (forall_mem_append_of Fleet.S0104.sem
+  (forall_mem_append_of Fleet.S0105.sem
+  (forall_mem_append_of Fleet.S0106.sem
+  (forall_mem_append_of Fleet.S0107.sem
+  (forall_mem_append_of Fleet.S0108.sem
+  (forall_mem_append_of Fleet.S0109.sem
+  (forall_mem_append_of Fleet.S0110.sem
+  (forall_mem_append_of Fleet.S0111.sem
+  (forall_mem_append_of Fleet.S0112.sem
+  (forall_mem_append_of Fleet.S0113.sem
+  (forall_mem_append_of Fleet.S0114.sem
+  (forall_mem_append_of Fleet.S0115.sem
+  (forall_mem_append_of Fleet.S0116.sem
+  (forall_mem_append_of Fleet.S0117.sem
+  (forall_mem_append_of Fleet.S0118.sem
+  (forall_mem_append_of Fleet.S0119.sem
+  (forall_mem_append_of Fleet.S0120.sem
+  (forall_mem_append_of Fleet.S0121.sem
+  (forall_mem_append_of Fleet.S0122.sem
+  (forall_mem_append_of Fleet.S0123.sem
+  (forall_mem_append_of Fleet.S0124.sem
+  (forall_mem_append_of Fleet.S0125.sem
+  (forall_mem_append_of Fleet.S0126.sem
+  (forall_mem_append_of Fleet.S0127.sem
+  (forall_mem_append_of Fleet.S0128.sem
+  (forall_mem_append_of Fleet.S0129.sem
+  (forall_mem_append_of Fleet.S0130.sem
+  (forall_mem_append_of Fleet.S0131.sem
+  (forall_mem_append_of Fleet.S0132.sem
+  (forall_mem_append_of Fleet.S0133.sem
+  (forall_mem_append_of Fleet.S0134.sem
+  (forall_mem_append_of Fleet.S0135.sem
+  (forall_mem_append_of Fleet.S0136.sem
+  (forall_mem_append_of Fleet.S0137.sem
+  (forall_mem_append_of Fleet.S0138.sem
+  (forall_mem_append_of Fleet.S0139.sem
+  (forall_mem_append_of Fleet.S0140.sem
+  Fleet.S0141.sem)))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))))
+
+/-- The archived `shifted_logsum` (label 1) leaf paths of the archived (O) tree, in tree order. -/
+def slPaths : List (List ℕ) := (ArchTree.archTree.leaves.filter (fun x => x.2 = 1)).map Prod.fst
+
+set_option maxRecDepth 100000 in
+theorem slPaths_eq : slPaths = allLeaves.map Prod.fst := by decide +kernel
+
+theorem slPaths_length : slPaths.length = 7056 := by
+  rw [slPaths_eq, List.length_map]
+  decide +kernel
+
+theorem fleet_sl_sem : ∀ p ∈ slPaths, SemUVT (uvtBox p) := by
+  intro p hp
+  rw [slPaths_eq] at hp
+  obtain ⟨x, hx, rfl⟩ := List.mem_map.mp hp
+  exact allLeaves_sem x hx
+
+end CKLaneM2.FleetAll

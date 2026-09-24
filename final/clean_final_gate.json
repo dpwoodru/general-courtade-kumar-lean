@@ -1,0 +1,39 @@
+{
+  "records": [
+    {
+      "declaration": "GeneralCK.ArchiveRegionalBoundary.generalCourtadeKumar_closed",
+      "elaborated_type": "GeneralCK.GeneralCourtadeKumar",
+      "source_sha256": "6c70b40eb69a8b83f857f39c1869f493a65eb3d40345b9b9e3f8e1fc067552b4",
+      "olean_sha256": "43de2287ab0259c0ab294803f81e7cbf7f5ddec9902797071e396d56ce6840be",
+      "ilean_sha256": "66ce1914ddef3036810d76d7d703af1435d0924da6d334abeda3db0a763cae1b",
+      "compile_rc": 0,
+      "source_sorry_count": 0,
+      "source_admit_count": 0,
+      "log_error_count": 0,
+      "log_sorry_warning_count": 0,
+      "axioms": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "gates": {
+        "compile_rc_zero": true,
+        "audit_rc_zero": true,
+        "olean_nonempty": true,
+        "no_source_sorry": true,
+        "no_source_admit": true,
+        "no_native_or_axiom_decl": true,
+        "no_log_errors": true,
+        "no_sorry_warnings": true,
+        "type_printed": true,
+        "axioms_printed": true,
+        "axioms_subset_permitted": true,
+        "no_sorryAx": true
+      },
+      "status": "PASS"
+    }
+  ],
+  "all_pass": true,
+  "compile_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "audit_log_sha256": "e3e5cbd8c4faa63973bb18b822b201a7c46ad4b9b80dce0b82e67a311b1e4957"
+}
