@@ -61,7 +61,7 @@ You may instead fetch and build Mathlib yourself: `LOCKS/REBUILD_TRUSTED_BASE.md
 ```bash
 git clone https://github.com/dpwoodru/general-courtade-kumar-lean.git
 cd general-courtade-kumar-lean
-sha256sum -c SHA256SUMS.txt                        # the repository files
+sha256sum -c SHA256SUMS.txt                        # the repository files (all except README.md)
 
 # release assets -> ./release/  (either with the GitHub CLI ...)
 gh release download v1.0 -R github.com/dpwoodru/general-courtade-kumar-lean -D release

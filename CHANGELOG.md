@@ -1,5 +1,12 @@
 # Changelog and errata
 
+## Documentation update (2026-09-24, after release v1.0)
+
+- `README.md`, `MANUSCRIPT_DEVIATIONS.md`: reference and citation for the paper, arXiv:2609.24931.
+- `SHA256SUMS.txt` no longer lists `README.md`, so that README updates (for example new verification results) do not
+  invalidate the repository checksums.
+- No proof file, table or release asset changed.
+
 ## GitHub release 1 (2026-09-24)
 
 The proof content is unchanged from the v3 release: `sources_v3.tar.zst` (sha256

@@ -1,5 +1,8 @@
 # Where the Lean proof verifies a step differently from the paper's archived computations
 
+The paper: Z. Chen, A. Gohari, A. Javanmard, H. Lin, V. Mirrokni, C. Nair and D. P. Woodruff, *A Proof of the Most
+Informative Boolean Function Conjecture*, [arXiv:2609.24931](https://arxiv.org/abs/2609.24931).
+
 The paper's computer-assisted steps rest on numerical computations archived with the manuscript: interval-arithmetic
 ledgers and leaf lists, not Lean. The Lean proof re-proves every such step inside Lean, and for most steps it follows
 the archived computation. The entries below are the steps where it instead uses its own certificate (a different

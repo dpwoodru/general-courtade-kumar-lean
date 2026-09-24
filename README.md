@@ -4,6 +4,10 @@ This repository contains a complete, machine-checked Lean 4 proof of the general
 every n, every Boolean function f on {0,1}ⁿ and every crossover probability p ∈ [0, 1], the mutual information between
 f(X) and the output Y of a binary symmetric channel with crossover p satisfies I(f(X); Y) ≤ 1 − H(p).
 
+It formalizes the main theorem of Z. Chen, A. Gohari, A. Javanmard, H. Lin, V. Mirrokni, C. Nair and D. P. Woodruff,
+[*A Proof of the Most Informative Boolean Function Conjecture*](https://arxiv.org/abs/2609.24931), arXiv:2609.24931
+(2026).
+
 ```lean
 theorem GeneralCK.ArchiveRegionalBoundary.generalCourtadeKumar_closed : GeneralCK.GeneralCourtadeKumar
 -- #print axioms: [propext, Classical.choice, Quot.sound]
@@ -83,7 +87,7 @@ the paper's claim with its own certificates or a different argument.
 | `provenance/` | the one historical source variant that is not part of the source set (`E8TAxisZero0082Root`: same statement, different proof) |
 | `browse/` | **read-only copies** of the readable proof code, for browsing on GitHub (see below) |
 | `THIRD_PARTY_NOTICES.md`, `LICENSES/` | licenses of the third-party packages whose compiled files are release assets (Apache License 2.0) |
-| `SHA256SUMS.txt` | sha256 of every file of this repository |
+| `SHA256SUMS.txt` | sha256 of every file of this repository except `README.md` (which may be updated after the release) |
 
 **Release assets** (GitHub Release `v1.0`):
 
@@ -141,4 +145,19 @@ The release asset `sources_v3.tar.zst` and its copies in `browse/` are covered b
 
 ## Citation
 
-To be added.
+Please cite the paper:
+
+Z. Chen, A. Gohari, A. Javanmard, H. Lin, V. Mirrokni, C. Nair and D. P. Woodruff. *A Proof of the Most Informative
+Boolean Function Conjecture.* arXiv:2609.24931, 2026. https://arxiv.org/abs/2609.24931
+
+```bibtex
+@misc{chen2026mostinformative,
+  title         = {A Proof of the Most Informative Boolean Function Conjecture},
+  author        = {Chen, Zijie and Gohari, Amin and Javanmard, Adel and Lin, Honghao and Mirrokni, Vahab and Nair, Chandra and Woodruff, David P.},
+  year          = {2026},
+  eprint        = {2609.24931},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.DS},
+  url           = {https://arxiv.org/abs/2609.24931}
+}
+```
