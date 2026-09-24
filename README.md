@@ -44,7 +44,8 @@ finite sums. [`REVIEW_GUIDE.md`](REVIEW_GUIDE.md) §1 walks through them.
 | Clean rebuild from these sources | every one of the 45,500 modules recompiled with plain `lean` into an empty output root, with no prebuilt campaign files. The final theorem passed the gate (compile rc 0, no errors, no `sorry`, only the 3 standard axioms), and its compiled file `CKRoute/Final.olean` (sha256 `43de2287…`) is byte-identical to the original build's |
 | Kernel replay of the clean rebuild | `SHARDED_REPLAY_OK`: 4,990 / 4,990 shards (4,954 run on a Google compute cluster, 36 on the build workstation), 45,500 modules each replayed exactly once, 22,668,080 declarations, 0 failures. The top shard prints the axiom line `[Classical.choice, Quot.sound, propext]` |
 | Acceptance tests of the verification kit | following [`HOW_TO_VERIFY.md`](HOW_TO_VERIFY.md) literally: checksums, unpacking, quick test (byte-identical), a 488-module partial rebuild (486 byte-identical + the 2 expected differences), the audit of the final theorem, and sample replay shards all pass |
-| Independent end-to-end run of the shipped kit (full rebuild, audit and replay on a Google compute cluster) | **in progress — results will be added** |
+| Independent end-to-end run of the shipped kit (full rebuild, audit and replay on a Google compute cluster) |
+**passed** (2026-09-24): `HOW_TO_VERIFY.md` followed literally on a single fresh machine with byte-identical inputs and the official Lean 4.33.0. All 45,500 modules rebuilt, 0 failures; 45,498 byte-identical to `CLEAN_BUILD_HASHES.tsv` plus the 2 expected `abs` modules; `CKRoute/Final.olean` `43de2287…`; audit: only the 3 standard axioms. Kernel replay of this rebuild: all 45,500 modules re-checked exactly once, 0 failures (1,205 batches of the shipped plan, plus the last 3,588 modules in 120 smaller batches run in parallel to finish sooner); the top batch prints the 3 standard axioms
 
 ## How to verify
 
