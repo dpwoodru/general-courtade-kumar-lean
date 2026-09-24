@@ -4,6 +4,10 @@ This guide is for human readers. It needs no Lean installation, only the extract
 
 Line counts are `\n`-terminated lines of the v3 files (`SOURCES_MANIFEST.tsv`, column `lines`).
 
+Some source comments describe an intermediate development status (for example "remains UNPROVED" or "still open") for
+statements that the release proves elsewhere. `SOURCE_COMMENT_NOTES.md` corrects them with links. The corrections are
+kept there rather than in the `.lean` files to preserve the published checksums.
+
 ## 1. The statement
 
 `sources/GeneralCK/Statement.lean` (module `GeneralCK.Statement`, 63 lines) defines:

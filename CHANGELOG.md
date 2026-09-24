@@ -1,5 +1,17 @@
 # Changelog and errata
 
+## Source-comment errata (2026-09-24, after release v1.0)
+
+- New `SOURCE_COMMENT_NOTES.md`: corrections, with links, for six out-of-date or imprecise comments and notes raised in a
+  coauthor review of commit `95f208b`.
+- No `.lean` file was edited, so every source and compiled checksum and every verification record stays valid;
+  `SOURCE_COMMENT_NOTES.md` explains why.
+- `HOW_TO_VERIFY.md`, `BUILD/EXPECTED.md`: a fully fresh kernel replay needs a new, empty work directory.
+- `provenance/E8TAxisZero0082Root/README.md`: tactic name corrected (`norm_num`, not `simp only`).
+- New `provenance/PsiCornerBoundaryRefutation/`: the historical file that a source comment cites. It is outside the
+  source set and is not imported by the final theorem; it was compile-checked against this release.
+- No proof file, table or release asset changed.
+
 ## Documentation update (2026-09-24, after release v1.0)
 
 - `README.md`, `MANUSCRIPT_DEVIATIONS.md`: reference and citation for the paper, arXiv:2609.24931.

@@ -6,8 +6,8 @@
 | campaign variant (`campaign_variant_2b04854f.lean`, this folder) | `2b04854fb7202c589e5e541e8b9009f443f67c5c38737016f09629cacdcc9097` (1,878 B) | `061862a9a429e4e0e614fb9ccc2b0ed54cc01e064d24b721cf9a454d6956dc9c` (original build; 196,496 B) |
 
 - **The difference.** The two sources differ only in the last two lines of the proof of the theorem `positiveAt`:
-  - the variant: `simp only […] at *` then `exact ⟨by linarith, by linarith, by linarith, by linarith⟩`;
-  - published: `simp only […]` then `exact ⟨hs0, hs1, ht0, ht1⟩`.
+  - the variant: `norm_num […] at *` then `exact ⟨by linarith, by linarith, by linarith, by linarith⟩`;
+  - published: `norm_num […]` then `exact ⟨hs0, hs1, ht0, ht1⟩`.
 - **Kernel-level comparison of the two oleans:**
   - imports are equal, and both files have the same 9 constants;
   - 8 constants are kernel-identical;

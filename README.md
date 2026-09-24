@@ -76,6 +76,7 @@ the paper's claim with its own certificates or a different argument.
 | `HOW_TO_VERIFY.md` | step-by-step machine check: requirements, commands, expected output |
 | `REVIEW_GUIDE.md` | for human readers: statement, proof skeleton, the 18 inputs of the final theorem, certificate families, trust base |
 | `MANUSCRIPT_DEVIATIONS.md` | where the Lean proof verifies a step differently from the paper's archived computations |
+| `SOURCE_COMMENT_NOTES.md` | errata for out-of-date or imprecise comments in the sources, kept outside the `.lean` files to preserve their checksums |
 | `CHANGELOG.md` | release history and errata |
 | `BUILD/` | `build_plain.sh` / `build_plain.py` (the tested build: plain `lean`, topological order, parallel jobs under a memory budget), `audit_final.sh`, `replay_fresh.sh`, `EXPECTED.md`; `lake/` is a Lake project skeleton (**untested**, a convenience only) |
 | `LOCKS/` | `lean-toolchain`, `lake-manifest.json` (Mathlib `db584cd6…` and its dependencies), the toolchain commit, per-file hashes of the trusted packages, and how to rebuild the trusted base yourself |
@@ -135,6 +136,10 @@ The 45,500 campaign modules are not trusted: they are rebuilt from source and re
   those two historical directory names so that `build_plain.sh` reproduces the published hashes exactly; they carry
   no meaning for the proof. Two further modules had an absolute source path that cannot be reproduced elsewhere; they
   are compiled plainly and are expected to differ from the published hashes by that path only.
+- **Out-of-date comments.** Some comments in the sources describe an intermediate development status, for example
+  "remains UNPROVED" or "still open", for statements that the release proves elsewhere. They are corrected, with links,
+  in [`SOURCE_COMMENT_NOTES.md`](SOURCE_COMMENT_NOTES.md) rather than in the `.lean` files, to preserve the published
+  source and compiled checksums. Lean's kernel does not read comments, so they do not affect the proof.
 - Module namespaces such as `CKLaneE` or `CKLaneM07` are names of the work streams that produced them.
 
 ## License

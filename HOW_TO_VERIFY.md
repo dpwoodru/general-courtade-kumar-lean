@@ -92,7 +92,9 @@ BUILD/build_plain.sh --packages trusted/packages --out out_test --lean $LEAN --t
 BUILD/build_plain.sh --packages trusted/packages --out out --lean $LEAN --jobs 32 --mem-gb 200
 BUILD/audit_final.sh  --out out --packages trusted/packages --lean $LEAN
 
-# optional: an independent kernel replay of your own build (about 240 CPU-hours)
+# optional: an independent kernel replay of your own build (about 240 CPU-hours).
+# Run it in a NEW, empty work directory (default ./replay_work, or --work DIR): in a reused directory, shards that
+# already succeeded in an earlier run are not replayed again (see SOURCE_COMMENT_NOTES.md §5).
 BUILD/replay_fresh.sh --out out --packages trusted/packages --lean $LEAN --workers 32
 ```
 

@@ -93,7 +93,8 @@ The clean build's gate record for `CKRoute.Final` is `final/clean_final_gate.jso
 
 - All 1,225 shards of `replay/plan.tsv` must print `SHARD_REPLAY_OK`, and `summary.json` must show
   `SHARDED_REPLAY_OK` with 45,500 modules replayed exactly once.
-- The verdict must be `INCREMENTAL_REPLAY_OK` (0 cached, 45,500 replayed).
+- The verdict must be `INCREMENTAL_REPLAY_OK` (0 cached, 45,500 replayed) for a run in a new, empty work directory.
+  In a reused directory, shards that already succeeded are not replayed again (see `SOURCE_COMMENT_NOTES.md` §5).
 - The top shard (id 1224) must print the axiom line above.
 - Cost: ≈ 236 Lean core-hours over the recorded shard runs of the original build; top shard 1:08:47 at 68.5 GB, all
   other shards ≤ 26.3 GB. The replay of the clean rebuild (a finer 4,990-shard plan) needed up to 82.9 GB for its top
