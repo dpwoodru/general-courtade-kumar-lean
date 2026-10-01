@@ -1,0 +1,3 @@
+{"challenge_module": "CKChallenge.Challenge", "solution_module": "CKChallenge.Solution",
+ "theorem_names": ["CourtadeKumar.courtade_kumar"],
+ "permitted_axioms": ["propext", "Quot.sound", "Classical.choice"], "enable_nanoda": false}

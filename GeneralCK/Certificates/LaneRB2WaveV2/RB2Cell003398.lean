@@ -1,0 +1,2020 @@
+import GeneralCK.Certificates.DyadicFastLog
+import GeneralCK.Certificates.BivariateProvedProgram
+import GeneralCK.CorrectionHessianNatural
+import GeneralCK.Certificates.CorrectionFactorizedProgramKernel
+import GeneralCK.CorrectionInteriorRatioBridge
+
+set_option autoImplicit false
+set_option relaxedAutoImplicit false
+
+namespace LaneCBRB2Cell003398Endpoints
+open GeneralCK.Certificates
+set_option maxRecDepth 10000
+set_option maxHeartbeats 4000000
+
+noncomputable def lift40 (a : DyadicInterval 40) : DyadicInterval 64 :=
+  ⟨a.lo*16777216, a.hi*16777216⟩
+
+theorem lift40_contains {a : DyadicInterval 40} {x : ℝ} :
+    (lift40 a).Contains x ↔ a.Contains x := by
+  simp only [DyadicInterval.Contains, lift40, Int.cast_mul, Int.cast_ofNat]
+  norm_num [DyadicInterval.scale]
+  constructor <;> intro h <;> constructor <;> linarith [h.1,h.2]
+
+theorem direct {z : ℤ} {e n : ℕ} {a : DyadicInterval 40}
+    (hc : DyadicFastLog.check z 1099511627776 e n (lift40 a)=true) :
+    a.Contains (Real.log ((z:ℝ)/1099511627776)) := by
+  apply lift40_contains.mp
+  simpa only [Int.cast_ofNat] using DyadicFastLog.check_sound hc
+
+theorem reciprocal {z : ℤ} {e n : ℕ} {a : DyadicInterval 40}
+    (hc : DyadicFastLog.check 1099511627776 z e n (lift40 a.neg)=true) :
+    a.Contains (Real.log ((z:ℝ)/1099511627776)) := by
+  have h := lift40_contains.mp (DyadicFastLog.check_sound hc)
+  have hn := DyadicInterval.neg_sound h
+  rw [← Real.log_inv, inv_div] at hn
+  simpa only [DyadicInterval.neg, neg_neg, Int.cast_ofNat] using hn
+
+noncomputable def sharedTwo : DyadicInterval 64 := ⟨12786308645202655420,12786308645202662926⟩
+theorem sharedTwo_eq : DyadicLogSeries.enclosure (DyadicFastLog.fraction 64 1 3) 16=sharedTwo := by rfl
+noncomputable def out_w0 : DyadicInterval 40 := ⟨-2107592842112,-2107592803264⟩
+theorem checked_w0 : DyadicFastLog.check 161705518694 1099511627776 2 16 (lift40 out_w0)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w0 : out_w0.Contains (Real.log ((161705518694:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using direct checked_w0
+#print axioms endpoint_w0
+noncomputable def out_w1 : DyadicInterval 40 := ⟨-2107592842112,-2107592803264⟩
+theorem checked_w1 : DyadicFastLog.check 161705518695 1099511627776 2 16 (lift40 out_w1)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w1 : out_w1.Contains (Real.log ((161705518695:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using direct checked_w1
+#print axioms endpoint_w1
+noncomputable def out_w2 : DyadicInterval 40 := ⟨-174908291648,-174908291584⟩
+theorem checked_w2 : DyadicFastLog.check 937806109081 1099511627776 0 16 (lift40 out_w2)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w2 : out_w2.Contains (Real.log ((937806109081:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using direct checked_w2
+#print axioms endpoint_w2
+noncomputable def out_w3 : DyadicInterval 40 := ⟨-174908291648,-174908291584⟩
+theorem checked_w3 : DyadicFastLog.check 937806109082 1099511627776 0 16 (lift40 out_w3)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w3 : out_w3.Contains (Real.log ((937806109082:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using direct checked_w3
+#print axioms endpoint_w3
+noncomputable def out_w4 : DyadicInterval 40 := ⟨-1711243278592,-1711243240000⟩
+theorem checked_w4 : DyadicFastLog.check 231888052550 1099511627776 2 16 (lift40 out_w4)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w4 : out_w4.Contains (Real.log ((231888052550:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using direct checked_w4
+#print axioms endpoint_w4
+noncomputable def out_w5 : DyadicInterval 40 := ⟨-1711243278528,-1711243239936⟩
+theorem checked_w5 : DyadicFastLog.check 231888052553 1099511627776 2 16 (lift40 out_w5)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w5 : out_w5.Contains (Real.log ((231888052553:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using direct checked_w5
+#print axioms endpoint_w5
+noncomputable def out_w6 : DyadicInterval 40 := ⟨-260434099840,-260434099776⟩
+theorem checked_w6 : DyadicFastLog.check 867623575223 1099511627776 0 16 (lift40 out_w6)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w6 : out_w6.Contains (Real.log ((867623575223:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using direct checked_w6
+#print axioms endpoint_w6
+noncomputable def out_w7 : DyadicInterval 40 := ⟨-260434099840,-260434099776⟩
+theorem checked_w7 : DyadicFastLog.check 867623575226 1099511627776 0 16 (lift40 out_w7)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w7 : out_w7.Contains (Real.log ((867623575226:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using direct checked_w7
+#print axioms endpoint_w7
+noncomputable def out_w8 : DyadicInterval 40 := ⟨762123383616,762123402880⟩
+theorem checked_w8 : DyadicFastLog.check 1099511627776 2199023255552 1 16 (lift40 out_w8.neg)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w8 : out_w8.Contains (Real.log ((2199023255552:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using reciprocal checked_w8
+#print axioms endpoint_w8
+noncomputable def out_w9 : DyadicInterval 40 := ⟨99041995648,99041995712⟩
+theorem checked_w9 : DyadicFastLog.check 1099511627776 1203151394816 0 16 (lift40 out_w9.neg)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w9 : out_w9.Contains (Real.log ((1203151394816:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using reciprocal checked_w9
+#print axioms endpoint_w9
+noncomputable def out_w10 : DyadicInterval 40 := ⟨-108854718848,-108854718784⟩
+theorem checked_w10 : DyadicFastLog.check 995871860736 1099511627776 0 16 (lift40 out_w10)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w10 : out_w10.Contains (Real.log ((995871860736:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using direct checked_w10
+#print axioms endpoint_w10
+noncomputable def out_w11 : DyadicInterval 40 := ⟨99042118464,99042118528⟩
+theorem checked_w11 : DyadicFastLog.check 1099511627776 1203151529216 0 16 (lift40 out_w11.neg)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w11 : out_w11.Contains (Real.log ((1203151529216:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using reciprocal checked_w11
+#print axioms endpoint_w11
+noncomputable def out_w12 : DyadicInterval 40 := ⟨-108854867200,-108854867136⟩
+theorem checked_w12 : DyadicFastLog.check 995871726336 1099511627776 0 16 (lift40 out_w12)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w12 : out_w12.Contains (Real.log ((995871726336:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using direct checked_w12
+#print axioms endpoint_w12
+noncomputable def out_w13 : DyadicInterval 40 := ⟨-9812748736,-9812748672⟩
+theorem checked_w13 : DyadicFastLog.check 1089742536754 1099511627776 0 16 (lift40 out_w13)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w13 : out_w13.Contains (Real.log ((1089742536754:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using direct checked_w13
+#print axioms endpoint_w13
+noncomputable def out_w14 : DyadicInterval 40 := ⟨-9812723136,-9812723072⟩
+theorem checked_w14 : DyadicFastLog.check 1089742562092 1099511627776 0 16 (lift40 out_w14)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w14 : out_w14.Contains (Real.log ((1089742562092:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using direct checked_w14
+#print axioms endpoint_w14
+noncomputable def out_w15 : DyadicInterval 40 := ⟨207896714496,207896714560⟩
+theorem checked_w15 : DyadicFastLog.check 1099511627776 1328362614440 0 16 (lift40 out_w15.neg)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w15 : out_w15.Contains (Real.log ((1328362614440:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using reciprocal checked_w15
+#print axioms endpoint_w15
+noncomputable def out_w16 : DyadicInterval 40 := ⟨207896985664,207896985728⟩
+theorem checked_w16 : DyadicFastLog.check 1099511627776 1328362942100 0 16 (lift40 out_w16.neg)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w16 : out_w16.Contains (Real.log ((1328362942100:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using reciprocal checked_w16
+#print axioms endpoint_w16
+noncomputable def out_w17 : DyadicInterval 40 := ⟨1932684511616,1932684550208⟩
+theorem checked_w17 : DyadicFastLog.check 1099511627776 6376583371151 2 16 (lift40 out_w17.neg)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w17 : out_w17.Contains (Real.log ((6376583371151:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using reciprocal checked_w17
+#print axioms endpoint_w17
+noncomputable def out_w18 : DyadicInterval 40 := ⟨1932684511616,1932684550208⟩
+theorem checked_w18 : DyadicFastLog.check 1099511627776 6376583371198 2 16 (lift40 out_w18.neg)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w18 : out_w18.Contains (Real.log ((6376583371198:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using reciprocal checked_w18
+#print axioms endpoint_w18
+noncomputable def out_w19 : DyadicInterval 40 := ⟨1450809141056,1450809164160⟩
+theorem checked_w19 : DyadicFastLog.check 1099511627776 4113891159926 1 16 (lift40 out_w19.neg)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w19 : out_w19.Contains (Real.log ((4113891159926:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using reciprocal checked_w19
+#print axioms endpoint_w19
+noncomputable def out_w20 : DyadicInterval 40 := ⟨1450809141120,1450809164224⟩
+theorem checked_w20 : DyadicFastLog.check 1099511627776 4113891159994 1 16 (lift40 out_w20.neg)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w20 : out_w20.Contains (Real.log ((4113891159994:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using reciprocal checked_w20
+#print axioms endpoint_w20
+noncomputable def out_w21 : DyadicInterval 40 := ⟨-2109053987328,-2109053948480⟩
+theorem checked_w21 : DyadicFastLog.check 161490770329 1099511627776 2 16 (lift40 out_w21)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w21 : out_w21.Contains (Real.log ((161490770329:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using direct checked_w21
+#print axioms endpoint_w21
+noncomputable def out_w22 : DyadicInterval 40 := ⟨-2106133636032,-2106133597184⟩
+theorem checked_w22 : DyadicFastLog.check 161920267060 1099511627776 2 16 (lift40 out_w22)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w22 : out_w22.Contains (Real.log ((161920267060:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using direct checked_w22
+#print axioms endpoint_w22
+noncomputable def out_w23 : DyadicInterval 40 := ⟨-175160097856,-175160097792⟩
+theorem checked_w23 : DyadicFastLog.check 937591360716 1099511627776 0 16 (lift40 out_w23)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w23 : out_w23.Contains (Real.log ((937591360716:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using direct checked_w23
+#print axioms endpoint_w23
+noncomputable def out_w24 : DyadicInterval 40 := ⟨-174656543168,-174656543104⟩
+theorem checked_w24 : DyadicFastLog.check 938020857447 1099511627776 0 16 (lift40 out_w24)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w24 : out_w24.Contains (Real.log ((938020857447:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using direct checked_w24
+#print axioms endpoint_w24
+noncomputable def out_w25 : DyadicInterval 40 := ⟨-1718937585280,-1718937546688⟩
+theorem checked_w25 : DyadicFastLog.check 230270980586 1099511627776 2 16 (lift40 out_w25)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w25 : out_w25.Contains (Real.log ((230270980586:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using direct checked_w25
+#print axioms endpoint_w25
+noncomputable def out_w26 : DyadicInterval 40 := ⟨-1703595332160,-1703595293568⟩
+theorem checked_w26 : DyadicFastLog.check 233506634467 1099511627776 2 16 (lift40 out_w26)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w26 : out_w26.Contains (Real.log ((233506634467:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using direct checked_w26
+#print axioms endpoint_w26
+noncomputable def out_w27 : DyadicInterval 40 := ⟨-262487192640,-262487192576⟩
+theorem checked_w27 : DyadicFastLog.check 866004993309 1099511627776 0 16 (lift40 out_w27)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w27 : out_w27.Contains (Real.log ((866004993309:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using direct checked_w27
+#print axioms endpoint_w27
+noncomputable def out_w28 : DyadicInterval 40 := ⟨-258386743552,-258386743488⟩
+theorem checked_w28 : DyadicFastLog.check 869240647190 1099511627776 0 16 (lift40 out_w28)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w28 : out_w28.Contains (Real.log ((869240647190:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using direct checked_w28
+#print axioms endpoint_w28
+noncomputable def out_w29 : DyadicInterval 40 := ⟨95974930496,95974930560⟩
+theorem checked_w29 : DyadicFastLog.check 1099511627776 1199799905280 0 16 (lift40 out_w29.neg)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w29 : out_w29.Contains (Real.log ((1199799905280:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using reciprocal checked_w29
+#print axioms endpoint_w29
+noncomputable def out_w30 : DyadicInterval 40 := ⟨-105160654336,-105160654272⟩
+theorem checked_w30 : DyadicFastLog.check 999223350272 1099511627776 0 16 (lift40 out_w30)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w30 : out_w30.Contains (Real.log ((999223350272:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using direct checked_w30
+#print axioms endpoint_w30
+noncomputable def out_w31 : DyadicInterval 40 := ⟨102136624640,102136624704⟩
+theorem checked_w31 : DyadicFastLog.check 1099511627776 1206542492928 0 16 (lift40 out_w31.neg)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w31 : out_w31.Contains (Real.log ((1206542492928:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using reciprocal checked_w31
+#print axioms endpoint_w31
+noncomputable def out_w32 : DyadicInterval 40 := ⟨-112605115392,-112605115328⟩
+theorem checked_w32 : DyadicFastLog.check 992480762624 1099511627776 0 16 (lift40 out_w32)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w32 : out_w32.Contains (Real.log ((992480762624:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using direct checked_w32
+#print axioms endpoint_w32
+noncomputable def out_w33 : DyadicInterval 40 := ⟨-10468490752,-10468490688⟩
+theorem checked_w33 : DyadicFastLog.check 1089092814726 1099511627776 0 16 (lift40 out_w33)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w33 : out_w33.Contains (Real.log ((1089092814726:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using direct checked_w33
+#print axioms endpoint_w33
+noncomputable def out_w34 : DyadicInterval 40 := ⟨-9185723840,-9185723776⟩
+theorem checked_w34 : DyadicFastLog.check 1090364167804 1099511627776 0 16 (lift40 out_w34)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w34 : out_w34.Contains (Real.log ((1090364167804:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using direct checked_w34
+#print axioms endpoint_w34
+noncomputable def out_w35 : DyadicInterval 40 := ⟨201135584832,201135584896⟩
+theorem checked_w35 : DyadicFastLog.check 1099511627776 1320219294816 0 16 (lift40 out_w35.neg)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w35 : out_w35.Contains (Real.log ((1320219294816:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using reciprocal checked_w35
+#print axioms endpoint_w35
+noncomputable def out_w36 : DyadicInterval 40 := ⟨214741740032,214741740096⟩
+theorem checked_w36 : DyadicFastLog.check 1099511627776 1336658150304 0 16 (lift40 out_w36.neg)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w36 : out_w36.Contains (Real.log ((1336658150304:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using reciprocal checked_w36
+#print axioms endpoint_w36
+noncomputable def out_w37 : DyadicInterval 40 := ⟨1930973499392,1930973537984⟩
+theorem checked_w37 : DyadicFastLog.check 1099511627776 6366668125785 2 16 (lift40 out_w37.neg)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w37 : out_w37.Contains (Real.log ((6366668125785:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using reciprocal checked_w37
+#print axioms endpoint_w37
+noncomputable def out_w38 : DyadicInterval 40 := ⟨1934397405376,1934397443968⟩
+theorem checked_w38 : DyadicFastLog.check 1099511627776 6386524986897 2 16 (lift40 out_w38.neg)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w38 : out_w38.Contains (Real.log ((6386524986897:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using reciprocal checked_w38
+#print axioms endpoint_w38
+noncomputable def out_w39 : DyadicInterval 40 := ⟨1441108101952,1441108124288⟩
+theorem checked_w39 : DyadicFastLog.check 1099511627776 4077753773586 1 16 (lift40 out_w39.neg)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w39 : out_w39.Contains (Real.log ((4077753773586:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using reciprocal checked_w39
+#print axioms endpoint_w39
+noncomputable def out_w40 : DyadicInterval 40 := ⟨1460550804096,1460550828160⟩
+theorem checked_w40 : DyadicFastLog.check 1099511627776 4150502145294 1 16 (lift40 out_w40.neg)=true := by
+  simp only [DyadicFastLog.check,DyadicFastLog.approximation,sharedTwo_eq]
+  decide
+theorem endpoint_w40 : out_w40.Contains (Real.log ((4150502145294:ℝ)/1099511627776)) := by
+  simpa only [Int.cast_ofNat] using reciprocal checked_w40
+#print axioms endpoint_w40
+end LaneCBRB2Cell003398Endpoints
+
+namespace GeneralCK.Certificates.LaneCB.RB2Cell003398
+open Set LaneCBRB2Cell003398Endpoints
+open BivariateJetProgram (RegistersContain RegistersSound zeroBox zeroJet)
+open BivariateProvedProgram
+set_option maxRecDepth 10000
+set_option maxHeartbeats 4000000
+theorem lc0 : ProvedTranscendental.LogEncloses (⟨161705518694,161705518695⟩ : DyadicInterval 40) (⟨-2107592842112,-2107592803264⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w0
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w1
+theorem lc1 : ProvedTranscendental.LogEncloses (⟨937806109081,937806109082⟩ : DyadicInterval 40) (⟨-174908291648,-174908291584⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w2
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w3
+theorem lc2 : ProvedTranscendental.LogEncloses (⟨231888052550,231888052553⟩ : DyadicInterval 40) (⟨-1711243278592,-1711243239936⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w4
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w5
+theorem lc3 : ProvedTranscendental.LogEncloses (⟨867623575223,867623575226⟩ : DyadicInterval 40) (⟨-260434099840,-260434099776⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w6
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w7
+theorem lc4 : ProvedTranscendental.LogEncloses (⟨2199023255552,2199023255552⟩ : DyadicInterval 40) (⟨762123383616,762123402880⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w8
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w8
+theorem lc5 : ProvedTranscendental.LogEncloses (⟨1203151394816,1203151394816⟩ : DyadicInterval 40) (⟨99041995648,99041995712⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w9
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w9
+theorem lc6 : ProvedTranscendental.LogEncloses (⟨995871860736,995871860736⟩ : DyadicInterval 40) (⟨-108854718848,-108854718784⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w10
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w10
+theorem lc7 : ProvedTranscendental.LogEncloses (⟨2199023255552,2199023255552⟩ : DyadicInterval 40) (⟨762123383616,762123402880⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w8
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w8
+theorem lc8 : ProvedTranscendental.LogEncloses (⟨1203151529216,1203151529216⟩ : DyadicInterval 40) (⟨99042118464,99042118528⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w11
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w11
+theorem lc9 : ProvedTranscendental.LogEncloses (⟨995871726336,995871726336⟩ : DyadicInterval 40) (⟨-108854867200,-108854867136⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w12
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w12
+theorem lc10 : ProvedTranscendental.LogEncloses (⟨2199023255552,2199023255552⟩ : DyadicInterval 40) (⟨762123383616,762123402880⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w8
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w8
+theorem lc11 : ProvedTranscendental.LogEncloses (⟨1089742536754,1089742562092⟩ : DyadicInterval 40) (⟨-9812748736,-9812723072⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w13
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w14
+theorem lc12 : ProvedTranscendental.LogEncloses (⟨2199023255552,2199023255552⟩ : DyadicInterval 40) (⟨762123383616,762123402880⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w8
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w8
+theorem lc13 : ProvedTranscendental.LogEncloses (⟨1203151394816,1203151529216⟩ : DyadicInterval 40) (⟨99041995648,99042118528⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w9
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w11
+theorem lc14 : ProvedTranscendental.LogEncloses (⟨995871726336,995871860736⟩ : DyadicInterval 40) (⟨-108854867200,-108854718784⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w12
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w10
+theorem lc15 : ProvedTranscendental.LogEncloses (⟨1089742536754,1089742562092⟩ : DyadicInterval 40) (⟨-9812748736,-9812723072⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w13
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w14
+theorem lc16 : ProvedTranscendental.LogEncloses (⟨1328362614440,1328362942100⟩ : DyadicInterval 40) (⟨207896714496,207896985728⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w15
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w16
+theorem lc17 : ProvedTranscendental.LogEncloses (⟨6376583371151,6376583371198⟩ : DyadicInterval 40) (⟨1932684511616,1932684550208⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w17
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w18
+theorem lc18 : ProvedTranscendental.LogEncloses (⟨4113891159926,4113891159994⟩ : DyadicInterval 40) (⟨1450809141056,1450809164224⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w19
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w20
+theorem lc19 : ProvedTranscendental.LogEncloses (⟨161490770329,161920267060⟩ : DyadicInterval 40) (⟨-2109053987328,-2106133597184⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w21
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w22
+theorem lc20 : ProvedTranscendental.LogEncloses (⟨937591360716,938020857447⟩ : DyadicInterval 40) (⟨-175160097856,-174656543104⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w23
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w24
+theorem lc21 : ProvedTranscendental.LogEncloses (⟨230270980586,233506634467⟩ : DyadicInterval 40) (⟨-1718937585280,-1703595293568⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w25
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w26
+theorem lc22 : ProvedTranscendental.LogEncloses (⟨866004993309,869240647190⟩ : DyadicInterval 40) (⟨-262487192640,-258386743488⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w27
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w28
+theorem lc23 : ProvedTranscendental.LogEncloses (⟨2199023255552,2199023255552⟩ : DyadicInterval 40) (⟨762123383616,762123402880⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w8
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w8
+theorem lc24 : ProvedTranscendental.LogEncloses (⟨1199799905280,1199799905280⟩ : DyadicInterval 40) (⟨95974930496,95974930560⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w29
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w29
+theorem lc25 : ProvedTranscendental.LogEncloses (⟨999223350272,999223350272⟩ : DyadicInterval 40) (⟨-105160654336,-105160654272⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w30
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w30
+theorem lc26 : ProvedTranscendental.LogEncloses (⟨2199023255552,2199023255552⟩ : DyadicInterval 40) (⟨762123383616,762123402880⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w8
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w8
+theorem lc27 : ProvedTranscendental.LogEncloses (⟨1206542492928,1206542492928⟩ : DyadicInterval 40) (⟨102136624640,102136624704⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w31
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w31
+theorem lc28 : ProvedTranscendental.LogEncloses (⟨992480762624,992480762624⟩ : DyadicInterval 40) (⟨-112605115392,-112605115328⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w32
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w32
+theorem lc29 : ProvedTranscendental.LogEncloses (⟨2199023255552,2199023255552⟩ : DyadicInterval 40) (⟨762123383616,762123402880⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w8
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w8
+theorem lc30 : ProvedTranscendental.LogEncloses (⟨1089092814726,1090364167804⟩ : DyadicInterval 40) (⟨-10468490752,-9185723776⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w33
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w34
+theorem lc31 : ProvedTranscendental.LogEncloses (⟨2199023255552,2199023255552⟩ : DyadicInterval 40) (⟨762123383616,762123402880⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w8
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w8
+theorem lc32 : ProvedTranscendental.LogEncloses (⟨1199799905280,1206542492928⟩ : DyadicInterval 40) (⟨95974930496,102136624704⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w29
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w31
+theorem lc33 : ProvedTranscendental.LogEncloses (⟨992480762624,999223350272⟩ : DyadicInterval 40) (⟨-112605115392,-105160654272⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w32
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w30
+theorem lc34 : ProvedTranscendental.LogEncloses (⟨1089092814726,1090364167804⟩ : DyadicInterval 40) (⟨-10468490752,-9185723776⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w33
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w34
+theorem lc35 : ProvedTranscendental.LogEncloses (⟨1320219294816,1336658150304⟩ : DyadicInterval 40) (⟨201135584832,214741740096⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w35
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w36
+theorem lc36 : ProvedTranscendental.LogEncloses (⟨6366668125785,6386524986897⟩ : DyadicInterval 40) (⟨1930973499392,1934397443968⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w37
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w38
+theorem lc37 : ProvedTranscendental.LogEncloses (⟨4077753773586,4150502145294⟩ : DyadicInterval 40) (⟨1441108101952,1460550828160⟩ : DyadicInterval 40) := by
+  apply ProvedTranscendental.log_of_endpoints (by decide)
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w39
+  · exact DyadicInterval.subsetCheck_sound (by decide) endpoint_w40
+theorem ew11_ok (x : ℝ) (hx : (⟨103639767040,103639767040⟩ : DyadicInterval 40).Contains x) : (⟨757231591810,757231611140⟩ : DyadicInterval 40).Contains (Reflection.biasE x) := by
+  exact ProvedTranscendental.entropy_encloses (c:=(⟨103639767040,103639767040⟩ : DyadicInterval 40)) (two:=(⟨762123383616,762123402880⟩ : DyadicInterval 40)) (plus:=(⟨99041995648,99041995712⟩ : DyadicInterval 40)) (minus:=(⟨-108854718848,-108854718784⟩ : DyadicInterval 40))
+    (lc4 2 (by norm_num [DyadicInterval.Contains,DyadicInterval.scale])) lc5 lc6 (by decide) hx
+theorem ew14_ok (x : ℝ) (hx : (⟨103639901440,103639901440⟩ : DyadicInterval 40).Contains x) : (⟨757231579092,757231598421⟩ : DyadicInterval 40).Contains (Reflection.biasE x) := by
+  exact ProvedTranscendental.entropy_encloses (c:=(⟨103639901440,103639901440⟩ : DyadicInterval 40)) (two:=(⟨762123383616,762123402880⟩ : DyadicInterval 40)) (plus:=(⟨99042118464,99042118528⟩ : DyadicInterval 40)) (minus:=(⟨-108854867200,-108854867136⟩ : DyadicInterval 40))
+    (lc7 2 (by norm_num [DyadicInterval.Contains,DyadicInterval.scale])) lc8 lc9 (by decide) hx
+theorem ew35_ok (x : ℝ) (hx : (⟨100288277504,100288277504⟩ : DyadicInterval 40).Contains x) : (⟨757543290480,757543309810⟩ : DyadicInterval 40).Contains (Reflection.biasE x) := by
+  exact ProvedTranscendental.entropy_encloses (c:=(⟨100288277504,100288277504⟩ : DyadicInterval 40)) (two:=(⟨762123383616,762123402880⟩ : DyadicInterval 40)) (plus:=(⟨95974930496,95974930560⟩ : DyadicInterval 40)) (minus:=(⟨-105160654336,-105160654272⟩ : DyadicInterval 40))
+    (lc23 2 (by norm_num [DyadicInterval.Contains,DyadicInterval.scale])) lc24 lc25 (by decide) hx
+theorem ew38_ok (x : ℝ) (hx : (⟨107030865152,107030865152⟩ : DyadicInterval 40).Contains x) : (⟨756905718443,756905737772⟩ : DyadicInterval 40).Contains (Reflection.biasE x) := by
+  exact ProvedTranscendental.entropy_encloses (c:=(⟨107030865152,107030865152⟩ : DyadicInterval 40)) (two:=(⟨762123383616,762123402880⟩ : DyadicInterval 40)) (plus:=(⟨102136624640,102136624704⟩ : DyadicInterval 40)) (minus:=(⟨-112605115392,-112605115328⟩ : DyadicInterval 40))
+    (lc26 2 (by norm_num [DyadicInterval.Contains,DyadicInterval.scale])) lc27 lc28 (by decide) hx
+theorem bw17_ok (x : ℝ) (hx : (⟨103639767040,103639901440⟩ : DyadicInterval 40).Contains x) : (⟨767029745152,767029777248⟩ : DyadicInterval 40).Contains (Reflection.biasB x) := by
+  exact ProvedTranscendental.denominator_encloses (c:=(⟨103639767040,103639901440⟩ : DyadicInterval 40)) (two:=(⟨762123383616,762123402880⟩ : DyadicInterval 40)) (gapLog:=(⟨-9812748736,-9812723072⟩ : DyadicInterval 40))
+    (lc10 2 (by norm_num [DyadicInterval.Contains,DyadicInterval.scale])) lc11 (by decide) hx
+theorem bw41_ok (x : ℝ) (hx : (⟨100288277504,107030865152⟩ : DyadicInterval 40).Contains x) : (⟨766716245504,767357648256⟩ : DyadicInterval 40).Contains (Reflection.biasB x) := by
+  exact ProvedTranscendental.denominator_encloses (c:=(⟨100288277504,107030865152⟩ : DyadicInterval 40)) (two:=(⟨762123383616,762123402880⟩ : DyadicInterval 40)) (gapLog:=(⟨-10468490752,-9185723776⟩ : DyadicInterval 40))
+    (lc29 2 (by norm_num [DyadicInterval.Contains,DyadicInterval.scale])) lc30 (by decide) hx
+theorem brcenter28_contact (y : ℝ) (hy : (⟨8033445195873,8033445305865⟩ : DyadicInterval 40).Contains y) : (⟨103639767040,103639901440⟩ : DyadicInterval 40).Contains (Reflection.biasContact y) := by
+  exact ProvedTranscendental.contact_bracket (Y:=(⟨8033445195873,8033445305865⟩ : DyadicInterval 40)) (c:=(⟨103639767040,103639901440⟩ : DyadicInterval 40)) (elo:=(⟨757231591810,757231611140⟩ : DyadicInterval 40)) (ehi:=(⟨757231579092,757231598421⟩ : DyadicInterval 40))
+    (by decide) (by decide) (by decide) (by decide)
+    (ew11_ok _ (DyadicContact.point_contains 40 103639767040)) (ew14_ok _ (DyadicContact.point_contains 40 103639901440))
+    (by decide) (by decide) hy
+theorem brcenter28_jet (y : ℝ) (hy : (⟨8033445195873,8033445305865⟩ : DyadicInterval 40).Contains y) : (⟨⟨103639767040,103639901440⟩,⟨-14003667054,-14003630146⟩,⟨3759978656,3759993868⟩⟩ : DyadicJetEnclosure 40).Contains reflectionContactJet y := by
+  exact ProvedTranscendental.contact_jet (c:=(⟨103639767040,103639901440⟩ : DyadicInterval 40)) (B:=(⟨767029745152,767029777248⟩ : DyadicInterval 40)) (by decide) brcenter28_contact bw17_ok (by decide) (by decide) (by decide) hy
+theorem brwhole28_contact (y : ℝ) (hy : (⟨7775581013789,8305328643215⟩ : DyadicInterval 40).Contains y) : (⟨100288277504,107030865152⟩ : DyadicInterval 40).Contains (Reflection.biasContact y) := by
+  exact ProvedTranscendental.contact_bracket (Y:=(⟨7775581013789,8305328643215⟩ : DyadicInterval 40)) (c:=(⟨100288277504,107030865152⟩ : DyadicInterval 40)) (elo:=(⟨757543290480,757543309810⟩ : DyadicInterval 40)) (ehi:=(⟨756905718443,756905737772⟩ : DyadicInterval 40))
+    (by decide) (by decide) (by decide) (by decide)
+    (ew35_ok _ (DyadicContact.point_contains 40 100288277504)) (ew38_ok _ (DyadicContact.point_contains 40 107030865152))
+    (by decide) (by decide) hy
+theorem brwhole28_jet (y : ℝ) (hy : (⟨7775581013789,8305328643215⟩ : DyadicInterval 40).Contains y) : (⟨⟨100288277504,107030865152⟩,⟨-14941128695,-13106976423⟩,⟨3397366433,4150865625⟩⟩ : DyadicJetEnclosure 40).Contains reflectionContactJet y := by
+  exact ProvedTranscendental.contact_jet (c:=(⟨100288277504,107030865152⟩ : DyadicInterval 40)) (B:=(⟨766716245504,767357648256⟩ : DyadicInterval 40)) (by decide) brwhole28_contact bw41_ok (by decide) (by decide) (by decide) hy
+noncomputable def centerInitial : List (DyadicBivariateJetEnclosure 40) := [⟨⟨161705518694,161705518695⟩,⟨1099511627776,1099511627776⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩,⟨⟨198856985804,198856985805⟩,⟨0,0⟩,⟨1099511627776,1099511627776⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩,⟨⟨1099511627776,1099511627776⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩,⟨⟨2199023255552,2199023255552⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩]
+noncomputable def centerBoxes0 := centerInitial
+noncomputable def centerStep0 : Instruction 40 := ⟨.inv 3,⟨⟨549755813888,549755813888⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes1 := centerStep0.proposed :: centerBoxes0
+theorem centerAccepted0 : StepValid centerStep0.shape centerBoxes0 centerStep0.proposed := by
+  dsimp only [StepValid,centerStep0]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep1 : Instruction 40 := ⟨.mul 3 0,⟨⟨549755813888,549755813888⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes2 := centerStep1.proposed :: centerBoxes1
+theorem centerAccepted1 : StepValid centerStep1.shape centerBoxes1 centerStep1.proposed := by
+  dsimp only [StepValid,centerStep1]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep2 : Instruction 40 := ⟨.neg 2,⟨⟨-161705518695,-161705518694⟩,⟨-1099511627776,-1099511627776⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes3 := centerStep2.proposed :: centerBoxes2
+theorem centerAccepted2 : StepValid centerStep2.shape centerBoxes2 centerStep2.proposed := by
+  dsimp only [StepValid,centerStep2]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep3 : Instruction 40 := ⟨.add 1 0,⟨⟨388050295193,388050295194⟩,⟨-1099511627776,-1099511627776⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes4 := centerStep3.proposed :: centerBoxes3
+theorem centerAccepted3 : StepValid centerStep3.shape centerBoxes3 centerStep3.proposed := by
+  dsimp only [StepValid,centerStep3]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep4 : Instruction 40 := ⟨.mul 5 0,⟨⟨70182533856,70182533858⟩,⟨-198856985805,-198856985804⟩,⟨388050295193,388050295194⟩,⟨0,0⟩,⟨-1099511627776,-1099511627776⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes5 := centerStep4.proposed :: centerBoxes4
+theorem centerAccepted4 : StepValid centerStep4.shape centerBoxes4 centerStep4.proposed := by
+  dsimp only [StepValid,centerStep4]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep5 : Instruction 40 := ⟨.add 5 0,⟨⟨231888052550,231888052553⟩,⟨900654641971,900654641972⟩,⟨388050295193,388050295194⟩,⟨0,0⟩,⟨-1099511627776,-1099511627776⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes6 := centerStep5.proposed :: centerBoxes5
+theorem centerAccepted5 : StepValid centerStep5.shape centerBoxes5 centerStep5.proposed := by
+  dsimp only [StepValid,centerStep5]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep6 : Instruction 40 := ⟨.add 0 3,⟨⟨70182533855,70182533859⟩,⟨-198856985805,-198856985804⟩,⟨388050295193,388050295194⟩,⟨0,0⟩,⟨-1099511627776,-1099511627776⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes7 := centerStep6.proposed :: centerBoxes6
+theorem centerAccepted6 : StepValid centerStep6.shape centerBoxes6 centerStep6.proposed := by
+  dsimp only [StepValid,centerStep6]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep7 : Instruction 40 := ⟨.log 7,⟨⟨-2107592842112,-2107592803264⟩,⟨7476094998927,7476094998974⟩,⟨0,0⟩,⟨-50833474627948,-50833474627307⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes8 := centerStep7.proposed :: centerBoxes7
+theorem centerAccepted7 : StepValid centerStep7.shape centerBoxes7 centerStep7.proposed := by
+  dsimp only [StepValid,centerStep7]
+  exact ⟨by decide,by decide,lc0,by decide⟩
+noncomputable def centerStep8 : Instruction 40 := ⟨.mul 8 0,⟨⟨-309964337914,-309964332198⟩,⟨-1008081214343,-1008081175481⟩,⟨0,0⟩,⟨7476094998833,7476094999068⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes9 := centerStep8.proposed :: centerBoxes8
+theorem centerAccepted8 : StepValid centerStep8.shape centerBoxes8 centerStep8.proposed := by
+  dsimp only [StepValid,centerStep8]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep9 : Instruction 40 := ⟨.neg 0,⟨⟨309964332198,309964337914⟩,⟨1008081175481,1008081214343⟩,⟨0,0⟩,⟨-7476094999068,-7476094998833⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes10 := centerStep9.proposed :: centerBoxes9
+theorem centerAccepted9 : StepValid centerStep9.shape centerBoxes9 centerStep9.proposed := by
+  dsimp only [StepValid,centerStep9]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep10 : Instruction 40 := ⟨.add 12 7,⟨⟨937806109081,937806109082⟩,⟨-1099511627776,-1099511627776⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes11 := centerStep10.proposed :: centerBoxes10
+theorem centerAccepted10 : StepValid centerStep10.shape centerBoxes10 centerStep10.proposed := by
+  dsimp only [StepValid,centerStep10]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep11 : Instruction 40 := ⟨.log 0,⟨⟨-174908291648,-174908291584⟩,⟨-1289099962038,-1289099962035⟩,⟨0,0⟩,⟨-1511378934198,-1511378934190⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes12 := centerStep11.proposed :: centerBoxes11
+theorem centerAccepted11 : StepValid centerStep11.shape centerBoxes11 centerStep11.proposed := by
+  dsimp only [StepValid,centerStep11]
+  exact ⟨by decide,by decide,lc1,by decide⟩
+noncomputable def centerStep12 : Instruction 40 := ⟨.mul 1 0,⟨⟨-149184474537,-149184474481⟩,⟨-924603336194,-924603336126⟩,⟨0,0⟩,⟨1289099962029,1289099962045⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes13 := centerStep12.proposed :: centerBoxes12
+theorem centerAccepted12 : StepValid centerStep12.shape centerBoxes12 centerStep12.proposed := by
+  dsimp only [StepValid,centerStep12]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep13 : Instruction 40 := ⟨.neg 0,⟨⟨149184474481,149184474537⟩,⟨924603336126,924603336194⟩,⟨0,0⟩,⟨-1289099962045,-1289099962029⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes14 := centerStep13.proposed :: centerBoxes13
+theorem centerAccepted13 : StepValid centerStep13.shape centerBoxes13 centerStep13.proposed := by
+  dsimp only [StepValid,centerStep13]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep14 : Instruction 40 := ⟨.add 4 0,⟨⟨459148806679,459148812451⟩,⟨1932684511607,1932684550537⟩,⟨0,0⟩,⟨-8765194961113,-8765194960862⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes15 := centerStep14.proposed :: centerBoxes14
+theorem centerAccepted14 : StepValid centerStep14.shape centerBoxes14 centerStep14.proposed := by
+  dsimp only [StepValid,centerStep14]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep15 : Instruction 40 := ⟨.log 9,⟨⟨-1711243278592,-1711243239936⟩,⟨4270510017894,4270510017955⟩,⟨1839964616672,1839964616702⟩,⟨-16586687537211,-16586687536739⟩,⟨-12359836831582,-12359836831299⟩,⟨-3079066837666,-3079066837568⟩⟩⟩
+noncomputable def centerBoxes16 := centerStep15.proposed :: centerBoxes15
+theorem centerAccepted15 : StepValid centerStep15.shape centerBoxes15 centerStep15.proposed := by
+  dsimp only [StepValid,centerStep15]
+  exact ⟨by decide,by decide,lc2,by decide⟩
+noncomputable def centerStep16 : Instruction 40 := ⟨.mul 10 0,⟨⟨-360902842038,-360902833879⟩,⟨-501094246796,-501094215103⟩,⟨-215898260364,-215898246706⟩,⟨3498148245026,3498148245280⟩,⟨2118921378177,2118921416982⟩,⟨649378137151,649378137206⟩⟩⟩
+noncomputable def centerBoxes17 := centerStep16.proposed :: centerBoxes16
+theorem centerAccepted16 : StepValid centerStep16.shape centerBoxes16 centerStep16.proposed := by
+  dsimp only [StepValid,centerStep16]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep17 : Instruction 40 := ⟨.neg 0,⟨⟨360902833879,360902842038⟩,⟨501094215103,501094246796⟩,⟨215898246706,215898260364⟩,⟨-3498148245280,-3498148245026⟩,⟨-2118921416982,-2118921378177⟩,⟨-649378137206,-649378137151⟩⟩⟩
+noncomputable def centerBoxes18 := centerStep17.proposed :: centerBoxes17
+theorem centerAccepted17 : StepValid centerStep17.shape centerBoxes17 centerStep17.proposed := by
+  dsimp only [StepValid,centerStep17]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep18 : Instruction 40 := ⟨.neg 12,⟨⟨-231888052553,-231888052550⟩,⟨-900654641972,-900654641971⟩,⟨-388050295194,-388050295193⟩,⟨0,0⟩,⟨1099511627776,1099511627776⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes19 := centerStep18.proposed :: centerBoxes18
+theorem centerAccepted18 : StepValid centerStep18.shape centerBoxes18 centerStep18.proposed := by
+  dsimp only [StepValid,centerStep18]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep19 : Instruction 40 := ⟨.add 21 0,⟨⟨867623575223,867623575226⟩,⟨-900654641972,-900654641971⟩,⟨-388050295194,-388050295193⟩,⟨0,0⟩,⟨1099511627776,1099511627776⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes20 := centerStep19.proposed :: centerBoxes19
+theorem centerAccepted19 : StepValid centerStep19.shape centerBoxes19 centerStep19.proposed := by
+  dsimp only [StepValid,centerStep19]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep20 : Instruction 40 := ⟨.log 0,⟨⟨-260434099840,-260434099776⟩,⟨-1141370843001,-1141370842994⟩,⟨-491763737078,-491763737073⟩,⟨-1184823669294,-1184823669278⟩,⟨882890401935,882890401949⟩,⟨-219944534461,-219944534456⟩⟩⟩
+noncomputable def centerBoxes21 := centerStep20.proposed :: centerBoxes20
+theorem centerAccepted20 : StepValid centerStep20.shape centerBoxes20 centerStep20.proposed := by
+  dsimp only [StepValid,centerStep20]
+  exact ⟨by decide,by decide,lc3,by decide⟩
+noncomputable def centerStep21 : Instruction 40 := ⟨.mul 1 0,⟨⟨-205508299418,-205508299366⟩,⟨-687322490716,-687322490652⟩,⟨-296135369749,-296135369719⟩,⟨934943225675,934943225705⟩,⟨1241901182864,1241901182953⟩,⟨173558022044,173558022055⟩⟩⟩
+noncomputable def centerBoxes22 := centerStep21.proposed :: centerBoxes21
+theorem centerAccepted21 : StepValid centerStep21.shape centerBoxes21 centerStep21.proposed := by
+  dsimp only [StepValid,centerStep21]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep22 : Instruction 40 := ⟨.neg 0,⟨⟨205508299366,205508299418⟩,⟨687322490652,687322490716⟩,⟨296135369719,296135369749⟩,⟨-934943225705,-934943225675⟩,⟨-1241901182953,-1241901182864⟩,⟨-173558022055,-173558022044⟩⟩⟩
+noncomputable def centerBoxes23 := centerStep22.proposed :: centerBoxes22
+theorem centerAccepted22 : StepValid centerStep22.shape centerBoxes22 centerStep22.proposed := by
+  dsimp only [StepValid,centerStep22]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep23 : Instruction 40 := ⟨.add 5 0,⟨⟨566411133245,566411141456⟩,⟨1188416705755,1188416737512⟩,⟨512033616425,512033630113⟩,⟨-4433091470985,-4433091470701⟩,⟨-3360822599935,-3360822561041⟩,⟨-822936159261,-822936159195⟩⟩⟩
+noncomputable def centerBoxes24 := centerStep23.proposed :: centerBoxes23
+theorem centerAccepted23 : StepValid centerStep23.shape centerBoxes23 centerStep23.proposed := by
+  dsimp only [StepValid,centerStep23]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep24 : Instruction 40 := ⟨.add 9 0,⟨⟨1025559939924,1025559953907⟩,⟨3121101217362,3121101288049⟩,⟨512033616425,512033630113⟩,⟨-13198286432098,-13198286431563⟩,⟨-3360822599935,-3360822561041⟩,⟨-822936159261,-822936159195⟩⟩⟩
+noncomputable def centerBoxes25 := centerStep24.proposed :: centerBoxes24
+theorem centerAccepted24 : StepValid centerStep24.shape centerBoxes24 centerStep24.proposed := by
+  dsimp only [StepValid,centerStep24]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep25 : Instruction 40 := ⟨.mul 28 18,⟨⟨140365067710,140365067718⟩,⟨-397713971610,-397713971608⟩,⟨776100590386,776100590388⟩,⟨0,0⟩,⟨-2199023255552,-2199023255552⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes26 := centerStep25.proposed :: centerBoxes25
+theorem centerAccepted25 : StepValid centerStep25.shape centerBoxes25 centerStep25.proposed := by
+  dsimp only [StepValid,centerStep25]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep26 : Instruction 40 := ⟨.inv 0,⟨⟨8612725653674,8612725654166⟩,⟨24403517070031,24403517072944⟩,⟨-47621118089427,-47621118083862⟩,⟨138291098389580,138291098414674⟩,⟨-134930893559671,-134930893495948⟩,⟨526609340352052,526609340445025⟩⟩⟩
+noncomputable def centerBoxes27 := centerStep26.proposed :: centerBoxes26
+theorem centerAccepted26 : StepValid centerStep26.shape centerBoxes26 centerStep26.proposed := by
+  dsimp only [StepValid,centerStep26]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep27 : Instruction 40 := ⟨.mul 2 0,⟨⟨8033445195873,8033445305865⟩,⟨47210467548904,47210468417078⟩,⟨-40407309469689,-40407308751427⟩,⟨164149500125908,164149505072443⟩,⟨-275995695040944,-275995689576862⟩,⟨440390515135295,440390523110909⟩⟩⟩
+noncomputable def centerBoxes28 := centerStep27.proposed :: centerBoxes27
+theorem centerAccepted27 : StepValid centerStep27.shape centerBoxes27 centerStep27.proposed := by
+  dsimp only [StepValid,centerStep27]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep28 : Instruction 40 := ⟨.contact 0,⟨⟨103639767040,103639901440⟩,⟨-601284847268,-601283251466⟩,⟨514636673824,514638039351⟩,⟨4841409323589,4841443197172⟩,⟨-2418011575836,-2417978023068⟩,⟨-530778013587,-530742403544⟩⟩⟩
+noncomputable def centerBoxes29 := centerStep28.proposed :: centerBoxes28
+theorem centerAccepted28 : StepValid centerStep28.shape centerBoxes28 centerStep28.proposed := by
+  dsimp only [StepValid,centerStep28]
+  exact ⟨by decide,by decide,(⟨⟨103639767040,103639901440⟩,⟨-14003667054,-14003630146⟩,⟨3759978656,3759993868⟩⟩ : DyadicJetEnclosure 40),brcenter28_jet,by decide⟩
+noncomputable def centerStep29 : Instruction 40 := ⟨.log 32,⟨⟨762123383616,762123402880⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes30 := centerStep29.proposed :: centerBoxes29
+theorem centerAccepted29 : StepValid centerStep29.shape centerBoxes29 centerStep29.proposed := by
+  dsimp only [StepValid,centerStep29]
+  exact ⟨by decide,by decide,lc4,by decide⟩
+noncomputable def centerStep30 : Instruction 40 := ⟨.add 32 1,⟨⟨1203151394816,1203151529216⟩,⟨-601284847268,-601283251466⟩,⟨514636673824,514638039351⟩,⟨4841409323589,4841443197172⟩,⟨-2418011575836,-2417978023068⟩,⟨-530778013587,-530742403544⟩⟩⟩
+noncomputable def centerBoxes31 := centerStep30.proposed :: centerBoxes30
+theorem centerAccepted30 : StepValid centerStep30.shape centerBoxes30 centerStep30.proposed := by
+  dsimp only [StepValid,centerStep30]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep31 : Instruction 40 := ⟨.log 0,⟨⟨99041995648,99042118528⟩,⟨-549490017654,-549488497931⟩,⟨470305687362,470306987800⟩,⟨4149756424371,4149789393299⟩,⟨-1974684942126,-1974652732808⟩,⟨-686226577437,-686192868168⟩⟩⟩
+noncomputable def centerBoxes32 := centerStep31.proposed :: centerBoxes31
+theorem centerAccepted31 : StepValid centerStep31.shape centerBoxes31 centerStep31.proposed := by
+  dsimp only [StepValid,centerStep31]
+  exact ⟨by decide,by decide,lc13,by decide⟩
+noncomputable def centerStep32 : Instruction 40 := ⟨.mul 1 0,⟨⟨108377676232,108377822802⟩,⟨-655447620504,-655445679418⟩,⟨560994146278,560995807306⟩,⟨5578007887964,5578051321332⟩,⟨-2893018179377,-2892976612520⟩,⟨-358459897796,-358417274657⟩⟩⟩
+noncomputable def centerBoxes33 := centerStep32.proposed :: centerBoxes32
+theorem centerAccepted32 : StepValid centerStep32.shape centerBoxes32 centerStep32.proposed := by
+  dsimp only [StepValid,centerStep32]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep33 : Instruction 40 := ⟨.neg 4,⟨⟨-103639901440,-103639767040⟩,⟨601283251466,601284847268⟩,⟨-514638039351,-514636673824⟩,⟨-4841443197172,-4841409323589⟩,⟨2417978023068,2418011575836⟩,⟨530742403544,530778013587⟩⟩⟩
+noncomputable def centerBoxes34 := centerStep33.proposed :: centerBoxes33
+theorem centerAccepted33 : StepValid centerStep33.shape centerBoxes33 centerStep33.proposed := by
+  dsimp only [StepValid,centerStep33]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep34 : Instruction 40 := ⟨.add 36 0,⟨⟨995871726336,995871860736⟩,⟨601283251466,601284847268⟩,⟨-514638039351,-514636673824⟩,⟨-4841443197172,-4841409323589⟩,⟨2417978023068,2418011575836⟩,⟨530742403544,530778013587⟩⟩⟩
+noncomputable def centerBoxes35 := centerStep34.proposed :: centerBoxes34
+theorem centerAccepted34 : StepValid centerStep34.shape centerBoxes34 centerStep34.proposed := by
+  dsimp only [StepValid,centerStep34]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep35 : Instruction 40 := ⟨.log 0,⟨⟨-108854867200,-108854718784⟩,⟨663858426610,663860278080⟩,⟨-568196177679,-568194593359⟩,⟨-5746113746472,-5746073390549⟩,⟨3012677597308,3012716915544⟩,⟨292348894689,292389927196⟩⟩⟩
+noncomputable def centerBoxes36 := centerStep35.proposed :: centerBoxes35
+theorem centerAccepted35 : StepValid centerStep35.shape centerBoxes35 centerStep35.proposed := by
+  dsimp only [StepValid,centerStep35]
+  exact ⟨by decide,by decide,lc14,by decide⟩
+noncomputable def centerStep36 : Instruction 40 := ⟨.mul 1 0,⟨⟨-98594227119,-98594079386⟩,⟨541754211691,541756208944⟩,⟨-463687642263,-463685933166⟩,⟨-3999092615899,-3999047402420⟩,⟨1867858924851,1867901935572⟩,⟨744141088476,744184780587⟩⟩⟩
+noncomputable def centerBoxes37 := centerStep36.proposed :: centerBoxes36
+theorem centerAccepted36 : StepValid centerStep36.shape centerBoxes36 centerStep36.proposed := by
+  dsimp only [StepValid,centerStep36]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep37 : Instruction 40 := ⟨.add 4 0,⟨⟨9783449113,9783743416⟩,⟨-113693408813,-113689470474⟩,⟨97306504015,97309874140⟩,⟨1578915272065,1579003918912⟩,⟨-1025159254526,-1025074676948⟩,⟨385681190680,385767505930⟩⟩⟩
+noncomputable def centerBoxes38 := centerStep37.proposed :: centerBoxes37
+theorem centerAccepted37 : StepValid centerStep37.shape centerBoxes37 centerStep37.proposed := by
+  dsimp only [StepValid,centerStep37]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep38 : Instruction 40 := ⟨.mul 0 37,⟨⟨4891724556,4891871708⟩,⟨-56846704407,-56844735237⟩,⟨48653252007,48654937070⟩,⟨789457636032,789501959456⟩,⟨-512579627263,-512537338474⟩,⟨192840595340,192883752965⟩⟩⟩
+noncomputable def centerBoxes39 := centerStep38.proposed :: centerBoxes38
+theorem centerAccepted38 : StepValid centerStep38.shape centerBoxes38 centerStep38.proposed := by
+  dsimp only [StepValid,centerStep38]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep39 : Instruction 40 := ⟨.neg 0,⟨⟨-4891871708,-4891724556⟩,⟨56844735237,56846704407⟩,⟨-48654937070,-48653252007⟩,⟨-789501959456,-789457636032⟩,⟨512537338474,512579627263⟩,⟨-192883752965,-192840595340⟩⟩⟩
+noncomputable def centerBoxes40 := centerStep39.proposed :: centerBoxes39
+theorem centerAccepted39 : StepValid centerStep39.shape centerBoxes39 centerStep39.proposed := by
+  dsimp only [StepValid,centerStep39]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep40 : Instruction 40 := ⟨.add 10 0,⟨⟨757231511908,757231678324⟩,⟨56844735237,56846704407⟩,⟨-48654937070,-48653252007⟩,⟨-789501959456,-789457636032⟩,⟨512537338474,512579627263⟩,⟨-192883752965,-192840595340⟩⟩⟩
+noncomputable def centerBoxes41 := centerStep40.proposed :: centerBoxes40
+theorem centerAccepted40 : StepValid centerStep40.shape centerBoxes40 centerStep40.proposed := by
+  dsimp only [StepValid,centerStep40]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep41 : Instruction 40 := ⟨.mul 12 12,⟨⟨9769065684,9769091022⟩,⟨-113354148760,-113353700920⟩,⟨97019119466,97019502712⟩,⟨1570340978897,1570352039085⟩,⟨-1018718715006,-1018708811130⟩,⟨381698782856,381708182405⟩⟩⟩
+noncomputable def centerBoxes42 := centerStep41.proposed :: centerBoxes41
+theorem centerAccepted41 : StepValid centerStep41.shape centerBoxes41 centerStep41.proposed := by
+  dsimp only [StepValid,centerStep41]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep42 : Instruction 40 := ⟨.neg 0,⟨⟨-9769091022,-9769065684⟩,⟨113353700920,113354148760⟩,⟨-97019502712,-97019119466⟩,⟨-1570352039085,-1570340978897⟩,⟨1018708811130,1018718715006⟩,⟨-381708182405,-381698782856⟩⟩⟩
+noncomputable def centerBoxes43 := centerStep42.proposed :: centerBoxes42
+theorem centerAccepted42 : StepValid centerStep42.shape centerBoxes42 centerStep42.proposed := by
+  dsimp only [StepValid,centerStep42]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep43 : Instruction 40 := ⟨.add 45 0,⟨⟨1089742536754,1089742562092⟩,⟨113353700920,113354148760⟩,⟨-97019502712,-97019119466⟩,⟨-1570352039085,-1570340978897⟩,⟨1018708811130,1018718715006⟩,⟨-381708182405,-381698782856⟩⟩⟩
+noncomputable def centerBoxes44 := centerStep43.proposed :: centerBoxes43
+theorem centerAccepted43 : StepValid centerStep43.shape centerBoxes43 centerStep43.proposed := by
+  dsimp only [StepValid,centerStep43]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep44 : Instruction 40 := ⟨.log 0,⟨⟨-9812748736,-9812723072⟩,⟨114369867295,114370321810⟩,⟨-97889242418,-97888853459⟩,⟨-1596326305047,-1596315014310⟩,⟨1038023370218,1038033467703⟩,⟨-393845092870,-393835530845⟩⟩⟩
+noncomputable def centerBoxes45 := centerStep44.proposed :: centerBoxes44
+theorem centerAccepted44 : StepValid centerStep44.shape centerBoxes44 centerStep44.proposed := by
+  dsimp only [StepValid,centerStep44]
+  exact ⟨by decide,by decide,lc11,by decide⟩
+noncomputable def centerStep45 : Instruction 40 := ⟨.mul 0 44,⟨⟨-4906374368,-4906361536⟩,⟨57184933647,57185160905⟩,⟨-48944621209,-48944426729⟩,⟨-798163152524,-798157507155⟩,⟨519011685109,519016733852⟩,⟨-196922546435,-196917765422⟩⟩⟩
+noncomputable def centerBoxes46 := centerStep45.proposed :: centerBoxes45
+theorem centerAccepted45 : StepValid centerStep45.shape centerBoxes45 centerStep45.proposed := by
+  dsimp only [StepValid,centerStep45]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep46 : Instruction 40 := ⟨.neg 0,⟨⟨4906361536,4906374368⟩,⟨-57185160905,-57184933647⟩,⟨48944426729,48944621209⟩,⟨798157507155,798163152524⟩,⟨-519016733852,-519011685109⟩,⟨196917765422,196922546435⟩⟩⟩
+noncomputable def centerBoxes47 := centerStep46.proposed :: centerBoxes46
+theorem centerAccepted46 : StepValid centerStep46.shape centerBoxes46 centerStep46.proposed := by
+  dsimp only [StepValid,centerStep46]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep47 : Instruction 40 := ⟨.add 17 0,⟨⟨767029745152,767029777248⟩,⟨-57185160905,-57184933647⟩,⟨48944426729,48944621209⟩,⟨798157507155,798163152524⟩,⟨-519016733852,-519011685109⟩,⟨196917765422,196922546435⟩⟩⟩
+noncomputable def centerBoxes48 := centerStep47.proposed :: centerBoxes47
+theorem centerAccepted47 : StepValid centerStep47.shape centerBoxes47 centerStep47.proposed := by
+  dsimp only [StepValid,centerStep47]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep48 : Instruction 40 := ⟨.mul 51 51,⟨⟨4398046511104,4398046511104⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes49 := centerStep48.proposed :: centerBoxes48
+theorem centerAccepted48 : StepValid centerStep48.shape centerBoxes48 centerStep48.proposed := by
+  dsimp only [StepValid,centerStep48]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep49 : Instruction 40 := ⟨.inv 0,⟨⟨274877906944,274877906944⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes50 := centerStep49.proposed :: centerBoxes49
+theorem centerAccepted49 : StepValid centerStep49.shape centerBoxes49 centerStep49.proposed := by
+  dsimp only [StepValid,centerStep49]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep50 : Instruction 40 := ⟨.mul 6 0,⟨⟨272435634188,272435640523⟩,⟨28338425230,28338537190⟩,⟨-24254875678,-24254779866⟩,⟨-392588009772,-392585244724⟩,⟨254677202782,254679678752⟩,⟨-95427045602,-95424695714⟩⟩⟩
+noncomputable def centerBoxes51 := centerStep50.proposed :: centerBoxes50
+theorem centerAccepted50 : StepValid centerStep50.shape centerBoxes50 centerStep50.proposed := by
+  dsimp only [StepValid,centerStep50]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep51 : Instruction 40 := ⟨.mul 54 3,⟨⟨1534059490304,1534059554496⟩,⟨-114370321810,-114369867294⟩,⟨97888853458,97889242418⟩,⟨1596315014310,1596326305048⟩,⟨-1038033467704,-1038023370218⟩,⟨393835530844,393845092870⟩⟩⟩
+noncomputable def centerBoxes52 := centerStep51.proposed :: centerBoxes51
+theorem centerAccepted51 : StepValid centerStep51.shape centerBoxes51 centerStep51.proposed := by
+  dsimp only [StepValid,centerStep51]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep52 : Instruction 40 := ⟨.inv 17,⟨⟨1213937121108,1213937284938⟩,⟨-732947904499,-732945761430⟩,⟨627326252371,627328086234⟩,⟨6786598541448,6786646481525⟩,⟨-3705015470148,-3704969447582⟩,⟨1364517085,1411802511⟩⟩⟩
+noncomputable def centerBoxes53 := centerStep52.proposed :: centerBoxes52
+theorem centerAccepted52 : StepValid centerStep52.shape centerBoxes52 centerStep52.proposed := by
+  dsimp only [StepValid,centerStep52]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep53 : Instruction 40 := ⟨.mul 22 0,⟨⟨1328362614440,1328362942100⟩,⟨-1465895808998,-1465891522860⟩,⟨1254652504742,1254656172468⟩,⟨13573197082899,13573292963044⟩,⟨-7410030940295,-7409938895165⟩,⟨2729113257,2823525939⟩⟩⟩
+noncomputable def centerBoxes54 := centerStep53.proposed :: centerBoxes53
+theorem centerAccepted53 : StepValid centerStep53.shape centerBoxes53 centerStep53.proposed := by
+  dsimp only [StepValid,centerStep53]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep54 : Instruction 40 := ⟨.log 0,⟨⟨207896714496,207896985728⟩,⟨-1213350533644,-1213346686631⟩,⟨1038500077094,1038503369107⟩,⟨9895821165488,9895911789223⟩,⟨-4987408577320,-4987323610480⟩,⟨-978621316974,-978536950508⟩⟩⟩
+noncomputable def centerBoxes55 := centerStep54.proposed :: centerBoxes54
+theorem centerAccepted54 : StepValid centerStep54.shape centerBoxes54 centerStep54.proposed := by
+  dsimp only [StepValid,centerStep54]
+  exact ⟨by decide,by decide,lc16,by decide⟩
+noncomputable def centerStep55 : Instruction 40 := ⟨.mul 14 26,⟨⟨71376505265,71376613513⟩,⟨-408745617216,-408744234619⟩,⟨349843061231,349844244342⟩,⟨3197675753332,3197706407951⟩,⟨-1563755124510,-1563725617608⟩,⟨-429273988658,-429243593873⟩⟩⟩
+noncomputable def centerBoxes56 := centerStep55.proposed :: centerBoxes55
+theorem centerAccepted55 : StepValid centerStep55.shape centerBoxes55 centerStep55.proposed := by
+  dsimp only [StepValid,centerStep55]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep56 : Instruction 40 := ⟨.mul 5 4,⟨⟨380107367275,380107392020⟩,⟨11199770856,11200041999⟩,⟨-9586084985,-9585852948⟩,⟨-158108804792,-158102070497⟩,⟨103173714834,103179732136⟩,⟨-39876359791,-39870669851⟩⟩⟩
+noncomputable def centerBoxes57 := centerStep56.proposed :: centerBoxes56
+theorem centerAccepted56 : StepValid centerStep56.shape centerBoxes56 centerStep56.proposed := by
+  dsimp only [StepValid,centerStep56]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep57 : Instruction 40 := ⟨.inv 0,⟨⟨3180484897149,3180485104200⟩,⟨-93714486514,-93712205568⟩,⟨80208017964,80209969939⟩,⟨1328414991346,1328471780156⟩,⟨-868066077077,-868015386132⟩,⟨337656647898,337704497608⟩⟩⟩
+noncomputable def centerBoxes58 := centerStep57.proposed :: centerBoxes57
+theorem centerAccepted57 : StepValid centerStep57.shape centerBoxes57 centerStep57.proposed := by
+  dsimp only [StepValid,centerStep57]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep58 : Instruction 40 := ⟨.mul 2 0,⟨⟨206466117566,206466444130⟩,⟨-1188435244010,-1188431010392⟩,⟨1017174818692,1017178441494⟩,⟨9405617408040,9405712431702⟩,⟨-4639360162761,-4639269486367⟩,⟨-1168771939740,-1168679383644⟩⟩⟩
+noncomputable def centerBoxes59 := centerStep58.proposed :: centerBoxes58
+theorem centerAccepted58 : StepValid centerStep58.shape centerBoxes58 centerStep58.proposed := by
+  dsimp only [StepValid,centerStep58]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep59 : Instruction 40 := ⟨.add 4 0,⟨⟨414362832062,414363429858⟩,⟨-2401785777654,-2401777697023⟩,⟨2055674895786,2055681810601⟩,⟨19301438573528,19301624220925⟩,⟨-9626768740081,-9626593096847⟩,⟨-2147393256714,-2147216334152⟩⟩⟩
+noncomputable def centerBoxes60 := centerStep59.proposed :: centerBoxes59
+theorem centerAccepted59 : StepValid centerStep59.shape centerBoxes59 centerStep59.proposed := by
+  dsimp only [StepValid,centerStep59]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep60 : Instruction 40 := ⟨.mul 19 19,⟨⟨521503864207,521504093429⟩,⟨78297716404,78300445940⟩,⟨-67017135110,-67014799380⟩,⟨-1081579411903,-1081517714769⟩,⟨700935835804,700994587894⟩,⟨-261371586111,-261311784315⟩⟩⟩
+noncomputable def centerBoxes61 := centerStep60.proposed :: centerBoxes60
+theorem centerAccepted60 : StepValid centerStep60.shape centerBoxes60 centerStep60.proposed := by
+  dsimp only [StepValid,centerStep60]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep61 : Instruction 40 := ⟨.mul 20 0,⟨⟨359158693353,359158930151⟩,⟨80885226686,80888064204⟩,⟨-69231870424,-69229442289⟩,⟨-1111250704551,-1111186300037⟩,⟨718902355146,718963569908⟩,⟨-265561116704,-265498969546⟩⟩⟩
+noncomputable def centerBoxes62 := centerStep61.proposed :: centerBoxes61
+theorem centerAccepted61 : StepValid centerStep61.shape centerBoxes61 centerStep61.proposed := by
+  dsimp only [StepValid,centerStep61]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep62 : Instruction 40 := ⟨.mul 65 0,⟨⟨718317386706,718317860302⟩,⟨161770453372,161776128408⟩,⟨-138463740848,-138458884578⟩,⟨-2222501409102,-2222372600074⟩,⟨1437804710292,1437927139816⟩,⟨-531122233408,-530997939092⟩⟩⟩
+noncomputable def centerBoxes63 := centerStep62.proposed :: centerBoxes62
+theorem centerAccepted62 : StepValid centerStep62.shape centerBoxes62 centerStep62.proposed := by
+  dsimp only [StepValid,centerStep62]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep63 : Instruction 40 := ⟨.add 11 20,⟨⟨1524290399282,1524290488812⟩,⟨-1016620890,-1015718534⟩,⟨869350746,870122952⟩,⟨25962975225,25985326151⟩,⟨-19324656574,-19304655212⟩,⟨12127348439,12146310014⟩⟩⟩
+noncomputable def centerBoxes64 := centerStep63.proposed :: centerBoxes63
+theorem centerAccepted63 : StepValid centerStep63.shape centerBoxes63 centerStep63.proposed := by
+  dsimp only [StepValid,centerStep63]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep64 : Instruction 40 := ⟨.mul 1 0,⟨⟨995827846230,995828561284⟩,⟨223603721696,223612192319⟩,⟨-191389056877,-191381808327⟩,⟨-3064466939337,-3064273296817⟩,⟨1980908510174,1981091667039⟩,⟨-728609160889,-728424209087⟩⟩⟩
+noncomputable def centerBoxes65 := centerStep64.proposed :: centerBoxes64
+theorem centerAccepted64 : StepValid centerStep64.shape centerBoxes64 centerStep64.proposed := by
+  dsimp only [StepValid,centerStep64]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep65 : Instruction 40 := ⟨.mul 14 14,⟨⟨67503765217,67503768357⟩,⟨14043320060,14043375870⟩,⟨-12019686604,-12019638842⟩,⟨-193089180465,-193087794156⟩,⟨124956927822,124958167626⟩,⟨-46219491098,-46218317037⟩⟩⟩
+noncomputable def centerBoxes66 := centerStep65.proposed :: centerBoxes65
+theorem centerAccepted65 : StepValid centerStep65.shape centerBoxes65 centerStep65.proposed := by
+  dsimp only [StepValid,centerStep65]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep66 : Instruction 40 := ⟨.mul 41 0,⟨⟨62963551864,62963555652⟩,⟨204716662003,204716727493⟩,⟨20224695423,20224742430⟩,⟨-910674638699,-910672986796⟩,⟨-117362449847,-117361117336⟩,⟨-104829376649,-104828233825⟩⟩⟩
+noncomputable def centerBoxes67 := centerStep66.proposed :: centerBoxes66
+theorem centerAccepted66 : StepValid centerStep66.shape centerBoxes66 centerStep66.proposed := by
+  dsimp only [StepValid,centerStep66]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep67 : Instruction 40 := ⟨.mul 15 15,⟨⟨2140348915228,2140349094353⟩,⟨-319143300520,-319142018864⟩,⟨273152772282,273153869082⟩,⟨4478211237730,4478243119344⟩,⟨-2916932832114,-2916904372648⟩,⟨1116403584711,1116430451458⟩⟩⟩
+noncomputable def centerBoxes68 := centerStep67.proposed :: centerBoxes67
+theorem centerAccepted67 : StepValid centerStep67.shape centerBoxes67 centerStep67.proposed := by
+  dsimp only [StepValid,centerStep67]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep68 : Instruction 40 := ⟨.mul 16 0,⟨⟨2986255427429,2986255802307⟩,⟨-667912212634,-667909502399⟩,⟨571661897932,571664217269⟩,⟨9421923113000,9421990625793⟩,⟨-6147260196722,-6147200039986⟩,⟨2372919142317,2372975758996⟩⟩⟩
+noncomputable def centerBoxes69 := centerStep68.proposed :: centerBoxes68
+theorem centerAccepted68 : StepValid centerStep68.shape centerBoxes68 centerStep68.proposed := by
+  dsimp only [StepValid,centerStep68]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep69 : Instruction 40 := ⟨.mul 2 0,⟨⟨171007967295,171007999052⟩,⟨517759067606,517759472779⟩,⟨87666167049,87666436403⟩,⟨-2182546526540,-2182536742123⟩,⟨-576626274107,-576618604664⟩,⟨-127799049773,-127792525602⟩⟩⟩
+noncomputable def centerBoxes70 := centerStep69.proposed :: centerBoxes69
+theorem centerAccepted69 : StepValid centerStep69.shape centerBoxes69 centerStep69.proposed := by
+  dsimp only [StepValid,centerStep69]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep70 : Instruction 40 := ⟨.inv 0,⟨⟨7069410941689,7069412254513⟩,⟨-21404003682706,-21403978983341⟩,⟨-3624101201951,-3624088720923⟩,⟨219834497431402,219835210485547⟩,⟨45782440064371,45782862795974⟩,⟨8998630600352,8998927172811⟩⟩⟩
+noncomputable def centerBoxes71 := centerStep70.proposed :: centerBoxes70
+theorem centerAccepted70 : StepValid centerStep70.shape centerBoxes70 centerStep70.proposed := by
+  dsimp only [StepValid,centerStep70]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep71 : Instruction 40 := ⟨.mul 6 0,⟨⟨6402766550469,6402772337002⟩,⟨-17947942611780,-17947851592083⟩,⟨-4512905097684,-4512844602986⟩,⟨170694822003388,170697199323503⟩,⟨57190140040833,57191908536269⟩,⟨4727023865527,4728540486964⟩⟩⟩
+noncomputable def centerBoxes72 := centerStep71.proposed :: centerBoxes71
+theorem centerAccepted71 : StepValid centerStep71.shape centerBoxes71 centerStep71.proposed := by
+  dsimp only [StepValid,centerStep71]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep72 : Instruction 40 := ⟨.mul 75 0,⟨⟨12805533100938,12805544674004⟩,⟨-35895885223560,-35895703184166⟩,⟨-9025810195368,-9025689205972⟩,⟨341389644006776,341394398647006⟩,⟨114380280081666,114383817072538⟩,⟨9454047731054,9457080973928⟩⟩⟩
+noncomputable def centerBoxes73 := centerStep72.proposed :: centerBoxes72
+theorem centerAccepted72 : StepValid centerStep72.shape centerBoxes72 centerStep72.proposed := by
+  dsimp only [StepValid,centerStep72]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep73 : Instruction 40 := ⟨.inv 73,⟨⟨7476094998927,7476094998974⟩,⟨-50833474627948,-50833474627307⟩,⟨0,0⟩,⟨691281248581238,691281248594304⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes74 := centerStep73.proposed :: centerBoxes73
+theorem centerAccepted73 : StepValid centerStep73.shape centerBoxes73 centerStep73.proposed := by
+  dsimp only [StepValid,centerStep73]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep74 : Instruction 40 := ⟨.mul 63 0,⟨⟨6376583371151,6376583371198⟩,⟨-50833474627948,-50833474627307⟩,⟨0,0⟩,⟨691281248581241,691281248594298⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes75 := centerStep74.proposed :: centerBoxes74
+theorem centerAccepted74 : StepValid centerStep74.shape centerBoxes74 centerStep74.proposed := by
+  dsimp only [StepValid,centerStep74]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep75 : Instruction 40 := ⟨.log 0,⟨⟨1932684511616,1932684550208⟩,⟨-8765194961109,-8765194960859⟩,⟨0,0⟩,⟨49322095689288,49322095699534⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes76 := centerStep75.proposed :: centerBoxes75
+theorem centerAccepted75 : StepValid centerStep75.shape centerBoxes75 centerStep75.proposed := by
+  dsimp only [StepValid,centerStep75]
+  exact ⟨by decide,by decide,lc17,by decide⟩
+noncomputable def centerStep76 : Instruction 40 := ⟨.inv 70,⟨⟨5213402787702,5213402787770⟩,⟨-20248888934297,-20248888933745⟩,⟨-8724306701069,-8724306700817⟩,⟨157293621746759,157293621753274⟩,⟨92490196909111,92490196912664⟩,⟨29199173940473,29199173941770⟩⟩⟩
+noncomputable def centerBoxes77 := centerStep76.proposed :: centerBoxes76
+theorem centerAccepted76 : StepValid centerStep76.shape centerBoxes76 centerStep76.proposed := by
+  dsimp only [StepValid,centerStep76]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep77 : Instruction 40 := ⟨.mul 57 0,⟨⟨4113891159926,4113891159994⟩,⟨-20248888934298,-20248888933745⟩,⟨-8724306701070,-8724306700816⟩,⟨157293621746759,157293621753272⟩,⟨92490196909110,92490196912665⟩,⟨29199173940472,29199173941771⟩⟩⟩
+noncomputable def centerBoxes78 := centerStep77.proposed :: centerBoxes77
+theorem centerAccepted77 : StepValid centerStep77.shape centerBoxes77 centerStep77.proposed := by
+  dsimp only [StepValid,centerStep77]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep78 : Instruction 40 := ⟨.log 0,⟨⟨1450809141056,1450809164224⟩,⟨-5411880861057,-5411880860798⟩,⟨-2331728353823,-2331728353707⟩,⟨15401863864756,15401863870534⟩,⟨13242727231947,13242727234794⟩,⟨2859122302587,2859122303707⟩⟩⟩
+noncomputable def centerBoxes79 := centerStep78.proposed :: centerBoxes78
+theorem centerAccepted78 : StepValid centerStep78.shape centerBoxes78 centerStep78.proposed := by
+  dsimp only [StepValid,centerStep78]
+  exact ⟨by decide,by decide,lc18,by decide⟩
+noncomputable def centerStep79 : Instruction 40 := ⟨.mul 79 68,⟨⟨137923437526,137923437528⟩,⟨776100590386,776100590388⟩,⟨0,0⟩,⟨-2199023255552,-2199023255552⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes80 := centerStep79.proposed :: centerBoxes79
+theorem centerAccepted79 : StepValid centerStep79.shape centerBoxes79 centerStep79.proposed := by
+  dsimp only [StepValid,centerStep79]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep80 : Instruction 40 := ⟨.mul 74 60,⟨⟨182982640767,182982640771⟩,⟨520756793373,520756793381⟩,⟨224369939347,224369939352⟩,⟨-1475525612670,-1475525612666⟩,⟨-1271471045350,-1271471045340⟩,⟨-273908938835,-273908938833⟩⟩⟩
+noncomputable def centerBoxes81 := centerStep80.proposed :: centerBoxes80
+theorem centerAccepted80 : StepValid centerStep80.shape centerBoxes80 centerStep80.proposed := by
+  dsimp only [StepValid,centerStep80]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep81 : Instruction 40 := ⟨.add 5 2,⟨⟨3383493652672,3383493714432⟩,⟨-14177075822166,-14177075821657⟩,⟨-2331728353823,-2331728353707⟩,⟨64723959554044,64723959570068⟩,⟨13242727231947,13242727234794⟩,⟨2859122302587,2859122303707⟩⟩⟩
+noncomputable def centerBoxes82 := centerStep81.proposed :: centerBoxes81
+theorem centerAccepted81 : StepValid centerStep81.shape centerBoxes81 centerStep81.proposed := by
+  dsimp only [StepValid,centerStep81]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep82 : Instruction 40 := ⟨.mul 85 22,⟨⟨828725664124,828726859716⟩,⟨-4803571555308,-4803555394046⟩,⟨4111349791572,4111363621202⟩,⟨38602877147056,38603248441850⟩,⟨-19253537480162,-19253186193694⟩,⟨-4294786513428,-4294432668304⟩⟩⟩
+noncomputable def centerBoxes83 := centerStep82.proposed :: centerBoxes82
+theorem centerAccepted82 : StepValid centerStep82.shape centerBoxes82 centerStep82.proposed := by
+  dsimp only [StepValid,centerStep82]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep83 : Instruction 40 := ⟨.add 1 0,⟨⟨4212219316796,4212220574148⟩,⟨-18980647377474,-18980631215703⟩,⟨1779621437749,1779635267495⟩,⟨103326836701100,103327208011918⟩,⟨-6010810248215,-6010458958900⟩,⟨-1435664210841,-1435310364597⟩⟩⟩
+noncomputable def centerBoxes84 := centerStep83.proposed :: centerBoxes83
+theorem centerAccepted83 : StepValid centerStep83.shape centerBoxes83 centerStep83.proposed := by
+  dsimp only [StepValid,centerStep83]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep84 : Instruction 40 := ⟨.mul 4 0,⟨⟨528383468723,528383626455⟩,⟨592290021624,592292936525⟩,⟨223236844421,223238579237⟩,⟨-22258392859632,-22258320951329⟩,⟨502162617283,502216445110⟩,⟨-180090631234,-180046244533⟩⟩⟩
+noncomputable def centerBoxes85 := centerStep84.proposed :: centerBoxes84
+theorem centerAccepted84 : StepValid centerStep84.shape centerBoxes84 centerStep84.proposed := by
+  dsimp only [StepValid,centerStep84]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep85 : Instruction 40 := ⟨.mul 88 85,⟨⟨323411037388,323411037390⟩,⟨2199023255552,2199023255552⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes86 := centerStep85.proposed :: centerBoxes85
+theorem centerAccepted85 : StepValid centerStep85.shape centerBoxes85 centerStep85.proposed := by
+  dsimp only [StepValid,centerStep85]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep86 : Instruction 40 := ⟨.neg 0,⟨⟨-323411037390,-323411037388⟩,⟨-2199023255552,-2199023255552⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes87 := centerStep86.proposed :: centerBoxes86
+theorem centerAccepted86 : StepValid centerStep86.shape centerBoxes86 centerStep86.proposed := by
+  dsimp only [StepValid,centerStep86]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep87 : Instruction 40 := ⟨.add 89 0,⟨⟨776100590386,776100590388⟩,⟨-2199023255552,-2199023255552⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes88 := centerStep87.proposed :: centerBoxes87
+theorem centerAccepted87 : StepValid centerStep87.shape centerBoxes87 centerStep87.proposed := by
+  dsimp only [StepValid,centerStep87]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep88 : Instruction 40 := ⟨.mul 12 0,⟨⟨1364203481439,1364203508684⟩,⟨-10052364137424,-10052364060047⟩,⟨0,0⟩,⟨69875243480313,69875243488636⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes89 := centerStep88.proposed :: centerBoxes88
+theorem centerAccepted88 : StepValid centerStep88.shape centerBoxes88 centerStep88.proposed := by
+  dsimp only [StepValid,centerStep88]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep89 : Instruction 40 := ⟨.neg 91,⟨⟨-1099511627776,-1099511627776⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes90 := centerStep89.proposed :: centerBoxes89
+theorem centerAccepted89 : StepValid centerStep89.shape centerBoxes89 centerStep89.proposed := by
+  dsimp only [StepValid,centerStep89]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep90 : Instruction 40 := ⟨.add 1 0,⟨⟨264691853663,264691880908⟩,⟨-10052364137424,-10052364060047⟩,⟨0,0⟩,⟨69875243480313,69875243488636⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes91 := centerStep90.proposed :: centerBoxes90
+theorem centerAccepted90 : StepValid centerStep90.shape centerBoxes90 centerStep90.proposed := by
+  dsimp only [StepValid,centerStep90]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep91 : Instruction 40 := ⟨.mul 84 0,⟨⟨16895451136,16895452877⟩,⟨-689520871713,-689520861808⟩,⟨93417613196,93417622813⟩,⟨8096310262366,8096310291160⟩,⟨-3812469614569,-3812469560006⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes92 := centerStep91.proposed :: centerBoxes91
+theorem centerAccepted91 : StepValid centerStep91.shape centerBoxes91 centerStep91.proposed := by
+  dsimp only [StepValid,centerStep91]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep92 : Instruction 40 := ⟨.add 7 0,⟨⟨545278919859,545279079332⟩,⟨-97230850089,-97227925283⟩,⟨316654457617,316656202050⟩,⟨-14162082597266,-14162010660169⟩,⟨-3310306997286,-3310253114896⟩,⟨-180090631234,-180046244533⟩⟩⟩
+noncomputable def centerBoxes93 := centerStep92.proposed :: centerBoxes92
+theorem centerAccepted92 : StepValid centerStep92.shape centerBoxes92 centerStep92.proposed := by
+  dsimp only [StepValid,centerStep92]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep93 : Instruction 40 := ⟨.inv 17,⟨⟨625516367626,625516380118⟩,⟨2836869013540,2836869126942⟩,⟨0,0⟩,⟨9768609462891,9768611647221⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes94 := centerStep93.proposed :: centerBoxes93
+theorem centerAccepted93 : StepValid centerStep93.shape centerBoxes93 centerStep93.proposed := by
+  dsimp only [StepValid,centerStep93]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep94 : Instruction 40 := ⟨.mul 1 0,⟨⟨310211261688,310211358609⟩,⟨1351568591508,1351570724247⟩,⟨180145931263,180146927277⟩,⟨-3714067332415,-3714008633371⟩,⟨-1066240685041,-1066205460029⟩,⟨-102454250503,-102428996692⟩⟩⟩
+noncomputable def centerBoxes95 := centerStep94.proposed :: centerBoxes94
+theorem centerAccepted94 : StepValid centerStep94.shape centerBoxes94 centerStep94.proposed := by
+  dsimp only [StepValid,centerStep94]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep95 : Instruction 40 := ⟨.neg 12,⟨⟨-828726859716,-828725664124⟩,⟨4803555394046,4803571555308⟩,⟨-4111363621202,-4111349791572⟩,⟨-38603248441850,-38602877147056⟩,⟨19253186193694,19253537480162⟩,⟨4294432668304,4294786513428⟩⟩⟩
+noncomputable def centerBoxes96 := centerStep95.proposed :: centerBoxes95
+theorem centerAccepted95 : StepValid centerStep95.shape centerBoxes95 centerStep95.proposed := by
+  dsimp only [StepValid,centerStep95]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep96 : Instruction 40 := ⟨.add 14 0,⟨⟨2554766792956,2554768050308⟩,⟨-9373520428120,-9373504266349⟩,⟨-6443091975025,-6443078145279⟩,⟨26120711112194,26121082423012⟩,⟨32495913425641,32496264714956⟩,⟨7153554970891,7153908817135⟩⟩⟩
+noncomputable def centerBoxes97 := centerStep96.proposed :: centerBoxes96
+theorem centerAccepted96 : StepValid centerStep96.shape centerBoxes96 centerStep96.proposed := by
+  dsimp only [StepValid,centerStep96]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep97 : Instruction 40 := ⟨.mul 16 0,⟨⟨425168740838,425168950099⟩,⟨-349954787766,-349951502527⟩,⟨-550936523669,-550933965482⟩,⟨-7960477775049,-7960398984012⟩,⟨-2510701667361,-2510631902804⟩,⟨-2075530335366,-2075465490048⟩⟩⟩
+noncomputable def centerBoxes98 := centerStep97.proposed :: centerBoxes97
+theorem centerAccepted97 : StepValid centerStep97.shape centerBoxes97 centerStep97.proposed := by
+  dsimp only [StepValid,centerStep97]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep98 : Instruction 40 := ⟨.mul 101 92,⟨⟨463776105100,463776105106⟩,⟨1801309283942,1801309283944⟩,⟨776100590386,776100590388⟩,⟨0,0⟩,⟨-2199023255552,-2199023255552⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes99 := centerStep98.proposed :: centerBoxes98
+theorem centerAccepted98 : StepValid centerStep98.shape centerBoxes98 centerStep98.proposed := by
+  dsimp only [StepValid,centerStep98]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep99 : Instruction 40 := ⟨.neg 0,⟨⟨-463776105106,-463776105100⟩,⟨-1801309283944,-1801309283942⟩,⟨-776100590388,-776100590386⟩,⟨0,0⟩,⟨2199023255552,2199023255552⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes100 := centerStep99.proposed :: centerBoxes99
+theorem centerAccepted99 : StepValid centerStep99.shape centerBoxes99 centerStep99.proposed := by
+  dsimp only [StepValid,centerStep99]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep100 : Instruction 40 := ⟨.add 102 0,⟨⟨635735522670,635735522676⟩,⟨-1801309283944,-1801309283942⟩,⟨-776100590388,-776100590386⟩,⟨0,0⟩,⟨2199023255552,2199023255552⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes101 := centerStep100.proposed :: centerBoxes100
+theorem centerAccepted100 : StepValid centerStep100.shape centerBoxes100 centerStep100.proposed := by
+  dsimp only [StepValid,centerStep100]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep101 : Instruction 40 := ⟨.mul 22 0,⟨⟨838855073728,838855087133⟩,⟨-5505972626100,-5505972587961⟩,⟨-2372268129558,-2372268113121⟩,⟨26637694145792,26637694150087⟩,⟨18198591552621,18198591601066⟩,⟨4944883690109,4944883690946⟩⟩⟩
+noncomputable def centerBoxes102 := centerStep101.proposed :: centerBoxes101
+theorem centerAccepted101 : StepValid centerStep101.shape centerBoxes101 centerStep101.proposed := by
+  dsimp only [StepValid,centerStep101]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep102 : Instruction 40 := ⟨.neg 0,⟨⟨-838855087133,-838855073728⟩,⟨5505972587961,5505972626100⟩,⟨2372268113121,2372268129558⟩,⟨-26637694150087,-26637694145792⟩,⟨-18198591601066,-18198591552621⟩,⟨-4944883690946,-4944883690109⟩⟩⟩
+noncomputable def centerBoxes103 := centerStep102.proposed :: centerBoxes102
+theorem centerAccepted102 : StepValid centerStep102.shape centerBoxes102 centerStep102.proposed := by
+  dsimp only [StepValid,centerStep102]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep103 : Instruction 40 := ⟨.add 105 0,⟨⟨260656540643,260656554048⟩,⟨5505972587961,5505972626100⟩,⟨2372268113121,2372268129558⟩,⟨-26637694150087,-26637694145792⟩,⟨-18198591601066,-18198591552621⟩,⟨-4944883690946,-4944883690109⟩⟩⟩
+noncomputable def centerBoxes104 := centerStep103.proposed :: centerBoxes103
+theorem centerAccepted103 : StepValid centerStep103.shape centerBoxes103 centerStep103.proposed := by
+  dsimp only [StepValid,centerStep103]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep104 : Instruction 40 := ⟨.mul 97 0,⟨⟨16637874512,16637875370⟩,⟨304307587512,304307592393⟩,⟨243416829745,243416835537⟩,⟨-3691914673543,-3691914659364⟩,⟨91889901393,91889934400⟩,⟨1358852583578,1358852595257⟩⟩⟩
+noncomputable def centerBoxes105 := centerStep104.proposed :: centerBoxes104
+theorem centerAccepted104 : StepValid centerStep104.shape centerBoxes104 centerStep104.proposed := by
+  dsimp only [StepValid,centerStep104]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep105 : Instruction 40 := ⟨.add 7 0,⟨⟨441806615350,441806825469⟩,⟨-45647200254,-45643910134⟩,⟨-307519693924,-307517129945⟩,⟨-11652392448592,-11652313643376⟩,⟨-2418811765968,-2418741968404⟩,⟨-716677751788,-716612894791⟩⟩⟩
+noncomputable def centerBoxes106 := centerStep105.proposed :: centerBoxes105
+theorem centerAccepted105 : StepValid centerStep105.shape centerBoxes105 centerStep105.proposed := by
+  dsimp only [StepValid,centerStep105]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep106 : Instruction 40 := ⟨.neg 26,⟨⟨-137923437528,-137923437526⟩,⟨-776100590388,-776100590386⟩,⟨0,0⟩,⟨2199023255552,2199023255552⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes107 := centerStep106.proposed :: centerBoxes106
+theorem centerAccepted106 : StepValid centerStep106.shape centerBoxes106 centerStep106.proposed := by
+  dsimp only [StepValid,centerStep106]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep107 : Instruction 40 := ⟨.mul 100 27,⟨⟨8803741660,8803741662⟩,⟨24594252772,24594252778⟩,⟨48677275704,48677275706⟩,⟨-421095203148,-421095203137⟩,⟨135985501305,135985501309⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes108 := centerStep107.proposed :: centerBoxes107
+theorem centerAccepted107 : StepValid centerStep107.shape centerBoxes107 centerStep107.proposed := by
+  dsimp only [StepValid,centerStep107]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep108 : Instruction 40 := ⟨.mul 0 32,⟨⟨15474920610,15474920924⟩,⟨-26951584595,-26951583701⟩,⟨85563275952,85563277665⟩,⟨-737392879962,-737392864882⟩,⟨-149019560525,-149019555716⟩,⟨0,0⟩⟩⟩
+noncomputable def centerBoxes109 := centerStep108.proposed :: centerBoxes108
+theorem centerAccepted108 : StepValid centerStep108.shape centerBoxes108 centerStep108.proposed := by
+  dsimp only [StepValid,centerStep108]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep109 : Instruction 40 := ⟨.inv 84,⟨⟨1178795851972,1178795868045⟩,⟨-3587446387949,-3587446208866⟩,⟨-588540078431,-588540046647⟩,⟨37005784609169,37005786905786⟩,⟨7445210567347,7445211040834⟩,⟨1533580071935,1533580153270⟩⟩⟩
+noncomputable def centerBoxes110 := centerStep109.proposed :: centerBoxes109
+theorem centerAccepted109 : StepValid centerStep109.shape centerBoxes109 centerStep109.proposed := by
+  dsimp only [StepValid,centerStep109]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep110 : Instruction 40 := ⟨.mul 1 0,⟨⟨16590795189,16590795753⟩,⟨-79386032423,-79386027524⟩,⟨83449798329,83449802033⟩,⟨-93859296200,-93859211745⟩,⟨-319724845053,-319724808142⟩,⟨-70015454579,-70015446215⟩⟩⟩
+noncomputable def centerBoxes111 := centerStep110.proposed :: centerBoxes110
+theorem centerAccepted110 : StepValid centerStep110.shape centerBoxes110 centerStep110.proposed := by
+  dsimp only [StepValid,centerStep110]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep111 : Instruction 40 := ⟨.neg 0,⟨⟨-16590795753,-16590795189⟩,⟨79386027524,79386032423⟩,⟨-83449802033,-83449798329⟩,⟨93859211745,93859296200⟩,⟨319724808142,319724845053⟩,⟨70015446215,70015454579⟩⟩⟩
+noncomputable def centerBoxes112 := centerStep111.proposed :: centerBoxes111
+theorem centerAccepted111 : StepValid centerStep111.shape centerBoxes111 centerStep111.proposed := by
+  dsimp only [StepValid,centerStep111]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep112 : Instruction 40 := ⟨.add 5 0,⟨⟨-154514233281,-154514232715⟩,⟨-696714562864,-696714557963⟩,⟨-83449802033,-83449798329⟩,⟨2292882467297,2292882551752⟩,⟨319724808142,319724845053⟩,⟨70015446215,70015454579⟩⟩⟩
+noncomputable def centerBoxes113 := centerStep112.proposed :: centerBoxes112
+theorem centerAccepted112 : StepValid centerStep112.shape centerBoxes112 centerStep112.proposed := by
+  dsimp only [StepValid,centerStep112]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep113 : Instruction 40 := ⟨.mul 106 34,⟨⟨92606079905,92606081391⟩,⟨-607836272274,-607836268044⟩,⟨363197897343,363197905539⟩,⟨2940689649344,2940689649875⟩,⟨-2093815862297,-2093815838777⟩,⟨-1463372704375,-1463372704205⟩⟩⟩
+noncomputable def centerBoxes114 := centerStep113.proposed :: centerBoxes113
+theorem centerAccepted113 : StepValid centerStep113.shape centerBoxes113 centerStep113.proposed := by
+  dsimp only [StepValid,centerStep113]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep114 : Instruction 40 := ⟨.mul 0 4,⟨⟨99283772996,99283775944⟩,⟨-953818233387,-953818200032⟩,⟨339817947339,339817964911⟩,⟨10235992920441,10235993433052⟩,⟨-2477396948056,-2477396736554⟩,⟨-1828549926604,-1828549866332⟩⟩⟩
+noncomputable def centerBoxes115 := centerStep114.proposed :: centerBoxes114
+theorem centerAccepted114 : StepValid centerStep114.shape centerBoxes114 centerStep114.proposed := by
+  dsimp only [StepValid,centerStep114]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep115 : Instruction 40 := ⟨.neg 0,⟨⟨-99283775944,-99283772996⟩,⟨953818200032,953818233387⟩,⟨-339817964911,-339817947339⟩,⟨-10235993433052,-10235992920441⟩,⟨2477396736554,2477396948056⟩,⟨1828549866332,1828549926604⟩⟩⟩
+noncomputable def centerBoxes116 := centerStep115.proposed :: centerBoxes115
+theorem centerAccepted115 : StepValid centerStep115.shape centerBoxes115 centerStep115.proposed := by
+  dsimp only [StepValid,centerStep115]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep116 : Instruction 40 := ⟨.add 118 0,⟨⟨1000227851832,1000227854780⟩,⟨953818200032,953818233387⟩,⟨-339817964911,-339817947339⟩,⟨-10235993433052,-10235992920441⟩,⟨2477396736554,2477396948056⟩,⟨1828549866332,1828549926604⟩⟩⟩
+noncomputable def centerBoxes117 := centerStep116.proposed :: centerBoxes116
+theorem centerAccepted116 : StepValid centerStep116.shape centerBoxes116 centerStep116.proposed := by
+  dsimp only [StepValid,centerStep116]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep117 : Instruction 40 := ⟨.mul 36 0,⟨⟨166459661792,166459662288⟩,⟨632469547613,632469554573⟩,⟨147556669478,147556673012⟩,⟨-2142275036850,-2142274915930⟩,⟨-710674195104,-710674141338⟩,⟨-83553767888,-83553749937⟩⟩⟩
+noncomputable def centerBoxes118 := centerStep117.proposed :: centerBoxes117
+theorem centerAccepted117 : StepValid centerStep117.shape centerBoxes117 centerStep117.proposed := by
+  dsimp only [StepValid,centerStep117]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep118 : Instruction 40 := ⟨.mul 5 5,⟨⟨21713865964,21713866124⟩,⟨195818420878,195818422976⟩,⟨23454379622,23454380752⟩,⟨238520780456,238520818979⟩,⟨15895511860,15895528004⟩,⟨-7011322745,-7011319193⟩⟩⟩
+noncomputable def centerBoxes119 := centerStep118.proposed :: centerBoxes118
+theorem centerAccepted118 : StepValid centerStep118.shape centerBoxes118 centerStep118.proposed := by
+  dsimp only [StepValid,centerStep118]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep119 : Instruction 40 := ⟨.mul 46 0,⟨⟨252891940682,252892171099⟩,⟨1571716733614,1571722419420⟩,⟨94915413108,94918063833⟩,⟨-3265883197637,-3265721313106⟩,⟨70806796333,70902504112⟩,⟨-280023831894,-279958632553⟩⟩⟩
+noncomputable def centerBoxes120 := centerStep119.proposed :: centerBoxes119
+theorem centerAccepted119 : StepValid centerStep119.shape centerBoxes119 centerStep119.proposed := by
+  dsimp only [StepValid,centerStep119]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep120 : Instruction 40 := ⟨.neg 0,⟨⟨-252892171099,-252891940682⟩,⟨-1571722419420,-1571716733614⟩,⟨-94918063833,-94915413108⟩,⟨3265721313106,3265883197637⟩,⟨-70902504112,-70806796333⟩,⟨279958632553,280023831894⟩⟩⟩
+noncomputable def centerBoxes121 := centerStep120.proposed :: centerBoxes120
+theorem centerAccepted120 : StepValid centerStep120.shape centerBoxes120 centerStep120.proposed := by
+  dsimp only [StepValid,centerStep120]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep121 : Instruction 40 := ⟨.add 26 0,⟨⟨57319090589,57319417927⟩,⟨-220153827912,-220146009367⟩,⟨85227867430,85231514169⟩,⟨-448346019309,-448125435734⟩,⟨-1137143189153,-1137012256362⟩,⟨177504382050,177594835202⟩⟩⟩
+noncomputable def centerBoxes122 := centerStep121.proposed :: centerBoxes121
+theorem centerAccepted121 : StepValid centerStep121.shape centerBoxes121 centerStep121.proposed := by
+  dsimp only [StepValid,centerStep121]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep122 : Instruction 40 := ⟨.mul 49 43,⟨⟨16896942251092,16896957791619⟩,⟨-110394613672658,-110394315748182⟩,⟨-39066235102391,-39066050722017⟩,⟨983206365906612,983214601085853⟩,⟨425706385953614,425712176431045⟩,⟨84055059251316,84059605096513⟩⟩⟩
+noncomputable def centerBoxes123 := centerStep122.proposed :: centerBoxes122
+theorem centerAccepted122 : StepValid centerStep122.shape centerBoxes122 centerStep122.proposed := by
+  dsimp only [StepValid,centerStep122]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep123 : Instruction 40 := ⟨.mul 5 5,⟨⟨25201024076,25201024227⟩,⟨191504417650,191504420330⟩,⟨44678442092,44678443298⟩,⟨78972060683,78972115246⟩,⟨-45426507354,-45426484496⟩,⟨14305694496,14305701908⟩⟩⟩
+noncomputable def centerBoxes124 := centerStep123.proposed :: centerBoxes123
+theorem centerAccepted123 : StepValid centerStep123.shape centerBoxes123 centerStep123.proposed := by
+  dsimp only [StepValid,centerStep123]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep124 : Instruction 40 := ⟨.mul 1 0,⟨⟨387281259900,387281618414⟩,⟨412712099355,412721690920⟩,⟨-208801867644,-208796986224⟩,⟨-14706455977080,-14706160816894⟩,⟨-2230944201799,-2230765994751⟩,⟨-1028493965456,-1028374375913⟩⟩⟩
+noncomputable def centerBoxes125 := centerStep124.proposed :: centerBoxes124
+theorem centerAccepted124 : StepValid centerStep124.shape centerBoxes124 centerStep124.proposed := by
+  dsimp only [StepValid,centerStep124]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep125 : Instruction 40 := ⟨.neg 0,⟨⟨-387281618414,-387281259900⟩,⟨-412721690920,-412712099355⟩,⟨208796986224,208801867644⟩,⟨14706160816894,14706455977080⟩,⟨2230765994751,2230944201799⟩,⟨1028374375913,1028493965456⟩⟩⟩
+noncomputable def centerBoxes126 := centerStep125.proposed :: centerBoxes125
+theorem centerAccepted125 : StepValid centerStep125.shape centerBoxes125 centerStep125.proposed := by
+  dsimp only [StepValid,centerStep125]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep126 : Instruction 40 := ⟨.add 20 0,⟨⟨54524996936,54525565569⟩,⟨-458368891174,-458356009489⟩,⟨-98722707700,-98715262301⟩,⟨3053768368302,3054142333704⟩,⟨-188045771217,-187797766605⟩,⟨311696624125,311881070665⟩⟩⟩
+noncomputable def centerBoxes127 := centerStep126.proposed :: centerBoxes126
+theorem centerAccepted126 : StepValid centerStep126.shape centerBoxes126 centerStep126.proposed := by
+  dsimp only [StepValid,centerStep126]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep127 : Instruction 40 := ⟨.add 47 46,⟨⟨320906078293,320906078299⟩,⟨1296857383759,1296857383769⟩,⟨224369939347,224369939352⟩,⟨-3674548868222,-3674548868218⟩,⟨-1271471045350,-1271471045340⟩,⟨-273908938835,-273908938833⟩⟩⟩
+noncomputable def centerBoxes128 := centerStep127.proposed :: centerBoxes127
+theorem centerAccepted127 : StepValid centerStep127.shape centerBoxes127 centerStep127.proposed := by
+  dsimp only [StepValid,centerStep127]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep128 : Instruction 40 := ⟨.mul 55 15,⟨⟨-1799561611779,-1799559978824⟩,⟨-3069919716398,-3069886725497⟩,⟨296474603978,296492532752⟩,⟨24219304151862,24220228635796⟩,⟨-3907064568757,-3906473018436⟩,⟨856485154469,856930681267⟩⟩⟩
+noncomputable def centerBoxes129 := centerStep128.proposed :: centerBoxes128
+theorem centerAccepted128 : StepValid centerStep128.shape centerBoxes128 centerStep128.proposed := by
+  dsimp only [StepValid,centerStep128]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep129 : Instruction 40 := ⟨.mul 0 11,⟨⟨-272443156213,-272442908180⟩,⟨-1499925683923,-1499919737192⟩,⟨-196620259891,-196617320514⟩,⟨3641096435869,3641277781249⟩,⟨330197611195,330303066020⟩,⟨345993452268,346065870354⟩⟩⟩
+noncomputable def centerBoxes130 := centerStep129.proposed :: centerBoxes129
+theorem centerAccepted129 : StepValid centerStep129.shape centerBoxes129 centerStep129.proposed := by
+  dsimp only [StepValid,centerStep129]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep130 : Instruction 40 := ⟨.add 2 0,⟨⟨48462922080,48463170119⟩,⟨-203068300164,-203062353423⟩,⟨27749679456,27752618838⟩,⟨-33452432353,-33271086969⟩,⟨-941273434155,-941167979320⟩,⟨72084513433,72156931521⟩⟩⟩
+noncomputable def centerBoxes131 := centerStep130.proposed :: centerBoxes130
+theorem centerAccepted130 : StepValid centerStep130.shape centerBoxes130 centerStep130.proposed := by
+  dsimp only [StepValid,centerStep130]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep131 : Instruction 40 := ⟨.mul 9 4,⟨⟨2842464926,2842510804⟩,⟨-34813137988,-34811828405⟩,⟨-920116629,-919474175⟩,⟨320509023534,320552276026⟩,⟨-81961619123,-81936841706⟩,⟨9746164506,9762259368⟩⟩⟩
+noncomputable def centerBoxes132 := centerStep131.proposed :: centerBoxes131
+theorem centerAccepted131 : StepValid centerStep131.shape centerBoxes131 centerStep131.proposed := by
+  dsimp only [StepValid,centerStep131]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep132 : Instruction 40 := ⟨.mul 1 1,⟨⟨2136089111,2136110978⟩,⟨-17901281494,-17900665644⟩,⟨2446232524,2446504166⟩,⟨72055824524,72076218998⟩,⟨-93228248626,-93217141806⟩,⟨7755208329,7761921552⟩⟩⟩
+noncomputable def centerBoxes133 := centerStep132.proposed :: centerBoxes132
+theorem centerAccepted132 : StepValid centerStep132.shape centerBoxes132 centerStep132.proposed := by
+  dsimp only [StepValid,centerStep132]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep133 : Instruction 40 := ⟨.mul 54 0,⟨⟨2818576475,2818605374⟩,⟨-34134901728,-34133981102⟩,⟨-1302227273,-1301822413⟩,⟨301216952869,301250233818⟩,⟨-71367550365,-71349986462⟩,⟨5411039534,5421106825⟩⟩⟩
+noncomputable def centerBoxes134 := centerStep133.proposed :: centerBoxes133
+theorem centerAccepted133 : StepValid centerStep133.shape centerBoxes133 centerStep133.proposed := by
+  dsimp only [StepValid,centerStep133]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep134 : Instruction 40 := ⟨.neg 0,⟨⟨-2818605374,-2818576475⟩,⟨34133981102,34134901728⟩,⟨1301822413,1302227273⟩,⟨-301250233818,-301216952869⟩,⟨71349986462,71367550365⟩,⟨-5421106825,-5411039534⟩⟩⟩
+noncomputable def centerBoxes135 := centerStep134.proposed :: centerBoxes134
+theorem centerAccepted134 : StepValid centerStep134.shape centerBoxes134 centerStep134.proposed := by
+  dsimp only [StepValid,centerStep134]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerStep135 : Instruction 40 := ⟨.add 3 0,⟨⟨23859552,23934329⟩,⟨-679156886,-676926677⟩,⟨381705784,382753098⟩,⟨19258789716,19335323157⟩,⟨-10611632661,-10569291341⟩,⟨4325057681,4351219834⟩⟩⟩
+noncomputable def centerBoxes136 := centerStep135.proposed :: centerBoxes135
+theorem centerAccepted135 : StepValid centerStep135.shape centerBoxes135 centerStep135.proposed := by
+  dsimp only [StepValid,centerStep135]
+  exact ⟨by decide,by decide⟩
+noncomputable def centerProgram : List (Instruction 40) := [centerStep0,centerStep1,centerStep2,centerStep3,centerStep4,centerStep5,centerStep6,centerStep7,centerStep8,centerStep9,centerStep10,centerStep11,centerStep12,centerStep13,centerStep14,centerStep15,centerStep16,centerStep17,centerStep18,centerStep19,centerStep20,centerStep21,centerStep22,centerStep23,centerStep24,centerStep25,centerStep26,centerStep27,centerStep28,centerStep29,centerStep30,centerStep31,centerStep32,centerStep33,centerStep34,centerStep35,centerStep36,centerStep37,centerStep38,centerStep39,centerStep40,centerStep41,centerStep42,centerStep43,centerStep44,centerStep45,centerStep46,centerStep47,centerStep48,centerStep49,centerStep50,centerStep51,centerStep52,centerStep53,centerStep54,centerStep55,centerStep56,centerStep57,centerStep58,centerStep59,centerStep60,centerStep61,centerStep62,centerStep63,centerStep64,centerStep65,centerStep66,centerStep67,centerStep68,centerStep69,centerStep70,centerStep71,centerStep72,centerStep73,centerStep74,centerStep75,centerStep76,centerStep77,centerStep78,centerStep79,centerStep80,centerStep81,centerStep82,centerStep83,centerStep84,centerStep85,centerStep86,centerStep87,centerStep88,centerStep89,centerStep90,centerStep91,centerStep92,centerStep93,centerStep94,centerStep95,centerStep96,centerStep97,centerStep98,centerStep99,centerStep100,centerStep101,centerStep102,centerStep103,centerStep104,centerStep105,centerStep106,centerStep107,centerStep108,centerStep109,centerStep110,centerStep111,centerStep112,centerStep113,centerStep114,centerStep115,centerStep116,centerStep117,centerStep118,centerStep119,centerStep120,centerStep121,centerStep122,centerStep123,centerStep124,centerStep125,centerStep126,centerStep127,centerStep128,centerStep129,centerStep130,centerStep131,centerStep132,centerStep133,centerStep134,centerStep135]
+theorem centerAccepted : Accepted centerProgram centerInitial :=
+  ⟨centerAccepted0,⟨centerAccepted1,⟨centerAccepted2,⟨centerAccepted3,⟨centerAccepted4,⟨centerAccepted5,⟨centerAccepted6,⟨centerAccepted7,⟨centerAccepted8,⟨centerAccepted9,⟨centerAccepted10,⟨centerAccepted11,⟨centerAccepted12,⟨centerAccepted13,⟨centerAccepted14,⟨centerAccepted15,⟨centerAccepted16,⟨centerAccepted17,⟨centerAccepted18,⟨centerAccepted19,⟨centerAccepted20,⟨centerAccepted21,⟨centerAccepted22,⟨centerAccepted23,⟨centerAccepted24,⟨centerAccepted25,⟨centerAccepted26,⟨centerAccepted27,⟨centerAccepted28,⟨centerAccepted29,⟨centerAccepted30,⟨centerAccepted31,⟨centerAccepted32,⟨centerAccepted33,⟨centerAccepted34,⟨centerAccepted35,⟨centerAccepted36,⟨centerAccepted37,⟨centerAccepted38,⟨centerAccepted39,⟨centerAccepted40,⟨centerAccepted41,⟨centerAccepted42,⟨centerAccepted43,⟨centerAccepted44,⟨centerAccepted45,⟨centerAccepted46,⟨centerAccepted47,⟨centerAccepted48,⟨centerAccepted49,⟨centerAccepted50,⟨centerAccepted51,⟨centerAccepted52,⟨centerAccepted53,⟨centerAccepted54,⟨centerAccepted55,⟨centerAccepted56,⟨centerAccepted57,⟨centerAccepted58,⟨centerAccepted59,⟨centerAccepted60,⟨centerAccepted61,⟨centerAccepted62,⟨centerAccepted63,⟨centerAccepted64,⟨centerAccepted65,⟨centerAccepted66,⟨centerAccepted67,⟨centerAccepted68,⟨centerAccepted69,⟨centerAccepted70,⟨centerAccepted71,⟨centerAccepted72,⟨centerAccepted73,⟨centerAccepted74,⟨centerAccepted75,⟨centerAccepted76,⟨centerAccepted77,⟨centerAccepted78,⟨centerAccepted79,⟨centerAccepted80,⟨centerAccepted81,⟨centerAccepted82,⟨centerAccepted83,⟨centerAccepted84,⟨centerAccepted85,⟨centerAccepted86,⟨centerAccepted87,⟨centerAccepted88,⟨centerAccepted89,⟨centerAccepted90,⟨centerAccepted91,⟨centerAccepted92,⟨centerAccepted93,⟨centerAccepted94,⟨centerAccepted95,⟨centerAccepted96,⟨centerAccepted97,⟨centerAccepted98,⟨centerAccepted99,⟨centerAccepted100,⟨centerAccepted101,⟨centerAccepted102,⟨centerAccepted103,⟨centerAccepted104,⟨centerAccepted105,⟨centerAccepted106,⟨centerAccepted107,⟨centerAccepted108,⟨centerAccepted109,⟨centerAccepted110,⟨centerAccepted111,⟨centerAccepted112,⟨centerAccepted113,⟨centerAccepted114,⟨centerAccepted115,⟨centerAccepted116,⟨centerAccepted117,⟨centerAccepted118,⟨centerAccepted119,⟨centerAccepted120,⟨centerAccepted121,⟨centerAccepted122,⟨centerAccepted123,⟨centerAccepted124,⟨centerAccepted125,⟨centerAccepted126,⟨centerAccepted127,⟨centerAccepted128,⟨centerAccepted129,⟨centerAccepted130,⟨centerAccepted131,⟨centerAccepted132,⟨centerAccepted133,⟨centerAccepted134,⟨centerAccepted135,True.intro⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩
+noncomputable def center_m11 : DyadicBivariateJetEnclosure 40 := ⟨⟨57319090589,57319417927⟩,⟨-220153827912,-220146009367⟩,⟨85227867430,85231514169⟩,⟨-448346019309,-448125435734⟩,⟨-1137143189153,-1137012256362⟩,⟨177504382050,177594835202⟩⟩
+theorem center_m11_eq : (finalBoxes centerProgram centerInitial).getD 14 (zeroBox 40)=center_m11 := rfl
+noncomputable def center_kdet : DyadicBivariateJetEnclosure 40 := ⟨⟨23859552,23934329⟩,⟨-679156886,-676926677⟩,⟨381705784,382753098⟩,⟨19258789716,19335323157⟩,⟨-10611632661,-10569291341⟩,⟨4325057681,4351219834⟩⟩
+theorem center_kdet_eq : (finalBoxes centerProgram centerInitial).getD 0 (zeroBox 40)=center_kdet := rfl
+noncomputable def wholeInitial : List (DyadicBivariateJetEnclosure 40) := [⟨⟨161490770329,161920267060⟩,⟨1099511627776,1099511627776⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩,⟨⟨194991515238,202722456372⟩,⟨0,0⟩,⟨1099511627776,1099511627776⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩,⟨⟨1099511627776,1099511627776⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩,⟨⟨2199023255552,2199023255552⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩]
+noncomputable def wholeBoxes0 := wholeInitial
+noncomputable def wholeStep0 : Instruction 40 := ⟨.inv 3,⟨⟨549755813888,549755813888⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes1 := wholeStep0.proposed :: wholeBoxes0
+theorem wholeAccepted0 : StepValid wholeStep0.shape wholeBoxes0 wholeStep0.proposed := by
+  dsimp only [StepValid,wholeStep0]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep1 : Instruction 40 := ⟨.mul 3 0,⟨⟨549755813888,549755813888⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes2 := wholeStep1.proposed :: wholeBoxes1
+theorem wholeAccepted1 : StepValid wholeStep1.shape wholeBoxes1 wholeStep1.proposed := by
+  dsimp only [StepValid,wholeStep1]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep2 : Instruction 40 := ⟨.neg 2,⟨⟨-161920267060,-161490770329⟩,⟨-1099511627776,-1099511627776⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes3 := wholeStep2.proposed :: wholeBoxes2
+theorem wholeAccepted2 : StepValid wholeStep2.shape wholeBoxes2 wholeStep2.proposed := by
+  dsimp only [StepValid,wholeStep2]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep3 : Instruction 40 := ⟨.add 1 0,⟨⟨387835546828,388265043559⟩,⟨-1099511627776,-1099511627776⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes4 := wholeStep3.proposed :: wholeBoxes3
+theorem wholeAccepted3 : StepValid wholeStep3.shape wholeBoxes3 wholeStep3.proposed := by
+  dsimp only [StepValid,wholeStep3]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep4 : Instruction 40 := ⟨.mul 5 0,⟨⟨68780210257,71586367407⟩,⟨-202722456372,-194991515238⟩,⟨387835546828,388265043559⟩,⟨0,0⟩,⟨-1099511627776,-1099511627776⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes5 := wholeStep4.proposed :: wholeBoxes4
+theorem wholeAccepted4 : StepValid wholeStep4.shape wholeBoxes4 wholeStep4.proposed := by
+  dsimp only [StepValid,wholeStep4]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep5 : Instruction 40 := ⟨.add 5 0,⟨⟨230270980586,233506634467⟩,⟨896789171404,904520112538⟩,⟨387835546828,388265043559⟩,⟨0,0⟩,⟨-1099511627776,-1099511627776⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes6 := wholeStep5.proposed :: wholeBoxes5
+theorem wholeAccepted5 : StepValid wholeStep5.shape wholeBoxes5 wholeStep5.proposed := by
+  dsimp only [StepValid,wholeStep5]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep6 : Instruction 40 := ⟨.add 0 3,⟨⟨68350713526,72015864138⟩,⟨-202722456372,-194991515238⟩,⟨387835546828,388265043559⟩,⟨0,0⟩,⟨-1099511627776,-1099511627776⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes7 := wholeStep6.proposed :: wholeBoxes6
+theorem wholeAccepted6 : StepValid wholeStep6.shape wholeBoxes6 wholeStep6.proposed := by
+  dsimp only [StepValid,wholeStep6]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep7 : Instruction 40 := ⟨.log 7,⟨⟨-2109053987328,-2106133597184⟩,⟨7466179753561,7486036614673⟩,⟨0,0⟩,⟨-50968759929879,-50698727238781⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes8 := wholeStep7.proposed :: wholeBoxes7
+theorem wholeAccepted7 : StepValid wholeStep7.shape wholeBoxes7 wholeStep7.proposed := by
+  dsimp only [StepValid,wholeStep7]
+  exact ⟨by decide,by decide,lc19,by decide⟩
+noncomputable def wholeStep8 : Instruction 40 := ⟨.mul 8 0,⟨⟨-310591153605,-309338372085⟩,⟨-1012458836028,-1003697736345⟩,⟨0,0⟩,⟨7426413220536,7525697666178⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes9 := wholeStep8.proposed :: wholeBoxes8
+theorem wholeAccepted8 : StepValid wholeStep8.shape wholeBoxes8 wholeStep8.proposed := by
+  dsimp only [StepValid,wholeStep8]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep9 : Instruction 40 := ⟨.neg 0,⟨⟨309338372085,310591153605⟩,⟨1003697736345,1012458836028⟩,⟨0,0⟩,⟨-7525697666178,-7426413220536⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes10 := wholeStep9.proposed :: wholeBoxes9
+theorem wholeAccepted9 : StepValid wholeStep9.shape wholeBoxes9 wholeStep9.proposed := by
+  dsimp only [StepValid,wholeStep9]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep10 : Instruction 40 := ⟨.add 12 7,⟨⟨937591360716,938020857447⟩,⟨-1099511627776,-1099511627776⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes11 := wholeStep10.proposed :: wholeBoxes10
+theorem wholeAccepted10 : StepValid wholeStep10.shape wholeBoxes10 wholeStep10.proposed := by
+  dsimp only [StepValid,wholeStep10]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep11 : Instruction 40 := ⟨.log 0,⟨⟨-175160097856,-174656543104⟩,⟨-1289395220847,-1288804838417⟩,⟨0,0⟩,⟨-1512071353812,-1510686990083⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes12 := wholeStep11.proposed :: wholeBoxes11
+theorem wholeAccepted11 : StepValid wholeStep11.shape wholeBoxes11 wholeStep11.proposed := by
+  dsimp only [StepValid,wholeStep11]
+  exact ⟨by decide,by decide,lc20,by decide⟩
+noncomputable def wholeStep12 : Instruction 40 := ⟨.mul 1 0,⟨⟨-149433458484,-148935638123⟩,⟨-925358754682,-923848090527⟩,⟨0,0⟩,⟨1287623803112,1290575715387⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes13 := wholeStep12.proposed :: wholeBoxes12
+theorem wholeAccepted12 : StepValid wholeStep12.shape wholeBoxes12 wholeStep12.proposed := by
+  dsimp only [StepValid,wholeStep12]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep13 : Instruction 40 := ⟨.neg 0,⟨⟨148935638123,149433458484⟩,⟨923848090527,925358754682⟩,⟨0,0⟩,⟨-1290575715387,-1287623803112⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes14 := wholeStep13.proposed :: wholeBoxes13
+theorem wholeAccepted13 : StepValid wholeStep13.shape wholeBoxes13 wholeStep13.proposed := by
+  dsimp only [StepValid,wholeStep13]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep14 : Instruction 40 := ⟨.add 4 0,⟨⟨458274010208,460024612089⟩,⟨1927545826872,1937817590710⟩,⟨0,0⟩,⟨-8816273381565,-8714037023648⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes15 := wholeStep14.proposed :: wholeBoxes14
+theorem wholeAccepted14 : StepValid wholeStep14.shape wholeBoxes14 wholeStep14.proposed := by
+  dsimp only [StepValid,wholeStep14]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep15 : Instruction 40 := ⟨.log 9,⟨⟨-1718937585280,-1703595293568⟩,⟨4222707092982,4318956643005⟩,⟨1826199475554,1853911113619⟩,⟨-16965156177457,-16217432124104⟩,⟨-12532303034437,-12190838776864⟩,⟨-3125920936507,-3033168945436⟩⟩⟩
+noncomputable def wholeBoxes16 := wholeStep15.proposed :: wholeBoxes15
+theorem wholeAccepted15 : StepValid wholeStep15.shape wholeBoxes15 wholeStep15.proposed := by
+  dsimp only [StepValid,wholeStep15]
+  exact ⟨by decide,by decide,lc21,by decide⟩
+noncomputable def wholeStep16 : Instruction 40 := ⟨.mul 10 0,⟨⟨-365056012377,-356784365768⟩,⟨-529732201409,-472264929712⟩,⟨-224538446167,-207195869290⟩,⟨3285349037276,3709612701416⟩,⟨2021059808259,2216070462396⟩,⟨624465307685,674087433454⟩⟩⟩
+noncomputable def wholeBoxes17 := wholeStep16.proposed :: wholeBoxes16
+theorem wholeAccepted16 : StepValid wholeStep16.shape wholeBoxes16 wholeStep16.proposed := by
+  dsimp only [StepValid,wholeStep16]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep17 : Instruction 40 := ⟨.neg 0,⟨⟨356784365768,365056012377⟩,⟨472264929712,529732201409⟩,⟨207195869290,224538446167⟩,⟨-3709612701416,-3285349037276⟩,⟨-2216070462396,-2021059808259⟩,⟨-674087433454,-624465307685⟩⟩⟩
+noncomputable def wholeBoxes18 := wholeStep17.proposed :: wholeBoxes17
+theorem wholeAccepted17 : StepValid wholeStep17.shape wholeBoxes17 wholeStep17.proposed := by
+  dsimp only [StepValid,wholeStep17]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep18 : Instruction 40 := ⟨.neg 12,⟨⟨-233506634467,-230270980586⟩,⟨-904520112538,-896789171404⟩,⟨-388265043559,-387835546828⟩,⟨0,0⟩,⟨1099511627776,1099511627776⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes19 := wholeStep18.proposed :: wholeBoxes18
+theorem wholeAccepted18 : StepValid wholeStep18.shape wholeBoxes18 wholeStep18.proposed := by
+  dsimp only [StepValid,wholeStep18]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep19 : Instruction 40 := ⟨.add 21 0,⟨⟨866004993309,869240647190⟩,⟨-904520112538,-896789171404⟩,⟨-388265043559,-387835546828⟩,⟨0,0⟩,⟨1099511627776,1099511627776⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes20 := wholeStep19.proposed :: wholeBoxes19
+theorem wholeAccepted19 : StepValid wholeStep19.shape wholeBoxes19 wholeStep19.proposed := by
+  dsimp only [StepValid,wholeStep19]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep20 : Instruction 40 := ⟨.log 0,⟨⟨-262487192640,-258386743488⟩,⟨-1148411832469,-1134358045507⟩,⟨-492955506436,-490577258185⟩,⟨-1199486848196,-1170308837942⟩,⟨875904365775,889855252368⟩,⟨-221011879445,-218884493960⟩⟩⟩
+noncomputable def wholeBoxes21 := wholeStep20.proposed :: wholeBoxes20
+theorem wholeAccepted20 : StepValid wholeStep20.shape wholeBoxes20 wholeStep20.proposed := by
+  dsimp only [StepValid,wholeStep20]
+  exact ⟨by decide,by decide,lc22,by decide⟩
+noncomputable def wholeStep21 : Instruction 40 := ⟨.mul 1 0,⟨⟨-207514437725,-203512363500⟩,⟨-697152982777,-677514241562⟩,⟨-298573831512,-293701081233⟩,⟨902143528209,967729558869⟩,⟨1227652846615,1256171769330⟩,⟨171361615915,175750499358⟩⟩⟩
+noncomputable def wholeBoxes22 := wholeStep21.proposed :: wholeBoxes21
+theorem wholeAccepted21 : StepValid wholeStep21.shape wholeBoxes21 wholeStep21.proposed := by
+  dsimp only [StepValid,wholeStep21]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep22 : Instruction 40 := ⟨.neg 0,⟨⟨203512363500,207514437725⟩,⟨677514241562,697152982777⟩,⟨293701081233,298573831512⟩,⟨-967729558869,-902143528209⟩,⟨-1256171769330,-1227652846615⟩,⟨-175750499358,-171361615915⟩⟩⟩
+noncomputable def wholeBoxes23 := wholeStep22.proposed :: wholeBoxes22
+theorem wholeAccepted22 : StepValid wholeStep22.shape wholeBoxes22 wholeStep22.proposed := by
+  dsimp only [StepValid,wholeStep22]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep23 : Instruction 40 := ⟨.add 5 0,⟨⟨560296729268,572570450102⟩,⟨1149779171274,1226885184186⟩,⟨500896950523,523112277679⟩,⟨-4677342260285,-4187492565485⟩,⟨-3472242231726,-3248712654874⟩,⟨-849837932812,-795826923600⟩⟩⟩
+noncomputable def wholeBoxes24 := wholeStep23.proposed :: wholeBoxes23
+theorem wholeAccepted23 : StepValid wholeStep23.shape wholeBoxes23 wholeStep23.proposed := by
+  dsimp only [StepValid,wholeStep23]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep24 : Instruction 40 := ⟨.add 9 0,⟨⟨1018570739476,1032595062191⟩,⟨3077324998146,3164702774896⟩,⟨500896950523,523112277679⟩,⟨-13493615641850,-12901529589133⟩,⟨-3472242231726,-3248712654874⟩,⟨-849837932812,-795826923600⟩⟩⟩
+noncomputable def wholeBoxes25 := wholeStep24.proposed :: wholeBoxes24
+theorem wholeAccepted24 : StepValid wholeStep24.shape wholeBoxes24 wholeStep24.proposed := by
+  dsimp only [StepValid,wholeStep24]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep25 : Instruction 40 := ⟨.mul 28 18,⟨⟨136701427052,144031728276⟩,⟨-405444912744,-389983030476⟩,⟨775671093656,776530087118⟩,⟨0,0⟩,⟨-2199023255552,-2199023255552⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes26 := wholeStep25.proposed :: wholeBoxes25
+theorem wholeAccepted25 : StepValid wholeStep25.shape wholeBoxes25 wholeStep25.proposed := by
+  dsimp only [StepValid,wholeStep25]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep26 : Instruction 40 := ⟨.inv 0,⟨⟨8393468814718,8843549373884⟩,⟨22726314845690,26229222192964⟩,⟨-50235628945725,-45202339880303⟩,⟨123068399458344,155587325351403⟩,⟨-169840900875772,-102521231903361⟩,⟨486867009518556,570725239127411⟩⟩⟩
+noncomputable def wholeBoxes27 := wholeStep26.proposed :: wholeBoxes26
+theorem wholeAccepted26 : StepValid wholeStep26.shape wholeBoxes26 wholeStep26.proposed := by
+  dsimp only [StepValid,wholeStep26]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep27 : Instruction 40 := ⟨.mul 2 0,⟨⟨7775581013789,8305328643215⟩,⟨44545041166774,50087119748265⟩,⟨-43354520550396,-37667279231924⟩,⟨132690664088163,198620457143706⟩,⟨-321671099061040,-233807948164847⟩,⟨396389766716575,488730517573002⟩⟩⟩
+noncomputable def wholeBoxes28 := wholeStep27.proposed :: wholeBoxes27
+theorem wholeAccepted27 : StepValid wholeStep27.shape wholeBoxes27 wholeStep27.proposed := by
+  dsimp only [StepValid,wholeStep27]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep28 : Instruction 40 := ⟨.contact 0,⟨⟨100288277504,107030865152⟩,⟨-680627728908,-531009213168⟩,⟨449021300311,589139263915⟩,⟨2877211092745,7031958688892⟩,⟨-4668729179671,-344118582390⟩,⟨-2654069508140,1728431842867⟩⟩⟩
+noncomputable def wholeBoxes29 := wholeStep28.proposed :: wholeBoxes28
+theorem wholeAccepted28 : StepValid wholeStep28.shape wholeBoxes28 wholeStep28.proposed := by
+  dsimp only [StepValid,wholeStep28]
+  exact ⟨by decide,by decide,(⟨⟨100288277504,107030865152⟩,⟨-14941128695,-13106976423⟩,⟨3397366433,4150865625⟩⟩ : DyadicJetEnclosure 40),brwhole28_jet,by decide⟩
+noncomputable def wholeStep29 : Instruction 40 := ⟨.log 32,⟨⟨762123383616,762123402880⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes30 := wholeStep29.proposed :: wholeBoxes29
+theorem wholeAccepted29 : StepValid wholeStep29.shape wholeBoxes29 wholeStep29.proposed := by
+  dsimp only [StepValid,wholeStep29]
+  exact ⟨by decide,by decide,lc4,by decide⟩
+noncomputable def wholeStep30 : Instruction 40 := ⟨.add 32 1,⟨⟨1199799905280,1206542492928⟩,⟨-680627728908,-531009213168⟩,⟨449021300311,589139263915⟩,⟨2877211092745,7031958688892⟩,⟨-4668729179671,-344118582390⟩,⟨-2654069508140,1728431842867⟩⟩⟩
+noncomputable def wholeBoxes31 := wholeStep30.proposed :: wholeBoxes30
+theorem wholeAccepted30 : StepValid wholeStep30.shape wholeBoxes30 wholeStep30.proposed := by
+  dsimp only [StepValid,wholeStep30]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep31 : Instruction 40 := ⟨.log 0,⟨⟨95974930496,102136624704⟩,⟨-623735756962,-483904054565⟩,⟨409189186211,539894584259⟩,⟨2268141776365,6231204695123⟩,⟨-4098394262523,-7318499212⟩,⟨-2697327586750,1431674578002⟩⟩⟩
+noncomputable def wholeBoxes32 := wholeStep31.proposed :: wholeBoxes31
+theorem wholeAccepted31 : StepValid wholeStep31.shape wholeBoxes31 wholeStep31.proposed := by
+  dsimp only [StepValid,wholeStep31]
+  exact ⟨by decide,by decide,lc32,by decide⟩
+noncomputable def wholeStep32 : Instruction 40 := ⟨.mul 1 0,⟨⟨104728962940,112079012788⟩,⟨-747678053854,-574392844244⟩,⟨485706491368,647176833361⟩,⟨3193573725746,8263211817158⟩,⟨-5599458309048,-433259581133⟩,⟨-2872228588896,2310169843250⟩⟩⟩
+noncomputable def wholeBoxes33 := wholeStep32.proposed :: wholeBoxes32
+theorem wholeAccepted32 : StepValid wholeStep32.shape wholeBoxes32 wholeStep32.proposed := by
+  dsimp only [StepValid,wholeStep32]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep33 : Instruction 40 := ⟨.neg 4,⟨⟨-107030865152,-100288277504⟩,⟨531009213168,680627728908⟩,⟨-589139263915,-449021300311⟩,⟨-7031958688892,-2877211092745⟩,⟨344118582390,4668729179671⟩,⟨-1728431842867,2654069508140⟩⟩⟩
+noncomputable def wholeBoxes34 := wholeStep33.proposed :: wholeBoxes33
+theorem wholeAccepted33 : StepValid wholeStep33.shape wholeBoxes33 wholeStep33.proposed := by
+  dsimp only [StepValid,wholeStep33]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep34 : Instruction 40 := ⟨.add 36 0,⟨⟨992480762624,999223350272⟩,⟨531009213168,680627728908⟩,⟨-589139263915,-449021300311⟩,⟨-7031958688892,-2877211092745⟩,⟨344118582390,4668729179671⟩,⟨-1728431842867,2654069508140⟩⟩⟩
+noncomputable def wholeBoxes35 := wholeStep34.proposed :: wholeBoxes34
+theorem wholeAccepted34 : StepValid wholeStep34.shape wholeBoxes34 wholeStep34.proposed := by
+  dsimp only [StepValid,wholeStep34]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep35 : Instruction 40 := ⟨.log 0,⟨⟨-112605115392,-105160654272⟩,⟨584304604346,754027816261⟩,⟨-652673074833,-494087874023⟩,⟨-8307397881243,-3476498201625⟩,⟨641225603582,5619806068468⟩,⟨-2302257464312,2718260598222⟩⟩⟩
+noncomputable def wholeBoxes36 := wholeStep35.proposed :: wholeBoxes35
+theorem wholeAccepted35 : StepValid wholeStep35.shape wholeBoxes35 wholeStep35.proposed := by
+  dsimp only [StepValid,wholeStep35]
+  exact ⟨by decide,by decide,lc33,by decide⟩
+noncomputable def wholeStep36 : Instruction 40 := ⟨.mul 1 0,⟨⟨-102334216226,-94923895039⟩,⟨457720412098,634464344769⟩,⟨-550195911952,-385655416919⟩,⟨-6710101193257,-1484385017268⟩,⟨-707380874922,4597062148516⟩,⟨-1960524296537,3346768061194⟩⟩⟩
+noncomputable def wholeBoxes37 := wholeStep36.proposed :: wholeBoxes36
+theorem wholeAccepted36 : StepValid wholeStep36.shape wholeBoxes36 wholeStep36.proposed := by
+  dsimp only [StepValid,wholeStep36]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep37 : Instruction 40 := ⟨.add 4 0,⟨⟨2394746714,17155117749⟩,⟨-289957641756,60071500525⟩,⟨-64489420584,261521416442⟩,⟨-3516527467511,6778826799890⟩,⟨-6306839183970,4163802567383⟩,⟨-4832752885433,5656937904444⟩⟩⟩
+noncomputable def wholeBoxes38 := wholeStep37.proposed :: wholeBoxes37
+theorem wholeAccepted37 : StepValid wholeStep37.shape wholeBoxes37 wholeStep37.proposed := by
+  dsimp only [StepValid,wholeStep37]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep38 : Instruction 40 := ⟨.mul 0 37,⟨⟨1197373357,8577558875⟩,⟨-144978820878,30035750263⟩,⟨-32244710292,130760708221⟩,⟨-1758263733756,3389413399945⟩,⟨-3153419591985,2081901283692⟩,⟨-2416376442717,2828468952222⟩⟩⟩
+noncomputable def wholeBoxes39 := wholeStep38.proposed :: wholeBoxes38
+theorem wholeAccepted38 : StepValid wholeStep38.shape wholeBoxes38 wholeStep38.proposed := by
+  dsimp only [StepValid,wholeStep38]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep39 : Instruction 40 := ⟨.neg 0,⟨⟨-8577558875,-1197373357⟩,⟨-30035750263,144978820878⟩,⟨-130760708221,32244710292⟩,⟨-3389413399945,1758263733756⟩,⟨-2081901283692,3153419591985⟩,⟨-2828468952222,2416376442717⟩⟩⟩
+noncomputable def wholeBoxes40 := wholeStep39.proposed :: wholeBoxes39
+theorem wholeAccepted39 : StepValid wholeStep39.shape wholeBoxes39 wholeStep39.proposed := by
+  dsimp only [StepValid,wholeStep39]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep40 : Instruction 40 := ⟨.add 10 0,⟨⟨753545824741,760926029523⟩,⟨-30035750263,144978820878⟩,⟨-130760708221,32244710292⟩,⟨-3389413399945,1758263733756⟩,⟨-2081901283692,3153419591985⟩,⟨-2828468952222,2416376442717⟩⟩⟩
+noncomputable def wholeBoxes41 := wholeStep40.proposed :: wholeBoxes40
+theorem wholeAccepted40 : StepValid wholeStep40.shape wholeBoxes40 wholeStep40.proposed := by
+  dsimp only [StepValid,wholeStep40]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep41 : Instruction 40 := ⟨.mul 12 12,⟨⟨9147459972,10418813050⟩,⟨-132510057796,-96868460472⟩,⟨81911953694,114698350648⟩,⟨1037772251903,2211692349273⟩,⟨-1638332182612,-496484985446⟩,⟨-149970633169,967849023774⟩⟩⟩
+noncomputable def wholeBoxes42 := wholeStep41.proposed :: wholeBoxes41
+theorem wholeAccepted41 : StepValid wholeStep41.shape wholeBoxes41 wholeStep41.proposed := by
+  dsimp only [StepValid,wholeStep41]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep42 : Instruction 40 := ⟨.neg 0,⟨⟨-10418813050,-9147459972⟩,⟨96868460472,132510057796⟩,⟨-114698350648,-81911953694⟩,⟨-2211692349273,-1037772251903⟩,⟨496484985446,1638332182612⟩,⟨-967849023774,149970633169⟩⟩⟩
+noncomputable def wholeBoxes43 := wholeStep42.proposed :: wholeBoxes42
+theorem wholeAccepted42 : StepValid wholeStep42.shape wholeBoxes42 wholeStep42.proposed := by
+  dsimp only [StepValid,wholeStep42]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep43 : Instruction 40 := ⟨.add 45 0,⟨⟨1089092814726,1090364167804⟩,⟨96868460472,132510057796⟩,⟨-114698350648,-81911953694⟩,⟨-2211692349273,-1037772251903⟩,⟨496484985446,1638332182612⟩,⟨-967849023774,149970633169⟩⟩⟩
+noncomputable def wholeBoxes44 := wholeStep43.proposed :: wholeBoxes43
+theorem wholeAccepted43 : StepValid wholeStep43.shape wholeBoxes43 wholeStep43.proposed := by
+  dsimp only [StepValid,wholeStep43]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep44 : Instruction 40 := ⟨.log 0,⟨⟨-10468490752,-9185723776⟩,⟨97681125076,133777716072⟩,⟨-115795613119,-82599142744⟩,⟨-2249127268915,-1055156535884⟩,⟨507988324142,1668094164029⟩,⟨-989303029863,145200192876⟩⟩⟩
+noncomputable def wholeBoxes45 := wholeStep44.proposed :: wholeBoxes44
+theorem wholeAccepted44 : StepValid wholeStep44.shape wholeBoxes44 wholeStep44.proposed := by
+  dsimp only [StepValid,wholeStep44]
+  exact ⟨by decide,by decide,lc30,by decide⟩
+noncomputable def wholeStep45 : Instruction 40 := ⟨.mul 0 44,⟨⟨-5234245376,-4592861888⟩,⟨48840562538,66888858036⟩,⟨-57897806560,-41299571372⟩,⟨-1124563634458,-527578267942⟩,⟨253994162071,834047082015⟩,⟨-494651514932,72600096438⟩⟩⟩
+noncomputable def wholeBoxes46 := wholeStep45.proposed :: wholeBoxes45
+theorem wholeAccepted45 : StepValid wholeStep45.shape wholeBoxes45 wholeStep45.proposed := by
+  dsimp only [StepValid,wholeStep45]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep46 : Instruction 40 := ⟨.neg 0,⟨⟨4592861888,5234245376⟩,⟨-66888858036,-48840562538⟩,⟨41299571372,57897806560⟩,⟨527578267942,1124563634458⟩,⟨-834047082015,-253994162071⟩,⟨-72600096438,494651514932⟩⟩⟩
+noncomputable def wholeBoxes47 := wholeStep46.proposed :: wholeBoxes46
+theorem wholeAccepted46 : StepValid wholeStep46.shape wholeBoxes46 wholeStep46.proposed := by
+  dsimp only [StepValid,wholeStep46]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep47 : Instruction 40 := ⟨.add 17 0,⟨⟨766716245504,767357648256⟩,⟨-66888858036,-48840562538⟩,⟨41299571372,57897806560⟩,⟨527578267942,1124563634458⟩,⟨-834047082015,-253994162071⟩,⟨-72600096438,494651514932⟩⟩⟩
+noncomputable def wholeBoxes48 := wholeStep47.proposed :: wholeBoxes47
+theorem wholeAccepted47 : StepValid wholeStep47.shape wholeBoxes47 wholeStep47.proposed := by
+  dsimp only [StepValid,wholeStep47]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep48 : Instruction 40 := ⟨.mul 51 51,⟨⟨4398046511104,4398046511104⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes49 := wholeStep48.proposed :: wholeBoxes48
+theorem wholeAccepted48 : StepValid wholeStep48.shape wholeBoxes48 wholeStep48.proposed := by
+  dsimp only [StepValid,wholeStep48]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep49 : Instruction 40 := ⟨.inv 0,⟨⟨274877906944,274877906944⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes50 := wholeStep49.proposed :: wholeBoxes49
+theorem wholeAccepted49 : StepValid wholeStep49.shape wholeBoxes49 wholeStep49.proposed := by
+  dsimp only [StepValid,wholeStep49]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep50 : Instruction 40 := ⟨.mul 6 0,⟨⟨272273203681,272591041951⟩,⟨24217115118,33127514449⟩,⟨-28674587662,-20477988423⟩,⟨-552923087319,-259443062975⟩,⟨124121246361,409583045653⟩,⟨-241962255944,37492658293⟩⟩⟩
+noncomputable def wholeBoxes51 := wholeStep50.proposed :: wholeBoxes50
+theorem wholeAccepted50 : StepValid wholeStep50.shape wholeBoxes50 wholeStep50.proposed := by
+  dsimp only [StepValid,wholeStep50]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep51 : Instruction 40 := ⟨.mul 54 3,⟨⟨1533432491008,1534715296512⟩,⟨-133777716072,-97681125076⟩,⟨82599142744,115795613120⟩,⟨1055156535884,2249127268916⟩,⟨-1668094164030,-507988324142⟩,⟨-145200192876,989303029864⟩⟩⟩
+noncomputable def wholeBoxes52 := wholeStep51.proposed :: wholeBoxes51
+theorem wholeAccepted51 : StepValid wholeStep51.shape wholeBoxes51 wholeStep51.proposed := by
+  dsimp only [StepValid,wholeStep51]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep52 : Instruction 40 := ⟨.inv 17,⟨⟨1209865461296,1218084889040⟩,⟨-835343497695,-642949052848⟩,⟨543677609700,723058483289⟩,⟨4167098443161,9776147689792⟩,⟨-6721717964429,-994505209110⟩,⟨-2768749792609,2979746415377⟩⟩⟩
+noncomputable def wholeBoxes53 := wholeStep52.proposed :: wholeBoxes52
+theorem wholeAccepted52 : StepValid wholeStep52.shape wholeBoxes52 wholeStep52.proposed := by
+  dsimp only [StepValid,wholeStep52]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep53 : Instruction 40 := ⟨.mul 22 0,⟨⟨1320219294816,1336658150304⟩,⟨-1670686995391,-1285898105696⟩,⟨1087355219399,1446116966577⟩,⟨8334196886322,19552295379578⟩,⟨-13443435928855,-1989010418219⟩,⟨-5534503165911,5959492830753⟩⟩⟩
+noncomputable def wholeBoxes54 := wholeStep53.proposed :: wholeBoxes53
+theorem wholeAccepted53 : StepValid wholeStep53.shape wholeBoxes53 wholeStep53.proposed := by
+  dsimp only [StepValid,wholeStep53]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep54 : Instruction 40 := ⟨.log 0,⟨⟨201135584832,214741740096⟩,⟨-1391389888802,-1057757302438⟩,⟨894439394979,1204362355649⟩,⟨5094814006681,15266051692594⟩,⟨-10335556705065,-112050726832⟩,⟨-5928484345014,4235598970894⟩⟩⟩
+noncomputable def wholeBoxes55 := wholeStep54.proposed :: wholeBoxes54
+theorem wholeAccepted54 : StepValid wholeStep54.shape wholeBoxes54 wholeStep54.proposed := by
+  dsimp only [StepValid,wholeStep54]
+  exact ⟨by decide,by decide,lc35,by decide⟩
+noncomputable def wholeStep55 : Instruction 40 := ⟨.mul 14 26,⟨⟨68732163330,74071587057⟩,⟨-473957795911,-349812186736⟩,⟨295006151954,410857483227⟩,⟨1462454152800,5074866951394⟩,⟨-3469746968129,229753082592⟩,⟨-2252233195305,1465949836042⟩⟩⟩
+noncomputable def wholeBoxes56 := wholeStep55.proposed :: wholeBoxes55
+theorem wholeAccepted55 : StepValid wholeStep55.shape wholeBoxes55 wholeStep55.proposed := by
+  dsimp only [StepValid,wholeStep55]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep56 : Instruction 40 := ⟨.mul 5 4,⟨⟨379725476664,380486782683⟩,⟨608182878,22051017638⟩,⟨-19570320629,148460491⟩,⟨-518550328651,191469019484⟩,⟨-236809999802,452886341559⟩,⟨-379772454984,294524189785⟩⟩⟩
+noncomputable def wholeBoxes57 := wholeStep56.proposed :: wholeBoxes56
+theorem wholeAccepted56 : StepValid wholeStep56.shape wholeBoxes56 wholeStep56.proposed := by
+  dsimp only [StepValid,wholeStep56]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep57 : Instruction 40 := ⟨.inv 0,⟨⟨3177313574705,3183683723925⟩,⟨-184879525512,-5078724944⟩,⟨-1244718298,164080935012⟩,⟨-1605292963476,4369087424142⟩,⟨-3816133671948,1985600342825⟩,⟨-2469469777566,3200990429774⟩⟩⟩
+noncomputable def wholeBoxes58 := wholeStep57.proposed :: wholeBoxes57
+theorem wholeAccepted57 : StepValid wholeStep57.shape wholeBoxes57 wholeStep57.proposed := by
+  dsimp only [StepValid,wholeStep57]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep58 : Instruction 40 := ⟨.mul 2 0,⟨⟨198618759502,214477500885⟩,⟨-1384820316652,-1011187197278⟩,⟨852410133088,1200709464197⟩,⟨4121213382254,15148222463339⟩,⟨-10443700922166,798199295845⟩,⟨-6688731915024,4582990035848⟩⟩⟩
+noncomputable def wholeBoxes59 := wholeStep58.proposed :: wholeBoxes58
+theorem wholeAccepted58 : StepValid wholeStep58.shape wholeBoxes58 wholeStep58.proposed := by
+  dsimp only [StepValid,wholeStep58]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep59 : Instruction 40 := ⟨.add 4 0,⟨⟨399754344334,429219240981⟩,⟨-2776210205454,-2068944499716⟩,⟨1746849528067,2405071819846⟩,⟨9216027388935,30414274155933⟩,⟨-20779257627231,686148569013⟩,⟨-12617216260038,8818589006742⟩⟩⟩
+noncomputable def wholeBoxes60 := wholeStep59.proposed :: wholeBoxes59
+theorem wholeAccepted59 : StepValid wholeStep59.shape wholeBoxes59 wholeStep59.proposed := by
+  dsimp only [StepValid,wholeStep59]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep60 : Instruction 40 := ⟨.mul 19 19,⟨⟨516439567931,526605092460⟩,⟨-41572974064,200667561396⟩,⟨-180988038710,44630431832⟩,⟨-4699263497042,2471874723206⟩,⟨-2916077230028,4373203136544⟩,⟨-3922599699942,3375647966468⟩⟩⟩
+noncomputable def wholeBoxes61 := wholeStep60.proposed :: wholeBoxes60
+theorem wholeAccepted60 : StepValid wholeStep60.shape wholeBoxes60 wholeStep60.proposed := by
+  dsimp only [StepValid,wholeStep60]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep61 : Instruction 40 := ⟨.mul 20 0,⟨⟨353939758629,364441368340⟩,⟨-43156375918,208310444688⟩,⟨-187881382345,46330283963⟩,⟨-4886468262040,2605711004045⟩,⟨-3062939641778,4548593869511⟩,⟨-4079962475717,3536503565984⟩⟩⟩
+noncomputable def wholeBoxes62 := wholeStep61.proposed :: wholeBoxes61
+theorem wholeAccepted61 : StepValid wholeStep61.shape wholeBoxes61 wholeStep61.proposed := by
+  dsimp only [StepValid,wholeStep61]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep62 : Instruction 40 := ⟨.mul 65 0,⟨⟨707879517258,728882736680⟩,⟨-86312751836,416620889376⟩,⟨-375762764690,92660567926⟩,⟨-9772936524080,5211422008090⟩,⟨-6125879283556,9097187739022⟩,⟨-8159924951434,7073007131968⟩⟩⟩
+noncomputable def wholeBoxes63 := wholeStep62.proposed :: wholeBoxes62
+theorem wholeAccepted62 : StepValid wholeStep62.shape wholeBoxes62 wholeStep62.proposed := by
+  dsimp only [StepValid,wholeStep62]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep63 : Instruction 40 := ⟨.add 11 20,⟨⟨1523013677958,1525567836540⟩,⟨-36909255600,34828932720⟩,⟨-32099207904,33883659426⟩,⟨-1156535813389,1211355017013⟩,⟨-1171609178584,1130343858470⟩,⟨-1113049216650,1139273663033⟩⟩⟩
+noncomputable def wholeBoxes64 := wholeStep63.proposed :: wholeBoxes63
+theorem wholeAccepted63 : StepValid wholeStep63.shape wholeBoxes63 wholeStep63.proposed := by
+  dsimp only [StepValid,wholeStep63]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep64 : Instruction 40 := ⟨.mul 1 0,⟨⟨980535503122,1011321782870⟩,⟨-144226284934,601148382576⟩,⟨-542648328050,151028140459⟩,⟨-14354564839055,8060246254830⟩,⟨-9300375246787,13397085155541⟩,⟨-12082878901009,10590949812196⟩⟩⟩
+noncomputable def wholeBoxes65 := wholeStep64.proposed :: wholeBoxes64
+theorem wholeAccepted64 : StepValid wholeStep64.shape wholeBoxes64 wholeStep64.proposed := by
+  dsimp only [StepValid,wholeStep64]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep65 : Instruction 40 := ⟨.mul 14 14,⟨⟨67423295552,67580800671⟩,⟨11993818620,16425953948⟩,⟨-14218013764,-10141970984⟩,⟨-273094723210,-126496091460⟩,⟨59744655252,202185676932⟩,⟨-119211827862,20085999073⟩⟩⟩
+noncomputable def wholeBoxes66 := wholeStep65.proposed :: wholeBoxes65
+theorem wholeAccepted65 : StepValid wholeStep65.shape wholeBoxes65 wholeStep65.proposed := by
+  dsimp only [StepValid,wholeStep65]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep66 : Instruction 40 := ⟨.mul 41 0,⟨⟨62459908811,63467815446⟩,⟨199815936466,209942760514⟩,⟨17362865336,22757405243⟩,⟨-1018713970549,-813763413953⟩,⟨-193532171495,-29904644637⟩,⟨-177720274109,-39178062335⟩⟩⟩
+noncomputable def wholeBoxes67 := wholeStep66.proposed :: wholeBoxes66
+theorem wholeAccepted66 : StepValid wholeStep66.shape wholeBoxes66 wholeStep66.proposed := by
+  dsimp only [StepValid,wholeStep66]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep67 : Instruction 40 := ⟨.mul 15 15,⟨⟨2138599670141,2142179292922⟩,⟨-373458000810,-272461713302⟩,⟨230393578408,323258607250⟩,⟨2960501510495,6311286598658⟩,⟨-4684880881930,-1431606830892⟩,⟨-392935069035,2786159014861⟩⟩⟩
+noncomputable def wholeBoxes68 := wholeStep67.proposed :: wholeBoxes67
+theorem wholeAccepted67 : StepValid wholeStep67.shape wholeBoxes67 wholeStep67.proposed := by
+  dsimp only [StepValid,wholeStep67]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep68 : Instruction 40 := ⟨.mul 16 0,⟨⟨2982595305596,2990086912832⟩,⟨-781917660491,-569982572050⟩,⟨481977165941,676814028260⟩,⟨6229597928586,13282244856823⟩,⟨-9867839912679,-3025585373671⟩,⟨-796742536616,5884511829999⟩⟩⟩
+noncomputable def wholeBoxes69 := wholeStep68.proposed :: wholeBoxes68
+theorem wholeAccepted68 : StepValid wholeStep68.shape wholeBoxes68 wholeStep68.proposed := by
+  dsimp only [StepValid,wholeStep68]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep69 : Instruction 40 := ⟨.mul 2 0,⟨⟨169432160698,172598706151⟩,⟨496896489782,538553687132⟩,⟨74479112732,100956210577⟩,⟨-2715077332129,-1647927161544⟩,⟨-1024505721879,-132764002449⟩,⟨-514073294451,261415942300⟩⟩⟩
+noncomputable def wholeBoxes70 := wholeStep69.proposed :: wholeBoxes69
+theorem wholeAccepted69 : StepValid wholeStep69.shape wholeBoxes69 wholeStep69.proposed := by
+  dsimp only [StepValid,wholeStep69]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep70 : Instruction 40 := ⟨.inv 0,⟨⟨7004257717650,7135161439448⟩,⟨-22679681860084,-20164641734820⟩,⟨-4251488370416,-3022449656722⟩,⟨182979273918922,258516255015239⟩,⟨22790452063261,70171584589597⟩,⟨-8400329962056,26715260192331⟩⟩⟩
+noncomputable def wholeBoxes71 := wholeStep70.proposed :: wholeBoxes70
+theorem wholeAccepted70 : StepValid wholeStep70.shape wholeBoxes70 wholeStep70.proposed := by
+  dsimp only [StepValid,wholeStep70]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep71 : Instruction 40 := ⟨.mul 6 0,⟨⟨6246339912806,6562863007283⟩,⟨-21796526307737,-14081575836810⟩,⟨-7431941616328,-1715315220953⟩,⟨45227196786300,296037151846701⟩,⟨-45469166241666,163233094328434⟩,⟨-87305049466029,97497820558161⟩⟩⟩
+noncomputable def wholeBoxes72 := wholeStep71.proposed :: wholeBoxes71
+theorem wholeAccepted71 : StepValid wholeStep71.shape wholeBoxes71 wholeStep71.proposed := by
+  dsimp only [StepValid,wholeStep71]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep72 : Instruction 40 := ⟨.mul 75 0,⟨⟨12492679825612,13125726014566⟩,⟨-43593052615474,-28163151673620⟩,⟨-14863883232656,-3430630441906⟩,⟨90454393572600,592074303693402⟩,⟨-90938332483332,326466188656868⟩,⟨-174610098932058,194995641116322⟩⟩⟩
+noncomputable def wholeBoxes73 := wholeStep72.proposed :: wholeBoxes72
+theorem wholeAccepted72 : StepValid wholeStep72.shape wholeBoxes72 wholeStep72.proposed := by
+  dsimp only [StepValid,wholeStep72]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep73 : Instruction 40 := ⟨.inv 73,⟨⟨7466179753561,7486036614673⟩,⟨-50968759929879,-50698727238781⟩,⟨0,0⟩,⟨688534438889288,694042688409450⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes74 := wholeStep73.proposed :: wholeBoxes73
+theorem wholeAccepted73 : StepValid wholeStep73.shape wholeBoxes73 wholeStep73.proposed := by
+  dsimp only [StepValid,wholeStep73]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep74 : Instruction 40 := ⟨.mul 63 0,⟨⟨6366668125785,6386524986897⟩,⟨-50968759929879,-50698727238781⟩,⟨0,0⟩,⟨688534438889293,694042688409449⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes75 := wholeStep74.proposed :: wholeBoxes74
+theorem wholeAccepted74 : StepValid wholeStep74.shape wholeBoxes74 wholeStep74.proposed := by
+  dsimp only [StepValid,wholeStep74]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep75 : Instruction 40 := ⟨.log 0,⟨⟨1930973499392,1934397443968⟩,⟨-8802209113000,-8728352308427⟩,⟨0,0⟩,⟨48072260419587,50570802524564⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes76 := wholeStep75.proposed :: wholeBoxes75
+theorem wholeAccepted75 : StepValid wholeStep75.shape wholeBoxes75 wholeStep75.proposed := by
+  dsimp only [StepValid,wholeStep75]
+  exact ⟨by decide,by decide,lc36,by decide⟩
+noncomputable def wholeStep76 : Instruction 40 := ⟨.inv 70,⟨⟨5177265401362,5250013773070⟩,⟨-20622412067554,-19883441684743⟩,⟨-8852165483898,-8599017165374⟩,⟨152725897778622,162012481439757⟩,⟨90427728164235,94611898439989⟩,⟨28564537638328,29851667878004⟩⟩⟩
+noncomputable def wholeBoxes77 := wholeStep76.proposed :: wholeBoxes76
+theorem wholeAccepted76 : StepValid wholeStep76.shape wholeBoxes76 wholeStep76.proposed := by
+  dsimp only [StepValid,wholeStep76]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep77 : Instruction 40 := ⟨.mul 57 0,⟨⟨4077753773586,4150502145294⟩,⟨-20622412067555,-19883441684743⟩,⟨-8852165483899,-8599017165373⟩,⟨152725897778625,162012481439753⟩,⟨90427728164235,94611898439988⟩,⟨28564537638327,29851667878004⟩⟩⟩
+noncomputable def wholeBoxes78 := wholeStep77.proposed :: wholeBoxes77
+theorem wholeAccepted77 : StepValid wholeStep77.shape wholeBoxes77 wholeStep77.proposed := by
+  dsimp only [StepValid,wholeStep77]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep78 : Instruction 40 := ⟨.log 0,⟨⟨1441108101952,1460550828160⟩,⟨-5560556894820,-5267332618378⟩,⟨-2386867726934,-2277969997312⟩,⟨12337307122431,18450751091951⟩,⟨11884156240445,14597961419439⟩,⟨2385529735779,3329599988098⟩⟩⟩
+noncomputable def wholeBoxes79 := wholeStep78.proposed :: wholeBoxes78
+theorem wholeAccepted78 : StepValid wholeStep78.shape wholeBoxes78 wholeStep78.proposed := by
+  dsimp only [StepValid,wholeStep78]
+  exact ⟨by decide,by decide,lc37,by decide⟩
+noncomputable def wholeStep79 : Instruction 40 := ⟨.mul 79 68,⟨⟨137708731104,138138227836⟩,⟨775671093656,776530087118⟩,⟨0,0⟩,⟨-2199023255552,-2199023255552⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes80 := wholeStep79.proposed :: wholeBoxes79
+theorem wholeAccepted79 : StepValid wholeStep79.shape wholeBoxes79 wholeStep79.proposed := by
+  dsimp only [StepValid,wholeStep79]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep80 : Instruction 40 := ⟨.mul 74 60,⟨⟨181367630831,184603284713⟩,⟨514239630406,527271482626⟩,⟨223012699764,225726113123⟩,⟨-1488218247661,-1462887335851⟩,⟨-1277786996086,-1265155094604⟩,⟨-274212187014,-273605858425⟩⟩⟩
+noncomputable def wholeBoxes81 := wholeStep80.proposed :: wholeBoxes80
+theorem wholeAccepted80 : StepValid wholeStep80.shape wholeBoxes80 wholeStep80.proposed := by
+  dsimp only [StepValid,wholeStep80]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep81 : Instruction 40 := ⟨.add 5 2,⟨⟨3372081601344,3394948272128⟩,⟨-14362766007820,-13995684926805⟩,⟨-2386867726934,-2277969997312⟩,⟨60409567542018,69021553616515⟩,⟨11884156240445,14597961419439⟩,⟨2385529735779,3329599988098⟩⟩⟩
+noncomputable def wholeBoxes82 := wholeStep81.proposed :: wholeBoxes81
+theorem wholeAccepted81 : StepValid wholeStep81.shape wholeBoxes81 wholeStep81.proposed := by
+  dsimp only [StepValid,wholeStep81]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep82 : Instruction 40 := ⟨.mul 85 22,⟨⟨799508688668,858438481962⟩,⟨-5552420410908,-4137888999432⟩,⟨3493699056134,4810143639692⟩,⟨18432054777870,60828548311866⟩,⟨-41558515254462,1372297138026⟩,⟨-25234432520076,17637178013484⟩⟩⟩
+noncomputable def wholeBoxes83 := wholeStep82.proposed :: wholeBoxes82
+theorem wholeAccepted82 : StepValid wholeStep82.shape wholeBoxes82 wholeStep82.proposed := by
+  dsimp only [StepValid,wholeStep82]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep83 : Instruction 40 := ⟨.add 1 0,⟨⟨4171590290012,4253386754090⟩,⟨-19915186418728,-18133573926237⟩,⟨1106831329200,2532173642380⟩,⟨78841622319888,129850101928381⟩,⟨-29674359014017,15970258557465⟩,⟨-22848902784297,20966778001582⟩⟩⟩
+noncomputable def wholeBoxes84 := wholeStep83.proposed :: wholeBoxes83
+theorem wholeAccepted83 : StepValid wholeStep83.shape wholeBoxes83 wholeStep83.proposed := by
+  dsimp only [StepValid,wholeStep83]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep84 : Instruction 40 := ⟨.mul 4 0,⟨⟨522472333180,534378440090⟩,⟨440862498754,732808376541⟩,⟨138625489753,318132133118⟩,⟨-26762426849619,-17614674410809⟩,⟨-2947332449143,3794786820733⟩,⟨-2870644437844,2634181834373⟩⟩⟩
+noncomputable def wholeBoxes85 := wholeStep84.proposed :: wholeBoxes84
+theorem wholeAccepted84 : StepValid wholeStep84.shape wholeBoxes84 wholeStep84.proposed := by
+  dsimp only [StepValid,wholeStep84]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep85 : Instruction 40 := ⟨.mul 88 85,⟨⟨322981540658,323840534120⟩,⟨2199023255552,2199023255552⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes86 := wholeStep85.proposed :: wholeBoxes85
+theorem wholeAccepted85 : StepValid wholeStep85.shape wholeBoxes85 wholeStep85.proposed := by
+  dsimp only [StepValid,wholeStep85]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep86 : Instruction 40 := ⟨.neg 0,⟨⟨-323840534120,-322981540658⟩,⟨-2199023255552,-2199023255552⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes87 := wholeStep86.proposed :: wholeBoxes86
+theorem wholeAccepted86 : StepValid wholeStep86.shape wholeBoxes86 wholeStep86.proposed := by
+  dsimp only [StepValid,wholeStep86]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep87 : Instruction 40 := ⟨.add 89 0,⟨⟨775671093656,776530087118⟩,⟨-2199023255552,-2199023255552⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes88 := wholeStep87.proposed :: wholeBoxes87
+theorem wholeAccepted87 : StepValid wholeStep87.shape wholeBoxes87 wholeStep87.proposed := by
+  dsimp only [StepValid,wholeStep87]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep88 : Instruction 40 := ⟨.mul 12 0,⟨⟨1362241460896,1366168194805⟩,⟨-10085355074002,-10019526791356⟩,⟨0,0⟩,⟨68826886701518,70924465735029⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes89 := wholeStep88.proposed :: wholeBoxes88
+theorem wholeAccepted88 : StepValid wholeStep88.shape wholeBoxes88 wholeStep88.proposed := by
+  dsimp only [StepValid,wholeStep88]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep89 : Instruction 40 := ⟨.neg 91,⟨⟨-1099511627776,-1099511627776⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes90 := wholeStep89.proposed :: wholeBoxes89
+theorem wholeAccepted89 : StepValid wholeStep89.shape wholeBoxes89 wholeStep89.proposed := by
+  dsimp only [StepValid,wholeStep89]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep90 : Instruction 40 := ⟨.add 1 0,⟨⟨262729833120,266656567029⟩,⟨-10085355074002,-10019526791356⟩,⟨0,0⟩,⟨68826886701518,70924465735029⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes91 := wholeStep90.proposed :: wholeBoxes90
+theorem wholeAccepted90 : StepValid wholeStep90.shape wholeBoxes90 wholeStep90.proposed := by
+  dsimp only [StepValid,wholeStep90]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep91 : Instruction 40 := ⟨.mul 84 0,⟨⟨16332498087,17465484328⟩,⟨-709735863957,-669453487389⟩,⟨92673843479,94163100233⟩,⟨7832397602987,8364388665000⟩,⟨-3828047577542,-3796961353657⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes92 := wholeStep91.proposed :: wholeBoxes91
+theorem wholeAccepted91 : StepValid wholeStep91.shape wholeBoxes91 wholeStep91.proposed := by
+  dsimp only [StepValid,wholeStep91]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep92 : Instruction 40 := ⟨.add 7 0,⟨⟨538804831267,551843924418⟩,⟨-268873365203,63354889152⟩,⟨231299333232,412295233351⟩,⟨-18930029246632,-9250285745809⟩,⟨-6775380026685,-2174532924⟩,⟨-2870644437844,2634181834373⟩⟩⟩
+noncomputable def wholeBoxes93 := wholeStep92.proposed :: wholeBoxes92
+theorem wholeAccepted92 : StepValid wholeStep92.shape wholeBoxes92 wholeStep92.proposed := by
+  dsimp only [StepValid,wholeStep92]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep93 : Instruction 40 := ⟨.inv 17,⟨⟨624962477790,626070642604⟩,⟨2819944113704,2853899713000⟩,⟨0,0⟩,⟨9051860824210,10487488740222⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes94 := wholeStep93.proposed :: wholeBoxes93
+theorem wholeAccepted93 : StepValid wholeStep93.shape wholeBoxes93 wholeStep93.proposed := by
+  dsimp only [StepValid,wholeStep93]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep94 : Instruction 40 := ⟨.mul 1 0,⟨⟨306256699690,314224308002⟩,⟨1228787179419,1468444546555⟩,⟨131470555432,234764176355⟩,⟨-7738912673162,334687177806⟩,⟨-3264736127623,1068920252372⟩,⟨-1634567713963,1499924031834⟩⟩⟩
+noncomputable def wholeBoxes95 := wholeStep94.proposed :: wholeBoxes94
+theorem wholeAccepted94 : StepValid wholeStep94.shape wholeBoxes94 wholeStep94.proposed := by
+  dsimp only [StepValid,wholeStep94]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep95 : Instruction 40 := ⟨.neg 12,⟨⟨-858438481962,-799508688668⟩,⟨4137888999432,5552420410908⟩,⟨-4810143639692,-3493699056134⟩,⟨-60828548311866,-18432054777870⟩,⟨-1372297138026,41558515254462⟩,⟨-17637178013484,25234432520076⟩⟩⟩
+noncomputable def wholeBoxes96 := wholeStep95.proposed :: wholeBoxes95
+theorem wholeAccepted95 : StepValid wholeStep95.shape wholeBoxes95 wholeStep95.proposed := by
+  dsimp only [StepValid,wholeStep95]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep96 : Instruction 40 := ⟨.add 14 0,⟨⟨2513643119382,2595439583460⟩,⟨-10224877008388,-8443264515897⟩,⟨-7197011366626,-5771669053446⟩,⟨-418980769848,50589498838645⟩,⟨10511859102419,56156476673901⟩,⟨-15251648277705,28564032508174⟩⟩⟩
+noncomputable def wholeBoxes97 := wholeStep96.proposed :: wholeBoxes96
+theorem wholeAccepted96 : StepValid wholeStep96.shape wholeBoxes96 wholeStep96.proposed := by
+  dsimp only [StepValid,wholeStep96]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep97 : Instruction 40 := ⟨.mul 16 0,⟨⟨414632720382,435763170009⟩,⟨-541086567730,-148096300554⟩,⟨-698507938160,-419218352493⟩,⟨-13390033832289,-2748412477325⟩,⟨-6832768636613,2124166238017⟩,⟨-6163020168585,1828953597124⟩⟩⟩
+noncomputable def wholeBoxes98 := wholeStep97.proposed :: wholeBoxes97
+theorem wholeAccepted97 : StepValid wholeStep97.shape wholeBoxes97 wholeStep97.proposed := by
+  dsimp only [StepValid,wholeStep97]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep98 : Instruction 40 := ⟨.mul 101 92,⟨⟨460541961172,467013268934⟩,⟨1793578342808,1809040225076⟩,⟨775671093656,776530087118⟩,⟨0,0⟩,⟨-2199023255552,-2199023255552⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes99 := wholeStep98.proposed :: wholeBoxes98
+theorem wholeAccepted98 : StepValid wholeStep98.shape wholeBoxes98 wholeStep98.proposed := by
+  dsimp only [StepValid,wholeStep98]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep99 : Instruction 40 := ⟨.neg 0,⟨⟨-467013268934,-460541961172⟩,⟨-1809040225076,-1793578342808⟩,⟨-776530087118,-775671093656⟩,⟨0,0⟩,⟨2199023255552,2199023255552⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes100 := wholeStep99.proposed :: wholeBoxes99
+theorem wholeAccepted99 : StepValid wholeStep99.shape wholeBoxes99 wholeStep99.proposed := by
+  dsimp only [StepValid,wholeStep99]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep100 : Instruction 40 := ⟨.add 102 0,⟨⟨632498358842,638969666604⟩,⟨-1809040225076,-1793578342808⟩,⟨-776530087118,-775671093656⟩,⟨0,0⟩,⟨2199023255552,2199023255552⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes101 := wholeStep100.proposed :: wholeBoxes100
+theorem wholeAccepted100 : StepValid wholeStep100.shape wholeBoxes100 wholeStep100.proposed := by
+  dsimp only [StepValid,wholeStep100]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep101 : Instruction 40 := ⟨.mul 22 0,⟨⟨829003064971,848783816517⟩,⟨-5634521934668,-5380861255530⟩,⟨-2418617202729,-2327067870562⟩,⟨24281756782187,29020168282773⟩,⟨17150500619892,19258840655526⟩,⟨4586358592049,5306412824385⟩⟩⟩
+noncomputable def wholeBoxes102 := wholeStep101.proposed :: wholeBoxes101
+theorem wholeAccepted101 : StepValid wholeStep101.shape wholeBoxes101 wholeStep101.proposed := by
+  dsimp only [StepValid,wholeStep101]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep102 : Instruction 40 := ⟨.neg 0,⟨⟨-848783816517,-829003064971⟩,⟨5380861255530,5634521934668⟩,⟨2327067870562,2418617202729⟩,⟨-29020168282773,-24281756782187⟩,⟨-19258840655526,-17150500619892⟩,⟨-5306412824385,-4586358592049⟩⟩⟩
+noncomputable def wholeBoxes103 := wholeStep102.proposed :: wholeBoxes102
+theorem wholeAccepted102 : StepValid wholeStep102.shape wholeBoxes102 wholeStep102.proposed := by
+  dsimp only [StepValid,wholeStep102]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep103 : Instruction 40 := ⟨.add 105 0,⟨⟨250727811259,270508562805⟩,⟨5380861255530,5634521934668⟩,⟨2327067870562,2418617202729⟩,⟨-29020168282773,-24281756782187⟩,⟨-19258840655526,-17150500619892⟩,⟨-5306412824385,-4586358592049⟩⟩⟩
+noncomputable def wholeBoxes104 := wholeStep103.proposed :: wholeBoxes103
+theorem wholeAccepted103 : StepValid wholeStep103.shape wholeBoxes103 wholeStep103.proposed := by
+  dsimp only [StepValid,wholeStep103]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep104 : Instruction 40 := ⟨.mul 97 0,⟨⟨15586397057,17717782528⟩,⟨284624134908,324585171530⟩,⟨233101588638,253938039164⟩,⟨-3978494305985,-3417990211099⟩,⟨-79842825688,260117590799⟩,⟨1294113985886,1423039197915⟩⟩⟩
+noncomputable def wholeBoxes105 := wholeStep104.proposed :: wholeBoxes104
+theorem wholeAccepted104 : StepValid wholeStep104.shape wholeBoxes104 wholeStep104.proposed := by
+  dsimp only [StepValid,wholeStep104]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep105 : Instruction 40 := ⟨.add 7 0,⟨⟨430219117439,453480952537⟩,⟨-256462432822,176488870976⟩,⟨-465406349522,-165280313329⟩,⟨-17368528138274,-6166402688424⟩,⟨-6912611462301,2384283828816⟩,⟨-4868906182699,3251992795039⟩⟩⟩
+noncomputable def wholeBoxes106 := wholeStep105.proposed :: wholeBoxes105
+theorem wholeAccepted105 : StepValid wholeStep105.shape wholeBoxes105 wholeStep105.proposed := by
+  dsimp only [StepValid,wholeStep105]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep106 : Instruction 40 := ⟨.neg 26,⟨⟨-138138227836,-137708731104⟩,⟨-776530087118,-775671093656⟩,⟨0,0⟩,⟨2199023255552,2199023255552⟩,⟨0,0⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes107 := wholeStep106.proposed :: wholeBoxes106
+theorem wholeAccepted106 : StepValid wholeStep106.shape wholeBoxes106 wholeStep106.proposed := by
+  dsimp only [StepValid,wholeStep106]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep107 : Instruction 40 := ⟨.mul 100 27,⟨⟨8560609812,9047784123⟩,⟨22750056674,26439421267⟩,⟨48574603197,48780061705⟩,⟨-430377197902,-411822268082⟩,⟨135467630589,136503455910⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes108 := wholeStep107.proposed :: wholeBoxes107
+theorem wholeAccepted107 : StepValid wholeStep107.shape wholeBoxes107 wholeStep107.proposed := by
+  dsimp only [StepValid,wholeStep107]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep108 : Instruction 40 := ⟨.mul 0 32,⟨⟨15034229987,15917985803⟩,⟨-32478720927,-21441946496⟩,⟨85307211990,85819944324⟩,⟨-806215500207,-668301437444⟩,⟨-152602205145,-145450316030⟩,⟨0,0⟩⟩⟩
+noncomputable def wholeBoxes109 := wholeStep108.proposed :: wholeBoxes108
+theorem wholeAccepted108 : StepValid wholeStep108.shape wholeBoxes108 wholeStep108.proposed := by
+  dsimp only [StepValid,wholeStep108]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep109 : Instruction 40 := ⟨.inv 84,⟨⟨1170764672309,1186884496836⟩,⟨-3687654195282,-3489096089025⟩,⟨-609553984245,-567921032756⟩,⟨35424167355040,38638477049887⟩,⟨7068437043909,7833785652411⟩,⟨1453295613410,1616372579345⟩⟩⟩
+noncomputable def wholeBoxes110 := wholeStep109.proposed :: wholeBoxes109
+theorem wholeAccepted109 : StepValid wholeStep109.shape wholeBoxes109 wholeStep109.proposed := by
+  dsimp only [StepValid,wholeStep109]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep110 : Instruction 40 := ⟨.mul 1 0,⟨⟨16008512233,17182911116⟩,⟨-88447011397,-70539814725⟩,⟨82010772915,84874141992⟩,⟨-249823256919,65632410666⟩,⟨-344834578421,-294164718761⟩,⟨-75283057859,-64725212814⟩⟩⟩
+noncomputable def wholeBoxes111 := wholeStep110.proposed :: wholeBoxes110
+theorem wholeAccepted110 : StepValid wholeStep110.shape wholeBoxes110 wholeStep110.proposed := by
+  dsimp only [StepValid,wholeStep110]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep111 : Instruction 40 := ⟨.neg 0,⟨⟨-17182911116,-16008512233⟩,⟨70539814725,88447011397⟩,⟨-84874141992,-82010772915⟩,⟨-65632410666,249823256919⟩,⟨294164718761,344834578421⟩,⟨64725212814,75283057859⟩⟩⟩
+noncomputable def wholeBoxes112 := wholeStep111.proposed :: wholeBoxes111
+theorem wholeAccepted111 : StepValid wholeStep111.shape wholeBoxes111 wholeStep111.proposed := by
+  dsimp only [StepValid,wholeStep111]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep112 : Instruction 40 := ⟨.add 5 0,⟨⟨-155321138952,-153717243337⟩,⟨-705990272393,-687224082259⟩,⟨-84874141992,-82010772915⟩,⟨2133390844886,2448846512471⟩,⟨294164718761,344834578421⟩,⟨64725212814,75283057859⟩⟩⟩
+noncomputable def wholeBoxes113 := wholeStep112.proposed :: wholeBoxes112
+theorem wholeAccepted112 : StepValid wholeStep112.shape wholeBoxes112 wholeStep112.proposed := by
+  dsimp only [StepValid,wholeStep112]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep113 : Instruction 40 := ⟨.mul 106 34,⟨⟨89585925740,95663226610⟩,⟨-633494675104,-583013202473⟩,⟨351993191379,374147890588⟩,⟨2635200946176,3258943514912⟩,⟨-2281364780511,-1902860682491⟩,⟨-1537429802154,-1388954350434⟩⟩⟩
+noncomputable def wholeBoxes114 := wholeStep113.proposed :: wholeBoxes113
+theorem wholeAccepted113 : StepValid wholeStep113.shape wholeBoxes113 wholeStep113.proposed := by
+  dsimp only [StepValid,wholeStep113]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep114 : Instruction 40 := ⟨.mul 0 4,⟨⟨95391475945,103265120362⟩,⟨-1004680514282,-905079254222⟩,⟨321769487012,357606585928⟩,⟨9392429244584,11129022379897⟩,⟨-2840448898341,-2110378514316⟩,⟨-1956035193016,-1701955572694⟩⟩⟩
+noncomputable def wholeBoxes115 := wholeStep114.proposed :: wholeBoxes114
+theorem wholeAccepted114 : StepValid wholeStep114.shape wholeBoxes114 wholeStep114.proposed := by
+  dsimp only [StepValid,wholeStep114]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep115 : Instruction 40 := ⟨.neg 0,⟨⟨-103265120362,-95391475945⟩,⟨905079254222,1004680514282⟩,⟨-357606585928,-321769487012⟩,⟨-11129022379897,-9392429244584⟩,⟨2110378514316,2840448898341⟩,⟨1701955572694,1956035193016⟩⟩⟩
+noncomputable def wholeBoxes116 := wholeStep115.proposed :: wholeBoxes115
+theorem wholeAccepted115 : StepValid wholeStep115.shape wholeBoxes115 wholeStep115.proposed := by
+  dsimp only [StepValid,wholeStep115]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep116 : Instruction 40 := ⟨.add 118 0,⟨⟨996246507414,1004120151831⟩,⟨905079254222,1004680514282⟩,⟨-357606585928,-321769487012⟩,⟨-11129022379897,-9392429244584⟩,⟨2110378514316,2840448898341⟩,⟨1701955572694,1956035193016⟩⟩⟩
+noncomputable def wholeBoxes117 := wholeStep116.proposed :: wholeBoxes116
+theorem wholeAccepted116 : StepValid wholeStep116.shape wholeBoxes116 wholeStep116.proposed := by
+  dsimp only [StepValid,wholeStep116]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep117 : Instruction 40 := ⟨.mul 36 0,⟨⟨164333749829,168587465191⟩,⟨615238164589,650207988851⟩,⟨142026940784,153065747735⟩,⟨-2381010542573,-1911212412102⟩,⟨-806729902248,-613667127526⟩,⟨-116510475162,-50027413833⟩⟩⟩
+noncomputable def wholeBoxes118 := wholeStep117.proposed :: wholeBoxes117
+theorem wholeAccepted117 : StepValid wholeStep117.shape wholeBoxes117 wholeStep117.proposed := by
+  dsimp only [StepValid,wholeStep117]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep118 : Instruction 40 := ⟨.mul 5 5,⟨⟨21490442030,21941247001⟩,⟨192154750910,199461670850⟩,⟨22931035230,23979279654⟩,⟨167200250508,310107325418⟩,⟨5092585854,26743016808⟩,⟨-9035435900,-4994510725⟩⟩⟩
+noncomputable def wholeBoxes119 := wholeStep118.proposed :: wholeBoxes118
+theorem wholeAccepted118 : StepValid wholeStep118.shape wholeBoxes118 wholeStep118.proposed := by
+  dsimp only [StepValid,wholeStep118]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep119 : Instruction 40 := ⟨.mul 46 0,⟨⟨244174963510,261929741604⟩,⟨1313348407279,1830667919022⟩,⟨-36072426341,219206131194⟩,⟨-12148668362426,5673305658511⟩,⟨-5404022299319,5647120481607⟩,⟨-4240619447178,3691381505115⟩⟩⟩
+noncomputable def wholeBoxes120 := wholeStep119.proposed :: wholeBoxes119
+theorem wholeAccepted119 : StepValid wholeStep119.shape wholeBoxes119 wholeStep119.proposed := by
+  dsimp only [StepValid,wholeStep119]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep120 : Instruction 40 := ⟨.neg 0,⟨⟨-261929741604,-244174963510⟩,⟨-1830667919022,-1313348407279⟩,⟨-219206131194,36072426341⟩,⟨-5673305658511,12148668362426⟩,⟨-5647120481607,5404022299319⟩,⟨-3691381505115,4240619447178⟩⟩⟩
+noncomputable def wholeBoxes121 := wholeStep120.proposed :: wholeBoxes120
+theorem wholeAccepted120 : StepValid wholeStep120.shape wholeBoxes120 wholeStep120.proposed := by
+  dsimp only [StepValid,wholeStep120]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep121 : Instruction 40 := ⟨.add 26 0,⟨⟨44326958086,70049344492⟩,⟨-601880739603,155096139276⟩,⟨-87735575762,270836602696⟩,⟨-13412218331673,12483355540232⟩,⟨-8911856609230,6472942551691⟩,⟨-5325949219078,5740543479012⟩⟩⟩
+noncomputable def wholeBoxes122 := wholeStep121.proposed :: wholeBoxes121
+theorem wholeAccepted121 : StepValid wholeStep121.shape wholeBoxes121 wholeStep121.proposed := by
+  dsimp only [StepValid,wholeStep121]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep122 : Instruction 40 := ⟨.mul 49 43,⟨⟨16373907885082,17435731934507⟩,⟨-124288103860970,-96760455553299⟩,⟨-48238533765358,-30378813929385⟩,⟨528571001376779,1447676747158774⟩,⟨89012235784968,777737680410925⟩,⟨-190626014009195,363307398103458⟩⟩⟩
+noncomputable def wholeBoxes123 := wholeStep122.proposed :: wholeBoxes122
+theorem wholeAccepted122 : StepValid wholeStep122.shape wholeBoxes122 wholeStep122.proposed := by
+  dsimp only [StepValid,wholeStep122]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep123 : Instruction 40 := ⟨.mul 5 5,⟨⟨24561433140,25849415961⟩,⟨183907822474,199392009904⟩,⟨42454884816,46938960474⟩,⟨-41637636605,197712736492⟩,⟨-88446822600,-2404064098⟩,⟨963057085,27663064650⟩⟩⟩
+noncomputable def wholeBoxes124 := wholeStep123.proposed :: wholeBoxes123
+theorem wholeAccepted123 : StepValid wholeStep123.shape wholeBoxes123 wholeStep123.proposed := by
+  dsimp only [StepValid,wholeStep123]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep124 : Instruction 40 := ⟨.mul 1 0,⟨⟨365768431729,409912433825⟩,⟨-183249677476,1000417046182⟩,⟨-501846035515,65727294815⟩,⟨-33931092759454,4801090947775⟩,⟨-13467979086504,9431319423168⟩,⟨-8585935011603,6633992363798⟩⟩⟩
+noncomputable def wholeBoxes125 := wholeStep124.proposed :: wholeBoxes124
+theorem wholeAccepted124 : StepValid wholeStep124.shape wholeBoxes124 wholeStep124.proposed := by
+  dsimp only [StepValid,wholeStep124]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep125 : Instruction 40 := ⟨.neg 0,⟨⟨-409912433825,-365768431729⟩,⟨-1000417046182,183249677476⟩,⟨-65727294815,501846035515⟩,⟨-4801090947775,33931092759454⟩,⟨-9431319423168,13467979086504⟩,⟨-6633992363798,8585935011603⟩⟩⟩
+noncomputable def wholeBoxes126 := wholeStep125.proposed :: wholeBoxes125
+theorem wholeAccepted125 : StepValid wholeStep125.shape wholeBoxes125 wholeStep125.proposed := by
+  dsimp only [StepValid,wholeStep125]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep126 : Instruction 40 := ⟨.add 20 0,⟨⟨20306683614,87712520808⟩,⟨-1256879479004,359738548452⟩,⟨-531133644337,336565722186⟩,⟨-22169619086049,27764690071030⟩,⟨-16343930885469,15852262915320⟩,⟨-11502898546497,11837927806642⟩⟩⟩
+noncomputable def wholeBoxes127 := wholeStep126.proposed :: wholeBoxes126
+theorem wholeAccepted126 : StepValid wholeStep126.shape wholeBoxes126 wholeStep126.proposed := by
+  dsimp only [StepValid,wholeStep126]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep127 : Instruction 40 := ⟨.add 47 46,⟨⟨319076361935,322741512549⟩,⟨1289910724062,1303801569744⟩,⟨223012699764,225726113123⟩,⟨-3687241503213,-3661910591403⟩,⟨-1277786996086,-1265155094604⟩,⟨-274212187014,-273605858425⟩⟩⟩
+noncomputable def wholeBoxes128 := wholeStep127.proposed :: wholeBoxes127
+theorem wholeAccepted127 : StepValid wholeStep127.shape wholeBoxes127 wholeStep127.proposed := by
+  dsimp only [StepValid,wholeStep127]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep128 : Instruction 40 := ⟨.mul 55 15,⟨⟨-1854189317014,-1746539332711⟩,⟨-4490605393066,-1650139752638⟩,⟨-533589335711,1167919385506⟩,⟨-24193554328096,72569519513857⟩,⟨-38530652919278,29871925546288⟩,⟨-26298636294343,27859553394344⟩⟩⟩
+noncomputable def wholeBoxes129 := wholeStep128.proposed :: wholeBoxes128
+theorem wholeAccepted128 : StepValid wholeStep128.shape wholeBoxes128 wholeStep128.proposed := by
+  dsimp only [StepValid,wholeStep128]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep129 : Instruction 40 := ⟨.mul 0 11,⟨⟨-284301747288,-261038947217⟩,⟨-1785036590405,-1223917303588⟩,⟨-339941241521,-46528902779⟩,⟨-5984818335430,13295628151583⟩,⟨-5873783496572,6418202600386⟩,⟨-4101451928528,4793347101937⟩⟩⟩
+noncomputable def wholeBoxes130 := wholeStep129.proposed :: wholeBoxes129
+theorem wholeAccepted129 : StepValid wholeStep129.shape wholeBoxes129 wholeStep129.proposed := by
+  dsimp only [StepValid,wholeStep129]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep130 : Instruction 40 := ⟨.add 2 0,⟨⟨34774614647,61702565332⟩,⟨-495125866343,79884266156⟩,⟨-116928541757,179197210344⟩,⟨-9672059838643,9633717560180⟩,⟨-7151570492658,5153047505782⟩,⟨-4375664115542,4519741243512⟩⟩⟩
+noncomputable def wholeBoxes131 := wholeStep130.proposed :: wholeBoxes130
+theorem wholeAccepted130 : StepValid wholeStep130.shape wholeBoxes130 wholeStep130.proposed := by
+  dsimp only [StepValid,wholeStep130]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep131 : Instruction 40 := ⟨.mul 9 4,⟨⟨818666661,5588121518⟩,⟨-128089650850,35291416545⟩,⟨-40837287215,43048175365⟩,⟨-2876209847571,4140772964917⟩,⟨-2246037590442,1917352064652⟩,⟨-1419379075980,1377943823094⟩⟩⟩
+noncomputable def wholeBoxes132 := wholeStep131.proposed :: wholeBoxes131
+theorem wholeAccepted131 : StepValid wholeStep131.shape wholeBoxes131 wholeStep131.proposed := by
+  dsimp only [StepValid,wholeStep131]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep132 : Instruction 40 := ⟨.mul 1 1,⟨⟨1099828135,3462634203⟩,⟨-55571101468,8965915462⟩,⟨-13123628356,20112434102⟩,⟨-1157502393794,1527177502194⟩,⟨-964056052124,683668251302⟩,⟨-529222178472,565689823920⟩⟩⟩
+noncomputable def wholeBoxes133 := wholeStep132.proposed :: wholeBoxes132
+theorem wholeAccepted132 : StepValid wholeStep132.shape wholeBoxes132 wholeStep132.proposed := by
+  dsimp only [StepValid,wholeStep132]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep133 : Instruction 40 := ⟨.mul 54 0,⟨⟨1441522941,4599635989⟩,⟨-91330178078,6641143631⟩,⟨-24949782613,24437992389⟩,⟨-1615929366792,2648831569078⟩,⟨-1389907196704,1141138620293⟩,⟨-787934966925,818905989561⟩⟩⟩
+noncomputable def wholeBoxes134 := wholeStep133.proposed :: wholeBoxes133
+theorem wholeAccepted133 : StepValid wholeStep133.shape wholeBoxes133 wholeStep133.proposed := by
+  dsimp only [StepValid,wholeStep133]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep134 : Instruction 40 := ⟨.neg 0,⟨⟨-4599635989,-1441522941⟩,⟨-6641143631,91330178078⟩,⟨-24437992389,24949782613⟩,⟨-2648831569078,1615929366792⟩,⟨-1141138620293,1389907196704⟩,⟨-818905989561,787934966925⟩⟩⟩
+noncomputable def wholeBoxes135 := wholeStep134.proposed :: wholeBoxes134
+theorem wholeAccepted134 : StepValid wholeStep134.shape wholeBoxes134 wholeStep134.proposed := by
+  dsimp only [StepValid,wholeStep134]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeStep135 : Instruction 40 := ⟨.add 3 0,⟨⟨-3780969328,4146598577⟩,⟨-134730794481,126621594623⟩,⟨-65275279604,67997957978⟩,⟨-5525041416649,5756702331709⟩,⟨-3387176210735,3307259261356⟩,⟨-2238285065541,2165878790019⟩⟩⟩
+noncomputable def wholeBoxes136 := wholeStep135.proposed :: wholeBoxes135
+theorem wholeAccepted135 : StepValid wholeStep135.shape wholeBoxes135 wholeStep135.proposed := by
+  dsimp only [StepValid,wholeStep135]
+  exact ⟨by decide,by decide⟩
+noncomputable def wholeProgram : List (Instruction 40) := [wholeStep0,wholeStep1,wholeStep2,wholeStep3,wholeStep4,wholeStep5,wholeStep6,wholeStep7,wholeStep8,wholeStep9,wholeStep10,wholeStep11,wholeStep12,wholeStep13,wholeStep14,wholeStep15,wholeStep16,wholeStep17,wholeStep18,wholeStep19,wholeStep20,wholeStep21,wholeStep22,wholeStep23,wholeStep24,wholeStep25,wholeStep26,wholeStep27,wholeStep28,wholeStep29,wholeStep30,wholeStep31,wholeStep32,wholeStep33,wholeStep34,wholeStep35,wholeStep36,wholeStep37,wholeStep38,wholeStep39,wholeStep40,wholeStep41,wholeStep42,wholeStep43,wholeStep44,wholeStep45,wholeStep46,wholeStep47,wholeStep48,wholeStep49,wholeStep50,wholeStep51,wholeStep52,wholeStep53,wholeStep54,wholeStep55,wholeStep56,wholeStep57,wholeStep58,wholeStep59,wholeStep60,wholeStep61,wholeStep62,wholeStep63,wholeStep64,wholeStep65,wholeStep66,wholeStep67,wholeStep68,wholeStep69,wholeStep70,wholeStep71,wholeStep72,wholeStep73,wholeStep74,wholeStep75,wholeStep76,wholeStep77,wholeStep78,wholeStep79,wholeStep80,wholeStep81,wholeStep82,wholeStep83,wholeStep84,wholeStep85,wholeStep86,wholeStep87,wholeStep88,wholeStep89,wholeStep90,wholeStep91,wholeStep92,wholeStep93,wholeStep94,wholeStep95,wholeStep96,wholeStep97,wholeStep98,wholeStep99,wholeStep100,wholeStep101,wholeStep102,wholeStep103,wholeStep104,wholeStep105,wholeStep106,wholeStep107,wholeStep108,wholeStep109,wholeStep110,wholeStep111,wholeStep112,wholeStep113,wholeStep114,wholeStep115,wholeStep116,wholeStep117,wholeStep118,wholeStep119,wholeStep120,wholeStep121,wholeStep122,wholeStep123,wholeStep124,wholeStep125,wholeStep126,wholeStep127,wholeStep128,wholeStep129,wholeStep130,wholeStep131,wholeStep132,wholeStep133,wholeStep134,wholeStep135]
+theorem wholeAccepted : Accepted wholeProgram wholeInitial :=
+  ⟨wholeAccepted0,⟨wholeAccepted1,⟨wholeAccepted2,⟨wholeAccepted3,⟨wholeAccepted4,⟨wholeAccepted5,⟨wholeAccepted6,⟨wholeAccepted7,⟨wholeAccepted8,⟨wholeAccepted9,⟨wholeAccepted10,⟨wholeAccepted11,⟨wholeAccepted12,⟨wholeAccepted13,⟨wholeAccepted14,⟨wholeAccepted15,⟨wholeAccepted16,⟨wholeAccepted17,⟨wholeAccepted18,⟨wholeAccepted19,⟨wholeAccepted20,⟨wholeAccepted21,⟨wholeAccepted22,⟨wholeAccepted23,⟨wholeAccepted24,⟨wholeAccepted25,⟨wholeAccepted26,⟨wholeAccepted27,⟨wholeAccepted28,⟨wholeAccepted29,⟨wholeAccepted30,⟨wholeAccepted31,⟨wholeAccepted32,⟨wholeAccepted33,⟨wholeAccepted34,⟨wholeAccepted35,⟨wholeAccepted36,⟨wholeAccepted37,⟨wholeAccepted38,⟨wholeAccepted39,⟨wholeAccepted40,⟨wholeAccepted41,⟨wholeAccepted42,⟨wholeAccepted43,⟨wholeAccepted44,⟨wholeAccepted45,⟨wholeAccepted46,⟨wholeAccepted47,⟨wholeAccepted48,⟨wholeAccepted49,⟨wholeAccepted50,⟨wholeAccepted51,⟨wholeAccepted52,⟨wholeAccepted53,⟨wholeAccepted54,⟨wholeAccepted55,⟨wholeAccepted56,⟨wholeAccepted57,⟨wholeAccepted58,⟨wholeAccepted59,⟨wholeAccepted60,⟨wholeAccepted61,⟨wholeAccepted62,⟨wholeAccepted63,⟨wholeAccepted64,⟨wholeAccepted65,⟨wholeAccepted66,⟨wholeAccepted67,⟨wholeAccepted68,⟨wholeAccepted69,⟨wholeAccepted70,⟨wholeAccepted71,⟨wholeAccepted72,⟨wholeAccepted73,⟨wholeAccepted74,⟨wholeAccepted75,⟨wholeAccepted76,⟨wholeAccepted77,⟨wholeAccepted78,⟨wholeAccepted79,⟨wholeAccepted80,⟨wholeAccepted81,⟨wholeAccepted82,⟨wholeAccepted83,⟨wholeAccepted84,⟨wholeAccepted85,⟨wholeAccepted86,⟨wholeAccepted87,⟨wholeAccepted88,⟨wholeAccepted89,⟨wholeAccepted90,⟨wholeAccepted91,⟨wholeAccepted92,⟨wholeAccepted93,⟨wholeAccepted94,⟨wholeAccepted95,⟨wholeAccepted96,⟨wholeAccepted97,⟨wholeAccepted98,⟨wholeAccepted99,⟨wholeAccepted100,⟨wholeAccepted101,⟨wholeAccepted102,⟨wholeAccepted103,⟨wholeAccepted104,⟨wholeAccepted105,⟨wholeAccepted106,⟨wholeAccepted107,⟨wholeAccepted108,⟨wholeAccepted109,⟨wholeAccepted110,⟨wholeAccepted111,⟨wholeAccepted112,⟨wholeAccepted113,⟨wholeAccepted114,⟨wholeAccepted115,⟨wholeAccepted116,⟨wholeAccepted117,⟨wholeAccepted118,⟨wholeAccepted119,⟨wholeAccepted120,⟨wholeAccepted121,⟨wholeAccepted122,⟨wholeAccepted123,⟨wholeAccepted124,⟨wholeAccepted125,⟨wholeAccepted126,⟨wholeAccepted127,⟨wholeAccepted128,⟨wholeAccepted129,⟨wholeAccepted130,⟨wholeAccepted131,⟨wholeAccepted132,⟨wholeAccepted133,⟨wholeAccepted134,⟨wholeAccepted135,True.intro⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩⟩
+noncomputable def whole_m11 : DyadicBivariateJetEnclosure 40 := ⟨⟨44326958086,70049344492⟩,⟨-601880739603,155096139276⟩,⟨-87735575762,270836602696⟩,⟨-13412218331673,12483355540232⟩,⟨-8911856609230,6472942551691⟩,⟨-5325949219078,5740543479012⟩⟩
+theorem whole_m11_eq : (finalBoxes wholeProgram wholeInitial).getD 14 (zeroBox 40)=whole_m11 := rfl
+noncomputable def whole_kdet : DyadicBivariateJetEnclosure 40 := ⟨⟨-3780969328,4146598577⟩,⟨-134730794481,126621594623⟩,⟨-65275279604,67997957978⟩,⟨-5525041416649,5756702331709⟩,⟨-3387176210735,3307259261356⟩,⟨-2238285065541,2165878790019⟩⟩
+theorem whole_kdet_eq : (finalBoxes wholeProgram wholeInitial).getD 0 (zeroBox 40)=whole_kdet := rfl
+theorem sameShape : shapes centerProgram=shapes wholeProgram := by decide
+theorem kernelShape : shapes wholeProgram =
+    shapes CorrectionFactorizedProgramKernel.kernelProgram := by decide
+attribute [local irreducible] wholeProgram centerProgram
+noncomputable def inputJets (u rho : ℝ) : List BivariateJet2 :=
+  [BivariateJet2.affineA (753/5120) u, BivariateJet2.affineZ (463/2560) rho,
+    BivariateJet2.const 1, BivariateJet2.const 2]
+noncomputable def outputJet_m11 (u rho : ℝ) : BivariateJet2 :=
+  (finalJets wholeProgram (inputJets u rho)).getD 14 zeroJet
+theorem output_value_m11 (u rho t : ℝ) : (outputJet_m11 u rho).value t =
+    Correction.Natural.m11 (753/5120+t*(u-(753/5120))) ((753/5120+t*(u-(753/5120)))+(463/2560+t*(rho-(463/2560)))*(1/2-(753/5120+t*(u-(753/5120))))) := by
+  exact CorrectionFactorizedProgramKernel.output_value_m11_of_shapes wholeProgram kernelShape (753/5120) (463/2560) u rho t
+theorem output_value_one_m11 (u rho : ℝ) : (outputJet_m11 u rho).value 1 =
+    Correction.Natural.m11 u (u+rho*(1/2-u)) := by simp [output_value_m11]
+noncomputable def outputJet_kdet (u rho : ℝ) : BivariateJet2 :=
+  (finalJets wholeProgram (inputJets u rho)).getD 0 zeroJet
+theorem output_value_kdet (u rho t : ℝ) : (outputJet_kdet u rho).value t =
+    Correction.Natural.kdet (753/5120+t*(u-(753/5120))) ((753/5120+t*(u-(753/5120)))+(463/2560+t*(rho-(463/2560)))*(1/2-(753/5120+t*(u-(753/5120))))) := by
+  exact CorrectionFactorizedProgramKernel.output_value_kdet_of_shapes wholeProgram kernelShape (753/5120) (463/2560) u rho t
+theorem output_value_one_kdet (u rho : ℝ) : (outputJet_kdet u rho).value 1 =
+    Correction.Natural.kdet u (u+rho*(1/2-u)) := by simp [output_value_kdet]
+
+private theorem center_A (x : ℝ) :
+    (⟨⟨161705518694,161705518695⟩,⟨1099511627776,1099511627776⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩ : DyadicBivariateJetEnclosure 40).Contains (BivariateJet2.affineA (753/5120) x) 0 := by
+  apply DyadicBivariateJetEnclosure.contains_coordinateA
+  norm_num [DyadicInterval.Contains,DyadicInterval.scale]
+private theorem whole_A {x t : ℝ} (hx : x∈Icc (47/320:ℝ) (377/2560)) (ht : t∈Icc (0:ℝ) 1) :
+    (⟨⟨161490770329,161920267060⟩,⟨1099511627776,1099511627776⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩ : DyadicBivariateJetEnclosure 40).Contains (BivariateJet2.affineA (753/5120) x) t := by
+  apply DyadicBivariateJetEnclosure.contains_coordinateA
+  change (⟨161490770329,161920267060⟩ : DyadicInterval 40).Contains ((Jet2.segment (753/5120) x).value t)
+  apply DyadicInterval.contains_segment _ _ ht
+  · norm_num [DyadicInterval.Contains,DyadicInterval.scale]
+  · norm_num [DyadicInterval.Contains,DyadicInterval.scale]
+    constructor <;> linarith [hx.1,hx.2]
+private theorem center_Z (x : ℝ) :
+    (⟨⟨198856985804,198856985805⟩,⟨0,0⟩,⟨1099511627776,1099511627776⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩ : DyadicBivariateJetEnclosure 40).Contains (BivariateJet2.affineZ (463/2560) x) 0 := by
+  apply DyadicBivariateJetEnclosure.contains_coordinateZ
+  norm_num [DyadicInterval.Contains,DyadicInterval.scale]
+private theorem whole_Z {x t : ℝ} (hx : x∈Icc (227/1280:ℝ) (59/320)) (ht : t∈Icc (0:ℝ) 1) :
+    (⟨⟨194991515238,202722456372⟩,⟨0,0⟩,⟨1099511627776,1099511627776⟩,⟨0,0⟩,⟨0,0⟩,⟨0,0⟩⟩ : DyadicBivariateJetEnclosure 40).Contains (BivariateJet2.affineZ (463/2560) x) t := by
+  apply DyadicBivariateJetEnclosure.contains_coordinateZ
+  change (⟨194991515238,202722456372⟩ : DyadicInterval 40).Contains ((Jet2.segment (463/2560) x).value t)
+  apply DyadicInterval.contains_segment _ _ ht
+  · norm_num [DyadicInterval.Contains,DyadicInterval.scale]
+  · norm_num [DyadicInterval.Contains,DyadicInterval.scale]
+    constructor <;> linarith [hx.1,hx.2]
+theorem initial_center (a z : ℝ) : RegistersContain centerInitial (inputJets a z) 0 := by
+  simpa [centerInitial,inputJets,DyadicBivariateJetEnclosure.const,DyadicInterval.ofInt,DyadicInterval.scale] using
+    ((((RegistersContain.nil 40 0).cons (DyadicBivariateJetEnclosure.contains_const 40 2 0)).cons
+      (DyadicBivariateJetEnclosure.contains_const 40 1 0)).cons (center_Z z)).cons (center_A a)
+
+theorem initial_whole {a z : ℝ} (ha : a ∈ Icc (47/320:ℝ) (377/2560))
+    (hz : z ∈ Icc (227/1280:ℝ) (59/320)) :
+    ∀ t ∈ Icc (0:ℝ) 1, RegistersContain wholeInitial (inputJets a z) t := by
+  intro t ht
+  simpa [wholeInitial,inputJets,DyadicBivariateJetEnclosure.const,DyadicInterval.ofInt,DyadicInterval.scale] using
+    ((((RegistersContain.nil 40 t).cons (DyadicBivariateJetEnclosure.contains_const 40 2 t)).cons
+      (DyadicBivariateJetEnclosure.contains_const 40 1 t)).cons (whole_Z hz ht)).cons (whole_A ha ht)
+
+theorem initial_sound (a z : ℝ) : ∀ i, ((inputJets a z).getD i zeroJet).DirectionalSoundOn
+    (a-753/5120) (z-463/2560) (Icc (0:ℝ) 1) := by
+  intro i t ht
+  have hconst (c : ℝ) : (BivariateJet2.const c).DirectionalSoundAt (a-753/5120) (z-463/2560) t := by
+    simpa only [BivariateJet2.DirectionalSoundAt,BivariateJet2.projection_const] using Jet2.soundAt_const c t
+  have h : RegistersSound (inputJets a z) (a-753/5120) (z-463/2560) t :=
+    ((((RegistersSound.nil _ _ t).cons (hconst 2)).cons (hconst 1)).cons
+      (BivariateJet2.soundOn_affineZ (463/2560) z (a-753/5120) _ t ht)).cons
+      (BivariateJet2.soundOn_affineA (753/5120) a (z-463/2560) _ t ht)
+  exact h i
+
+theorem taylor_positive_m11 : 0 < BivariateJetEnclosure.taylorLower
+    center_m11.toReal whole_m11.toReal (1/5120) (9/2560) := by
+  norm_num [BivariateJetEnclosure.taylorLower,JetBounds.Interval.magnitude,
+    DyadicBivariateJetEnclosure.toReal,DyadicInterval.toReal,DyadicInterval.scale,center_m11,whole_m11]
+theorem positive_m11 {a z : ℝ} (ha : a∈Icc (47/320:ℝ) (377/2560))
+    (hz : z∈Icc (227/1280:ℝ) (59/320)) : 0 < Correction.Natural.m11 a (a+z*(1/2-a)) := by
+  have hp := value_pos_of_accepted_taylor centerProgram wholeProgram 14 sameShape
+    (initial_center a z) (initial_whole ha hz) (initial_sound a z) centerAccepted wholeAccepted
+    (show (0:ℝ)≤1/5120 by norm_num) (show (0:ℝ)≤9/2560 by norm_num)
+    (by rw [abs_le]; constructor <;> linarith [ha.1,ha.2])
+    (by rw [abs_le]; constructor <;> linarith [hz.1,hz.2])
+    (by rw [center_m11_eq,whole_m11_eq]; exact taylor_positive_m11)
+  change 0 < (outputJet_m11 a z).value 1 at hp
+  simpa only [output_value_one_m11] using hp
+theorem taylor_positive_kdet : 0 < BivariateJetEnclosure.taylorLower
+    center_kdet.toReal whole_kdet.toReal (1/5120) (9/2560) := by
+  norm_num [BivariateJetEnclosure.taylorLower,JetBounds.Interval.magnitude,
+    DyadicBivariateJetEnclosure.toReal,DyadicInterval.toReal,DyadicInterval.scale,center_kdet,whole_kdet]
+theorem positive_kdet {a z : ℝ} (ha : a∈Icc (47/320:ℝ) (377/2560))
+    (hz : z∈Icc (227/1280:ℝ) (59/320)) : 0 < Correction.Natural.kdet a (a+z*(1/2-a)) := by
+  have hp := value_pos_of_accepted_taylor centerProgram wholeProgram 0 sameShape
+    (initial_center a z) (initial_whole ha hz) (initial_sound a z) centerAccepted wholeAccepted
+    (show (0:ℝ)≤1/5120 by norm_num) (show (0:ℝ)≤9/2560 by norm_num)
+    (by rw [abs_le]; constructor <;> linarith [ha.1,ha.2])
+    (by rw [abs_le]; constructor <;> linarith [hz.1,hz.2])
+    (by rw [center_kdet_eq,whole_kdet_eq]; exact taylor_positive_kdet)
+  change 0 < (outputJet_kdet a z).value 1 at hp
+  simpa only [output_value_one_kdet] using hp
+
+theorem actual_minors_positive {u rho : ℝ} (hu : u∈Icc (47/320:ℝ) (377/2560))
+    (hr : rho∈Icc (227/1280:ℝ) (59/320)) (hr1 : rho < 1) :
+    0 < Correction.Mleft (H u) (H (u+rho*(1/2-u))) ∧
+    0 < Correction.Mdet (H u) (H (u+rho*(1/2-u))) := by
+  let w := u+rho*(1/2-u)
+  have hu0 : 0<u := by linarith [hu.1]
+  have hgap : 0<1/2-u := by linarith [hu.2]
+  have huw : u<w := by dsimp [w]; nlinarith [mul_pos (show 0<rho by linarith [hr.1]) hgap]
+  have hw : w<1/2 := by dsimp [w]; nlinarith [mul_pos (show 0<1-rho by linarith [hr1]) hgap]
+  have heq := Correction.Natural.kernel_eq_actual_ratio hu0 hgap (show 0<rho by linarith [hr.1]) hr1
+  have hm := positive_m11 hu hr
+  have hk := positive_kdet hu hr
+  rw [heq.1] at hm
+  rw [heq.2] at hk
+  have hf0 := H_pos (hu0.trans huw) (show w<1 by linarith)
+  have hf1 : H w<1 := by
+    have h := H_strictMonoOn ⟨(hu0.trans huw).le,hw.le⟩
+      (by norm_num : (1/2:ℝ)∈Icc 0 (1/2)) hw
+    simpa only [H_half] using h
+  exact ⟨hm,(Correction.Mdet_pos_iff_Kfactored_pos hf0 hf1).mpr hk⟩
+
+#print axioms centerAccepted
+#print axioms wholeAccepted
+#print axioms actual_minors_positive
+end GeneralCK.Certificates.LaneCB.RB2Cell003398

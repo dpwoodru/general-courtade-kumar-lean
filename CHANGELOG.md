@@ -1,5 +1,42 @@
 # Changelog and errata
 
+## Release v1.1 (2026-10-01): sources in the repository, standard Lake build
+
+The proof is unchanged. The 45,500 Lean sources are byte-identical to `sources_v3.tar.zst` of v1.0 (sha256
+`3f09b23672e3a29cd6533a4004b8fd0d92e5edd17845478d327ac1aeb0a45589`), and each matches its sha256 in
+`SOURCES_MANIFEST.tsv`.
+
+- **Sources in the repository.** All 45,500 `.lean` files are now in the repository at the root (`GeneralCK/`,
+  `CKRoute/`, `CKLane*/`, `E8*.lean`), so no download or archive is part of the chain of trust. `browse/` (copies of
+  1,359 of them) is removed; its list of readable files is now `READABLE_FILES.md`.
+- **Lake project at the root.** `lakefile.toml`, `lean-toolchain` and `lake-manifest.json` moved from `BUILD/lake/` to
+  the root, so `git clone`, `lake exe cache get` and `lake build` build the whole proof. An independent agent ran the
+  standard Lake build of these sources with the v1.0 Lake files (`lake build CKRoute.Final`, completed 2026-10-01):
+  all 45,500 modules, no errors, no `sorry`, axioms `propext`, `Classical.choice`, `Quot.sound`. `lean-toolchain` and
+  `lake-manifest.json` are unchanged. Changes to `lakefile.toml` (header comment aside):
+  - the default target is the new `FinalCheck` instead of `CKRoute`. `FinalCheck.lean` imports `CKRoute.Final` and
+    checks the type and the axioms of the final theorem with `#guard_msgs`, so `lake build` fails unless both are as
+    expected. We compiled it against the clean rebuild's compiled files: rc 0, while a copy expecting a different axiom
+    list fails;
+  - the 37 libraries without a root file `<Name>.lean` now have `globs = ["<Name>.+"]` instead of
+    `["<Name>", "<Name>.+"]`. The bare `"<Name>"` glob named a module without a source file, so `lake build <Name>`,
+    or a bare `lake build` with the old default target `CKRoute`, would have ended with "some modules have bad
+    imports". `lake build CKRoute.Final`, as tested, is not affected: its modules are found through the `.+` globs,
+    which are kept;
+  - a new library `CKChallenge`, with sources in `verification/comparator/`, which is not built by default.
+  The Mathlib `[[require]]` and the library names are unchanged, so compile options and module resolution are those
+  of the tested build.
+- **comparator.** New `verification/comparator/`: the Formal Conjectures statement as a comparator challenge, a
+  solution derived from the final theorem, and `config.json`.
+- **formalization.yaml.** New, in the mathlib-initiative v0.4 format; it validates against that format's JSON schema.
+- **Documentation.** `README.md` and `HOW_TO_VERIFY.md` now lead with the Lake build. The plain-`lean` kit in `BUILD/`,
+  which reproduces the published per-module hashes, is now optional and takes `--sources .`. Paths are updated in
+  `REVIEW_GUIDE.md`, `SOURCE_COMMENT_NOTES.md`, `MANUSCRIPT_DEVIATIONS.md`, `provenance/` and
+  `LOCKS/REBUILD_TRUSTED_BASE.md`.
+- `SHA256SUMS.txt` now also lists the sources (still every file except `README.md`). `.gitignore` ignores `/.lake/`
+  and `/.verify-work/`, and no longer `/sources/`.
+- No `.lean` source, table or release asset of v1.0 changed; the v1.0 release assets remain available.
+
 ## Source-comment errata (2026-09-24, after release v1.0)
 
 - New `SOURCE_COMMENT_NOTES.md`: corrections, with links, for six out-of-date or imprecise comments and notes raised in a

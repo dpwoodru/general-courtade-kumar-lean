@@ -1,0 +1,28 @@
+import GeneralCK.Certificates.E8TAxisCellCertificateSchema
+
+namespace GeneralCK.Certificates.E8TAxisProd0292Geometry
+open GeneralCK Set DyadicInterval E8TAxisPartitionKernel
+
+noncomputable def sLower : ℝ := (6527343750000000000000000000000000000000000000000000000000637236764453 / 2500000000000000000000000000000000000000000000000000000000000000000000 : ℝ)
+noncomputable def sUpper : ℝ := (6617187499999999999999999999999999999999999999999999999999362763235547 / 2500000000000000000000000000000000000000000000000000000000000000000000 : ℝ)
+noncomputable def tLower : ℝ := (4687500000000000000000000000000000000000000000000000000000497841222229 / 250000000000000000000000000000000000000000000000000000000000000000000000 : ℝ)
+noncomputable def tUpper : ℝ := (1 / 50 : ℝ)
+noncomputable def centerS : ℝ := (673 / 256 : ℝ)
+noncomputable def centerT : ℝ := (9687500000000000000000000000000000000000000000000000000000497841222229 / 500000000000000000000000000000000000000000000000000000000000000000000000 : ℝ)
+def ds : DyadicInterval 160 := ⟨-26261357545789661811472461837870710509442537882, 26261357545789661811472461837870710509442537882⟩
+def dt : DyadicInterval 160 := ⟨-913438523331814323877303020447676887284957840, 913438523331814323877303020447676887284957840⟩
+def InCell (s t : ℝ) : Prop :=
+  sLower ≤ s ∧ s ≤ sUpper ∧ tLower ≤ t ∧ t ≤ tUpper
+noncomputable def rectangle : Rect := ⟨sLower, sUpper, tLower, tUpper⟩
+
+theorem center_mem : InCell centerS centerT := by
+  norm_num [InCell, sLower, sUpper, tLower, tUpper, centerS, centerT]
+
+theorem displacement_mem {s t : ℝ} (h : InCell s t) :
+    ds.Contains (s - centerS) ∧ dt.Contains (t - centerT) := by
+  rcases h with ⟨hs0, hs1, ht0, ht1⟩
+  norm_num [sLower, sUpper, tLower, tUpper] at hs0 hs1 ht0 ht1
+  norm_num [Contains, ds, dt, centerS, centerT, scale]
+  constructor <;> constructor <;> linarith
+
+end GeneralCK.Certificates.E8TAxisProd0292Geometry

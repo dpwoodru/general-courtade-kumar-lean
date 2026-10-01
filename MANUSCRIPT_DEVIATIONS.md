@@ -11,7 +11,7 @@ field type of the manuscript route.
 
 The entries are copied verbatim from the campaign's deviation log (2026-09-23). Lane names
 (E, G3b, N23, C, R2, M05, ...) are internal work streams; namespaces such as CKLaneE.* are the corresponding Lean
-modules in `sources/` (from `sources_v3.tar.zst`).
+modules of this repository.
 
 - (S) label 0 normalized_logsum (Lane E): lsk checks use the Lean-proved cost floor 1/(b(1−a)(2−a)) (CKLaneE.KappaFloor.cost_floor_sameSide) instead of the archive's κ-based β = min(κ(a),κ(b))/(2b(1−a)) (κ is a retained manuscript input absent from the corpus). The certified leaf inequality is the same proposition and at least as strong; no archive input assumed.
 - (S) label 0 is bound twice: G3b CKLaneG3.S.Label0.label0 (from E's NLSB batches via SAdapt) and E's own CKLaneE.NLSFamily.nls_family; either discharges sLabel0.

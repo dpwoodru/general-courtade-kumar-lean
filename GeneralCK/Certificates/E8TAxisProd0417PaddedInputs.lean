@@ -1,0 +1,95 @@
+import GeneralCK.Certificates.E8TAxisProd0417StableWitnesses
+
+/-! The eight original alpha intervals widened by 65536 precision-160 units
+on each side. The retained exp/log witnesses are checked again for the
+wider inputs. No original input or public inverse bracket is modified. -/
+
+namespace GeneralCK.Certificates.E8TAxisProd0417PaddedInputs
+open DyadicInterval E8TAxisStableInterval
+abbrev precision := E8TAxisProd0417StableWitnesses.precision
+set_option maxRecDepth 100000
+set_option maxHeartbeats 8000000
+
+def centerAAlpha : DyadicInterval precision := ⟨1741156135795404262119345367673058305863487983, 1741156135795404262119345367673058305863619056⟩
+def centerAInput : Inputs precision :=
+  { E8TAxisProd0417StableWitnesses.centerAInput with alpha := centerAAlpha }
+
+theorem centerA_primitive_checks :
+    expBoxCheck ((ofInt precision (-2)).mul centerAInput.alpha)
+      centerAInput.expNegTwo E8TAxisProd0417StableWitnesses.centerAExpWitness = true ∧
+    logBoxCheck ((ofInt precision 1).add centerAInput.expNegTwo)
+      centerAInput.logOnePlusExp E8TAxisProd0417StableWitnesses.centerALogWitness = true := by decide
+
+def centerBAlpha : DyadicInterval precision := ⟨1810512726752990776822670269813262127418430100239, 1810512726752990776822670269813262127418430231312⟩
+def centerBInput : Inputs precision :=
+  { E8TAxisProd0417StableWitnesses.centerBInput with alpha := centerBAlpha }
+
+theorem centerB_primitive_checks :
+    expBoxCheck ((ofInt precision (-2)).mul centerBInput.alpha)
+      centerBInput.expNegTwo E8TAxisProd0417StableWitnesses.centerBExpWitness = true ∧
+    logBoxCheck ((ofInt precision 1).add centerBInput.expNegTwo)
+      centerBInput.logOnePlusExp E8TAxisProd0417StableWitnesses.centerBLogWitness = true := by decide
+
+def centerCAlpha : DyadicInterval precision := ⟨735647128541667239647920807583802171096193025269, 735647128541667239647920807583802171096193156342⟩
+def centerCInput : Inputs precision :=
+  { E8TAxisProd0417StableWitnesses.centerCInput with alpha := centerCAlpha }
+
+theorem centerC_primitive_checks :
+    expBoxCheck ((ofInt precision (-2)).mul centerCInput.alpha)
+      centerCInput.expNegTwo E8TAxisProd0417StableWitnesses.centerCExpWitness = true ∧
+    logBoxCheck ((ofInt precision 1).add centerCInput.expNegTwo)
+      centerCInput.logOnePlusExp E8TAxisProd0417StableWitnesses.centerCLogWitness = true := by decide
+
+def centerDAlpha : DyadicInterval precision := ⟨733440986312093234127888410179197994001522253977, 733440986312093234127888410179197994001522385050⟩
+def centerDInput : Inputs precision :=
+  { E8TAxisProd0417StableWitnesses.centerDInput with alpha := centerDAlpha }
+
+theorem centerD_primitive_checks :
+    expBoxCheck ((ofInt precision (-2)).mul centerDInput.alpha)
+      centerDInput.expNegTwo E8TAxisProd0417StableWitnesses.centerDExpWitness = true ∧
+    logBoxCheck ((ofInt precision 1).add centerDInput.expNegTwo)
+      centerDInput.logOnePlusExp E8TAxisProd0417StableWitnesses.centerDLogWitness = true := by decide
+
+def wholeAAlpha : DyadicInterval precision := ⟨1582869063071984205522252427078437298396856442, 1899443256066344012630337314537754309230343028⟩
+def wholeAInput : Inputs precision :=
+  { E8TAxisProd0417StableWitnesses.wholeAInput with alpha := wholeAAlpha }
+
+theorem wholeA_primitive_checks :
+    expBoxCheck ((ofInt precision (-2)).mul wholeAInput.alpha)
+      wholeAInput.expNegTwo E8TAxisProd0417StableWitnesses.wholeAExpWitness = true ∧
+    logBoxCheck ((ofInt precision 1).add wholeAInput.expNegTwo)
+      wholeAInput.logOnePlusExp E8TAxisProd0417StableWitnesses.wholeALogWitness = true := by decide
+
+def wholeBAlpha : DyadicInterval precision := ⟨1792971558778424535670036312396712867821559597223, 1828109412528061721385991784476635374309534924899⟩
+def wholeBInput : Inputs precision :=
+  { E8TAxisProd0417StableWitnesses.wholeBInput with alpha := wholeBAlpha }
+
+theorem wholeB_primitive_checks :
+    expBoxCheck ((ofInt precision (-2)).mul wholeBInput.alpha)
+      wholeBInput.expNegTwo E8TAxisProd0417StableWitnesses.wholeBExpWitness = true ∧
+    logBoxCheck ((ofInt precision 1).add wholeBInput.expNegTwo)
+      wholeBInput.logOnePlusExp E8TAxisProd0417StableWitnesses.wholeBLogWitness = true := by decide
+
+def wholeCAlpha : DyadicInterval precision := ⟨729686250624038563936294882104931553976999716882, 741626261926458661020028065354221691041440696051⟩
+def wholeCInput : Inputs precision :=
+  { E8TAxisProd0417StableWitnesses.wholeCInput with alpha := wholeCAlpha }
+
+theorem wholeC_primitive_checks :
+    expBoxCheck ((ofInt precision (-2)).mul wholeCInput.alpha)
+      wholeCInput.expNegTwo E8TAxisProd0417StableWitnesses.wholeCExpWitness = true ∧
+    logBoxCheck ((ofInt precision 1).add wholeCInput.expNegTwo)
+      wholeCInput.logOnePlusExp E8TAxisProd0417StableWitnesses.wholeCLogWitness = true := by decide
+
+def wholeDAlpha : DyadicInterval precision := ⟨727686670816724440524685346233204921246428435152, 739212305620516788391447838602016614455787044482⟩
+def wholeDInput : Inputs precision :=
+  { E8TAxisProd0417StableWitnesses.wholeDInput with alpha := wholeDAlpha }
+
+theorem wholeD_primitive_checks :
+    expBoxCheck ((ofInt precision (-2)).mul wholeDInput.alpha)
+      wholeDInput.expNegTwo E8TAxisProd0417StableWitnesses.wholeDExpWitness = true ∧
+    logBoxCheck ((ofInt precision 1).add wholeDInput.expNegTwo)
+      wholeDInput.logOnePlusExp E8TAxisProd0417StableWitnesses.wholeDLogWitness = true := by decide
+
+#print axioms centerA_primitive_checks
+#print axioms wholeB_primitive_checks
+end GeneralCK.Certificates.E8TAxisProd0417PaddedInputs

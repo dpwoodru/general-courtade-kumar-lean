@@ -1,6 +1,6 @@
 # provenance/ — historical material outside the source set
 
-`sources_v3.tar.zst` contains exactly the sources the canonical clean build compiled. This folder holds historical
+The 45,500 Lean sources of this repository (identical to `sources_v3.tar.zst` of v1.0) are exactly the sources the canonical clean build compiled. This folder holds historical
 material that is not part of that source set:
 
 - [`E8TAxisZero0082Root/`](E8TAxisZero0082Root/README.md): the single known case where the original campaign build had

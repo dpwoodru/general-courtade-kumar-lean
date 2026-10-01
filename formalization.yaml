@@ -1,0 +1,117 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
+# formalization.yaml (v0.4): repo-root metadata for this formalization,
+# following https://github.com/mathlib-initiative/formalization.yaml
+
+version: "v0.4"
+
+project:
+  name: "The General Courtade–Kumar theorem in Lean 4"
+  description: >-
+    A complete, machine-checked Lean 4 proof of the general Courtade–Kumar
+    ("most informative Boolean function") inequality: for every n, every Boolean
+    function f on {0,1}^n and every crossover probability p in [0, 1], the mutual
+    information between f(X) and the output Y of n independent binary symmetric
+    channels with crossover p satisfies I(f(X); Y) <= 1 - H(p), where H is the
+    binary entropy in bits. The statement is GeneralCK.GeneralCourtadeKumar
+    (GeneralCK/Statement.lean, 63 lines), proved by
+    GeneralCK.ArchiveRegionalBoundary.generalCourtadeKumar_closed
+    (CKRoute/Final.lean) from Lean's three standard axioms. Most of the 45,500
+    modules are generated numerical certificates checked by Lean's kernel.
+  authors:
+    - "David P. Woodruff"
+  responsible_maintainers:
+    - "David P. Woodruff (GitHub @dpwoodru)"
+  license: "Apache-2.0"
+
+sources:
+  - title: "A Proof of the Most Informative Boolean Function Conjecture"
+    authors: ["Zijie Chen", "Amin Gohari", "Adel Javanmard", "Honghao Lin", "Vahab Mirrokni", "Chandra Nair", "David P. Woodruff"]
+    id: "arXiv:2609.24931"
+    type: "article"
+    location: "main theorem"
+    relationship: "formalizes"
+    note: >-
+      The paper's computer-assisted steps rest on archived interval-arithmetic
+      computations; the Lean proof re-proves each of them inside Lean. Where it
+      uses its own certificate (a different subdivision or cover) or a different
+      argument for the same lemma, the step is listed in MANUSCRIPT_DEVIATIONS.md.
+    author_endorsement: "participated"
+  - title: "Which Boolean Functions Maximize Mutual Information on Noisy Inputs?"
+    authors: ["Thomas A. Courtade", "Gowtham R. Kumar"]
+    id: "IEEE Transactions on Information Theory 60(8), 4515-4525, 2014"
+    type: "article"
+    relationship: "background"
+    note: "Origin of the conjecture whose statement is formalized."
+    author_endorsement: "not-contacted"
+
+related_formalizations:
+  - id: "https://github.com/google-deepmind/formal-conjectures/pull/6688"
+    relationship: "other"
+    note: >-
+      The same statement written for Formal Conjectures
+      (FormalConjectures/Paper/CourtadeKumar.lean, CourtadeKumar.courtade_kumar),
+      submitted as a pull request. verification/comparator/ uses it as the
+      comparator challenge.
+
+classification:
+  arxiv: ["cs.IT", "math.IT"]
+  msc2020: ["94A15", "94A17"]
+
+status:
+  scope: >-
+    The full general Courtade–Kumar inequality for all n, all Boolean functions
+    and all p in [0, 1], proved from Lean's three standard axioms. Nothing is
+    assumed from the literature.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: ["propext", "Classical.choice", "Quot.sound"]
+  main_results:
+    - declaration: "GeneralCK.ArchiveRegionalBoundary.generalCourtadeKumar_closed"
+      file: "CKRoute/Final.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "verification/comparator/config.json"
+      literature_dependencies: []
+    - declaration: "CourtadeKumar.courtade_kumar"
+      file: "verification/comparator/CKChallenge/Solution.lean"
+      sorry_count: 0
+      axioms: ["propext", "Classical.choice", "Quot.sound"]
+      comparator_config: "verification/comparator/config.json"
+      literature_dependencies: []
+
+automation:
+  methods:
+    - method: "agent"
+
+fidelity:
+  divergences: >-
+    The formal statement is the paper's main theorem. Some computer-assisted steps
+    are certified in Lean with different subdivisions or covers, or with a different
+    argument, than the paper's archived computations, always for the same lemma
+    statement; see MANUSCRIPT_DEVIATIONS.md.
+
+review:
+  status: "agent-reviewed"
+  reviewers: []
+  notes: >-
+    An independent agent, which took no part in the development, built all 45,500
+    modules from source with the official Lean 4.33.0, Mathlib db584cd6 and a
+    standard lake build (no errors, no sorry; the final theorem depends only on
+    propext, Classical.choice and Quot.sound), and checked with comparator (Lean
+    kernel and nanoda) the bridge from the main theorem to the Formal Conjectures
+    statement. A full comparator run on verification/comparator/config.json and
+    review by human experts are in progress. Earlier, the development's own clean
+    rebuild with plain lean was kernel-replayed in full (4,990/4,990 shards,
+    22,668,080 declarations, 0 failures). See README.md, "How it was verified".
+
+alignment:
+  namespace: "GeneralCK"
+  statements:
+    - source: "arXiv:2609.24931, main theorem"
+      lean: "GeneralCK.ArchiveRegionalBoundary.generalCourtadeKumar_closed"
+      module: "CKRoute.Final"
+      status: "proved"
+
+acknowledgements: >-
+  Built on Mathlib and its dependencies (Apache-2.0). The comparator challenge in
+  verification/comparator/ follows the Formal Conjectures statement.

@@ -1,8 +1,8 @@
 # GeneralCK/PsiCornerBoundaryRefutation.lean: historical development file
 
-A status note in [`GeneralCK/PsiBoundaryAnalyticBridge.lean`](../../browse/GeneralCK/PsiBoundaryAnalyticBridge.lean#L36-L47)
-cites this file. It is **not part of the source set**: the final theorem does not import it, so it is not in
-`sources_v3.tar.zst`, and it is not built by `BUILD/build_plain.sh`. It is included here only so that the reference
+A status note in [`GeneralCK/PsiBoundaryAnalyticBridge.lean`](../../GeneralCK/PsiBoundaryAnalyticBridge.lean#L36-L47)
+cites this file. It is **not part of the source set**: the final theorem does not import it, so it is not among
+the 45,500 sources, and neither `lake build` nor `BUILD/build_plain.sh` builds it. It is included here only so that the reference
 can be followed.
 
 | file | bytes | sha256 |

@@ -1,0 +1,101 @@
+import GeneralCK.Certificates.E8TAxisStableInterval
+
+/-! Executable primitive and denominator checks for the six positive stable
+parameter evaluations in the first historical E8 t-axis cell. -/
+
+namespace GeneralCK.Certificates.E8TAxisZero0020StableWitnesses
+
+open DyadicInterval E8TAxisStableInterval
+
+set_option maxRecDepth 100000
+
+def precision : ℕ := 160
+def logTwo : DyadicInterval precision := ⟨1013035739299659071135698605846798550487025271590, 1013035739299659071135698605846798552686048527143⟩
+def logTwoWitness : FastLogBoxWitness := ⟨0, 128, 0, 128⟩
+
+theorem logTwo_checked :
+    logBoxCheck (ofInt precision 2) logTwo logTwoWitness = true := by decide
+
+def centerDAlpha : DyadicInterval precision := ⟨99105371957748756558358702025034649328540468989, 99105371957748756558358702025034649328540468990⟩
+def centerDExp : DyadicInterval precision := ⟨1276144127861541994145963581661485621034162019732, 1276144127861541994145963581661485623233185275285⟩
+def centerDLog : DyadicInterval precision := ⟨917287995011510229356867982908921321385400443938, 917287995011510229356867982908921323584423699491⟩
+def centerDInput : Inputs precision := ⟨centerDAlpha, centerDExp, centerDLog, logTwo⟩
+def centerDExpWitness : ExpWitness precision :=
+  ⟨1276144127861541994145963581661485621583917833620, scale precision, 1276144127861541994145963581661485622683429461397, scale precision,
+    0, 128, 0, 128, ⟨-198210743915497513116717404050069299286688787692, -198210743915497513116717404050069299286686690539⟩, ⟨-198210743915497513116717404050069298027475185421, -198210743915497513116717404050069298027473088268⟩⟩
+def centerDLogWitness : FastLogBoxWitness := ⟨0, 128, 0, 128⟩
+
+theorem centerD_primitive_checks :
+    expBoxCheck ((ofInt precision (-2)).mul centerDAlpha) centerDExp centerDExpWitness = true ∧
+    logBoxCheck ((ofInt precision 1).add centerDExp) centerDLog centerDLogWitness = true := by decide
+
+def centerCAlpha : DyadicInterval precision := ⟨99741924952641264037723029627018281213874527817, 99741924952641264037723029627018281213874527818⟩
+def centerCExp : DyadicInterval precision := ⟨1275032969804752314514723632597307583183888748856, 1275032969804752314514723632597307585382912004409⟩
+def centerCLog : DyadicInterval precision := ⟨916694679033160724683830653449404491777179954842, 916694679033160724683830653449404493976203210395⟩
+def centerCInput : Inputs precision := ⟨centerCAlpha, centerCExp, centerCLog, logTwo⟩
+def centerCExpWitness : ExpWitness precision :=
+  ⟨1275032969804752314514723632597307583733644562744, scale precision, 1275032969804752314514723632597307584833156190521, scale precision,
+    0, 128, 0, 128, ⟨-199483849905282528075446059254036563057905591291, -199483849905282528075446059254036563057903494138⟩, ⟨-199483849905282528075446059254036561797594617131, -199483849905282528075446059254036561797592519978⟩⟩
+def centerCLogWitness : FastLogBoxWitness := ⟨0, 128, 0, 128⟩
+
+theorem centerC_primitive_checks :
+    expBoxCheck ((ofInt precision (-2)).mul centerCAlpha) centerCExp centerCExpWitness = true ∧
+    logBoxCheck ((ofInt precision 1).add centerCExp) centerCLog centerCLogWitness = true := by decide
+
+def centerBAlpha : DyadicInterval precision := ⟨199919324552184362978580257775708484377034756313, 199919324552184362978580257775708484377034756314⟩
+def centerBExp : DyadicInterval precision := ⟨1111692601737834304960484805256848518456948593643, 1111692601737834304960484805256848520655971849196⟩
+def centerBLog : DyadicInterval precision := ⟨826747501553732937550752135409491201983324755094, 826747501553732937550752135409491204182348010647⟩
+def centerBInput : Inputs precision := ⟨centerBAlpha, centerBExp, centerBLog, logTwo⟩
+def centerBExpWitness : ExpWitness precision :=
+  ⟨1111692601737834304960484805256848519006704407531, scale precision, 1111692601737834304960484805256848520106216035308, scale precision,
+    0, 128, 0, 128, ⟨-399838649104368725957160515551416969476814439210, -399838649104368725957160515551416969476812342057⟩, ⟨-399838649104368725957160515551416968031326683198, -399838649104368725957160515551416968031324586045⟩⟩
+def centerBLogWitness : FastLogBoxWitness := ⟨0, 128, 0, 128⟩
+
+theorem centerB_primitive_checks :
+    expBoxCheck ((ofInt precision (-2)).mul centerBAlpha) centerBExp centerBExpWitness = true ∧
+    logBoxCheck ((ofInt precision 1).add centerBExp) centerBLog centerBLogWitness = true := by decide
+
+def wholeDAlpha : DyadicInterval precision := ⟨95127887983717436574352739463518235552733806994, 103084551358829778834915002511195342403115231676⟩
+def wholeDExp : DyadicInterval precision := ⟨1269213987453105464161597200857722392217640859904, 1283109131137421329953040259475754031879254989498⟩
+def wholeDLog : DyadicInterval precision := ⟨913583624998653703523149262826058894965734123981, 921001564088758741914731412563984562181431746082⟩
+def wholeDInput : Inputs precision := ⟨wholeDAlpha, wholeDExp, wholeDLog, logTwo⟩
+def wholeDExpWitness : ExpWitness precision :=
+  ⟨1269213987453105464161597200857722392767396673792, scale precision, 1283109131137421329953040259475754031329499175610, scale precision,
+    0, 128, 0, 128, ⟨-206169102717659557669830005022390685439276081302, -206169102717659557669830005022390685439273984149⟩, ⟨-190255775967434873148705478927036470479279507931, -190255775967434873148705478927036470479277410778⟩⟩
+def wholeDLogWitness : FastLogBoxWitness := ⟨0, 128, 0, 128⟩
+
+theorem wholeD_primitive_checks :
+    expBoxCheck ((ofInt precision (-2)).mul wholeDAlpha) wholeDExp wholeDExpWitness = true ∧
+    logBoxCheck ((ofInt precision 1).add wholeDExp) wholeDLog wholeDLogWitness = true := by decide
+
+def wholeCAlpha : DyadicInterval precision := ⟨95127887983717436574352739463518235552733806994, 104358258011611726998445045028828451687585466342⟩
+def wholeCExp : DyadicInterval precision := ⟨1267003660491626537512866653176074203657491292939, 1283109131137421329953040259475754031879254989498⟩
+def wholeCLog : DyadicInterval precision := ⟨912400160656194878996222611181732224632599479572, 921001564088758741914731412563984562181431746082⟩
+def wholeCInput : Inputs precision := ⟨wholeCAlpha, wholeCExp, wholeCLog, logTwo⟩
+def wholeCExpWitness : ExpWitness precision :=
+  ⟨1267003660491626537512866653176074204207247106827, scale precision, 1283109131137421329953040259475754031329499175610, scale precision,
+    0, 128, 0, 128, ⟨-208716516023223453996890090057656904009320916408, -208716516023223453996890090057656904009318819255⟩, ⟨-190255775967434873148705478927036470479279507931, -190255775967434873148705478927036470479277410778⟩⟩
+def wholeCLogWitness : FastLogBoxWitness := ⟨0, 128, 0, 128⟩
+
+theorem wholeC_primitive_checks :
+    expBoxCheck ((ofInt precision (-2)).mul wholeCAlpha) wholeCExp wholeCExpWitness = true ∧
+    logBoxCheck ((ofInt precision 1).add wholeCExp) wholeCLog wholeCLogWitness = true := by decide
+
+def wholeBAlpha : DyadicInterval precision := ⟨191194719185872429583518944051791718612165764688, 208659993168738163327113473155546913729082918463⟩
+def wholeBExp : DyadicInterval precision := ⟨1098474615239151709131967435382893979535030622907, 1125044909933745912773463128462173915391977363052⟩
+def wholeBLog : DyadicInterval precision := ⟨819220710211348203542880090538222363061315522711, 834311627217828832252519695712052890740898632922⟩
+def wholeBInput : Inputs precision := ⟨wholeBAlpha, wholeBExp, wholeBLog, logTwo⟩
+def wholeBExpWitness : ExpWitness precision :=
+  ⟨1098474615239151709131967435382893980084786436795, scale precision, 1125044909933745912773463128462173914842221549164, scale precision,
+    0, 128, 0, 128, ⟨-417319986337476326654226946311093828189607567866, -417319986337476326654226946311093828189605470713⟩, ⟨-382389438371744859167037888103583436510166401088, -382389438371744859167037888103583436510164303935⟩⟩
+def wholeBLogWitness : FastLogBoxWitness := ⟨0, 128, 0, 128⟩
+
+theorem wholeB_primitive_checks :
+    expBoxCheck ((ofInt precision (-2)).mul wholeBAlpha) wholeBExp wholeBExpWitness = true ∧
+    logBoxCheck ((ofInt precision 1).add wholeBExp) wholeBLog wholeBLogWitness = true := by decide
+
+#print axioms logTwo_checked
+#print axioms centerB_primitive_checks
+#print axioms wholeB_primitive_checks
+
+end GeneralCK.Certificates.E8TAxisZero0020StableWitnesses

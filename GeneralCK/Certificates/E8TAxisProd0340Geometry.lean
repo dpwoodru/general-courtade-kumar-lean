@@ -1,0 +1,28 @@
+import GeneralCK.Certificates.E8TAxisCellCertificateSchema
+
+namespace GeneralCK.Certificates.E8TAxisProd0340Geometry
+open GeneralCK Set DyadicInterval E8TAxisPartitionKernel
+
+noncomputable def sLower : ℝ := (3802734375000000000000000000000000000000000000000000000000637236764453 / 1250000000000000000000000000000000000000000000000000000000000000000000 : ℝ)
+noncomputable def sUpper : ℝ := (197 / 64 : ℝ)
+noncomputable def tLower : ℝ := (87500000000000000000000000000000000000000000000000000000005974094666747 / 10000000000000000000000000000000000000000000000000000000000000000000000000 : ℝ)
+noncomputable def tUpper : ℝ := (24999999999999999999999999999999999999999999999999999999997261873277741 / 2500000000000000000000000000000000000000000000000000000000000000000000000 : ℝ)
+noncomputable def centerS : ℝ := (7650390625000000000000000000000000000000000000000000000000637236764453 / 2500000000000000000000000000000000000000000000000000000000000000000000 : ℝ)
+noncomputable def centerT : ℝ := (187499999999999999999999999999999999999999999999999999999995021587777711 / 20000000000000000000000000000000000000000000000000000000000000000000000000 : ℝ)
+def ds : DyadicInterval 160 := ⟨-26261357545789661811472461837870710509442537882, 26261357545789661811472461837870710509442537882⟩
+def dt : DyadicInterval 160 := ⟨-913438523331814323877303020447676887284957840, 913438523331814323877303020447676887284957840⟩
+def InCell (s t : ℝ) : Prop :=
+  sLower ≤ s ∧ s ≤ sUpper ∧ tLower ≤ t ∧ t ≤ tUpper
+noncomputable def rectangle : Rect := ⟨sLower, sUpper, tLower, tUpper⟩
+
+theorem center_mem : InCell centerS centerT := by
+  norm_num [InCell, sLower, sUpper, tLower, tUpper, centerS, centerT]
+
+theorem displacement_mem {s t : ℝ} (h : InCell s t) :
+    ds.Contains (s - centerS) ∧ dt.Contains (t - centerT) := by
+  rcases h with ⟨hs0, hs1, ht0, ht1⟩
+  norm_num [sLower, sUpper, tLower, tUpper] at hs0 hs1 ht0 ht1
+  norm_num [Contains, ds, dt, centerS, centerT, scale]
+  constructor <;> constructor <;> linarith
+
+end GeneralCK.Certificates.E8TAxisProd0340Geometry

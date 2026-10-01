@@ -8,134 +8,141 @@ theorem GeneralCK.ArchiveRegionalBoundary.generalCourtadeKumar_closed : GeneralC
 - **Axioms.** The only axioms are Lean's three standard ones. There is no `sorry`, no `native_decide` and no custom
   axiom. Every numerical certificate is checked by Lean's kernel.
 - **Size.** 45,500 Lean files, 50.4 million lines. Almost all of it is generated certificate data; the proof code is
-  roughly 0.2 million lines.
-- **Versions.** Lean 4.33.0 and Mathlib `db584cd6d46c92f209a44c0f1c829460d327499d`.
-- **Our checks (2026-09-23).**
-  - Clean rebuild: every one of the 45,500 modules was recompiled from these sources, with no prebuilt compiled files.
-  - The final theorem compiled and passed the gate: no sorry, no errors, only the standard axioms.
-  - Its compiled file is byte-identical to the original build's.
-  - Full kernel replay of the clean rebuild: 4,990/4,990 shards, 45,500 modules, 22,668,080 declarations re-checked,
-    0 failures.
-  - The verification kit was acceptance-tested by following these steps on Linux.
-  - An independent end-to-end run of this kit (full rebuild, audit and replay) is in progress; results will be added.
-
-## What you need
-
-| item | where |
-|---|---|
-| this repository | `git clone https://github.com/dpwoodru/general-courtade-kumar-lean.git` |
-| the release assets of `v1.0` | the GitHub Release page: `sources_v3.tar.zst` (all 45,500 sources), the two trusted package shards `packages-*.tar.zst` (prebuilt Mathlib `db584cd6` and its dependencies; file hashes in `LOCKS/TRUSTED_HASHES.tsv`), `v3_replay_addendum.tar.gz` (our kernel-replay verdict), `SHA256SUMS.txt` |
-| Lean 4.33.0 | the official release, e.g. via `elan` (below) |
-
-You may instead fetch and build Mathlib yourself: `LOCKS/REBUILD_TRUSTED_BASE.md`.
+  roughly 0.2 million lines (`READABLE_FILES.md`).
+- **Versions.** Lean 4.33.0 and Mathlib `db584cd6d46c92f209a44c0f1c829460d327499d` (`lean-toolchain`,
+  `lakefile.toml`, `lake-manifest.json`).
 
 ## Step 1: read what is claimed (everyone, about 30 minutes)
 
-1. Read `REVIEW_GUIDE.md` §1: the 63-line statement (`GeneralCK/Statement.lean`; a copy is in `browse/`) and the
-   Mathlib definitions it uses. Check that it says exactly what the conjecture says. This is the only part a human must
-   check; Lean's kernel checks everything else.
+1. Read `REVIEW_GUIDE.md` §1: the 63-line statement (`GeneralCK/Statement.lean`) and the Mathlib definitions it uses.
+   Check that it says exactly what the conjecture says. This is the only part a human must check; Lean's kernel checks
+   everything else.
 2. Optionally continue with §2–4: the final theorem's 18 inputs, the proof skeleton that follows the manuscript, and
    the certificate families (checker, soundness theorem, kernel evaluation).
 3. Read `MANUSCRIPT_DEVIATIONS.md`.
 
-## Step 2: machine check (Linux x86-64)
+## Step 2: build with Lake (Linux x86-64)
 
 **Requirements.**
 
 | resource | need |
 |---|---|
-| total compute | about 720 CPU-hours (roughly a day on a 64-core machine); the optional replay adds about 240 CPU-hours |
-| RAM | at least 128 GB (256 GB is comfortable). The largest single compile needs about 70 GB; the optional replay's largest shard up to about 83 GB |
-| disk | about 160 GB free: the build output alone is 138 GB (121.9 GB `.olean` + 16.5 GB `.ilean`), plus about 15 GB of unpacked inputs and the toolchain |
-| software | `git`, `python3` (≥ 3.7), `zstd`, GNU `tar` (≥ 1.31), `sha256sum`, and `curl` or the GitHub CLI `gh` |
+| software | `git`, [elan](https://github.com/leanprover/elan) (installs Lean 4.33.0 from `lean-toolchain`), a network connection (GitHub and the Mathlib cache) |
+| compute | about 1,500 CPU-hours; our run took 6.5 hours with 342 parallel jobs on a 380-core machine |
+| memory | most modules need a few GiB, the largest about 42 GiB; Lake has no memory budget, so set `LEAN_NUM_THREADS` (the number of parallel jobs) to fit your machine. Our run averaged about 4.2 GiB of resident memory per job at its peak |
+| disk | about 300 GB for `.lake/` |
 
-- **Platform.** The scripts were run and tested on Linux only. On Windows or macOS, use a Linux machine or WSL2.
-- **Open files.** Each Lean process near the top of the dependency graph maps up to about 77,000 files. With many
-  parallel jobs, check that the system file limit (`/proc/sys/fs/file-max`) is large; most kernels allow many
-  millions.
-- **Memory maps.** Lean also maps every imported `.olean`: near the top this is about 77,000 files, more than the Linux
-  default `vm.max_map_count` (65,530). We ran with a much higher limit. Lean reads a file instead when a mapping fails
-  (we tested this on a small module), but a full run at the default limit was not tested. Where possible, raise it:
-  `sudo sysctl -w vm.max_map_count=262144` (check with `cat /proc/sys/vm/max_map_count`).
+- **Platform.** We tested on Linux only. On Windows or macOS, use a Linux machine or WSL2.
+- **Memory maps.** Lean maps every imported `.olean`: near the top of the import graph this is about 77,000 files, more
+  than the Linux default `vm.max_map_count` (65,530). Our runs used a much higher limit. Lean reads a file instead when a
+  mapping fails (we tested this on a small module), but a full run at the default limit was not tested. Where possible,
+  raise it: `sudo sysctl -w vm.max_map_count=262144` (check with `cat /proc/sys/vm/max_map_count`).
+- **Open files.** With many parallel jobs, check that the system file limit (`/proc/sys/fs/file-max`) is large; most
+  kernels allow many millions.
 
 ```bash
+curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
+export PATH="$HOME/.elan/bin:$PATH"
+
 git clone https://github.com/dpwoodru/general-courtade-kumar-lean.git
 cd general-courtade-kumar-lean
-sha256sum -c SHA256SUMS.txt                        # the repository files (all except README.md)
+sha256sum -c --quiet SHA256SUMS.txt     # optional: every repository file except README.md
 
-# release assets -> ./release/  (either with the GitHub CLI ...)
-gh release download v1.0 -R github.com/dpwoodru/general-courtade-kumar-lean -D release
-# (... or with curl)
-# mkdir -p release && cd release
-# for a in SHA256SUMS.txt sources_v3.tar.zst v3_replay_addendum.tar.gz \
-#          packages-olean-00-63d3bf7e0d7d49c25608e9bc5aa9ac34ceed871255511e6e80cd16ca93bf0af9.tar.zst \
-#          packages-server-private-ir-00-f790c782b21af6394bcbd89e59ac4f9c01881f7372cb001ce161a251b06eb59d.tar.zst; do
-#   curl -fLO https://github.com/dpwoodru/general-courtade-kumar-lean/releases/download/v1.0/$a; done
-# cd ..
-(cd release && sha256sum -c SHA256SUMS.txt)
-
-# Lean 4.33.0, the official release (the build script checks the version and commit d8b18978...)
-curl -sSfL https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain leanprover/lean4:v4.33.0
-LEAN=$HOME/.elan/toolchains/leanprover--lean4---v4.33.0/bin/lean
-
-# trusted base: Mathlib db584cd6 and its dependencies
-mkdir -p trusted
-for f in release/packages-*.tar.zst; do tar --zstd -xf "$f" -C trusted; done   # -> trusted/packages/<pkg>/
-
-# sources
-tar --zstd -xf release/sources_v3.tar.zst                                    # -> sources/ (45,500 files, 4.9 GB)
-
-# quick test (seconds): builds only the statement file
-BUILD/build_plain.sh --packages trusted/packages --out out_test --lean $LEAN --target GeneralCK.Statement
-
-# full build (hours), then the audit of the final theorem
-BUILD/build_plain.sh --packages trusted/packages --out out --lean $LEAN --jobs 32 --mem-gb 200
-BUILD/audit_final.sh  --out out --packages trusted/packages --lean $LEAN
-
-# optional: an independent kernel replay of your own build (about 240 CPU-hours).
-# Run it in a NEW, empty work directory (default ./replay_work, or --work DIR): in a reused directory, shards that
-# already succeeded in an earlier run are not replayed again (see SOURCE_COMMENT_NOTES.md §5).
-BUILD/replay_fresh.sh --out out --packages trusted/packages --lean $LEAN --workers 32
+lake exe cache get                      # prebuilt Mathlib db584cd6 and its dependencies, from the Mathlib cache
+lake build GeneralCK.Statement          # quick test (seconds): the statement file and its Mathlib imports
+LEAN_NUM_THREADS=32 lake build          # the whole proof: 45,500 modules, then FinalCheck
+lake env lean final/AuditFinal.lean     # optional: print the type and the axioms of the final theorem again
 ```
 
-Adjust `--jobs` and `--mem-gb` to your machine. The script starts a job only when the measured memory of the running
-jobs fits in the budget. It is restart-safe: a module is marked done only after it compiled with rc 0, and re-running
-the same command skips done modules. (`out/.build/results.tsv` and `summary.json` describe only the modules compiled
-by the last invocation; after a restart, compare every `out/<Module/Path>.olean` with `CLEAN_BUILD_HASHES.tsv` for a
-complete byte comparison.) To stop a build, send SIGTERM to its process group.
+`lake build` is restart-safe: if it is interrupted, run it again and it continues where it stopped.
 
-**What you should see** (full details in `BUILD/EXPECTED.md`):
+**What you should see.**
 
-- **Quick test:** `OK   GeneralCK.Statement rc=0 errors=0 … IDENTICAL`.
-- **Build:** every module compiles, and `out/.build/summary.json` shows `n_failed: 0`. The script also compares each
-  output with `CLEAN_BUILD_HASHES.tsv`. Byte equality is a convenience, not the acceptance criterion; the 2 modules
-  with the `abs` recipe are expected to differ.
-- **Audit:** `audit_final.sh` ends by printing this summary:
+- **Quick test:** `Build completed successfully`.
+- **Build:** several thousand linter and deprecation warnings (unused `simp` arguments, deprecated lemma names and the
+  like), which do not affect the result, and no errors. The default target `FinalCheck.lean` checks the type and the
+  axioms of the final theorem with `#guard_msgs`, so the build fails unless both are as expected. It ends with
 
   ```
-  {"rc": 0, "errors": 0, "type_printed": true, "axioms": ["Classical.choice", "Quot.sound", "propext"], "sorryAx": false, "ok": true}
+  info: FinalCheck.lean:…: 'GeneralCK.ArchiveRegionalBoundary.generalCourtadeKumar_closed' depends on axioms: [propext,
+   Classical.choice,
+   Quot.sound]
+  Build completed successfully (… jobs).
   ```
 
-  It summarizes the two messages Lean printed, which are saved in `audit_work/AuditFinal.jsonl`. Lean may wrap the
-  axiom list over several lines:
+  (Lean breaks the axiom list over several lines.) A second `lake build` rebuilds nothing.
+- **Audit (optional):**
 
   ```
   GeneralCK.ArchiveRegionalBoundary.generalCourtadeKumar_closed : GeneralCK.GeneralCourtadeKumar
   'GeneralCK.ArchiveRegionalBoundary.generalCourtadeKumar_closed' depends on axioms: [propext, Classical.choice, Quot.sound]
   ```
 
-- **Replay (optional):** every shard prints `SHARD_REPLAY_OK`; `replay_work/t2/summary.json` shows
-  `SHARDED_REPLAY_OK` with 45,500 modules, `replay_work/t2/verdict.json` shows `INCREMENTAL_REPLAY_OK`, and the top
-  shard prints the axiom line above.
+## Step 3 (optional): comparator
 
-**Our replay verdict.** `v3_replay_addendum.tar.gz` contains our kernel replay of the clean rebuild (4,990 shards: 4,954
-run on a Google compute cluster and 36 on the build workstation), an independent recount from the shard outputs, the
-per-shard index and the top shard's output. Check it with
-`tar -xzf release/v3_replay_addendum.tar.gz && (cd v3_replay_addendum && sha256sum -c SHA256SUMS.txt)`.
+[comparator](https://github.com/leanprover/comparator) checks that a solution module proves exactly the statement of a
+trusted challenge module, using only permitted axioms, and replays the solution's whole environment (Mathlib
+included) through the Lean kernel. `verification/comparator/` contains:
 
-**The trust base.** You trust:
+| file | what |
+|---|---|
+| `CKChallenge/Defs.lean` | the definitions of the Formal Conjectures statement ([google-deepmind/formal-conjectures#6688](https://github.com/google-deepmind/formal-conjectures/pull/6688)): `Cube`, `binEntropyBits`, `bsc`, `jointProb`, `entropy`, `mutualInfo`, with sanity tests (the dictator attains the bound). It imports only Mathlib |
+| `CKChallenge/Challenge.lean` | the trusted challenge: `CourtadeKumar.courtade_kumar`, stated with `sorry` |
+| `CKChallenge/Bridge.lean` | `CourtadeKumar.of_general`: `GeneralCK.GeneralCourtadeKumar` implies the challenge statement (the two sets of definitions have identical bodies) |
+| `CKChallenge/Solution.lean` | the same theorem, proved by `of_general` applied to the final theorem |
+| `config.json` | challenge `CKChallenge.Challenge`, solution `CKChallenge.Solution`, theorem `CourtadeKumar.courtade_kumar`, axioms `propext`, `Quot.sound`, `Classical.choice` |
+
+They form the library `CKChallenge` of the root Lake project (`srcDir = "verification/comparator"`), which is not
+part of the default target. After Step 2, build comparator and lean4export at tag `v4.33.0` with this repository's
+toolchain, put `lean4export` and `landrun` on `PATH` (see comparator's README; its `scripts/fake-landrun.sh` runs
+without a sandbox), and run from the repository root:
+
+```bash
+lake build CKChallenge.Challenge CKChallenge.Solution
+lake env /path/to/comparator/.lake/build/bin/comparator verification/comparator/config.json
+```
+
+Expect a long run: the exported environment of the solution is about 100 GB, and comparator replays it through the
+kernel on one core. Status: stock comparator `v4.33.0` (with both the Lean kernel and nanoda) accepted the bridge
+`CourtadeKumar.of_general`; a full run on `config.json` is in progress and its result will be recorded here.
+
+## Step 4 (optional): reproduce the published hashes with plain `lean`
+
+The v1.0 verification kit compiles every module with plain `lean` (no Lake) in topological order, with a memory
+budget, and compares each output with `CLEAN_BUILD_HASHES.tsv` byte for byte. It needs the v1.0 release assets for the
+prebuilt trusted base (or see `LOCKS/REBUILD_TRUSTED_BASE.md`), about 720 CPU-hours, at least 128 GB RAM and about
+160 GB of disk. The sources are now in the repository, so pass `--sources .`:
+
+```bash
+# release assets of v1.0 -> ./release/
+gh release download v1.0 -R github.com/dpwoodru/general-courtade-kumar-lean -D release
+(cd release && sha256sum -c SHA256SUMS.txt)
+LEAN=$HOME/.elan/toolchains/leanprover--lean4---v4.33.0/bin/lean   # the build script checks version and commit d8b18978...
+mkdir -p trusted && for f in release/packages-*.tar.zst; do tar --zstd -xf "$f" -C trusted; done   # -> trusted/packages/<pkg>/
+
+BUILD/build_plain.sh --sources . --packages trusted/packages --out out_test --lean $LEAN --target GeneralCK.Statement
+BUILD/build_plain.sh --sources . --packages trusted/packages --out out --lean $LEAN --jobs 32 --mem-gb 200
+BUILD/audit_final.sh  --out out --packages trusted/packages --lean $LEAN
+
+# optional: an independent kernel replay of your own build (about 240 CPU-hours), in a NEW, empty work directory
+# (default ./replay_work, or --work DIR; see SOURCE_COMMENT_NOTES.md §5)
+BUILD/replay_fresh.sh --out out --packages trusted/packages --lean $LEAN --workers 32
+```
+
+`BUILD/EXPECTED.md` describes the expected output. In short: the quick test prints
+`OK   GeneralCK.Statement rc=0 errors=0 … IDENTICAL`; the build ends with `n_failed: 0` in `out/.build/summary.json`, and
+every output except the 2 modules with the `abs` recipe is byte-identical to `CLEAN_BUILD_HASHES.tsv`; the audit
+prints `{"rc": 0, "errors": 0, "type_printed": true, "axioms": ["Classical.choice", "Quot.sound", "propext"],
+"sorryAx": false, "ok": true}`; every replay shard prints `SHARD_REPLAY_OK` and `replay_work/t2/verdict.json` shows
+`INCREMENTAL_REPLAY_OK`. The script is restart-safe; after a restart, compare every `out/<Module/Path>.olean` with
+`CLEAN_BUILD_HASHES.tsv` for a complete byte comparison. `v3_replay_addendum.tar.gz` (a v1.0 release asset) contains
+our own kernel replay of the clean rebuild.
+
+## The trust base
+
+You trust:
 - the Lean 4.33.0 kernel;
-- Mathlib `db584cd6` (you can fetch it yourself instead of using the prebuilt packages);
+- Mathlib `db584cd6` and its dependencies, as fetched by Lake;
 - the 63-line statement.
 
-The 45,500 campaign modules are not trusted: they are rebuilt and checked by the kernel.
+The 45,500 modules of this repository are not trusted: they are rebuilt and checked by the kernel.

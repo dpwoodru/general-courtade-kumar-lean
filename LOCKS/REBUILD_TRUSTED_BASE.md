@@ -1,9 +1,9 @@
 # Rebuilding the trusted base (toolchain + packages) with the official tools
 
-The release ships the trusted package files as two prebuilt shards (`packages-*.tar.zst`), and the toolchain is the
-official Lean release. This page describes the alternative: obtain both from upstream and check them against
-`LOCKS/TRUSTED_HASHES.tsv`. We never ran `lake` on the build host; the Lake steps below are for the reader and were not
-executed by us.
+This page is for the optional plain-`lean` rebuild (`BUILD/build_plain.sh`); the standard Lake build
+(`lake exe cache get && lake build` at the repository root) does not need it. Release v1.0 ships the trusted package
+files as two prebuilt shards (`packages-*.tar.zst`), and the toolchain is the official Lean release. This page
+describes the alternative: obtain both from upstream and check them against `LOCKS/TRUSTED_HASHES.tsv`.
 
 ## Pins
 
@@ -11,7 +11,7 @@ executed by us.
 |---|---|
 | toolchain | `leanprover/lean4:v4.33.0` (`LOCKS/lean-toolchain`), commit `d8b18978322de05a8f3dba51ef03cf5461676c17` (`LOCKS/TOOLCHAIN_COMMIT`) |
 | official toolchain archive | `https://github.com/leanprover/lean4/releases/download/v4.33.0/lean-4.33.0-linux.tar.zst`, 574,882,764 bytes, sha256 `4b3fb03c29a1e0a253fb1d11f9bae3725f19a0dc6fc09b3ea16d2c9df3349e2c` |
-| Mathlib | rev `db584cd6d46c92f209a44c0f1c829460d327499d` (`BUILD/lake/lakefile.toml`, `LOCKS/lake-manifest.json`) |
+| Mathlib | rev `db584cd6d46c92f209a44c0f1c829460d327499d` (`lakefile.toml`, `lake-manifest.json`) |
 | other packages | plausible `b7eb3304…`, LeanSearchClient `5f4d51b8…`, importGraph `16f02aa7…`, proofwidgets `4be2e3d5…`, aesop `3448c0bc…`, Qq `92c15be1…`, batteries `4488d40d…` (full revs in `lake-manifest.json`) |
 
 **Verified.** On 2026-09-23 we downloaded the official toolchain archive above (sha256 as listed). All 17,493 of its
@@ -29,11 +29,7 @@ tar --zstd -xf lean-4.33.0-linux.tar.zst          # -> lean-4.33.0-linux/bin/lea
 ## Packages via Lake (alternative to the `packages-*` shards)
 
 ```bash
-mkdir lakebase && cd lakebase
-cp ../BUILD/lake/lakefile.toml ../LOCKS/lake-manifest.json ../LOCKS/lean-toolchain .
-mkdir -p GeneralCK && echo "" > GeneralCK.lean      # the project's own library can stay empty
-lake exe cache get                                  # downloads Mathlib's prebuilt oleans for rev db584cd6…
-cd ..
+lake exe cache get      # at the repository root: Mathlib's prebuilt oleans for rev db584cd6… into .lake/packages/
 ```
 
 Then build the `trusted/packages/` layout from the Lake tree. There is one root per package, holding that package's
@@ -42,7 +38,7 @@ Then build the `trusted/packages/` layout from the Lake tree. There is one root 
 ```bash
 for p in aesop batteries importGraph LeanSearchClient mathlib plausible proofwidgets Qq; do
   mkdir -p trusted/packages/$p
-  cp -a lakebase/.lake/packages/$p/.lake/build/lib/lean/. trusted/packages/$p/   # (lake package dir names may differ in case)
+  cp -a .lake/packages/$p/.lake/build/lib/lean/. trusted/packages/$p/   # (lake package dir names may differ in case)
 done
 ```
 

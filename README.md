@@ -8,13 +8,14 @@ It formalizes the main theorem of Z. Chen, A. Gohari, A. Javanmard, H. Lin, V. M
 [*A Proof of the Most Informative Boolean Function Conjecture*](https://arxiv.org/abs/2609.24931), arXiv:2609.24931
 (2026).
 
-```lean
-theorem GeneralCK.ArchiveRegionalBoundary.generalCourtadeKumar_closed : GeneralCK.GeneralCourtadeKumar
--- #print axioms: [propext, Classical.choice, Quot.sound]
-```
+The repository is a standard Lake project: Lean 4.33.0 (official release, commit
+`d8b18978322de05a8f3dba51ef03cf5461676c17`) and Mathlib `db584cd6d46c92f209a44c0f1c829460d327499d`, with all 45,500
+Lean source files in the repository. [`formalization.yaml`](formalization.yaml) describes the project in the
+[mathlib-initiative format](https://github.com/mathlib-initiative/formalization.yaml).
 
-The proposition `GeneralCK.GeneralCourtadeKumar` is defined in the 63-line file
-[`GeneralCK/Statement.lean`](browse/GeneralCK/Statement.lean):
+## The statement
+
+[`GeneralCK/Statement.lean`](GeneralCK/Statement.lean) (63 lines) defines
 
 ```lean
 def GeneralCourtadeKumar : Prop :=
@@ -27,127 +28,155 @@ Here `Cube n := Fin n → Bool`, `H p := Real.binEntropy p / Real.log 2` (binary
 bit flips of probability p. The definitions use only Mathlib's `Real.binEntropy`, `Real.log`, `Real.negMulLog` and
 finite sums. [`REVIEW_GUIDE.md`](REVIEW_GUIDE.md) §1 walks through them.
 
-- **Axioms.** Only Lean's three standard axioms: propositional extensionality, choice, and quotient soundness.
-  There is no `sorry`, no `native_decide` (no `Lean.ofReduceBool`) and no custom axiom. Every numerical certificate is
-  checked by Lean's kernel.
-- **Versions.** Lean 4.33.0 (official release, commit `d8b18978322de05a8f3dba51ef03cf5461676c17`) and Mathlib
-  `db584cd6d46c92f209a44c0f1c829460d327499d`.
-- **Size.** 45,500 Lean modules, 50.4 million lines (4.90 GB). Almost all of it is generated certificate data that the
-  kernel checks. The readable proof code (statement, proof skeleton, checkers and their soundness theorems,
-  adapters) is roughly 0.2 million lines; a copy is in [`browse/`](browse/).
+[`CKRoute/Final.lean`](CKRoute/Final.lean) proves it:
 
-## Verification status
+```lean
+theorem GeneralCK.ArchiveRegionalBoundary.generalCourtadeKumar_closed : GeneralCK.GeneralCourtadeKumar
+```
+
+The default build target [`FinalCheck.lean`](FinalCheck.lean) contains
+
+```lean
+/-- info: 'GeneralCK.ArchiveRegionalBoundary.generalCourtadeKumar_closed' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs (whitespace := lax) in
+#print axioms GeneralCK.ArchiveRegionalBoundary.generalCourtadeKumar_closed
+```
+
+and a similar check of the theorem's type, so `lake build` fails unless the proof rests on exactly Lean's three
+standard axioms: no `sorry`, no `native_decide` (`Lean.ofReduceBool`) and no added `axiom`. Every numerical
+certificate is checked by Lean's kernel.
+
+The statement has also been written in the style of [Formal Conjectures](https://github.com/google-deepmind/formal-conjectures),
+as `CourtadeKumar.courtade_kumar` (submitted in
+[google-deepmind/formal-conjectures#6688](https://github.com/google-deepmind/formal-conjectures/pull/6688)).
+[`verification/comparator/`](verification/comparator/) holds it as a [comparator](https://github.com/leanprover/comparator)
+challenge, with a solution that derives it from the final theorem.
+
+## Check it yourself
+
+You need Linux x86-64 (the only platform we tested), [elan](https://github.com/leanprover/elan) (it installs Lean
+4.33.0 from `lean-toolchain`) and a network connection for Mathlib.
+
+```sh
+git clone https://github.com/dpwoodru/general-courtade-kumar-lean.git && cd general-courtade-kumar-lean
+lake exe cache get              # prebuilt Mathlib db584cd6 from the Mathlib cache
+lake build GeneralCK.Statement  # quick test: the statement file only (seconds)
+LEAN_NUM_THREADS=32 lake build  # the whole proof, 45,500 modules; LEAN_NUM_THREADS = number of parallel jobs
+```
+
+- **Compute.** About 1,500 CPU-hours. Our run took 6.5 hours with 342 parallel jobs on a 380-core machine.
+- **Memory.** Most modules need a few GiB and the largest needs about 42 GiB. Lake has no memory budget, so choose
+  `LEAN_NUM_THREADS` to fit your machine; in our run the summed resident memory peaked at about 1,435 GiB with 342
+  jobs, about 4.2 GiB per job.
+- **Disk.** Allow about 300 GB for `.lake/`.
+- **Memory maps.** Near the top of the import graph a Lean process maps about 77,000 `.olean` files, more than the
+  Linux default `vm.max_map_count` (65,530). Raise it if you can: `sudo sysctl -w vm.max_map_count=262144`.
+
+Lean prints several thousand linter and deprecation warnings (unused `simp` arguments and the like) while building;
+they do not affect the result. The build has succeeded when it ends with the axioms of the final theorem
+(`propext`, `Classical.choice`, `Quot.sound`) and `Build completed successfully`. To print the type and the axioms
+again: `lake env lean final/AuditFinal.lean`.
+
+[`HOW_TO_VERIFY.md`](HOW_TO_VERIFY.md) has the details, the comparator check, and the optional plain-`lean` rebuild
+that reproduces the published per-module hashes.
+
+## How it was verified
 
 | check | result |
 |---|---|
-| Campaign kernel replay of the original build | `INCREMENTAL_REPLAY_OK`: all 45,500 modules, 22,668,080 declarations re-checked by the kernel |
-| Clean rebuild from these sources | every one of the 45,500 modules recompiled with plain `lean` into an empty output root, with no prebuilt campaign files. The final theorem passed the gate (compile rc 0, no errors, no `sorry`, only the 3 standard axioms), and its compiled file `CKRoute/Final.olean` (sha256 `43de2287…`) is byte-identical to the original build's |
-| Kernel replay of the clean rebuild | `SHARDED_REPLAY_OK`: 4,990 / 4,990 shards (4,954 run on a Google compute cluster, 36 on the build workstation), 45,500 modules each replayed exactly once, 22,668,080 declarations, 0 failures. The top shard prints the axiom line `[Classical.choice, Quot.sound, propext]` |
-| Acceptance tests of the verification kit | following [`HOW_TO_VERIFY.md`](HOW_TO_VERIFY.md) literally: checksums, unpacking, quick test (byte-identical), a 488-module partial rebuild (486 byte-identical + the 2 expected differences), the audit of the final theorem, and sample replay shards all pass |
-| Independent end-to-end run of the shipped kit (full rebuild, audit and replay on a Google compute cluster) |
-**passed** (2026-09-24): `HOW_TO_VERIFY.md` followed literally on a single fresh machine with byte-identical inputs and the official Lean 4.33.0. All 45,500 modules rebuilt, 0 failures; 45,498 byte-identical to `CLEAN_BUILD_HASHES.tsv` plus the 2 expected `abs` modules; `CKRoute/Final.olean` `43de2287…`; audit: only the 3 standard axioms. Kernel replay of this rebuild: all 45,500 modules re-checked exactly once, 0 failures (1,205 batches of the shipped plan, plus the last 3,588 modules in 120 smaller batches run in parallel to finish sooner); the top batch prints the 3 standard axioms
-
-## How to verify
-
-Full instructions, requirements and expected output: [`HOW_TO_VERIFY.md`](HOW_TO_VERIFY.md). In short (Linux
-x86-64, about 720 CPU-hours, at least 128 GB RAM, about 160 GB free disk):
-
-```bash
-git clone https://github.com/dpwoodru/general-courtade-kumar-lean.git && cd general-courtade-kumar-lean
-# download the release assets of v1.0 into ./release/ (see HOW_TO_VERIFY.md), then:
-(cd release && sha256sum -c SHA256SUMS.txt)
-mkdir -p trusted && for f in release/packages-*.tar.zst; do tar --zstd -xf "$f" -C trusted; done
-tar --zstd -xf release/sources_v3.tar.zst            # -> sources/ (45,500 files)
-BUILD/build_plain.sh --packages trusted/packages --out out_test --lean $LEAN --target GeneralCK.Statement   # seconds
-BUILD/build_plain.sh --packages trusted/packages --out out --lean $LEAN --jobs 32 --mem-gb 200            # hours
-BUILD/audit_final.sh  --out out --packages trusted/packages --lean $LEAN
-BUILD/replay_fresh.sh --out out --packages trusted/packages --lean $LEAN --workers 32                     # optional
-```
+| Standard Lake build (2026-10-01, by an independent agent on a Google compute cluster) | the 45,500 sources of this repository with the v1.0 Lake files, official Lean 4.33.0 and Mathlib from `lake exe cache get`: `lake build CKRoute.Final` built all 45,500 modules with no errors and no `sorry`; a second `lake build` rebuilt nothing; `lake env lean final/AuditFinal.lean` printed the expected type and the three standard axioms. v1.1 changes only the Lake configuration around these sources, as listed in [`CHANGELOG.md`](CHANGELOG.md) |
+| Clean rebuild from these sources (2026-09-23) | every module recompiled with plain `lean` into an empty output root, with no prebuilt campaign files; the final theorem passed the gate (no errors, no `sorry`, only the 3 standard axioms), and `CKRoute/Final.olean` (sha256 `43de2287…`) is byte-identical to the original build's |
+| Kernel replay of the clean rebuild | `SHARDED_REPLAY_OK`: 4,990 / 4,990 shards, 45,500 modules each replayed exactly once, 22,668,080 declarations, 0 failures; the top shard prints the 3 standard axioms |
+| Independent end-to-end run of the v1.0 verification kit (2026-09-24) | `HOW_TO_VERIFY.md` of v1.0 followed literally on a fresh machine: all 45,500 modules rebuilt, 0 failures, 45,498 byte-identical to `CLEAN_BUILD_HASHES.tsv` plus the 2 expected `abs` modules; `CKRoute/Final.olean` `43de2287…`; audit: only the 3 standard axioms; kernel replay of this rebuild: all 45,500 modules, 0 failures |
+| comparator | stock comparator `v4.33.0` (Lean kernel and nanoda) accepted the bridge from `GeneralCK.GeneralCourtadeKumar` to the Formal Conjectures statement. A full run on the challenge/solution pair in `verification/comparator/` is in progress |
 
 What a human must check is only the statement (`GeneralCK/Statement.lean`, 63 lines) and the Mathlib definitions it
-uses; Lean's kernel checks everything else. [`REVIEW_GUIDE.md`](REVIEW_GUIDE.md) explains the statement, the proof
-skeleton that follows the manuscript, and the certificate families.
-[`MANUSCRIPT_DEVIATIONS.md`](MANUSCRIPT_DEVIATIONS.md) lists the few computer-assisted steps where the Lean proof checks
-the paper's claim with its own certificates or a different argument.
+uses; Lean's kernel checks everything else.
+
+## Reading the proof
+
+- [`REVIEW_GUIDE.md`](REVIEW_GUIDE.md): the statement, the proof skeleton that follows the manuscript, the 18 inputs of
+  the final theorem, the certificate families and the trust base.
+- [`MANUSCRIPT_DEVIATIONS.md`](MANUSCRIPT_DEVIATIONS.md): the few computer-assisted steps where the Lean proof checks the
+  paper's claim with its own certificates or a different argument.
+- [`READABLE_FILES.md`](READABLE_FILES.md): the 1,359 files (238,690 lines) that are readable proof code. The other
+  44,141 files (4.88 GB) are generated certificate data: Lean definitions checked in the same file, mostly by `decide`
+  and `norm_num`, written to be checked rather than read.
+- [`SOURCE_COMMENT_NOTES.md`](SOURCE_COMMENT_NOTES.md): corrections to out-of-date comments, kept outside the `.lean`
+  files so that every source keeps its recorded checksum.
 
 ## Repository layout
 
 | path | what |
 |---|---|
+| `GeneralCK/`, `CKRoute/`, `CKLane*/`, `E8*.lean` | the 45,500 Lean sources; `GeneralCK/Statement.lean` is the statement and `CKRoute/Final.lean` the final theorem |
+| `FinalCheck.lean` | the default build target: the type and axiom checks above |
+| `lakefile.toml`, `lean-toolchain`, `lake-manifest.json` | the Lake project (Mathlib `db584cd6…` and its dependencies pinned) |
+| `formalization.yaml` | project metadata in the mathlib-initiative format |
+| `verification/comparator/` | the comparator challenge (the Formal Conjectures statement), the solution and `config.json` |
 | `HOW_TO_VERIFY.md` | step-by-step machine check: requirements, commands, expected output |
-| `REVIEW_GUIDE.md` | for human readers: statement, proof skeleton, the 18 inputs of the final theorem, certificate families, trust base |
-| `MANUSCRIPT_DEVIATIONS.md` | where the Lean proof verifies a step differently from the paper's archived computations |
-| `SOURCE_COMMENT_NOTES.md` | errata for out-of-date or imprecise comments in the sources, kept outside the `.lean` files to preserve their checksums |
+| `REVIEW_GUIDE.md`, `READABLE_FILES.md`, `MANUSCRIPT_DEVIATIONS.md`, `SOURCE_COMMENT_NOTES.md` | for human readers (see above) |
 | `CHANGELOG.md` | release history and errata |
-| `BUILD/` | `build_plain.sh` / `build_plain.py` (the tested build: plain `lean`, topological order, parallel jobs under a memory budget), `audit_final.sh`, `replay_fresh.sh`, `EXPECTED.md`; `lake/` is a Lake project skeleton (**untested**, a convenience only) |
-| `LOCKS/` | `lean-toolchain`, `lake-manifest.json` (Mathlib `db584cd6…` and its dependencies), the toolchain commit, per-file hashes of the trusted packages, and how to rebuild the trusted base yourself |
-| `final/` | `Final.lean` (the final theorem), `AuditFinal.lean` (`#check` + `#print axioms`), and the clean build's gate record for `CKRoute.Final` |
-| `replay/` | the frozen kernel-replay harness `ReplayShard.lean`, the 1,225-shard plan `plan.tsv`, and its drivers |
 | `SOURCES_MANIFEST.tsv` | per module: height, source path, source sha256, size, build recipe, closure imports |
 | `CLEAN_BUILD_HASHES.tsv` | per module: the clean build's `.olean` / `.ilean` sha256 and sizes, the comparison with the original build, wall time and max RSS |
 | `FAMILIES.tsv` | the certificate families (checker, soundness theorem, kernel evaluation) |
-| `provenance/` | the one historical source variant that is not part of the source set (`E8TAxisZero0082Root`: same statement, different proof) |
-| `browse/` | **read-only copies** of the readable proof code, for browsing on GitHub (see below) |
-| `THIRD_PARTY_NOTICES.md`, `LICENSES/` | licenses of the third-party packages whose compiled files are release assets (Apache License 2.0) |
+| `BUILD/` | the optional plain-`lean` rebuild of v1.0 (`build_plain.sh`, `audit_final.sh`, `replay_fresh.sh`, `EXPECTED.md`) |
+| `LOCKS/` | the toolchain commit, per-file hashes of the prebuilt trusted packages of v1.0, and how to rebuild the trusted base yourself |
+| `final/` | `AuditFinal.lean` (`#check` + `#print axioms`), a copy of `Final.lean`, and the clean build's gate record for `CKRoute.Final` |
+| `replay/` | the frozen kernel-replay harness `ReplayShard.lean`, the 1,225-shard plan `plan.tsv`, and its drivers |
+| `provenance/` | the historical source variant that is not part of the source set, and a historical file that a source comment cites |
+| `THIRD_PARTY_NOTICES.md`, `LICENSES/` | licenses of the third-party packages whose compiled files are v1.0 release assets (Apache License 2.0) |
 | `SHA256SUMS.txt` | sha256 of every file of this repository except `README.md` (which may be updated after the release) |
 
-**Release assets** (GitHub Release `v1.0`):
-
-| asset | what |
-|---|---|
-| `sources_v3.tar.zst` | the complete source tree: all 45,500 modules, exactly as compiled and kernel-checked (388 MB; extracts to `sources/`, 4.9 GB) |
-| `packages-olean-00-…tar.zst`, `packages-server-private-ir-00-…tar.zst` | the trusted base, prebuilt: Mathlib `db584cd6…` and its 7 dependency packages (a convenience; you can build it yourself, see `LOCKS/REBUILD_TRUSTED_BASE.md`) |
-| `v3_replay_addendum.tar.gz` | the clean-tree kernel-replay verdict, an independent recount, the per-shard index and the top shard's output |
-| `SHA256SUMS.txt` | sha256 of the assets |
-
-The two `packages-*` assets are unmodified compiled files of Mathlib and its 7 dependency packages, redistributed under their own license (Apache License 2.0); see [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
-
-### About `browse/`
-
-`browse/` holds byte-identical copies of 1,359 of the 45,500 source files (238,690 lines): the statement, the
-`CKRoute` proof skeleton, the checkers, their soundness theorems and the adapters. Generated certificate data is left
-out: modules whose last name component contains a number with two or more digits, modules whose name contains
-`Generated`, `Data` or `Coverage`, and files over 3,000 lines. **The build does not use `browse/`**: it compiles the
-complete tree from `sources_v3.tar.zst`. The list and the rule are in [`browse/README.md`](browse/README.md).
+The GitHub Release `v1.0` still holds the v1.0 assets: `sources_v3.tar.zst` (the same 45,500 sources, byte for byte),
+the prebuilt trusted packages for the plain-`lean` rebuild, and our kernel-replay verdict. The Lake build does not need
+them.
 
 ## Trust base
 
 You trust:
 - the Lean 4.33.0 kernel;
-- Mathlib `db584cd6…` and its dependencies (you can fetch and build them yourself instead of using the prebuilt
-  packages; their licenses and pinned revisions are in [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md));
+- Mathlib `db584cd6…` and its dependencies, as fetched by Lake (their licenses and pinned revisions are in
+  [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md));
 - the 63-line statement and the Mathlib definitions it uses.
 
-The 45,500 campaign modules are not trusted: they are rebuilt from source and re-checked by the kernel.
+The 45,500 modules of this repository are not trusted: they are rebuilt from source and checked by the kernel.
 
 ## Notes on provenance
 
-- **Source comments.** The Lean sources are published exactly as they were compiled and kernel-checked. Twenty-two of
-  them contain, inside comments only, historical references to the development workspace: directory names such as
-  `~/…`, `coord/…` or `A/asmroot5`, with no user or host names. They are left unchanged so that every published file
-  matches its recorded hash:
+- **Sources.** The Lean sources are published exactly as they were compiled and kernel-checked; every file matches its
+  sha256 in `SOURCES_MANIFEST.tsv`, and they are byte-identical to the v1.0 release asset `sources_v3.tar.zst`
+  (sha256 `3f09b23672e3a29cd6533a4004b8fd0d92e5edd17845478d327ac1aeb0a45589`).
+- **Source comments.** Twenty-two sources contain, inside comments only, historical references to the development
+  workspace: directory names such as `~/…`, `coord/…` or `A/asmroot5`, with no user or host names. They are left
+  unchanged so that every published file matches its recorded hash:
   `CKLaneA1/JnConvex.lean`, `CKLaneA5/Bands.lean`, `CKLaneA5/ChartOwnersAsm.lean`, `CKLaneA5/Correction.lean`,
   `CKLaneC/TM3/Core.lean`, `CKLaneC2R/ReflectionBridge.lean`, `CKLaneC3/LargeFields.lean`, `CKLaneD/OCompact.lean`,
   `CKLaneM06/CapSubrow.lean`, `CKLaneM1/MLRoute.lean`, `CKLaneM2/SLPlane.lean`, `CKLaneN1/SubRows.lean`,
   `CKLaneN1b/Moderate.lean`, `CKLaneN1c/FiveGain.lean`, `CKLaneN23/OpBoundaryStrip.lean`, `CKLaneN23/OpCorner.lean`,
   `CKLaneN23/RSDefs.lean`, `CKLaneN23/SameSideHalf.lean`, `CKLaneN4/CentralSubrows.lean`,
   `CKLaneP/RightLowerFinal.lean`, `CKLaneR2/TM3/Core.lean`, `GeneralCK/LanePHMC/Reduce.lean`.
-- **Build recipes.** 39 modules were compiled by the clean build from a staging directory whose relative name
-  becomes part of the module name recorded in the compiled file. The recipe column of `SOURCES_MANIFEST.tsv` keeps
-  those two historical directory names so that `build_plain.sh` reproduces the published hashes exactly; they carry
-  no meaning for the proof. Two further modules had an absolute source path that cannot be reproduced elsewhere; they
-  are compiled plainly and are expected to differ from the published hashes by that path only.
 - **Out-of-date comments.** Some comments in the sources describe an intermediate development status, for example
   "remains UNPROVED" or "still open", for statements that the release proves elsewhere. They are corrected, with links,
-  in [`SOURCE_COMMENT_NOTES.md`](SOURCE_COMMENT_NOTES.md) rather than in the `.lean` files, to preserve the published
-  source and compiled checksums. Lean's kernel does not read comments, so they do not affect the proof.
+  in [`SOURCE_COMMENT_NOTES.md`](SOURCE_COMMENT_NOTES.md) rather than in the `.lean` files. Lean's kernel does not read
+  comments, so they do not affect the proof.
+- **Build recipes.** 39 modules were compiled by the clean build from a staging directory whose relative name
+  becomes part of the module name recorded in the compiled file. The recipe column of `SOURCES_MANIFEST.tsv` keeps
+  those two historical directory names so that `BUILD/build_plain.sh` reproduces the published hashes exactly; they
+  carry no meaning for the proof. Two further modules had an absolute source path that cannot be reproduced elsewhere;
+  they are compiled plainly and are expected to differ from the published hashes by that path only. A Lake build
+  records its package name (`general-ck`) in the compiled files, so its `.olean` files are in general not
+  byte-identical to `CLEAN_BUILD_HASHES.tsv`.
 - Module namespaces such as `CKLaneE` or `CKLaneM07` are names of the work streams that produced them.
 
 ## License
 
 This repository is licensed under the Apache License, Version 2.0 (SPDX: `Apache-2.0`); see [`LICENSE`](LICENSE).
 
-The release asset `sources_v3.tar.zst` and its copies in `browse/` are covered by the same license. The trusted-package release assets (`packages-*.tar.zst`) contain unmodified compiled files of Mathlib and its dependencies, which remain under their own license (Apache License 2.0); see [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) and [`LICENSES/Apache-2.0.txt`](LICENSES/Apache-2.0.txt).
+The files under `verification/comparator/CKChallenge/` follow the Formal Conjectures statement and carry its Apache-2.0
+header. The trusted-package release assets of v1.0 (`packages-*.tar.zst`) contain unmodified compiled files of Mathlib
+and its dependencies, which remain under their own license (Apache License 2.0); see
+[`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) and [`LICENSES/Apache-2.0.txt`](LICENSES/Apache-2.0.txt).
 
 ## Citation
 

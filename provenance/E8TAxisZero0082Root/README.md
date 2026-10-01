@@ -2,7 +2,7 @@
 
 | | source sha256 | olean sha256 |
 |---|---|---|
-| published source (`sources/GeneralCK/Certificates/E8TAxisZero0082Root.lean`, compiled by the clean build) | `234eadad7586e12bebce6c9abd673f2d9c3be19123231fd8936c2ea197b301e0` (1,841 B) | `9a158df196b2609fa89c392aec14287ec282698d24b5026e33b08f3664531e8c` (clean build; 133,936 B) |
+| published source (`GeneralCK/Certificates/E8TAxisZero0082Root.lean`, compiled by the clean build) | `234eadad7586e12bebce6c9abd673f2d9c3be19123231fd8936c2ea197b301e0` (1,841 B) | `9a158df196b2609fa89c392aec14287ec282698d24b5026e33b08f3664531e8c` (clean build; 133,936 B) |
 | campaign variant (`campaign_variant_2b04854f.lean`, this folder) | `2b04854fb7202c589e5e541e8b9009f443f67c5c38737016f09629cacdcc9097` (1,878 B) | `061862a9a429e4e0e614fb9ccc2b0ed54cc01e064d24b721cf9a454d6956dc9c` (original build; 196,496 B) |
 
 - **The difference.** The two sources differ only in the last two lines of the proof of the theorem `positiveAt`:

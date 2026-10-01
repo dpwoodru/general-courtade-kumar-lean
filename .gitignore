@@ -1,7 +1,9 @@
-# downloaded release assets and everything the verification steps create
+# Lake build output and the comparator work directory
+/.lake/
+/.verify-work/
+# the optional plain-lean kit (BUILD/): downloaded release assets and everything its steps create
 /release/
 /trusted/
-/sources/
 /out/
 /out_test/
 /audit_work/

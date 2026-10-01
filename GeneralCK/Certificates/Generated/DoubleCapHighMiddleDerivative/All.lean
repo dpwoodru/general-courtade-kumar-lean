@@ -1,0 +1,556 @@
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell000
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell001
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell002
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell003
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell004
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell005
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell006
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell007
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell008
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell009
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell010
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell011
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell012
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell013
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell014
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell015
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell016
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell017
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell018
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell019
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell020
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell021
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell022
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell023
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell024
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell025
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell026
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell027
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell028
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell029
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell030
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell031
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell032
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell033
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell034
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell035
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell036
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell037
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell038
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell039
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell040
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell041
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell042
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell043
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell044
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell045
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell046
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell047
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell048
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell049
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell050
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell051
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell052
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell053
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell054
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell055
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell056
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell057
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell058
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell059
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell060
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell061
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell062
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell063
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell064
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell065
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell066
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell067
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell068
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell069
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell070
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell071
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell072
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell073
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell074
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell075
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell076
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell077
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell078
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell079
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell080
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell081
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell082
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell083
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell084
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell085
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell086
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell087
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell088
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell089
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell090
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell091
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell092
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell093
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell094
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell095
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell096
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell097
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell098
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell099
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell100
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell101
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell102
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell103
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell104
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell105
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell106
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell107
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell108
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell109
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell110
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell111
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell112
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell113
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell114
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell115
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell116
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell117
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell118
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell119
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell120
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell121
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell122
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell123
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell124
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell125
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell126
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell127
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell128
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell129
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell130
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell131
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell132
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell133
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell134
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell135
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell136
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell137
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell138
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell139
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell140
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell141
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell142
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell143
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell144
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell145
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell146
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell147
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell148
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell149
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell150
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell151
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell152
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell153
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell154
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell155
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell156
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell157
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell158
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell159
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell160
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell161
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell162
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell163
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell164
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell165
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell166
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell167
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell168
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell169
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell170
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell171
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell172
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell173
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell174
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell175
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell176
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell177
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell178
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell179
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell180
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell181
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell182
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell183
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell184
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell185
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell186
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell187
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell188
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell189
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell190
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell191
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell192
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell193
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell194
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell195
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell196
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell197
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell198
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell199
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell200
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell201
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell202
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell203
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell204
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell205
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell206
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell207
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell208
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell209
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell210
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell211
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell212
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell213
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell214
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell215
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell216
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell217
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell218
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell219
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell220
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell221
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell222
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell223
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell224
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell225
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell226
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell227
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell228
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell229
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell230
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell231
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell232
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell233
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell234
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell235
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell236
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell237
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell238
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell239
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell240
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell241
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell242
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell243
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell244
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell245
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell246
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell247
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell248
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell249
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell250
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell251
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell252
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell253
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell254
+import GeneralCK.Certificates.Generated.DoubleCapHighMiddleDerivative.Cell255
+import GeneralCK.PureGapDoubleCapHighMiddleDerivativeValueAdapter
+
+namespace GeneralCK.Certificates.DoubleCapHighMiddleDerivative
+open GeneralCK
+set_option maxRecDepth 10000
+set_option maxHeartbeats 2000000
+
+theorem all256Cells : ∀ i : Fin 256,
+    DoubleCapBridgeDerivativeCellCertificate i
+      doubleCapBridgeDerivativeExpression := by
+  intro i
+  fin_cases i <;> first
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell000.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell001.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell002.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell003.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell004.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell005.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell006.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell007.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell008.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell009.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell010.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell011.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell012.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell013.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell014.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell015.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell016.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell017.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell018.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell019.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell020.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell021.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell022.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell023.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell024.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell025.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell026.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell027.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell028.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell029.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell030.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell031.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell032.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell033.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell034.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell035.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell036.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell037.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell038.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell039.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell040.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell041.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell042.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell043.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell044.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell045.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell046.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell047.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell048.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell049.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell050.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell051.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell052.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell053.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell054.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell055.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell056.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell057.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell058.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell059.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell060.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell061.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell062.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell063.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell064.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell065.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell066.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell067.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell068.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell069.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell070.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell071.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell072.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell073.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell074.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell075.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell076.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell077.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell078.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell079.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell080.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell081.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell082.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell083.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell084.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell085.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell086.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell087.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell088.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell089.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell090.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell091.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell092.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell093.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell094.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell095.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell096.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell097.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell098.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell099.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell100.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell101.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell102.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell103.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell104.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell105.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell106.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell107.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell108.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell109.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell110.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell111.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell112.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell113.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell114.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell115.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell116.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell117.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell118.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell119.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell120.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell121.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell122.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell123.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell124.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell125.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell126.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell127.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell128.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell129.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell130.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell131.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell132.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell133.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell134.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell135.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell136.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell137.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell138.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell139.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell140.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell141.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell142.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell143.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell144.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell145.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell146.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell147.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell148.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell149.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell150.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell151.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell152.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell153.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell154.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell155.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell156.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell157.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell158.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell159.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell160.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell161.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell162.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell163.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell164.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell165.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell166.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell167.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell168.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell169.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell170.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell171.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell172.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell173.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell174.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell175.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell176.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell177.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell178.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell179.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell180.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell181.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell182.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell183.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell184.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell185.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell186.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell187.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell188.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell189.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell190.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell191.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell192.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell193.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell194.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell195.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell196.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell197.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell198.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell199.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell200.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell201.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell202.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell203.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell204.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell205.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell206.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell207.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell208.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell209.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell210.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell211.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell212.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell213.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell214.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell215.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell216.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell217.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell218.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell219.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell220.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell221.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell222.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell223.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell224.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell225.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell226.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell227.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell228.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell229.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell230.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell231.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell232.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell233.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell234.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell235.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell236.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell237.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell238.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell239.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell240.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell241.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell242.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell243.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell244.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell245.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell246.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell247.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell248.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell249.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell250.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell251.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell252.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell253.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell254.acceptedCell
+  | exact GeneralCK.Certificates.DoubleCapHighMiddleDerivative.Cell255.acceptedCell
+
+theorem bridgeSlope_nonneg {x : ℝ}
+    (hx : x ∈ Set.Icc (1 / 8 : ℝ) (1 / 5 : ℝ)) :
+    0 ≤ doubleCapBridgeSlope x :=
+  doubleCapBridgeSlope_nonneg_of_256_cells all256Cells hx
+
+theorem bridgeResidual_nonneg {m : ℝ}
+    (hmLo : 2 / 5 ≤ m) (hmHi : m ≤ 7 / 16) :
+    0 ≤ doubleCapHighSlopeResidual m :=
+  doubleCapHighSlopeResidual_nonneg_on_bridge_of_256_cells
+    all256Cells hmLo hmHi
+
+theorem bridgeValueResidual_nonneg {m : ℝ}
+    (hmLo : 2 / 5 ≤ m) (hmHi : m ≤ 7 / 16) :
+    0 ≤ doubleCapHighResidual m :=
+  doubleCapHighResidual_nonneg_on_bridge_of_256_cells
+    all256Cells hmLo hmHi
+
+theorem bridgeCapEndpoint {m : ℝ}
+    (hmLo : 2 / 5 ≤ m) (hmHi : m ≤ 7 / 16) :
+    phi m (capEntropyFloor m) ≤
+      4 * (H m - capEntropyFloor m) :=
+  doubleCapHighCapEndpoint_on_bridge_of_256_cells
+    all256Cells hmLo hmHi
+
+#print axioms all256Cells
+#print axioms bridgeSlope_nonneg
+#print axioms bridgeResidual_nonneg
+#print axioms bridgeValueResidual_nonneg
+#print axioms bridgeCapEndpoint
+
+end GeneralCK.Certificates.DoubleCapHighMiddleDerivative

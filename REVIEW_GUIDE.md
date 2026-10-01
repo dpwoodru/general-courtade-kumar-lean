@@ -1,6 +1,6 @@
 # REVIEW GUIDE (v3) — what is proved, where, and how it is checked
 
-This guide is for human readers. It needs no Lean installation, only the extracted `sources_v3.tar.zst` (`sources/<Module/Path>.lean`: 45,500 files, 50,371,955 lines, 4.90 GB).
+This guide is for human readers. It needs no Lean installation, only the Lean sources of this repository (`<Module/Path>.lean` at the repository root: 45,500 files, 50,371,955 lines, 4.90 GB; byte-identical to the v1.0 release asset `sources_v3.tar.zst`).
 
 Line counts are `\n`-terminated lines of the v3 files (`SOURCES_MANIFEST.tsv`, column `lines`).
 
@@ -10,7 +10,7 @@ kept there rather than in the `.lean` files to preserve the published checksums.
 
 ## 1. The statement
 
-`sources/GeneralCK/Statement.lean` (module `GeneralCK.Statement`, 63 lines) defines:
+`GeneralCK/Statement.lean` (module `GeneralCK.Statement`, 63 lines) defines:
 
 ```lean
 abbrev Cube (n : ℕ) := Fin n → Bool
@@ -51,7 +51,7 @@ The conventions that matter:
 
 ## 2. The final theorem and its 18 inputs
 
-`sources/CKRoute/Final.lean` (48 lines):
+`CKRoute/Final.lean` (48 lines):
 
 ```lean
 theorem GeneralCK.ArchiveRegionalBoundary.generalCourtadeKumar_closed : GeneralCK.GeneralCourtadeKumar :=
@@ -110,15 +110,15 @@ The 18 fields group as follows:
 
 | file | lines | role |
 |---|---|---|
-| `sources/GeneralCK/Statement.lean` | 63 | the statement: `GeneralCourtadeKumar` and its ingredients (entropy in bits, BSC noise kernel, mutual information) |
-| `sources/CKRoute/Manuscript.lean` | 286 | the manuscript route as Lean propositions: rows `SS_SmallMean`, `SS_RatioTail`, `SS_Compact`, `CentralSquare`, `OP_BoundaryStrip`, `OP_Corner`, `OP_LowEntropy`, `OP_Compact`, the Theorem 7.1 branch `PhiBranch`, structure `ManuscriptRoute`, and `generalCourtadeKumar_of_manuscriptRoute` (via `ArchiveRegionalBoundary.Inputs`); rows SS_SmallMean, SS_RatioTail, OP_LowEntropy discharged unconditionally |
-| `sources/CKRoute/OCompactBind.lean` | 26 | binds Lane D's (O)-tree aggregation to the row `OP_Compact` |
-| `sources/CKRoute/Bindings.lean` | 59 | `OP_Corner`, `OP_BoundaryStrip` bound to lane theorems; `RemainingRows → ManuscriptRoute` |
-| `sources/CKRoute/Bindings2.lean` | 74 | (O) row: closed per-label families; `RemainingRows2 → ManuscriptRoute` |
-| `sources/CKRoute/Remaining3T71.lean` | 95 | Theorem 7.1 components with every closed owner bound (`theorem71_of_open`, `capFibers_of_open`, `e8Strict_of_compactOwner`) |
-| `sources/CKRoute/Remaining3Rows.lean` | 71 | CentralSquare, SS_Compact, OP_Compact rows with the closed families bound (`centralSquare_of_open`, `ssCompact_of_open`, `oLabel3_of_M10`) |
-| `sources/CKRoute/Remaining3.lean` | 86 | `structure Remaining3` (18 fields = the leaf obligations) and `generalCourtadeKumar_of_remaining3` |
-| `sources/CKRoute/Final.lean` | 48 | the final theorem: one application of `generalCourtadeKumar_of_remaining3` to 18 gated lane theorems |
+| `GeneralCK/Statement.lean` | 63 | the statement: `GeneralCourtadeKumar` and its ingredients (entropy in bits, BSC noise kernel, mutual information) |
+| `CKRoute/Manuscript.lean` | 286 | the manuscript route as Lean propositions: rows `SS_SmallMean`, `SS_RatioTail`, `SS_Compact`, `CentralSquare`, `OP_BoundaryStrip`, `OP_Corner`, `OP_LowEntropy`, `OP_Compact`, the Theorem 7.1 branch `PhiBranch`, structure `ManuscriptRoute`, and `generalCourtadeKumar_of_manuscriptRoute` (via `ArchiveRegionalBoundary.Inputs`); rows SS_SmallMean, SS_RatioTail, OP_LowEntropy discharged unconditionally |
+| `CKRoute/OCompactBind.lean` | 26 | binds Lane D's (O)-tree aggregation to the row `OP_Compact` |
+| `CKRoute/Bindings.lean` | 59 | `OP_Corner`, `OP_BoundaryStrip` bound to lane theorems; `RemainingRows → ManuscriptRoute` |
+| `CKRoute/Bindings2.lean` | 74 | (O) row: closed per-label families; `RemainingRows2 → ManuscriptRoute` |
+| `CKRoute/Remaining3T71.lean` | 95 | Theorem 7.1 components with every closed owner bound (`theorem71_of_open`, `capFibers_of_open`, `e8Strict_of_compactOwner`) |
+| `CKRoute/Remaining3Rows.lean` | 71 | CentralSquare, SS_Compact, OP_Compact rows with the closed families bound (`centralSquare_of_open`, `ssCompact_of_open`, `oLabel3_of_M10`) |
+| `CKRoute/Remaining3.lean` | 86 | `structure Remaining3` (18 fields = the leaf obligations) and `generalCourtadeKumar_of_remaining3` |
+| `CKRoute/Final.lean` | 48 | the final theorem: one application of `generalCourtadeKumar_of_remaining3` to 18 gated lane theorems |
 
 - `CKRoute.Final` imports 45,500 campaign modules in total.
 - 18,245 of them lie under no field. They are imported through the route files themselves (the closed components bound in `Remaining3T71`, `Remaining3Rows`, `Bindings*`).
@@ -192,7 +192,7 @@ For `GeneralCK.Certificates.E8TAxisZero0082Root`, the campaign's historical olea
   - The Lean 4.33.0 kernel and toolchain: official `lean-4.33.0-linux`, commit `d8b18978…`.
   - Mathlib `db584cd6…` with its dependency packages (Batteries, Aesop, Qq, ProofWidgets, Plausible, ImportGraph, LeanSearchClient): 10,498 modules, pinned by `LOCKS/lake-manifest.json`, with file hashes in `LOCKS/TRUSTED_HASHES.tsv`.
 - **Not trusted: all 45,500 campaign modules.**
-  - They are rebuilt from these sources by plain `lean` (`BUILD/build_plain.sh`).
+  - They are rebuilt from these sources by `lake build` (default target `FinalCheck`) or by plain `lean` (`BUILD/build_plain.sh`).
   - They are checked by the gate (compile, no sorry, axioms).
   - Every constant is re-typechecked by the kernel in the layered replay (`BUILD/replay_fresh.sh`, T2).
 - The mathematical content that must be read and trusted is the statement (§1). Everything else is machine-checked relative to the trust base.
