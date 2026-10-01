@@ -8,9 +8,9 @@ It formalizes the main theorem of Z. Chen, A. Gohari, A. Javanmard, H. Lin, V. M
 [*A Proof of the Most Informative Boolean Function Conjecture*](https://arxiv.org/abs/2609.24931), arXiv:2609.24931
 (2026).
 
-The repository is a standard Lake project: Lean 4.33.0 (official release, commit
-`d8b18978322de05a8f3dba51ef03cf5461676c17`) and Mathlib `db584cd6d46c92f209a44c0f1c829460d327499d`, with all 45,500
-Lean source files in the repository. [`formalization.yaml`](formalization.yaml) describes the project in the
+The repository is a standard Lake project: Lean 4.33.1 (official release, commit
+`819816b2e0a3bf405af45ae5c7af2491d8f5bee6`) and Mathlib `v4.33.1` (`0df444a360eaa60ab8c11dca51a86af692955474`), with all 45,500 Lean source
+files in the repository. [`formalization.yaml`](formalization.yaml) describes the project in the
 [mathlib-initiative format](https://github.com/mathlib-initiative/formalization.yaml).
 
 ## The statement
@@ -55,20 +55,21 @@ challenge, with a solution that derives it from the final theorem.
 ## Check it yourself
 
 You need Linux x86-64 (the only platform we tested), [elan](https://github.com/leanprover/elan) (it installs Lean
-4.33.0 from `lean-toolchain`) and a network connection for Mathlib.
+4.33.1 from `lean-toolchain`) and a network connection for Mathlib.
 
 ```sh
 git clone https://github.com/dpwoodru/general-courtade-kumar-lean.git && cd general-courtade-kumar-lean
-lake exe cache get              # prebuilt Mathlib db584cd6 from the Mathlib cache
+lake exe cache get              # prebuilt Mathlib v4.33.1 from the Mathlib cache
 lake build GeneralCK.Statement  # quick test: the statement file only (seconds)
 LEAN_NUM_THREADS=32 lake build  # the whole proof, 45,500 modules; LEAN_NUM_THREADS = number of parallel jobs
 ```
 
-- **Compute.** About 1,500 CPU-hours. Our run took 6.5 hours with 342 parallel jobs on a 380-core machine.
+- **Compute.** About 1,200 CPU-hours. Our Lean 4.33.1 run took 5.0 hours with 342 parallel jobs on a 380-core
+  machine.
 - **Memory.** Most modules need a few GiB and the largest needs about 42 GiB. Lake has no memory budget, so choose
-  `LEAN_NUM_THREADS` to fit your machine; in our run the summed resident memory peaked at about 1,435 GiB with 342
-  jobs, about 4.2 GiB per job.
-- **Disk.** Allow about 300 GB for `.lake/`.
+  `LEAN_NUM_THREADS` to fit your machine; in our run the summed resident memory peaked at about 1,392 GiB with 342
+  jobs, about 4.1 GiB per job.
+- **Disk.** Allow about 300 GB for `.lake/` (289 GB in our run).
 - **Memory maps.** Near the top of the import graph a Lean process maps about 77,000 `.olean` files, more than the
   Linux default `vm.max_map_count` (65,530). Raise it if you can: `sudo sysctl -w vm.max_map_count=262144`.
 
@@ -82,13 +83,18 @@ that reproduces the published per-module hashes.
 
 ## How it was verified
 
+Release v1.2 moved from Lean 4.33.0 to Lean 4.33.1, which fixes kernel soundness bugs in 4.33.0
+([release notes](https://lean-lang.org/doc/reference/stable/releases/v4.33.1/)). The first row ran on Lean 4.33.1, as
+did part of the comparator row; the other rows ran on Lean 4.33.0, on the same sources.
+
 | check | result |
 |---|---|
-| Standard Lake build (2026-10-01, by an independent agent on a Google compute cluster) | the 45,500 sources of this repository with the v1.0 Lake files, official Lean 4.33.0 and Mathlib from `lake exe cache get`: `lake build CKRoute.Final` built all 45,500 modules with no errors and no `sorry`; a second `lake build` rebuilt nothing; `lake env lean final/AuditFinal.lean` printed the expected type and the three standard axioms. v1.1 changes only the Lake configuration around these sources, as listed in [`CHANGELOG.md`](CHANGELOG.md) |
+| Standard Lake build on Lean 4.33.1 (release v1.2, 2026-10-01, by an independent agent on a Google compute cluster) | a clone of v1.2 (Lean 4.33.1, Mathlib v4.33.1 from `lake exe cache get`): a bare `lake build` from scratch built all 45,500 modules and `FinalCheck`, whose type and axiom checks passed, with no errors and no `sorry` (5.0 h with 342 parallel jobs, 1,171 CPU-hours); a second `lake build` rebuilt nothing; `lake env lean final/AuditFinal.lean` printed the expected type and the three standard axioms; `lake build CKChallenge.Solution` succeeded, and stock comparator accepted the two small checks below |
+| Standard Lake build on Lean 4.33.0 (2026-10-01, same agent) | the 45,500 sources of this repository with the v1.0 Lake files, official Lean 4.33.0 and Mathlib from `lake exe cache get`: `lake build CKRoute.Final` built all 45,500 modules with no errors and no `sorry`; a second `lake build` rebuilt nothing; `lake env lean final/AuditFinal.lean` printed the expected type and the three standard axioms. In that built tree, a bare `lake build` with the v1.1 Lake configuration rebuilt only `FinalCheck`, which passed |
 | Clean rebuild from these sources (2026-09-23) | every module recompiled with plain `lean` into an empty output root, with no prebuilt campaign files; the final theorem passed the gate (no errors, no `sorry`, only the 3 standard axioms), and `CKRoute/Final.olean` (sha256 `43de2287…`) is byte-identical to the original build's |
 | Kernel replay of the clean rebuild | `SHARDED_REPLAY_OK`: 4,990 / 4,990 shards, 45,500 modules each replayed exactly once, 22,668,080 declarations, 0 failures; the top shard prints the 3 standard axioms |
 | Independent end-to-end run of the v1.0 verification kit (2026-09-24) | `HOW_TO_VERIFY.md` of v1.0 followed literally on a fresh machine: all 45,500 modules rebuilt, 0 failures, 45,498 byte-identical to `CLEAN_BUILD_HASHES.tsv` plus the 2 expected `abs` modules; `CKRoute/Final.olean` `43de2287…`; audit: only the 3 standard axioms; kernel replay of this rebuild: all 45,500 modules, 0 failures |
-| comparator | stock comparator `v4.33.0` (Lean kernel and nanoda) accepted the bridge from `GeneralCK.GeneralCourtadeKumar` to the Formal Conjectures statement. A full run on the challenge/solution pair in `verification/comparator/` is in progress |
+| comparator | stock comparator accepted the bridge from `GeneralCK.GeneralCourtadeKumar` to the Formal Conjectures statement and the tests of its definitions, on Lean 4.33.1 and earlier on Lean 4.33.0 (there with both the Lean kernel and nanoda). A full run on the challenge/solution pair in `verification/comparator/` is in progress |
 
 What a human must check is only the statement (`GeneralCK/Statement.lean`, 63 lines) and the Mathlib definitions it
 uses; Lean's kernel checks everything else.
@@ -111,7 +117,7 @@ uses; Lean's kernel checks everything else.
 |---|---|
 | `GeneralCK/`, `CKRoute/`, `CKLane*/`, `E8*.lean` | the 45,500 Lean sources; `GeneralCK/Statement.lean` is the statement and `CKRoute/Final.lean` the final theorem |
 | `FinalCheck.lean` | the default build target: the type and axiom checks above |
-| `lakefile.toml`, `lean-toolchain`, `lake-manifest.json` | the Lake project (Mathlib `db584cd6…` and its dependencies pinned) |
+| `lakefile.toml`, `lean-toolchain`, `lake-manifest.json` | the Lake project (Lean 4.33.1; Mathlib `v4.33.1` and its dependencies pinned) |
 | `formalization.yaml` | project metadata in the mathlib-initiative format |
 | `verification/comparator/` | the comparator challenge (the Formal Conjectures statement), the solution and `config.json` |
 | `HOW_TO_VERIFY.md` | step-by-step machine check: requirements, commands, expected output |
@@ -120,8 +126,8 @@ uses; Lean's kernel checks everything else.
 | `SOURCES_MANIFEST.tsv` | per module: height, source path, source sha256, size, build recipe, closure imports |
 | `CLEAN_BUILD_HASHES.tsv` | per module: the clean build's `.olean` / `.ilean` sha256 and sizes, the comparison with the original build, wall time and max RSS |
 | `FAMILIES.tsv` | the certificate families (checker, soundness theorem, kernel evaluation) |
-| `BUILD/` | the optional plain-`lean` rebuild of v1.0 (`build_plain.sh`, `audit_final.sh`, `replay_fresh.sh`, `EXPECTED.md`) |
-| `LOCKS/` | the toolchain commit, per-file hashes of the prebuilt trusted packages of v1.0, and how to rebuild the trusted base yourself |
+| `BUILD/` | the optional plain-`lean` rebuild of v1.0 with Lean 4.33.0 (`build_plain.sh`, `audit_final.sh`, `replay_fresh.sh`, `EXPECTED.md`) |
+| `LOCKS/` | the v1.0 toolchain commit (Lean 4.33.0), per-file hashes of the prebuilt trusted packages of v1.0, and how to rebuild the trusted base yourself |
 | `final/` | `AuditFinal.lean` (`#check` + `#print axioms`), a copy of `Final.lean`, and the clean build's gate record for `CKRoute.Final` |
 | `replay/` | the frozen kernel-replay harness `ReplayShard.lean`, the 1,225-shard plan `plan.tsv`, and its drivers |
 | `provenance/` | the historical source variant that is not part of the source set, and a historical file that a source comment cites |
@@ -135,8 +141,8 @@ them.
 ## Trust base
 
 You trust:
-- the Lean 4.33.0 kernel;
-- Mathlib `db584cd6…` and its dependencies, as fetched by Lake (their licenses and pinned revisions are in
+- the Lean 4.33.1 kernel;
+- Mathlib `v4.33.1` and its dependencies, as fetched by Lake (their licenses and pinned revisions are in
   [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md));
 - the 63-line statement and the Mathlib definitions it uses.
 

@@ -32,7 +32,8 @@ def GeneralCourtadeKumar : Prop :=
 
 ### Mathlib definitions the statement relies on (also to be checked by a human)
 
-The statement uses these Mathlib definitions at the pinned revision `db584cd6…`. They are quoted verbatim from Mathlib at that revision (file:line):
+The statement uses these Mathlib definitions at revision `db584cd6…` (Mathlib v4.33.0; the v4.33.1 tag used since
+release v1.2 differs from it only in `lean-toolchain`). They are quoted verbatim from Mathlib at that revision (file:line):
 
 | name | definition at `db584cd6…` | file |
 |---|---|---|
@@ -189,8 +190,10 @@ For `GeneralCK.Certificates.E8TAxisZero0082Root`, the campaign's historical olea
 ## 6. The trust base
 
 - **Trusted.**
-  - The Lean 4.33.0 kernel and toolchain: official `lean-4.33.0-linux`, commit `d8b18978…`.
-  - Mathlib `db584cd6…` with its dependency packages (Batteries, Aesop, Qq, ProofWidgets, Plausible, ImportGraph, LeanSearchClient): 10,498 modules, pinned by `LOCKS/lake-manifest.json`, with file hashes in `LOCKS/TRUSTED_HASHES.tsv`.
+  - The Lean 4.33.1 kernel and toolchain: official release, commit `819816b2…` (since release v1.2; the v1.0
+    records used Lean 4.33.0, commit `d8b18978…`).
+  - Mathlib `v4.33.1` (Mathlib `db584cd6…` plus the toolchain bump) with its dependency packages (Batteries, Aesop, Qq, ProofWidgets, Plausible, ImportGraph, LeanSearchClient): 10,498 modules, pinned by `lake-manifest.json`. The prebuilt v1.0 packages (Mathlib `db584cd6…`, Lean
+    4.33.0) have file hashes in `LOCKS/TRUSTED_HASHES.tsv`.
 - **Not trusted: all 45,500 campaign modules.**
   - They are rebuilt from these sources by `lake build` (default target `FinalCheck`) or by plain `lean` (`BUILD/build_plain.sh`).
   - They are checked by the gate (compile, no sorry, axioms).

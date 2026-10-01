@@ -9,8 +9,9 @@ theorem GeneralCK.ArchiveRegionalBoundary.generalCourtadeKumar_closed : GeneralC
   axiom. Every numerical certificate is checked by Lean's kernel.
 - **Size.** 45,500 Lean files, 50.4 million lines. Almost all of it is generated certificate data; the proof code is
   roughly 0.2 million lines (`READABLE_FILES.md`).
-- **Versions.** Lean 4.33.0 and Mathlib `db584cd6d46c92f209a44c0f1c829460d327499d` (`lean-toolchain`,
-  `lakefile.toml`, `lake-manifest.json`).
+- **Versions.** Lean 4.33.1 and Mathlib `v4.33.1` (`0df444a360eaa60ab8c11dca51a86af692955474`, which is Mathlib v4.33.0
+  `db584cd6` plus the toolchain bump), pinned in `lean-toolchain`, `lakefile.toml` and `lake-manifest.json`. Lean
+  4.33.1 fixes kernel soundness bugs in 4.33.0.
 
 ## Step 1: read what is claimed (everyone, about 30 minutes)
 
@@ -27,10 +28,10 @@ theorem GeneralCK.ArchiveRegionalBoundary.generalCourtadeKumar_closed : GeneralC
 
 | resource | need |
 |---|---|
-| software | `git`, [elan](https://github.com/leanprover/elan) (installs Lean 4.33.0 from `lean-toolchain`), a network connection (GitHub and the Mathlib cache) |
-| compute | about 1,500 CPU-hours; our run took 6.5 hours with 342 parallel jobs on a 380-core machine |
-| memory | most modules need a few GiB, the largest about 42 GiB; Lake has no memory budget, so set `LEAN_NUM_THREADS` (the number of parallel jobs) to fit your machine. Our run averaged about 4.2 GiB of resident memory per job at its peak |
-| disk | about 300 GB for `.lake/` |
+| software | `git`, [elan](https://github.com/leanprover/elan) (installs Lean 4.33.1 from `lean-toolchain`), a network connection (GitHub and the Mathlib cache) |
+| compute | about 1,200 CPU-hours; our Lean 4.33.1 run took 5.0 hours with 342 parallel jobs on a 380-core machine |
+| memory | most modules need a few GiB, the largest about 42 GiB; Lake has no memory budget, so set `LEAN_NUM_THREADS` (the number of parallel jobs) to fit your machine. Our run averaged about 4.1 GiB of resident memory per job at its peak |
+| disk | about 300 GB for `.lake/` (289 GB in our run) |
 
 - **Platform.** We tested on Linux only. On Windows or macOS, use a Linux machine or WSL2.
 - **Memory maps.** Lean maps every imported `.olean`: near the top of the import graph this is about 77,000 files, more
@@ -48,7 +49,7 @@ git clone https://github.com/dpwoodru/general-courtade-kumar-lean.git
 cd general-courtade-kumar-lean
 sha256sum -c --quiet SHA256SUMS.txt     # optional: every repository file except README.md
 
-lake exe cache get                      # prebuilt Mathlib db584cd6 and its dependencies, from the Mathlib cache
+lake exe cache get                      # prebuilt Mathlib v4.33.1 and its dependencies, from the Mathlib cache
 lake build GeneralCK.Statement          # quick test (seconds): the statement file and its Mathlib imports
 LEAN_NUM_THREADS=32 lake build          # the whole proof: 45,500 modules, then FinalCheck
 lake env lean final/AuditFinal.lean     # optional: print the type and the axioms of the final theorem again
@@ -94,7 +95,7 @@ included) through the Lean kernel. `verification/comparator/` contains:
 
 They form the library `CKChallenge` of the root Lake project (`srcDir = "verification/comparator"`), which is not
 part of the default target. After Step 2, build comparator and lean4export at tag `v4.33.0` with this repository's
-toolchain, put `lean4export` and `landrun` on `PATH` (see comparator's README; its `scripts/fake-landrun.sh` runs
+toolchain (Lean 4.33.1, as in the FLT repository's `verification/comparator/run.sh`), put `lean4export` and `landrun` on `PATH` (see comparator's README; its `scripts/fake-landrun.sh` runs
 without a sandbox), and run from the repository root:
 
 ```bash
@@ -103,13 +104,16 @@ lake env /path/to/comparator/.lake/build/bin/comparator verification/comparator/
 ```
 
 Expect a long run: the exported environment of the solution is about 100 GB, and comparator replays it through the
-kernel on one core. Status: stock comparator `v4.33.0` (with both the Lean kernel and nanoda) accepted the bridge
-`CourtadeKumar.of_general`; a full run on `config.json` is in progress and its result will be recorded here.
+kernel on one core. Status: stock comparator accepted the bridge `CourtadeKumar.of_general` and the tests of the definitions, on Lean
+4.33.1 and earlier on Lean 4.33.0 (there with both the Lean kernel and nanoda); a full run on `config.json` is in
+progress and its result will be recorded here.
 
 ## Step 4 (optional): reproduce the published hashes with plain `lean`
 
 The v1.0 verification kit compiles every module with plain `lean` (no Lake) in topological order, with a memory
-budget, and compares each output with `CLEAN_BUILD_HASHES.tsv` byte for byte. It needs the v1.0 release assets for the
+budget, and compares each output with `CLEAN_BUILD_HASHES.tsv` byte for byte. It reproduces the v1.0 build exactly,
+so it uses Lean 4.33.0, whose kernel has soundness bugs that 4.33.1 fixes: use it to reproduce the published hashes,
+not as the main check. It needs the v1.0 release assets for the
 prebuilt trusted base (or see `LOCKS/REBUILD_TRUSTED_BASE.md`), about 720 CPU-hours, at least 128 GB RAM and about
 160 GB of disk. The sources are now in the repository, so pass `--sources .`:
 
@@ -141,8 +145,8 @@ our own kernel replay of the clean rebuild.
 ## The trust base
 
 You trust:
-- the Lean 4.33.0 kernel;
-- Mathlib `db584cd6` and its dependencies, as fetched by Lake;
+- the Lean 4.33.1 kernel;
+- Mathlib `v4.33.1` and its dependencies, as fetched by Lake;
 - the 63-line statement.
 
 The 45,500 modules of this repository are not trusted: they are rebuilt and checked by the kernel.

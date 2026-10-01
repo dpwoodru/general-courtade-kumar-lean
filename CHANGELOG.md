@@ -1,5 +1,28 @@
 # Changelog and errata
 
+## Release v1.2 (2026-10-01): Lean 4.33.1
+
+The proof is unchanged: no `.lean` file changed.
+
+- **Lean 4.33.1.** Lean 4.33.1 fixes kernel soundness bugs in 4.33.0
+  ([release notes](https://lean-lang.org/doc/reference/stable/releases/v4.33.1/)). Mathlib's tag `v4.33.1`
+  (`0df444a360eaa60ab8c11dca51a86af692955474`) is Mathlib `v4.33.0` (`db584cd6`) plus one commit that only bumps
+  `lean-toolchain`. So the only changes are `lean-toolchain` (`leanprover/lean4:v4.33.1`), the Mathlib rev in
+  `lakefile.toml` and the Mathlib entry of `lake-manifest.json`; the other packages keep their revisions.
+- **Verified on Lean 4.33.1** (2026-10-01, by the same independent agent, on a 380-core machine of a Google compute
+  cluster). A clone of commit `c3599c05` (the toolchain change), with Mathlib v4.33.1 from `lake exe cache get`:
+  - a bare `lake build` from scratch built all 45,500 modules and `FinalCheck`, with no errors and no `sorry`, in
+    5.0 h with 342 parallel jobs (1,171 CPU-hours). `FinalCheck`'s type and axiom checks passed;
+  - a second `lake build` rebuilt nothing;
+  - `lake env lean final/AuditFinal.lean` printed the expected type and the axioms `propext`, `Classical.choice`,
+    `Quot.sound`;
+  - `lake build CKChallenge.Solution` succeeded, and stock comparator accepted the bridge and the definition tests.
+
+  The commit after `c3599c05` changes only documentation.
+- **Documentation.** The version numbers and the build figures are updated. The plain-`lean` kit in `BUILD/` still
+  reproduces the published v1.0 hashes with Lean 4.33.0, which is now documented as the reason it uses that version.
+- `SHA256SUMS.txt` regenerated.
+
 ## Release v1.1 (2026-10-01): sources in the repository, standard Lake build
 
 The proof is unchanged. The 45,500 Lean sources are byte-identical to `sources_v3.tar.zst` of v1.0 (sha256

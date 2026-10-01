@@ -95,12 +95,13 @@ review:
   reviewers: []
   notes: >-
     An independent agent, which took no part in the development, built all 45,500
-    modules from source with the official Lean 4.33.0, Mathlib db584cd6 and a
-    standard lake build (no errors, no sorry; the final theorem depends only on
-    propext, Classical.choice and Quot.sound), and checked with comparator (Lean
-    kernel and nanoda) the bridge from the main theorem to the Formal Conjectures
-    statement. A full comparator run on verification/comparator/config.json and
-    review by human experts are in progress. Earlier, the development's own clean
+    modules from source with a standard lake build on the official Lean 4.33.1 and
+    Mathlib v4.33.1 (no errors, no sorry; the default target FinalCheck checks that
+    the final theorem depends only on propext, Classical.choice and Quot.sound), as
+    it had earlier on Lean 4.33.0, and checked with comparator the bridge from the
+    main theorem to the Formal Conjectures statement. A full comparator run on
+    verification/comparator/config.json and review by human experts are in
+    progress. Earlier, the development's own clean
     rebuild with plain lean was kernel-replayed in full (4,990/4,990 shards,
     22,668,080 declarations, 0 failures). See README.md, "How it was verified".
 
