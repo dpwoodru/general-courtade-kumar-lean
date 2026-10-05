@@ -1,5 +1,17 @@
 # Changelog and errata
 
+## 2026-10-05: full comparator run (documentation only)
+
+The proof is unchanged: no `.lean` file changed.
+
+- **comparator.** The full run on `verification/comparator/config.json` was accepted on 2026-10-04. The record, with
+  the final output and the hashes of the inputs and the toolchain, is in `verification/comparator/results/2026-10-04/`.
+  The run used the opt-in parallel kernel replay proposed in
+  [leanprover/comparator#95](https://github.com/leanprover/comparator/issues/95), which is not yet reviewed upstream,
+  on exports made with Lean 4.33.0, replayed by the Lean 4.33.1 kernel. An end-to-end run on exports made with
+  Lean 4.33.1 is in progress.
+- `README.md`, `HOW_TO_VERIFY.md` and `formalization.yaml` updated accordingly; `SHA256SUMS.txt` regenerated.
+
 ## Release v1.2 (2026-10-01): Lean 4.33.1
 
 The proof is unchanged: no `.lean` file changed.

@@ -1,0 +1,66 @@
+{
+  "verdict": "accepted",
+  "final_lines": [
+    "[ReplayStats] mode=parallel replay_ms=283239264 checked_env_consts=22109794 replayed_decls=22109791 thm_tasks=9654755 postponed_ctor_rec=2579 env_digest=12041597716954051677 decl_counts=(axiom=3,defn=12451223,thm=9654755,opaque=42,quot=4,induct=1188,ctor=1389,rec=1190)",
+    "Lean default kernel accepts the solution",
+    "Your solution is okay!"
+  ],
+  "config": {
+    "challenge_module": "CKChallenge.Challenge",
+    "solution_module": "CKChallenge.Solution",
+    "theorem_names": [
+      "CourtadeKumar.courtade_kumar"
+    ],
+    "permitted_axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ]
+  },
+  "inputs": {
+    "challenge_export": {
+      "bytes": 66938973,
+      "sha256": "f6afc18413da4fac57b7fe9d10702bdecdbaec85c6e73755e76bb1316e274e1b"
+    },
+    "solution_export": {
+      "bytes": 104726244087,
+      "sha256": "b46814de2d0a935374bf6c66d2c97751b1c60695a93c16d651909a71725ee800"
+    },
+    "made_with": "lean4export, Lean 4.33.0 and Mathlib v4.33.0, from this repository's sources (the v1.0 sources_v3 set), 2026-09-30"
+  },
+  "kernel": {
+    "lean_version": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+    "lean_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+    "libleanshared_sha256": "23d636cac1cadcba37beac30eff9b9b20d66cee726cf5defb4ae39f1284a3e5a"
+  },
+  "comparator": {
+    "binary_sha256": "3bc16bba07de7a953e408342bf56a11ade76c09eda166010b665422c71040433",
+    "replay_mode": "parallel (opt-in parallel kernel replay proposed in leanprover/comparator#95, not yet reviewed upstream)",
+    "threads": 342
+  },
+  "run": {
+    "started_utc": "2026-10-01T07:42:37Z",
+    "finished_utc": "2026-10-04T19:05:37Z",
+    "wall_s": 300179.66,
+    "cpu_s": 53973665.74,
+    "peak_rss_gib": 940.21,
+    "exit_code": 0,
+    "stderr_bytes": 0,
+    "uninterrupted_single_process": true
+  },
+  "replay_stats": {
+    "mode": "parallel",
+    "replay_ms": 283239264,
+    "checked_env_consts": 22109794,
+    "replayed_decls": 22109791,
+    "thm_tasks": 9654755,
+    "postponed_ctor_rec": 2579,
+    "env_digest": "12041597716954051677",
+    "decl_counts": "(axiom=3,defn=12451223,thm=9654755,opaque=42,quot=4,induct=1188,ctor=1389,rec=1190)"
+  },
+  "original_stdout": {
+    "bytes": 4985,
+    "sha256": "6e8b891bd45ff15bb0736037f28e7d81ecd9a724845093573f07f41ab3cbf4cb",
+    "note": "comparator_output.txt is this output with the two input file paths shortened to <work>/"
+  }
+}

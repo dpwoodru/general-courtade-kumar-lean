@@ -103,10 +103,14 @@ lake build CKChallenge.Challenge CKChallenge.Solution
 lake env /path/to/comparator/.lake/build/bin/comparator verification/comparator/config.json
 ```
 
-Expect a long run: the exported environment of the solution is about 100 GB, and comparator replays it through the
-kernel on one core. Status: stock comparator accepted the bridge `CourtadeKumar.of_general` and the tests of the definitions, on Lean
-4.33.1 and earlier on Lean 4.33.0 (there with both the Lean kernel and nanoda); a full run on `config.json` is in
-progress and its result will be recorded here.
+Expect a long run: the exported environment of the solution is about 100 GB, and stock comparator replays it through
+the kernel on one core (projected at one to two weeks). Status: the full run on `config.json` was accepted on
+2026-10-04 (`Your solution is okay!`), after 83 hours on one machine with the opt-in parallel kernel replay proposed in
+[leanprover/comparator#95](https://github.com/leanprover/comparator/issues/95), which is not yet reviewed upstream. Its
+exports were made with Lean 4.33.0 and replayed by the Lean 4.33.1 kernel; the record is in
+[`verification/comparator/results/2026-10-04/`](verification/comparator/results/2026-10-04/). An end-to-end run on
+exports made with Lean 4.33.1 is in progress. Earlier, stock comparator accepted the bridge `CourtadeKumar.of_general`
+and the tests of the definitions, on Lean 4.33.1 and on Lean 4.33.0 (there with both the Lean kernel and nanoda).
 
 ## Step 4 (optional): reproduce the published hashes with plain `lean`
 
