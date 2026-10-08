@@ -1,0 +1,38 @@
+{
+  "verdict": "accept",
+  "exit_code": 0,
+  "last_stderr_lines": [
+    "con-leche: check 21400000/22106005 definition GeneralCK.Certificates.LaneCB.RB2Cell011647.wholeBoxes38 t=7575.6s",
+    "con-leche: check 21600000/22106005 theorem CKLaneC.RSC2.S01_0003.s2_0 t=11000.3s",
+    "con-leche: check 21800000/22106005 definition CKLaneC.RSC2.S10_0048.q0 t=16145.1s",
+    "con-leche: check 22000000/22106005 definition CKLaneM1.ML.Population.ix0788 t=19593.3s",
+    "con-leche: check done: 22106005/22106005 t=20343.0s (check 18403.4s)",
+    "con-leche: done: parse 854.9s, install 1084.6s, check 18403.4s, 150 workers t=20343.0s"
+  ],
+  "last_stdout_lines": [
+    "con-leche: accepted 22107215 declarations (--verified)"
+  ],
+  "checker": {
+    "name": "con-leche",
+    "repo": "https://github.com/leanprover/con-leche",
+    "commit": "67f04630d88718e81aa4d07ab64501f68f105398",
+    "lean_toolchain": "leanprover/lean4:v4.35.0-rc3",
+    "binary_sha256": "a0a6705813cf4114b63385be4f3b844b9496f0595c51829b018af92eea41b000",
+    "mode": "--verified",
+    "jobs": 150,
+    "patch": "con-leche-fuel.patch: whnfLoopFuel 1e5->1e8, whnfCoreLoopFuel 1e6->1e9, defeqLoopFuel 1e5->1e8 (ConLeche/Kernel/Core.lean), and the positivity witness of whnfLoopFuel in ConLeche/Verify/Knot.lean. Fuel exhaustion is an internal error (exit 3), never an accept; the official build stopped with 'fuel exhausted: whnf loop' at CKLaneD.Structural.structural_paths._proof_1_1.",
+    "patch_sha256": "4ebb8a47f2a827546c181e60522eb05b2e1a4ab74e20360afdca63809b3c64c6"
+  },
+  "input": {
+    "what": "lean4export 3.1.0 NDJSON export of CKChallenge.Solution, Lean 4.33.1 build of dpwoodru/general-courtade-kumar-lean @ c3599c05181ad357331b701edf8fd8ec75c88305",
+    "bytes": 104726218136,
+    "sha256": "f7e39d1adcb52ecd1b8dfdd96237e374a23b167f0cd8afeecca97b14c68fd3f6"
+  },
+  "run": {
+    "started_utc": "2026-10-08T12:18:09Z",
+    "finished_utc": "2026-10-08T18:02:05Z",
+    "wall_s": 20635.9,
+    "cpu_s": 2287982.0,
+    "peak_rss_gib": 954.37
+  }
+}

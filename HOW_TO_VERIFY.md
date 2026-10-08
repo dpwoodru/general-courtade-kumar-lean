@@ -112,6 +112,11 @@ exports were made with Lean 4.33.0 and replayed by the Lean 4.33.1 kernel; the r
 exports made with Lean 4.33.1 is in progress. Earlier, stock comparator accepted the bridge `CourtadeKumar.of_general`
 and the tests of the definitions, on Lean 4.33.1 and on Lean 4.33.0 (there with both the Lean kernel and nanoda).
 
+Independently, the Lean FRO's external checker [con-leche](https://github.com/leanprover/con-leche), which has a formal
+consistency proof, accepted the whole Lean 4.33.1 export of `CKChallenge.Solution` on 2026-10-08, with its loop step
+budgets raised 1000x. The record, the patch and how to reproduce it are in
+[`verification/con-leche/results/2026-10-08/`](verification/con-leche/results/2026-10-08/).
+
 ## Step 4 (optional): reproduce the published hashes with plain `lean`
 
 The v1.0 verification kit compiles every module with plain `lean` (no Lake) in topological order, with a memory

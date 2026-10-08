@@ -1,5 +1,16 @@
 # Changelog and errata
 
+## 2026-10-08: con-leche check (documentation only)
+
+The proof is unchanged: no `.lean` file changed.
+
+- **con-leche.** The Lean FRO's external checker [con-leche](https://github.com/leanprover/con-leche), which has a
+  formal consistency proof, accepted the whole Lean 4.33.1 export of `CKChallenge.Solution` (sha256 `f7e39d1a…`) on
+  2026-10-08: `accepted 22107215 declarations (--verified)`. It ran at commit `67f04630` with its loop step budgets
+  raised 1000x, because the official build stops on a step limit at `CKLaneD.Structural.structural_paths`. The
+  record, the patch and how to reproduce it are in `verification/con-leche/results/2026-10-08/`.
+- `README.md`, `HOW_TO_VERIFY.md` and `formalization.yaml` updated accordingly; `SHA256SUMS.txt` regenerated.
+
 ## 2026-10-05: full comparator run (documentation only)
 
 The proof is unchanged: no `.lean` file changed.

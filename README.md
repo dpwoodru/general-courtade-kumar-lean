@@ -84,8 +84,8 @@ that reproduces the published per-module hashes.
 ## How it was verified
 
 Release v1.2 moved from Lean 4.33.0 to Lean 4.33.1, which fixes kernel soundness bugs in 4.33.0
-([release notes](https://lean-lang.org/doc/reference/stable/releases/v4.33.1/)). The first row ran on Lean 4.33.1, as
-did part of the comparator row; the other rows ran on Lean 4.33.0, on the same sources.
+([release notes](https://lean-lang.org/doc/reference/stable/releases/v4.33.1/)). The first row and the con-leche row ran
+on Lean 4.33.1, as did part of the comparator row; the other rows ran on Lean 4.33.0, on the same sources.
 
 | check | result |
 |---|---|
@@ -95,6 +95,7 @@ did part of the comparator row; the other rows ran on Lean 4.33.0, on the same s
 | Kernel replay of the clean rebuild | `SHARDED_REPLAY_OK`: 4,990 / 4,990 shards, 45,500 modules each replayed exactly once, 22,668,080 declarations, 0 failures; the top shard prints the 3 standard axioms |
 | Independent end-to-end run of the v1.0 verification kit (2026-09-24) | `HOW_TO_VERIFY.md` of v1.0 followed literally on a fresh machine: all 45,500 modules rebuilt, 0 failures, 45,498 byte-identical to `CLEAN_BUILD_HASHES.tsv` plus the 2 expected `abs` modules; `CKRoute/Final.olean` `43de2287…`; audit: only the 3 standard axioms; kernel replay of this rebuild: all 45,500 modules, 0 failures |
 | comparator | the full run on the challenge/solution pair in `verification/comparator/` was accepted (2026-10-04): the solution proves the Formal Conjectures statement with only the three standard axioms, and the Lean 4.33.1 kernel replayed all 22,109,794 constants of its export (made with Lean 4.33.0). The run used the opt-in parallel kernel replay proposed in [leanprover/comparator#95](https://github.com/leanprover/comparator/issues/95), not yet reviewed upstream; record in [`verification/comparator/results/2026-10-04/`](verification/comparator/results/2026-10-04/). An end-to-end run on Lean 4.33.1 exports is in progress. Stock comparator also accepted the bridge from `GeneralCK.GeneralCourtadeKumar` to the Formal Conjectures statement and the tests of its definitions, on Lean 4.33.1 and earlier on Lean 4.33.0 (there with both the Lean kernel and nanoda) |
+| con-leche | the Lean FRO's external checker [con-leche](https://github.com/leanprover/con-leche), which has a formal consistency proof, accepted the whole Lean 4.33.1 export of the solution (2026-10-08): `accepted 22107215 declarations (--verified)`. It ran with its loop step budgets raised 1000x, because the official build stops on a step limit at one large `decide +kernel` proof; running out of steps is an error, never an accept, and con-leche's consistency theorems still build with the change. Record in [`verification/con-leche/results/2026-10-08/`](verification/con-leche/results/2026-10-08/) |
 
 What a human must check is only the statement (`GeneralCK/Statement.lean`, 63 lines) and the Mathlib definitions it
 uses; Lean's kernel checks everything else.
