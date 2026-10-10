@@ -1,5 +1,17 @@
 # Changelog and errata
 
+## 2026-10-10: con-leche check with unmodified con-leche (documentation only)
+
+The proof is unchanged: no `.lean` file changed.
+
+- **con-leche.** Unmodified con-leche, at commit `65e74db` (`master` on 2026-10-09), accepted the whole Lean 4.33.1
+  export of `CKChallenge.Solution` (sha256 `f7e39d1a…`) on 2026-10-10: `accepted 22107215 declarations (--verified)`.
+  Upstream raised the loop step budgets to 2^62 in `b0a170c`, after
+  [leanprover/con-leche#10](https://github.com/leanprover/con-leche/issues/10), so the local patch of the 2026-10-08
+  run is no longer needed. The record is in `verification/con-leche/results/2026-10-10/`.
+- `README.md`, `HOW_TO_VERIFY.md`, `formalization.yaml` and the README of the 2026-10-08 record updated accordingly;
+  `SHA256SUMS.txt` regenerated.
+
 ## 2026-10-08: con-leche check (documentation only)
 
 The proof is unchanged: no `.lean` file changed.

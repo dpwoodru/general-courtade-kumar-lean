@@ -1,5 +1,8 @@
 # con-leche check, 2026-10-08: accepted
 
+> **Newer record:** on 2026-10-10, unmodified con-leche, after upstream raised the step budgets, accepted the same
+> export: see [`../2026-10-10/`](../2026-10-10/).
+
 [con-leche](https://github.com/leanprover/con-leche) is the Lean FRO's external checker with a formal consistency
 proof. It accepted the whole export of the solution, made with Lean 4.33.1:
 

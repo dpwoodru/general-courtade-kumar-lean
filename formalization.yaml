@@ -102,10 +102,11 @@ review:
     main theorem to the Formal Conjectures statement. A full comparator run on
     verification/comparator/config.json was accepted on 2026-10-04, using the
     opt-in parallel kernel replay of leanprover/comparator#95 (not yet reviewed
-    upstream; see verification/comparator/results/2026-10-04/). On 2026-10-08 the
-    Lean FRO's verified checker con-leche, with its loop step budgets raised 1000x,
-    accepted the whole Lean 4.33.1 export of the solution (see
-    verification/con-leche/results/2026-10-08/). Review by human
+    upstream; see verification/comparator/results/2026-10-04/). On 2026-10-10 the
+    Lean FRO's verified checker con-leche, unmodified at commit 65e74db, accepted
+    the whole Lean 4.33.1 export of the solution (see
+    verification/con-leche/results/2026-10-10/), as a build with its loop step
+    budgets raised 1000x had on 2026-10-08. Review by human
     experts is in progress. Earlier, the development's own clean
     rebuild with plain lean was kernel-replayed in full (4,990/4,990 shards,
     22,668,080 declarations, 0 failures). See README.md, "How it was verified".

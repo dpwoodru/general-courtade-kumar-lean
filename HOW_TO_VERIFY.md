@@ -113,9 +113,11 @@ exports made with Lean 4.33.1 is in progress. Earlier, stock comparator accepted
 and the tests of the definitions, on Lean 4.33.1 and on Lean 4.33.0 (there with both the Lean kernel and nanoda).
 
 Independently, the Lean FRO's external checker [con-leche](https://github.com/leanprover/con-leche), which has a formal
-consistency proof, accepted the whole Lean 4.33.1 export of `CKChallenge.Solution` on 2026-10-08, with its loop step
-budgets raised 1000x. The record, the patch and how to reproduce it are in
-[`verification/con-leche/results/2026-10-08/`](verification/con-leche/results/2026-10-08/).
+consistency proof, accepted the whole Lean 4.33.1 export of `CKChallenge.Solution` on 2026-10-10, unmodified, at
+commit `65e74db`. The record and how to reproduce it are in
+[`verification/con-leche/results/2026-10-10/`](verification/con-leche/results/2026-10-10/). An earlier run on
+2026-10-08, with its loop step budgets raised 1000x by a local patch before upstream raised them, gave the same verdict;
+its record and the patch are in [`verification/con-leche/results/2026-10-08/`](verification/con-leche/results/2026-10-08/).
 
 ## Step 4 (optional): reproduce the published hashes with plain `lean`
 

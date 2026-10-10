@@ -1,0 +1,37 @@
+{
+  "verdict": "accept",
+  "exit_code": 0,
+  "last_stderr_lines": [
+    "con-leche: check 21400000/22106005 definition GeneralCK.Certificates.LaneCB.RB2Cell011647.wholeBoxes38 t=8371.9s",
+    "con-leche: check 21600000/22106005 theorem CKLaneC.RSC2.S01_0003.s2_0 t=11609.5s",
+    "con-leche: check 21800000/22106005 definition CKLaneC.RSC2.S10_0048.q0 t=16859.5s",
+    "con-leche: check 22000000/22106005 definition CKLaneM1.ML.Population.ix0776 t=20373.7s",
+    "con-leche: check done: 22106005/22106005 t=21453.4s (check 19589.9s)",
+    "con-leche: done: parse 1013.3s, install 850.2s, check 19589.9s, 150 workers t=21453.4s"
+  ],
+  "last_stdout_lines": [
+    "con-leche: accepted 22107215 declarations (--verified)"
+  ],
+  "checker": {
+    "name": "con-leche",
+    "repo": "https://github.com/leanprover/con-leche",
+    "commit": "65e74db49e89ad2bbd1e90aa4f784954db41fa3a",
+    "lean_toolchain": "leanprover/lean4:v4.35.0-rc3",
+    "binary_sha256": "058e8b0cd946813056ab43de1f246d1c24ee17a9ed46276b48bd709119bdf3b9",
+    "mode": "--verified",
+    "jobs": 150,
+    "modified": false
+  },
+  "input": {
+    "what": "lean4export 3.1.0 NDJSON export of CKChallenge.Solution, Lean 4.33.1 build of dpwoodru/general-courtade-kumar-lean @ c3599c05181ad357331b701edf8fd8ec75c88305",
+    "bytes": 104726218136,
+    "sha256": "f7e39d1adcb52ecd1b8dfdd96237e374a23b167f0cd8afeecca97b14c68fd3f6"
+  },
+  "run": {
+    "started_utc": "2026-10-09T19:40:53Z",
+    "finished_utc": "2026-10-10T01:48:00Z",
+    "wall_s": 22027.3,
+    "cpu_s": 2057514.49,
+    "peak_rss_gib": 967.27
+  }
+}
