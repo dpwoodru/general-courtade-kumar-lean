@@ -1,4 +1,4 @@
-# comparator `compareAt` and `checkAxioms` on the Lean 4.33.1 exports, 2026-10-08: passed
+# comparator on the Lean 4.33.1 exports: `compareAt` and `checkAxioms` passed 2026-10-08, full run accepted 2026-10-11
 
 On the Lean 4.33.1 exports of release v1.2 (commit `c3599c05`), comparator's statement comparison and axiom check
 passed ([`compare_and_axioms_output.txt`](compare_and_axioms_output.txt)):
@@ -31,13 +31,24 @@ and axiom checks here and con-leche's proof check are on the same file.
 | run | Google compute cluster, 2026-10-08 UTC. The inputs were re-hashed at 02:18:59, and comparator started at 02:19:14. `compareAt` had passed by 05:45:59 and `checkAxioms` by 06:41:46. These times come from the run's once-a-minute monitor ([`run_log_excerpt.txt`](run_log_excerpt.txt)) |
 
 [`../../tools/`](../../tools/) has the exact upstream revisions, the two patches, the binary hashes and the byte-identity
-checks. [`result.json`](result.json) has the hashes and times in machine-readable form. In the two text files, the
-run's working directory is shortened to `<work>/`, and the host name and task number are replaced by `<host>` and
-`<task>`.
+checks. [`result.json`](result.json) has the hashes and times in machine-readable form. In the text files, the run's
+working directory is shortened to `<work>/`, and the host name and task number are replaced by `<host>` and `<task>`.
 
-## Kernel replay
+## Kernel replay: accepted, 2026-10-11
 
-After `checkAxioms`, the same process went on to replay the whole solution export through the Lean 4.33.1 kernel, with
-the parallel replay of [leanprover/comparator#95](https://github.com/leanprover/comparator/issues/95). That replay is
-not part of this record: con-leche checked the proofs of this file. When this record was written, the replay had
-checked more than 99% of the 9,654,755 theorems.
+After `checkAxioms`, the same process replayed the whole solution export through the Lean 4.33.1 kernel, with the
+parallel replay of [leanprover/comparator#95](https://github.com/leanprover/comparator/issues/95) (not yet reviewed
+upstream). It accepted. The last lines of [`comparator_output.txt`](comparator_output.txt), the complete output:
+
+```
+[ReplayStats] mode=parallel replay_ms=271211118 checked_env_consts=22109794 replayed_decls=22109791 thm_tasks=9654755 postponed_ctor_rec=2579 env_digest=12720708470609912041 decl_counts=(axiom=3,defn=12451223,thm=9654755,opaque=42,quot=4,induct=1188,ctor=1389,rec=1190)
+Lean default kernel accepts the solution
+Your solution is okay!
+```
+
+- **Run:** one uninterrupted process, 2026-10-08 02:19 UTC to 2026-10-11 10:35 UTC: 80.3 h, 342 threads,
+  15,023 CPU-hours, peak memory 897 GiB. Exit code 0, empty stderr. The original output was 4,985 bytes, sha256
+  `2e7b8c917e1dbb08e8b428d8933d42f0dfcf2070c6795349e7d3890f2f899e6f`.
+- **Second check of the proofs.** This replay is a second proof check of this file, with Lean's own kernel, next to
+  con-leche's. The declaration counts are those of the 2026-10-04 run on the Lean 4.33.0 exports.
+- **Environment digest.** The digest differs from that run's, as expected: the two solution exports are different files.

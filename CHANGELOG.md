@@ -1,12 +1,13 @@
 # Changelog and errata
 
-## 2026-10-11: comparator statement and axiom checks on the Lean 4.33.1 exports (documentation only)
+## 2026-10-11: comparator on the Lean 4.33.1 exports (documentation only)
 
 The proof is unchanged: no `.lean` file changed.
 
-- **comparator.** On the Lean 4.33.1 exports of release v1.2, `compareAt` and `checkAxioms` passed on 2026-10-08. The
-  solution export (sha256 `f7e39d1a…`) is the file that unmodified con-leche accepted on 2026-10-10. The record is in
-  `verification/comparator/results/2026-10-08/`.
+- **comparator.** On the Lean 4.33.1 exports of release v1.2, `compareAt` and `checkAxioms` passed on 2026-10-08, and
+  the full run was accepted on 2026-10-11 (`Your solution is okay!`), with the opt-in parallel kernel replay of
+  comparator#95. The solution export (sha256 `f7e39d1a…`) is the file that unmodified con-leche accepted on
+  2026-10-10. The record is in `verification/comparator/results/2026-10-08/`.
 - **Tool revisions.** `verification/comparator/tools/` gives the exact comparator and lean4export revisions used for
   the comparator records: the upstream tags and commits, the patches, the binary hashes, and the byte-identity checks
   of the fast lean4export build against the stock build.

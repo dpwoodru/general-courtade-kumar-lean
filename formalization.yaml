@@ -103,7 +103,8 @@ review:
     verification/comparator/config.json was accepted on 2026-10-04, using the
     opt-in parallel kernel replay of leanprover/comparator#95 (not yet reviewed
     upstream; see verification/comparator/results/2026-10-04/). On the Lean 4.33.1
-    exports, comparator's compareAt and checkAxioms passed on 2026-10-08 (see
+    exports, comparator's compareAt and checkAxioms passed on 2026-10-08 and the
+    full run was accepted on 2026-10-11 (see
     verification/comparator/results/2026-10-08/ and, for the exact tool
     revisions, verification/comparator/tools/). On 2026-10-10 the
     Lean FRO's verified checker con-leche, unmodified at commit 65e74db, accepted

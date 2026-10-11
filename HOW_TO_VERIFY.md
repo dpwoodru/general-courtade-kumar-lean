@@ -109,8 +109,8 @@ the kernel on one core (projected at one to two weeks). Status: the full run on 
 [leanprover/comparator#95](https://github.com/leanprover/comparator/issues/95), which is not yet reviewed upstream. Its
 exports were made with Lean 4.33.0 and replayed by the Lean 4.33.1 kernel; the record is in
 [`verification/comparator/results/2026-10-04/`](verification/comparator/results/2026-10-04/). On the Lean 4.33.1
-exports of release v1.2, `compareAt` and `checkAxioms` passed on 2026-10-08; the solution export is the file con-leche
-accepted (below). That record is in
+exports of release v1.2, `compareAt` and `checkAxioms` passed on 2026-10-08, and the full run was accepted on
+2026-10-11; the solution export is the file con-leche accepted (below). That record is in
 [`verification/comparator/results/2026-10-08/`](verification/comparator/results/2026-10-08/), and the exact comparator
 and lean4export revisions, with their patches, are in [`verification/comparator/tools/`](verification/comparator/tools/).
 Earlier, stock comparator accepted the bridge `CourtadeKumar.of_general`

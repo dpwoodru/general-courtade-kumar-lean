@@ -1,5 +1,5 @@
 {
-  "verdict": "compareAt and checkAxioms passed",
+  "verdict": "accepted: compareAt and checkAxioms passed (2026-10-08); full kernel replay accepted (2026-10-11)",
   "output_lines": [
     "Parsed challenge export (16336 constants). Parsing solution export stream...",
     "Parsed solution export (22109794 constants). Running Comparator.compareAt...",
@@ -80,10 +80,39 @@
     "compareAt_passed_by_utc": "2026-10-08T05:45:59Z",
     "checkAxioms_passed_by_utc": "2026-10-08T06:41:46Z",
     "times_note": "from the run's once-a-minute monitor; see run_log_excerpt.txt",
-    "kernel_replay": "continued in the same process (parallel replay, leanprover/comparator#95); not part of this record"
+    "finished_utc": "2026-10-11T10:35:29Z",
+    "wall_s": 288975.64,
+    "cpu_s": 54083102.99,
+    "peak_rss_gib": 897.01,
+    "threads": 342,
+    "exit_code": 0,
+    "stderr_bytes": 0,
+    "uninterrupted_single_process": true,
+    "replay_mode": "parallel (opt-in parallel kernel replay proposed in leanprover/comparator#95, not yet reviewed upstream)"
   },
   "files": {
-    "compare_and_axioms_output.txt": "the first 8 lines of the run's stdout, working directory shortened to <work>/",
-    "run_log_excerpt.txt": "the run's monitor lines for input verification, launch and the stdout transitions, working directory shortened to <work>/"
+    "compare_and_axioms_output.txt": "the first 8 lines of the stdout (through the start of the kernel replay), working directory shortened to <work>/",
+    "run_log_excerpt.txt": "the run's monitor lines for input verification, launch and the stdout transitions, working directory shortened to <work>/",
+    "comparator_output.txt": "the complete stdout, working directory shortened to <work>/"
+  },
+  "final_lines": [
+    "[ReplayStats] mode=parallel replay_ms=271211118 checked_env_consts=22109794 replayed_decls=22109791 thm_tasks=9654755 postponed_ctor_rec=2579 env_digest=12720708470609912041 decl_counts=(axiom=3,defn=12451223,thm=9654755,opaque=42,quot=4,induct=1188,ctor=1389,rec=1190)",
+    "Lean default kernel accepts the solution",
+    "Your solution is okay!"
+  ],
+  "replay_stats": {
+    "mode": "parallel",
+    "replay_ms": 271211118,
+    "checked_env_consts": 22109794,
+    "replayed_decls": 22109791,
+    "thm_tasks": 9654755,
+    "postponed_ctor_rec": 2579,
+    "env_digest": "12720708470609912041",
+    "decl_counts": "(axiom=3,defn=12451223,thm=9654755,opaque=42,quot=4,induct=1188,ctor=1389,rec=1190)"
+  },
+  "original_stdout": {
+    "bytes": 4985,
+    "sha256": "2e7b8c917e1dbb08e8b428d8933d42f0dfcf2070c6795349e7d3890f2f899e6f",
+    "note": "comparator_output.txt is this output with the run's working directory shortened to <work>/"
   }
 }
