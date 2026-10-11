@@ -1,0 +1,89 @@
+{
+  "verdict": "compareAt and checkAxioms passed",
+  "output_lines": [
+    "Parsed challenge export (16336 constants). Parsing solution export stream...",
+    "Parsed solution export (22109794 constants). Running Comparator.compareAt...",
+    "Comparator.compareAt passed. Running Comparator.checkAxioms...",
+    "Comparator.checkAxioms passed."
+  ],
+  "config": {
+    "challenge_module": "CKChallenge.Challenge",
+    "solution_module": "CKChallenge.Solution",
+    "theorem_names": [
+      "CourtadeKumar.courtade_kumar"
+    ],
+    "permitted_axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ],
+    "enable_nanoda": false,
+    "challenge_export_file": "<work>/challenge_export_v4331.txt",
+    "solution_export_file": "<work>/solution_export_v4331.txt"
+  },
+  "inputs": {
+    "challenge_export": {
+      "bytes": 66938973,
+      "sha256": "83593ce170233f5dc43c2506ec495d33751522193772fa51a917fabf1def3a21",
+      "constants": 16336,
+      "written_by": "stock and fast lean4export builds, byte-identical output"
+    },
+    "solution_export": {
+      "bytes": 104726218136,
+      "sha256": "f7e39d1adcb52ecd1b8dfdd96237e374a23b167f0cd8afeecca97b14c68fd3f6",
+      "constants": 22109794,
+      "written_by": "fast lean4export build",
+      "stock_byte_identity_check": "first 9 of 49 chunks of 2 GiB (19,327,352,832 bytes) identical to the stock build's; the other 40 chunks not compared",
+      "same_file_as": "verification/con-leche/results/2026-10-10/ (accepted by unmodified con-leche)"
+    },
+    "made_from": "commit c3599c05181ad357331b701edf8fd8ec75c88305 (release v1.2), built with Lean 4.33.1 and Mathlib v4.33.1"
+  },
+  "lean": {
+    "lean_version": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+    "lean_sha256": "e8baaa71855a616dc351028f3ad2200051b0671f423a1696a100e809302d5550",
+    "libleanshared_sha256": "23d636cac1cadcba37beac30eff9b9b20d66cee726cf5defb4ae39f1284a3e5a"
+  },
+  "comparator": {
+    "upstream": "https://github.com/leanprover/comparator",
+    "base_tag": "v4.33.0",
+    "base_commit": "3927ad383f208ae977c340a91c48ac9b497d2097",
+    "lean4export_dependency_commit": "15f6055e299ad5b89345e533cc2192f4cc00f659",
+    "patch": "verification/comparator/tools/comparator-v4.33.0-parallel-replay-v4331.patch",
+    "patch_sha256": "668dfe57fe251f08930e985cdc598c3d9b61116eecbf7b2f821633e905a7a38b",
+    "unchanged_upstream_files": [
+      "Comparator.lean",
+      "Comparator/Compare.lean",
+      "Comparator/Axioms.lean",
+      "Comparator/Util.lean",
+      "Export/Parse.lean (lean4export)"
+    ],
+    "binary_bytes": 121011920,
+    "binary_sha256": "3bc16bba07de7a953e408342bf56a11ade76c09eda166010b665422c71040433"
+  },
+  "lean4export": {
+    "upstream": "https://github.com/leanprover/lean4export",
+    "base_tag": "v4.33.0",
+    "base_commit": "15f6055e299ad5b89345e533cc2192f4cc00f659",
+    "fast_build": {
+      "patch": "verification/comparator/tools/lean4export-v4.33.0-fast-v4331.patch",
+      "patch_sha256": "76d3174ef83a7e372d35e1852bb537d47c3076228ca2124c09816803b9bc5067",
+      "binary_sha256": "6b1bdccb43a2437b628c13c361270e00fb50f70a569d906d524bba1745dc3a34"
+    },
+    "stock_build": {
+      "change": "lean-toolchain set to leanprover/lean4:v4.33.1 only",
+      "binary_sha256": "805ab4cc6a88dcef109644d201c3142261f524aecaf58b04913a9f029e21e9b5"
+    }
+  },
+  "run": {
+    "inputs_rehashed_utc": "2026-10-08T02:18:59Z",
+    "started_utc": "2026-10-08T02:19:14Z",
+    "compareAt_passed_by_utc": "2026-10-08T05:45:59Z",
+    "checkAxioms_passed_by_utc": "2026-10-08T06:41:46Z",
+    "times_note": "from the run's once-a-minute monitor; see run_log_excerpt.txt",
+    "kernel_replay": "continued in the same process (parallel replay, leanprover/comparator#95); not part of this record"
+  },
+  "files": {
+    "compare_and_axioms_output.txt": "the first 8 lines of the run's stdout, working directory shortened to <work>/",
+    "run_log_excerpt.txt": "the run's monitor lines for input verification, launch and the stdout transitions, working directory shortened to <work>/"
+  }
+}

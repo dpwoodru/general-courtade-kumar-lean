@@ -1,0 +1,449 @@
+diff --git a/Main.lean b/Main.lean
+index 37063f8..6362e84 100644
+--- a/Main.lean
++++ b/Main.lean
+@@ -7,6 +7,148 @@ import Lean
+ import Comparator
+ import Export.Parse
+ 
++namespace Lean.Environment.ParallelReplay
++
++structure Context where
++  newConstants : Std.HashMap Name ConstantInfo
++
++structure State where
++  env : Kernel.Environment
++  remaining : NameSet := {}
++  pending : NameSet := {}
++  postponedConstructors : NameSet := {}
++  postponedRecursors : NameSet := {}
++  tasks : Array (Name × Task (Except Kernel.Exception Kernel.Environment)) := #[]
++
++abbrev M := ReaderT Context <| StateRefT State IO
++
++def isTodo (name : Name) : M Bool := do
++  let r := (← get).remaining
++  if r.contains name then
++    modify fun s => { s with remaining := s.remaining.erase name, pending := s.pending.insert name }
++    return true
++  else
++    return false
++
++def throwKernelException (ex : Kernel.Exception) : M Unit := do
++  throw <| .userError <| (← ex.toMessageData {} |>.toString)
++
++def addDecl (d : Declaration) : M Unit := do
++  match (← get).env.addDeclCore 0 0 d (cancelTk? := none) with
++  | .ok env => modify fun s => { s with env := env }
++  | .error ex => throwKernelException ex
++
++def addThmAsync (info : TheoremVal) : M Unit := do
++  let kenv := (← get).env
++  let decl := Declaration.thmDecl info
++  match kenv.addDeclWithoutChecking decl with
++  | .ok env =>
++    let t := Task.spawn fun () => kenv.addDeclCore 0 0 decl (cancelTk? := none)
++    modify fun s => { s with env := env, tasks := s.tasks.push (info.name, t) }
++  | .error ex => throwKernelException ex
++
++mutual
++partial def replayConstant (name : Name) : M Unit := do
++  if ← isTodo name then
++    let some ci := (← read).newConstants[name]? | unreachable!
++    replayConstants ci.getUsedConstantsAsSet
++    if (← get).pending.contains name then
++      try
++        match ci with
++        | .defnInfo   info =>
++          addDecl (Declaration.defnDecl   info)
++        | .thmInfo    info =>
++          if let some (.thmInfo info') := (← get).env.find? ci.name then
++            if info.name == info'.name &&
++              info.type == info'.type &&
++              info.levelParams == info'.levelParams &&
++              info.all == info'.all
++            then
++              return
++          addThmAsync info
++        | .axiomInfo  info =>
++          addDecl (Declaration.axiomDecl  info)
++        | .opaqueInfo info =>
++          addDecl (Declaration.opaqueDecl info)
++        | .inductInfo info =>
++          let lparams := info.levelParams
++          let nparams := info.numParams
++          let all ← info.all.mapM fun n => do pure <| ((← read).newConstants[n]!)
++          for o in all do
++            modify fun s =>
++              { s with remaining := s.remaining.erase o.name, pending := s.pending.erase o.name }
++          let ctorInfo ← all.mapM fun ci => do
++            pure (ci, ← ci.inductiveVal!.ctors.mapM fun n => do
++              pure ((← read).newConstants[n]!))
++          for (_, ctors) in ctorInfo do
++            for ctor in ctors do
++              replayConstants ctor.getUsedConstantsAsSet
++          let types : List InductiveType := ctorInfo.map fun ⟨ci, ctors⟩ =>
++            { name := ci.name
++              type := ci.type
++              ctors := ctors.map fun ci => { name := ci.name, type := ci.type } }
++          addDecl (Declaration.inductDecl lparams nparams types false)
++        | .ctorInfo info =>
++          modify fun s => { s with postponedConstructors := s.postponedConstructors.insert info.name }
++        | .recInfo info =>
++          modify fun s => { s with postponedRecursors := s.postponedRecursors.insert info.name }
++        | .quotInfo _ =>
++          replayConstant `Eq
++          addDecl (Declaration.quotDecl)
++        modify fun s => { s with pending := s.pending.erase name }
++      catch ex =>
++        throw <| .userError s!"while replaying declaration '{name}':\n{ex}"
++
++partial def replayConstants (names : NameSet) : M Unit := do
++  for n in names do replayConstant n
++end
++
++def checkPostponedConstructors : M Unit := do
++  for ctor in (← get).postponedConstructors do
++    match (← get).env.find? ctor, (← read).newConstants[ctor]? with
++    | some (.ctorInfo info), some (.ctorInfo info') =>
++      if ! (info == info') then throw <| IO.userError s!"Invalid constructor {ctor}"
++    | _, _ => throw <| IO.userError s!"No such constructor {ctor}"
++
++def checkPostponedRecursors : M Unit := do
++  for ctor in (← get).postponedRecursors do
++    match (← get).env.find? ctor, (← read).newConstants[ctor]? with
++    | some (.recInfo info), some (.recInfo info') =>
++      if ! (info == info') then throw <| IO.userError s!"Invalid recursor {ctor}"
++    | _, _ => throw <| IO.userError s!"No such recursor {ctor}"
++
++end Lean.Environment.ParallelReplay
++
++def Lean.Environment.replayParallel (newConstants : Std.HashMap Lean.Name Lean.ConstantInfo) (env : Lean.Environment) : IO (Lean.Environment × Nat × Nat × Nat × Nat) := do
++  let mut remaining : Lean.NameSet := ∅
++  for (n, ci) in newConstants.toList do
++    if !ci.isUnsafe && !ci.isPartial then
++      remaining := remaining.insert n
++  let t0 ← IO.monoMsNow
++  let (_, s) ← StateRefT'.run (s := ({ env := env.toKernelEnv, remaining } : Lean.Environment.ParallelReplay.State)) do
++    ReaderT.run (r := ({ newConstants } : Lean.Environment.ParallelReplay.Context)) do
++      for n in remaining do
++        Lean.Environment.ParallelReplay.replayConstant n
++      let t1 ← IO.monoMsNow
++      let totalTasks := (← get).tasks.size
++      IO.println s!"[ParallelReplay] Main-thread DAG walk & non-theorem checks finished in {t1 - t0} ms; awaiting {totalTasks} theorem tasks..."
++      (← IO.getStdout).flush
++      let mut idx : Nat := 0
++      for (name, t) in (← get).tasks do
++        if let .error ex := t.get then
++          try Lean.Environment.ParallelReplay.throwKernelException ex
++          catch ex => throw <| .userError s!"while replaying declaration '{name}':\n{ex}"
++        idx := idx + 1
++        if idx % 200000 == 0 then
++          let tNow ← IO.monoMsNow
++          IO.println s!"[ParallelReplay] Awaited {idx}/{totalTasks} theorem tasks ({tNow - t0} ms elapsed)..."
++          (← IO.getStdout).flush
++      Lean.Environment.ParallelReplay.checkPostponedConstructors
++      Lean.Environment.ParallelReplay.checkPostponedRecursors
++  let t2 ← IO.monoMsNow
++  return (.ofKernelEnv s.env, s.tasks.size, s.postponedConstructors.size + s.postponedRecursors.size, t2 - t0, remaining.size)
++
++
+ namespace Comparator
+ 
+ structure Context where
+@@ -22,6 +164,8 @@ structure Context where
+   whichLandrun : String
+   whichLean4Export : String
+   whichNanoda : String
++  challengeExportFile : Option System.FilePath := none
++  solutionExportFile : Option System.FilePath := none
+ 
+ abbrev M := ReaderT Context IO
+ 
+@@ -152,62 +296,137 @@ def safeExport (module : Lean.Name) (decls : Array Lean.Name) : M String := do
+ 
+ def runNanoda (solutionExport : String) : M (Option String) := do
+   IO.println "Running nanoda kernel on solution"
++  (← IO.getStdout).flush
+   IO.FS.withTempFile fun config configPath => do
+     let legalAxioms ← getLegalAxioms
+-    config.putStr <| Lean.Json.compress <| Lean.Json.mkObj [
+-      ("use_stdin", true),
+-      ("permitted_axioms", .arr <| legalAxioms.map (.str ∘ Lean.Name.toString)),
+-      ("unpermitted_axiom_hard_error", true),
+-      ("nat_extension", true),
+-      ("string_extension", true),
+-    ]
+-    config.flush
+-
+-    let spawnArgs := {
+-      cmd := (← read).whichNanoda
+-      args := #[configPath.toString],
+-      envPass := #[]
+-      readablePaths := #[configPath.toString]
+-      writablePaths := #[]
+-      executablePaths := #[]
+-    }
+-
+-    let args := buildLandrunArgs spawnArgs
+-    let proc ← IO.Process.spawn {
+-      cmd := (← read).whichLandrun,
+-      args,
+-      stdin := .piped
+-      env := spawnArgs.envOverride
+-      cwd := (← getProjectDir)
+-    }
+-
+-    let (nanodaStdin, proc) ← proc.takeStdin
+-    nanodaStdin.putStr solutionExport
+-    nanodaStdin.flush
+-    let ret ← proc.wait
+-    if ret != 0 then
+-      IO.println "Nanoda kernel rejected the solution"
+-      return some s!"Child exited with {ret}"
+-    else
+-      IO.println "Nanoda kernel accepts the solution"
+-      return none
+-
++    match (← read).solutionExportFile with
++    | some exportPath =>
++      config.putStr <| Lean.Json.compress <| Lean.Json.mkObj [
++        ("use_stdin", false),
++        ("export_file_path", .str exportPath.toString),
++        ("permitted_axioms", .arr <| legalAxioms.map (.str ∘ Lean.Name.toString)),
++        ("unpermitted_axiom_hard_error", true),
++        ("nat_extension", true),
++        ("string_extension", true),
++      ]
++      config.flush
++      let spawnArgs := {
++        cmd := (← read).whichNanoda
++        args := #[configPath.toString],
++        envPass := #[]
++        readablePaths := #[configPath.toString, exportPath]
++        writablePaths := #[]
++        executablePaths := #[]
++      }
++      let args := buildLandrunArgs spawnArgs
++      let proc ← IO.Process.spawn {
++        cmd := (← read).whichLandrun,
++        args,
++        env := spawnArgs.envOverride
++        cwd := (← getProjectDir)
++      }
++      let ret ← proc.wait
++      if ret != 0 then
++        IO.println "Nanoda kernel rejected the solution"
++        return some s!"Child exited with {ret}"
++      else
++        IO.println "Nanoda kernel accepts the solution"
++        return none
++    | none =>
++      config.putStr <| Lean.Json.compress <| Lean.Json.mkObj [
++        ("use_stdin", true),
++        ("permitted_axioms", .arr <| legalAxioms.map (.str ∘ Lean.Name.toString)),
++        ("unpermitted_axiom_hard_error", true),
++        ("nat_extension", true),
++        ("string_extension", true),
++      ]
++      config.flush
++
++      let spawnArgs := {
++        cmd := (← read).whichNanoda
++        args := #[configPath.toString],
++        envPass := #[]
++        readablePaths := #[configPath.toString]
++        writablePaths := #[]
++        executablePaths := #[]
++      }
++
++      let args := buildLandrunArgs spawnArgs
++      let proc ← IO.Process.spawn {
++        cmd := (← read).whichLandrun,
++        args,
++        stdin := .piped
++        env := spawnArgs.envOverride
++        cwd := (← getProjectDir)
++      }
++
++      let (nanodaStdin, proc) ← proc.takeStdin
++      nanodaStdin.putStr solutionExport
++      nanodaStdin.flush
++      let ret ← proc.wait
++      if ret != 0 then
++        IO.println "Nanoda kernel rejected the solution"
++        return some s!"Child exited with {ret}"
++      else
++        IO.println "Nanoda kernel accepts the solution"
++        return none
++
++structure EnvStats where
++  total : Nat := 0
++  digest : UInt64 := 0
++  nAxioms : Nat := 0
++  nDefns : Nat := 0
++  nThms : Nat := 0
++  nOpaques : Nat := 0
++  nQuots : Nat := 0
++  nInducts : Nat := 0
++  nCtors : Nat := 0
++  nRecs : Nat := 0
++
++def countKernelEnvConsts (env : Lean.Environment) : EnvStats :=
++  env.constants.fold (init := {}) fun st n ci =>
++    let (k, st') : UInt64 × EnvStats := match ci with
++      | .axiomInfo _  => (1, { st with nAxioms := st.nAxioms + 1 })
++      | .defnInfo _   => (2, { st with nDefns := st.nDefns + 1 })
++      | .thmInfo _    => (3, { st with nThms := st.nThms + 1 })
++      | .opaqueInfo _ => (4, { st with nOpaques := st.nOpaques + 1 })
++      | .quotInfo _   => (5, { st with nQuots := st.nQuots + 1 })
++      | .inductInfo _ => (6, { st with nInducts := st.nInducts + 1 })
++      | .ctorInfo _   => (7, { st with nCtors := st.nCtors + 1 })
++      | .recInfo _    => (8, { st with nRecs := st.nRecs + 1 })
++    { st' with
++      total := st.total + 1
++      digest := st.digest ^^^ (mixHash n.hash (mixHash k ci.type.hash)) }
+ 
+ def runKernel (solution : Export.ExportedEnv) : M (Option String) := do
+-  IO.println "Running Lean default kernel on solution."
+-  let mut env ← Lean.mkEmptyEnvironment
++  let mode := (← IO.getEnv "COMPARATOR_REPLAY_MODE").getD "parallel"
++  IO.println s!"Running Lean default kernel on solution (mode={mode})."
++  (← IO.getStdout).flush
++  let env ← Lean.mkEmptyEnvironment
+   let mut constMap := solution.constMap
+   -- Lean's kernel interprets just the addition of `Quot as adding all of these so adding them
+   -- multiple times leads to errors.
+   constMap := constMap.erase `Quot.mk |>.erase `Quot.lift |>.erase `Quot.ind
+   try
+-    discard <| env.replay constMap
++    if mode == "sequential" then
++      let t0 ← IO.monoMsNow
++      let env' ← env.replay constMap
++      let t1 ← IO.monoMsNow
++      let st := countKernelEnvConsts env'
++      IO.println s!"[ReplayStats] mode=sequential replay_ms={t1 - t0} checked_env_consts={st.total} env_digest={st.digest} decl_counts=(axiom={st.nAxioms},defn={st.nDefns},thm={st.nThms},opaque={st.nOpaques},quot={st.nQuots},induct={st.nInducts},ctor={st.nCtors},rec={st.nRecs})"
++    else
++      let (env', nThms, nPostponed, ms, nRemaining) ← env.replayParallel constMap
++      let st := countKernelEnvConsts env'
++      IO.println s!"[ReplayStats] mode=parallel replay_ms={ms} checked_env_consts={st.total} replayed_decls={nRemaining} thm_tasks={nThms} postponed_ctor_rec={nPostponed} env_digest={st.digest} decl_counts=(axiom={st.nAxioms},defn={st.nDefns},thm={st.nThms},opaque={st.nOpaques},quot={st.nQuots},induct={st.nInducts},ctor={st.nCtors},rec={st.nRecs})"
+     IO.println "Lean default kernel accepts the solution"
++    (← IO.getStdout).flush
+     return none
+   catch e =>
+-    IO.println "Lean default kernel rejects the solution"
++    IO.println s!"Lean default kernel rejects the solution: {e}"
++    (← IO.getStdout).flush
+     return some e.toString
+ 
++
+ def primitiveTargets : M (Array Lean.Name) := do
+   -- The challenge needs to have all the built-in constants of the kernel, as the
+   -- kernel makes no guarantees when fed other definitions here.
+@@ -251,15 +470,25 @@ def stringStream (s : String) : BaseIO IO.FS.Stream := do
+   }
+   return IO.FS.Stream.ofBuffer ref
+ 
+-def verifyMatch (challengeExport : String) (solutionExport : String) :
+-    M Unit := do
+-  let challenge ← Export.parseStream (← stringStream challengeExport)
+-  let solution ← Export.parseStream (← stringStream solutionExport)
++def verifyMatchStreams (challengeStream : IO.FS.Stream) (solutionStream : IO.FS.Stream)
++    (solutionExport : String := "") : M Unit := do
++  IO.println "Parsing challenge export stream..."
++  (← IO.getStdout).flush
++  let challenge ← Export.parseStream challengeStream
++  IO.println s!"Parsed challenge export ({challenge.constOrder.size} constants). Parsing solution export stream..."
++  (← IO.getStdout).flush
++  let solution ← Export.parseStream solutionStream
++  IO.println s!"Parsed solution export ({solution.constOrder.size} constants). Running Comparator.compareAt..."
++  (← IO.getStdout).flush
+   let theoremNames ← getTheoremNames
+   let definitionNames ← getDefinitionNames
+   let targets := (← getTheoremNames) ++ (← getLegalAxioms)
+   IO.ofExcept <| Comparator.compareAt challenge solution targets definitionNames (← primitiveTargets)
++  IO.println "Comparator.compareAt passed. Running Comparator.checkAxioms..."
++  (← IO.getStdout).flush
+   IO.ofExcept <| Comparator.checkAxioms solution theoremNames definitionNames (← getLegalAxioms)
++  IO.println "Comparator.checkAxioms passed."
++  (← IO.getStdout).flush
+   let mut result := none
+   if ← getNanodaEnabled then
+     result := result <|> (← runNanoda solutionExport)
+@@ -267,21 +496,40 @@ def verifyMatch (challengeExport : String) (solutionExport : String) :
+   if let some error := result then
+     throw <| IO.userError error
+ 
++def verifyMatch (challengeExport : String) (solutionExport : String) :
++    M Unit := do
++  verifyMatchStreams (← stringStream challengeExport) (← stringStream solutionExport) solutionExport
++
+ def compareIt : M Unit := do
+   let exportTargets := (← builtinTargets) ++ (← getTheoremNames) ++ (← getLegalAxioms)
+     ++ (← primitiveTargets) ++ (← getDefinitionNames)
+ 
+-  let challengeModule ← getChallengeModule
+-  safeLakeBuild challengeModule
+-  let challengeExport ← safeExport challengeModule exportTargets
+-
+-  let solutionModule ← getSolutionModule
+-  safeLakeBuild solutionModule
+-  let solutionExport ← safeExport solutionModule exportTargets
+-
+-  verifyMatch challengeExport solutionExport
++  let challengeStream ← match (← read).challengeExportFile with
++    | some path =>
++      IO.println s!"Reading challenge export from file {path}"
++      (← IO.getStdout).flush
++      pure <| IO.FS.Stream.ofHandle (← IO.FS.Handle.mk path .read)
++    | none =>
++      let challengeModule ← getChallengeModule
++      safeLakeBuild challengeModule
++      let challengeExport ← safeExport challengeModule exportTargets
++      stringStream challengeExport
++
++  let (solutionStream, solutionExport) ← match (← read).solutionExportFile with
++    | some path =>
++      IO.println s!"Reading solution export from file {path}"
++      (← IO.getStdout).flush
++      pure (IO.FS.Stream.ofHandle (← IO.FS.Handle.mk path .read), "")
++    | none =>
++      let solutionModule ← getSolutionModule
++      safeLakeBuild solutionModule
++      let solutionExport ← safeExport solutionModule exportTargets
++      pure (← stringStream solutionExport, solutionExport)
++
++  verifyMatchStreams challengeStream solutionStream solutionExport
+ 
+   IO.println "Your solution is okay!"
++  (← IO.getStdout).flush
+ 
+ structure Config where
+   challenge_module : String
+@@ -290,6 +538,8 @@ structure Config where
+   definition_names : Option (Array String) := none
+   permitted_axioms : Array String
+   enable_nanoda : Bool
++  challenge_export_file : Option String := none
++  solution_export_file : Option String := none
+   deriving Lean.FromJson, Lean.ToJson, Repr
+ 
+ def M.run (x : M α) (cfg : Config) : IO α := do
+@@ -311,7 +561,9 @@ def M.run (x : M α) (cfg : Config) : IO α := do
+     enableNanoda := cfg.enable_nanoda,
+     whichLean4Export,
+     whichLandrun,
+-    whichNanoda
++    whichNanoda,
++    challengeExportFile := cfg.challenge_export_file.map System.FilePath.mk,
++    solutionExportFile := cfg.solution_export_file.map System.FilePath.mk
+   }
+ 
+ end Comparator
+diff --git a/lean-toolchain b/lean-toolchain
+index 025e595..a8afa7d 100644
+--- a/lean-toolchain
++++ b/lean-toolchain
+@@ -1 +1 @@
+-leanprover/lean4:v4.33.0
++leanprover/lean4:v4.33.1

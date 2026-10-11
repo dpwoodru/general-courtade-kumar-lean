@@ -29,5 +29,5 @@ Your solution is okay!
 - **Parallel replay.** Stock comparator replays the environment on one core. For this ~100 GB export that was projected to take one to two weeks.
   - The parallel replay of comparator#95 checks each theorem's proof in a separate task, against the environment just before that theorem, with the same kernel call. Only the order of the theorem checks changes.
   - It has not been reviewed upstream yet.
-- **Lean 4.33.0 exports.** The exports were made with Lean 4.33.0 and re-checked by the Lean 4.33.1 kernel. A second, end-to-end run, on exports made with Lean 4.33.1 from commit `c3599c05`, started on 2026-10-04 at 19:16 UTC. Its result will be added here.
+- **Lean 4.33.0 exports.** The exports were made with Lean 4.33.0 and re-checked by the Lean 4.33.1 kernel. A second run, on exports made with Lean 4.33.1 from commit `c3599c05`, passed `compareAt` and `checkAxioms` on 2026-10-08: [`../2026-10-08/`](../2026-10-08/).
 - **Cross-check.** A separate run used a different build of the parallel replay, split into 20 processes. Each process rebuilt the full environment and kernel-checked one twentieth of the theorems, definitions and opaque constants. It also accepted the same exports, with identical declaration counts.

@@ -1,0 +1,229 @@
+diff --git a/Export.lean b/Export.lean
+index e77a14f..aeb604d 100644
+--- a/Export.lean
++++ b/Export.lean
+@@ -32,12 +32,40 @@ def Lean.KVMap.toJson (kvs: Lean.KVMap) : Json :=
+ structure Context where
+   env : Environment
+ 
++partial def hashNatFull (n : Nat) (acc : UInt64 := 17) : UInt64 :=
++  if n < 18446744073709551616 then
++    mixHash acc n.toUInt64
++  else
++    hashNatFull (n >>> 64) (mixHash acc n.toUInt64)
++
++structure HashedExpr where
++  expr : Expr
++  hash : UInt64
++  deriving Inhabited
++
++@[inline] instance : BEq HashedExpr where
++  beq a b := a.expr == b.expr
++
++@[inline] instance : Hashable HashedExpr where
++  hash a := a.hash
++
++inductive PrepExpr where
++  | mk0 (he : HashedExpr)
++  | mk1 (he : HashedExpr) (c1 : PrepExpr)
++  | mk2 (he : HashedExpr) (c1 c2 : PrepExpr)
++  | mk3 (he : HashedExpr) (c1 c2 c3 : PrepExpr)
++  deriving Inhabited
++
++@[inline]
++def PrepExpr.he : PrepExpr → HashedExpr
++  | .mk0 he | .mk1 he .. | .mk2 he .. | .mk3 he .. => he
++
+ structure State where
+   visitedNames : HashMap Name Nat := HashMap.emptyWithCapacity 200000 |>.insert .anonymous 0
+   visitedLevels : HashMap Level Nat := HashMap.emptyWithCapacity 1000 |>.insert .zero 0
+-  visitedExprs : HashMap Expr Nat := HashMap.emptyWithCapacity 10000000
++  visitedExprs : HashMap HashedExpr Nat := HashMap.emptyWithCapacity 10000000
+   visitedConstants : NameHashSet := {}
+-  noMDataExprs : HashMap Expr Expr := HashMap.emptyWithCapacity 100000
++  noMDataExprs : HashMap Expr PrepExpr := HashMap.emptyWithCapacity 100000
+   exportMData : Bool := false
+   exportUnsafe : Bool := false
+   ignoreMissing : Bool := false
+@@ -127,61 +155,91 @@ def dumpNames (uparams : List Name) : M Json := do
+   let nameIdxs ← uparams.mapM dumpName
+   return nameIdxs.toJson
+ 
+-def removeMData (e : Expr) : M Expr := do
+-  if let some x := (← get).noMDataExprs[e]? then
+-    return x
+-  let e' ← match e with
+-  | .mdata _ e' => removeMData e'
+-  | .fvar .. | .mvar ..=> unreachable!
+-  | .bvar .. | .sort .. | .const .. | .lit _ => pure e
+-  | .app f a =>
+-    pure <| e.updateApp! (← removeMData f) (← removeMData a)
+-  | .lam _ d b _ =>
+-    pure <| e.updateLambdaE! (← removeMData d) (← removeMData b)
+-  | .letE _ d v b _ =>
+-    -- Normalize `nonDep` to `false` to avoid duplicate expression indices.
+-    -- Lean's `BEq` for `Expr` considers the `nonDep` flag, but external type checkers
+-    -- (e.g., nanoda_lib) treat expressions as identical regardless of this optimization hint.
+-    -- Without normalization, the same expression can get different indices, causing parse errors.
+-    -- See: https://github.com/ammkrn/lean4export/commit/eb023e5
+-    pure <| e.updateLet! (← removeMData d) (← removeMData v) (← removeMData b) false
+-  | .forallE _ d b _ =>
+-    pure <| e.updateForallE! (← removeMData d) (← removeMData b)
+-  | .proj _ _ e2 =>
+-    pure <| e.updateProj! (← removeMData e2)
+-  modify (fun st => { st with noMDataExprs := st.noMDataExprs.insert e e' })
+-  pure e'
++partial def removeMData (e : Expr) : M PrepExpr := do
++  match e with
++  | .bvar _ | .sort _ | .const _ _ | .lit (.strVal _) => return .mk0 ⟨e, hash e⟩
++  | .fvar .. | .mvar .. => unreachable!
++  | _ =>
++    if let some x := (← get).noMDataExprs[e]? then
++      return x
++    let p ← match e with
++    | .lit (.natVal n) => pure <| .mk0 ⟨e, hashNatFull n⟩
++    | .mdata _ e' =>
++      if (← get).exportMData then
++        let pe' ← removeMData e'
++        pure <| .mk1 ⟨e.updateMData! pe'.he.expr, mixHash 43 pe'.he.hash⟩ pe'
++      else
++        removeMData e'
++    | .app f a =>
++      let pf ← removeMData f
++      let pa ← removeMData a
++      let e' := e.updateApp! pf.he.expr pa.he.expr
++      let h  := mixHash 29 (mixHash pf.he.hash pa.he.hash)
++      pure <| .mk2 ⟨e', h⟩ pf pa
++    | .lam _ d b _ =>
++      let pd ← removeMData d
++      let pb ← removeMData b
++      let e' := e.updateLambdaE! pd.he.expr pb.he.expr
++      let h  := mixHash 31 (mixHash pd.he.hash pb.he.hash)
++      pure <| .mk2 ⟨e', h⟩ pd pb
++    | .letE _ d v b nondep =>
++      -- Normalize `nonDep` to `false` to avoid duplicate expression indices.
++      -- Lean's `BEq` for `Expr` considers the `nonDep` flag, but external type checkers
++      -- (e.g., nanoda_lib) treat expressions as identical regardless of this optimization hint.
++      -- Without normalization, the same expression can get different indices, causing parse errors.
++      -- See: https://github.com/ammkrn/lean4export/commit/eb023e5
++      let pd ← removeMData d
++      let pv ← removeMData v
++      let pb ← removeMData b
++      let nondep' := if (← get).exportMData then nondep else false
++      let e' := e.updateLet! pd.he.expr pv.he.expr pb.he.expr nondep'
++      let h  := mixHash 41 (mixHash pd.he.hash (mixHash pv.he.hash pb.he.hash))
++      pure <| .mk3 ⟨e', h⟩ pd pv pb
++    | .forallE _ d b _ =>
++      let pd ← removeMData d
++      let pb ← removeMData b
++      let e' := e.updateForallE! pd.he.expr pb.he.expr
++      let h  := mixHash 37 (mixHash pd.he.hash pb.he.hash)
++      pure <| .mk2 ⟨e', h⟩ pd pb
++    | .proj s i e2 =>
++      let pe2 ← removeMData e2
++      let e' := e.updateProj! pe2.he.expr
++      let h  := mixHash 23 (mixHash (hash s) (mixHash (hash i) pe2.he.hash))
++      pure <| .mk1 ⟨e', h⟩ pe2
++    | _ => unreachable!
++    modify (fun st => { st with noMDataExprs := st.noMDataExprs.insert e p })
++    pure p
+ 
+ mutual
+ 
+-partial def dumpExprAux (e : Expr) : M Nat := do
+-  getIdx e "ie" (·.visitedExprs) ({ · with visitedExprs := · }) do
+-    match e with
+-    | .fvar .. | .mvar .. => panic! "cannot export free variables or metavariables"
+-    | .mdata a e' =>
++partial def dumpExprAux (p : PrepExpr) : M Nat := do
++  getIdx p.he "ie" (·.visitedExprs) ({ · with visitedExprs := · }) do
++    match p.he.expr, p with
++    | .fvar .., _ | .mvar .., _ => panic! "cannot export free variables or metavariables"
++    | .mdata a _, .mk1 _ e' =>
+       return .mkObj [
+         ("mdata", .mkObj [
+             ("data", a.toJson),
+             ("expr", ← dumpExprAux e')
+         ])
+       ]
+-    | .bvar i => return .mkObj [("bvar", i)]
+-    | .lit (.natVal i) => dumpNatDeps; return .mkObj [("natVal", s!"{i}")]
+-    | .lit (.strVal s) => dumpStrDeps; return .mkObj [("strVal", s)]
+-    | .sort l => return .mkObj [("sort", ← dumpLevel l)]
+-    | .const n us => return .mkObj [
++    | .bvar i, _ => return .mkObj [("bvar", i)]
++    | .lit (.natVal i), _ => dumpNatDeps; return .mkObj [("natVal", s!"{i}")]
++    | .lit (.strVal s), _ => dumpStrDeps; return .mkObj [("strVal", s)]
++    | .sort l, _ => return .mkObj [("sort", ← dumpLevel l)]
++    | .const n us, _ => return .mkObj [
+       ("const", .mkObj [
+         ("name", ← dumpName n),
+         ("us", (← us.mapM dumpLevel).toJson)
+       ])
+     ]
+-    | .app f a => return .mkObj [
++    | .app .., .mk2 _ f a => return .mkObj [
+       ("app", .mkObj [
+         ("fn", ← dumpExprAux f),
+         ("arg", ← dumpExprAux a)
+       ])
+     ]
+-    | .lam n d b bi => return .mkObj [
++    | .lam n _ _ bi, .mk2 _ d b => return .mkObj [
+       ("lam", .mkObj [
+         ("name", ← dumpName n),
+         ("type", ← dumpExprAux d),
+@@ -189,7 +247,7 @@ partial def dumpExprAux (e : Expr) : M Nat := do
+         ("binderInfo", bi.toJson)
+       ])
+     ]
+-    | .forallE n d b bi => return .mkObj [
++    | .forallE n _ _ bi, .mk2 _ d b => return .mkObj [
+       ("forallE", .mkObj [
+         ("name", ← dumpName n),
+         ("type", ← dumpExprAux d),
+@@ -197,7 +255,7 @@ partial def dumpExprAux (e : Expr) : M Nat := do
+         ("binderInfo", bi.toJson)
+       ])
+     ]
+-    | .letE n d v b nondep => return .mkObj [
++    | .letE n _ _ _ nondep, .mk3 _ d v b => return .mkObj [
+       ("letE", .mkObj [
+         ("name", ← dumpName n),
+         ("type", ← dumpExprAux d),
+@@ -206,13 +264,14 @@ partial def dumpExprAux (e : Expr) : M Nat := do
+         ("nondep", nondep)
+       ])
+     ]
+-    | .proj s i e => return .mkObj [
++    | .proj s i _, .mk1 _ e => return .mkObj [
+       ("proj", .mkObj [
+         ("typeName", ← dumpName s),
+         ("idx", i),
+         ("struct", ← dumpExprAux e)
+       ])
+     ]
++    | _, _ => unreachable!
+ where
+   dumpNatDeps : M Unit := do
+     let nat := ``Nat
+@@ -227,10 +286,8 @@ where
+     then dumpConstant stringOfList
+ 
+ partial def dumpExpr (e : Expr) : M Nat := do
+-    let aux (e : Expr) : M Expr := do
+-      modify (fun st => { st with noMDataExprs := HashMap.emptyWithCapacity })
+-      removeMData e
+-    dumpExprAux <| ← if (← get).exportMData then pure e else aux e
++    modify (fun st => { st with noMDataExprs := HashMap.emptyWithCapacity })
++    dumpExprAux (← removeMData e)
+ 
+ partial def dumpConstant (c : Name) : M Unit := do
+   let some declar := (← read).env.find? c
+diff --git a/lean-toolchain b/lean-toolchain
+index 025e595..a8afa7d 100644
+--- a/lean-toolchain
++++ b/lean-toolchain
+@@ -1 +1 @@
+-leanprover/lean4:v4.33.0
++leanprover/lean4:v4.33.1

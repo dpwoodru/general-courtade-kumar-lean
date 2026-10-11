@@ -108,8 +108,12 @@ the kernel on one core (projected at one to two weeks). Status: the full run on 
 2026-10-04 (`Your solution is okay!`), after 83 hours on one machine with the opt-in parallel kernel replay proposed in
 [leanprover/comparator#95](https://github.com/leanprover/comparator/issues/95), which is not yet reviewed upstream. Its
 exports were made with Lean 4.33.0 and replayed by the Lean 4.33.1 kernel; the record is in
-[`verification/comparator/results/2026-10-04/`](verification/comparator/results/2026-10-04/). An end-to-end run on
-exports made with Lean 4.33.1 is in progress. Earlier, stock comparator accepted the bridge `CourtadeKumar.of_general`
+[`verification/comparator/results/2026-10-04/`](verification/comparator/results/2026-10-04/). On the Lean 4.33.1
+exports of release v1.2, `compareAt` and `checkAxioms` passed on 2026-10-08; the solution export is the file con-leche
+accepted (below). That record is in
+[`verification/comparator/results/2026-10-08/`](verification/comparator/results/2026-10-08/), and the exact comparator
+and lean4export revisions, with their patches, are in [`verification/comparator/tools/`](verification/comparator/tools/).
+Earlier, stock comparator accepted the bridge `CourtadeKumar.of_general`
 and the tests of the definitions, on Lean 4.33.1 and on Lean 4.33.0 (there with both the Lean kernel and nanoda).
 
 Independently, the Lean FRO's external checker [con-leche](https://github.com/leanprover/con-leche), which has a formal
