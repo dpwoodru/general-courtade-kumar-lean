@@ -1,5 +1,15 @@
 # Changelog and errata
 
+## 2026-10-15: statement merged into Formal Conjectures (documentation only)
+
+The proof is unchanged: no `.lean` file changed.
+
+- The Formal Conjectures statement `CourtadeKumar.courtade_kumar` was merged into
+  google-deepmind/formal-conjectures on 2026-10-15 (pull request #6688). The merged file also has the random-variable
+  formulation and the proof that the two formulations are equivalent.
+- `README.md`, `HOW_TO_VERIFY.md`, `formalization.yaml` and `verification/comparator/README.md` updated accordingly;
+  `SHA256SUMS.txt` regenerated.
+
 ## 2026-10-11: comparator on the Lean 4.33.1 exports (documentation only)
 
 The proof is unchanged: no `.lean` file changed.

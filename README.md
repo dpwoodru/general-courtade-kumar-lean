@@ -46,9 +46,9 @@ and a similar check of the theorem's type, so `lake build` fails unless the proo
 standard axioms: no `sorry`, no `native_decide` (`Lean.ofReduceBool`) and no added `axiom`. Every numerical
 certificate is checked by Lean's kernel.
 
-The statement has also been written in the style of [Formal Conjectures](https://github.com/google-deepmind/formal-conjectures),
-as `CourtadeKumar.courtade_kumar` (submitted in
-[google-deepmind/formal-conjectures#6688](https://github.com/google-deepmind/formal-conjectures/pull/6688)).
+The statement is also in [Formal Conjectures](https://github.com/google-deepmind/formal-conjectures), as
+`CourtadeKumar.courtade_kumar` in [`FormalConjectures/Paper/CourtadeKumar.lean`](https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/Paper/CourtadeKumar.lean)
+(merged on 2026-10-15 in [google-deepmind/formal-conjectures#6688](https://github.com/google-deepmind/formal-conjectures/pull/6688)).
 [`verification/comparator/`](verification/comparator/) holds it as a [comparator](https://github.com/leanprover/comparator)
 challenge, with a solution that derives it from the final theorem.
 

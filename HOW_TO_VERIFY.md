@@ -87,7 +87,7 @@ included) through the Lean kernel. `verification/comparator/` contains:
 
 | file | what |
 |---|---|
-| `CKChallenge/Defs.lean` | the definitions of the Formal Conjectures statement ([google-deepmind/formal-conjectures#6688](https://github.com/google-deepmind/formal-conjectures/pull/6688)): `Cube`, `binEntropyBits`, `bsc`, `jointProb`, `entropy`, `mutualInfo`, with sanity tests (the dictator attains the bound). It imports only Mathlib |
+| `CKChallenge/Defs.lean` | the definitions of the Formal Conjectures statement ([google-deepmind/formal-conjectures#6688](https://github.com/google-deepmind/formal-conjectures/pull/6688), merged 2026-10-15): `Cube`, `binEntropyBits`, `bsc`, `jointProb`, `entropy`, `mutualInfo`, with sanity tests (the dictator attains the bound). It imports only Mathlib |
 | `CKChallenge/Challenge.lean` | the trusted challenge: `CourtadeKumar.courtade_kumar`, stated with `sorry` |
 | `CKChallenge/Bridge.lean` | `CourtadeKumar.of_general`: `GeneralCK.GeneralCourtadeKumar` implies the challenge statement (the two sets of definitions have identical bodies) |
 | `CKChallenge/Solution.lean` | the same theorem, proved by `of_general` applied to the final theorem |

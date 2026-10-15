@@ -4,8 +4,8 @@
 of the trusted challenge `CKChallenge.Challenge`, with no axioms beyond `propext`, `Quot.sound` and `Classical.choice`,
 and replays the solution's whole environment (Mathlib included) through the Lean kernel.
 
-- `CKChallenge/Defs.lean` and `CKChallenge/Challenge.lean`: the Courtade–Kumar statement as written for Formal
-  Conjectures ([google-deepmind/formal-conjectures#6688](https://github.com/google-deepmind/formal-conjectures/pull/6688)),
+- `CKChallenge/Defs.lean` and `CKChallenge/Challenge.lean`: the Courtade–Kumar statement of Formal Conjectures
+  ([google-deepmind/formal-conjectures#6688](https://github.com/google-deepmind/formal-conjectures/pull/6688), merged 2026-10-15),
   with the Formal Conjectures attributes removed and explicit Mathlib imports. The challenge imports only Mathlib and
   `CKChallenge.Defs`.
 - `CKChallenge/Bridge.lean`: `GeneralCK.GeneralCourtadeKumar` implies the challenge statement (the two sets of

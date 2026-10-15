@@ -45,13 +45,14 @@ sources:
     author_endorsement: "not-contacted"
 
 related_formalizations:
-  - id: "https://github.com/google-deepmind/formal-conjectures/pull/6688"
+  - id: "https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/Paper/CourtadeKumar.lean"
     relationship: "other"
     note: >-
-      The same statement written for Formal Conjectures
+      The same statement in Formal Conjectures
       (FormalConjectures/Paper/CourtadeKumar.lean, CourtadeKumar.courtade_kumar),
-      submitted as a pull request. verification/comparator/ uses it as the
-      comparator challenge.
+      merged on 2026-10-15 in pull request #6688, together with a
+      random-variable formulation and a proof that the two are equivalent.
+      verification/comparator/ uses the statement as the comparator challenge.
 
 classification:
   arxiv: ["cs.IT", "math.IT"]
@@ -110,8 +111,9 @@ review:
     Lean FRO's verified checker con-leche, unmodified at commit 65e74db, accepted
     the whole Lean 4.33.1 export of the solution (see
     verification/con-leche/results/2026-10-10/), as a build with its loop step
-    budgets raised 1000x had on 2026-10-08. Review by human
-    experts is in progress. Earlier, the development's own clean
+    budgets raised 1000x had on 2026-10-08. The Formal Conjectures statement
+    was reviewed and merged on 2026-10-15 (pull request #6688); review of the
+    proof by human experts is in progress. Earlier, the development's own clean
     rebuild with plain lean was kernel-replayed in full (4,990/4,990 shards,
     22,668,080 declarations, 0 failures). See README.md, "How it was verified".
 
